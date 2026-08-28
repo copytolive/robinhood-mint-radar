@@ -1,0 +1,29 @@
+name: Radar CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python
+        run: python -m compileall -q radar
+      - name: Static safety assertions
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'MANUAL_ONLY' radar/scanner.py
+          grep -Fq 'No automatic minting' README.md
+          grep -Fq 'WAIT FOR QUALIFIED OPPORTUNITY' public/status.json

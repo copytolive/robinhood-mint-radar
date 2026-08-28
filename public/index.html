@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Robinhood Mint Radar</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">TAPEOUT-STYLE HYBRID CONTROL</div>
+      <h1>Robinhood Mint Radar</h1>
+      <p>Machine searches and verifies. Wallet execution stays manual.</p>
+    </div>
+    <div id="liveBadge" class="badge neutral">LOADING</div>
+  </header>
+  <section class="grid metrics" id="topMetrics"></section>
+  <section class="panel"><div class="panel-head"><h2>LIVE ECONOMIC SCAN</h2><span id="generatedAt">—</span></div><div class="grid scan-grid" id="scanMetrics"></div></section>
+  <section class="panel"><div class="panel-head"><h2>BEST LIVE OBSERVATION</h2><span id="bestAction">WAIT</span></div><div id="bestObservation" class="empty">No live observation yet.</div></section>
+  <section class="panel"><div class="panel-head"><h2>TOP 10 WATCHLIST</h2><span>READ-ONLY</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Collection</th><th>Mint</th><th>Velocity</th><th>Holders*</th><th>Market</th><th>Risk</th><th>Score</th><th>Action</th></tr></thead><tbody id="watchlist"></tbody></table></div><p class="footnote">* Recent unique minters / flow concentration are momentum proxies, not a full ownership snapshot.</p></section>
+  <section class="panel"><div class="panel-head"><h2>MANUAL PACKAGES</h2><span>NO AUTO-MINT</span></div><div id="packages" class="empty">No manual package yet. This is normal until a candidate passes every hard gate.</div></section>
+  <section class="panel two-col"><div><div class="panel-head"><h2>LEARNING / L6</h2><span id="learningStatus">—</span></div><div id="learning"></div></div><div><div class="panel-head"><h2>SCAN DIAGNOSTICS</h2><span>FAIL-CLOSED</span></div><pre id="diagnostics">[]</pre></div></section>
+  <section class="panel"><div class="panel-head"><h2>SYSTEM CONTRACT</h2><span>V1.0</span></div><div class="contract-grid"><div><b>Chain</b><span>Robinhood Chain / 4663</span></div><div><b>Execution</b><span>Manual wallet only</span></div><div><b>Persistence</b><span>SQLite local checkpoints</span></div><div><b>Public mode</b><span>Periodic read-only snapshot</span></div></div><ul id="limitations"></ul></section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

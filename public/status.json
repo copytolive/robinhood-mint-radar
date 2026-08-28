@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "generated_at": 0,
+  "mode": "READ_ONLY",
+  "wallet_execution": "MANUAL_ONLY",
+  "status": "BOOTSTRAP",
+  "money_readiness": "WAIT FOR QUALIFIED OPPORTUNITY",
+  "live_ready": "NOT_READY",
+  "realized_net_usd": 0.0,
+  "capital_deployed_usd": 0.0,
+  "net_capital_day_pct": 0.0,
+  "win_rate_pct": 0.0,
+  "prediction_mae": null,
+  "scan": {"blocks_processed":0,"total_mint_units_stored":0,"hoodsea_launches_stored":0,"live_observations":0,"qualified_candidates":0},
+  "best_live_observation": null,
+  "watchlist": [],
+  "manual_packages": [],
+  "learning": {"status":"PREDICTION_UNCERTIFIED","qualified_samples":0,"observed_win_rate_pct":0.0,"brier":null,"ece":null},
+  "diagnostics": [{"stage":"BOOTSTRAP","reason":"AWAITING_FIRST_LIVE_SCAN","error":null}],
+  "limitations": ["Bootstrap placeholder. GitHub Actions replaces this with a live read-only snapshot."]
+}

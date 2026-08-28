@@ -1,0 +1,76 @@
+name: Live Radar + Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: robinhood-mint-radar-pages
+  cancel-in-progress: true
+
+jobs:
+  scan-test-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Live read-only scan
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+          RADAR_DB: /tmp/radar-public.sqlite
+          RADAR_STATUS_PATH: public/status.json
+        run: |
+          python -m radar --once --public-lookback 120 --db /tmp/radar-public.sqlite --status public/status.json
+          python - <<'PY'
+          import json
+          d=json.load(open('public/status.json'))
+          assert d['mode']=='READ_ONLY'
+          assert d['wallet_execution']=='MANUAL_ONLY'
+          assert d['money_readiness']
+          assert isinstance(d.get('diagnostics',[]),list)
+          print('LIVE_READY=',d.get('live_ready'))
+          print('LATEST_BLOCK=',d.get('chain',{}).get('latest_block'))
+          print('QUALIFIED=',d.get('scan',{}).get('qualified_candidates'))
+          PY
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Browser acceptance
+        env:
+          RADAR_TEST_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+          node tools/browser-smoke.mjs
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence-${{ github.sha }}
+          path: proof/
+          if-no-files-found: warn
+          retention-days: 30
