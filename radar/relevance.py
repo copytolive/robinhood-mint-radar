@@ -1,4 +1,4 @@
-_DENY_NAME=('positionmanager','nonfungibleposition','liquidityposition','stakingposition','loanposition','debtposition','vaultposition','receipt','vestingposition','uniswap','algebra','camelot','clamm','lpposition','liquidity manager','position nft','positions')
+_DENY_NAME=('positionmanager','nonfungibleposition','liquidityposition','stakingposition','loanposition','debtposition','vaultposition','receipt','vestingposition','uniswap','algebra','camelot','clamm','lpposition','liquidity manager','position nft','positions','liquidity book token','lbpair')
 _POSITIVE_NAME=('hoodsea','erc721seadrop','seadrop','erc721','erc1155','nft')
 _POSITIVE_SOURCE=('tokenuri(','contracturi(','baseuri','erc721','erc1155')
 
@@ -8,8 +8,8 @@ def evaluate_relevance(standard,contract_name=None,source_text='',launch=None,ma
     for needle in _DENY_NAME:
         if needle in name:return {'state':'REJECT','reasons':[f'NON_COLLECTIBLE_NAME:{needle}'],'confidence':'HIGH'}
     if not launch:
-        for needle,label in (('nonfungiblepositionmanager','NON_COLLECTIBLE_POSITION_MANAGER'),('positions(','POSITION_ACCOUNTING_SOURCE'),('liquidity(','LIQUIDITY_ACCOUNTING_SOURCE')):
-            if needle in source and ('tokenuri' not in source or 'position' in source):reasons.append(label)
+        for needle,label in (('nonfungiblepositionmanager','NON_COLLECTIBLE_POSITION_MANAGER'),('positions(','POSITION_ACCOUNTING_SOURCE'),('liquidity(','LIQUIDITY_ACCOUNTING_SOURCE'),('lbpair','LIQUIDITY_BOOK_PAIR_SOURCE')):
+            if needle in source and ('tokenuri' not in source or 'position' in source or needle=='lbpair'):reasons.append(label)
     if reasons:return {'state':'REJECT','reasons':sorted(set(reasons)),'confidence':'MEDIUM'}
     strong=False
     if launch:strong=True; reasons.append('KNOWN_LAUNCHPAD_COLLECTION')
