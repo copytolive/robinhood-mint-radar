@@ -21,6 +21,11 @@ xml_escape() {
 R=$(xml_escape "$REPO_DIR")
 P=$(xml_escape "$PYTHON_BIN")
 PATH_VALUE=$(xml_escape "$PATH")
+SSL_ENV=""
+if [ -n "${SSL_CERT_FILE:-}" ]; then
+  SSL_VALUE=$(xml_escape "$SSL_CERT_FILE")
+  SSL_ENV="    <key>SSL_CERT_FILE</key><string>$SSL_VALUE</string>"
+fi
 
 cat > "$PLIST" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,6 +45,7 @@ cat > "$PLIST" <<EOF
   <dict>
     <key>PYTHON_BIN</key><string>$P</string>
     <key>PATH</key><string>$PATH_VALUE</string>
+$SSL_ENV
   </dict>
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><true/>
@@ -59,5 +65,6 @@ launchctl kickstart -k "$DOMAIN/$LABEL" >/dev/null 2>&1 || true
 echo "INSTALLED: $PLIST"
 echo "SERVICE: $DOMAIN/$LABEL"
 echo "POWER: prevents system sleep while on AC power"
+if [ -n "${SSL_CERT_FILE:-}" ]; then echo "TLS CA: $SSL_CERT_FILE"; fi
 echo "LOG: $REPO_DIR/logs/radar.out.log"
 echo "STATUS: $REPO_DIR/public/status.json"
