@@ -23,6 +23,12 @@ class _RPC:
     def block(self,n): return {'hash':f'0xhash{n}','timestamp':hex(1000)}
 
 
+class _Resp:
+    def __enter__(self): return self
+    def __exit__(self,*args): return False
+    def read(self): return b'{"jsonrpc":"2.0","id":2,"result":"0x1234"}'
+
+
 class LiveScannerTests(unittest.TestCase):
     def _scanner(self,last=1000,tip=12000):
         s=LiveRadarScanner.__new__(LiveRadarScanner)
@@ -40,6 +46,7 @@ class LiveScannerTests(unittest.TestCase):
         self.assertEqual(s.db.last,11990)
         self.assertEqual(out['scan']['from_block'],1001)
         self.assertEqual(out['scan']['to_block'],11990)
+        self.assertEqual(out['scan']['lag_seconds'],0)
 
     def test_failed_range_does_not_advance_checkpoint(self):
         s=self._scanner(last=1000,tip=12000)
@@ -58,6 +65,11 @@ class LiveScannerTests(unittest.TestCase):
         rows=c.logs(1,4,['0xtopic'])
         self.assertEqual([int(r['blockNumber'],16) for r in rows],[1,2,3,4])
         self.assertGreater(len(calls),1)
+
+    def test_rpc_call_retries_connection_reset(self):
+        c=RPCClient('https://example.invalid',retries=1)
+        with patch('radar.rpc.urlopen',side_effect=[ConnectionResetError(54,'reset'),_Resp()]),patch('radar.rpc.time.sleep'):
+            self.assertEqual(c.call('eth_blockNumber'),'0x1234')
 
 
 if __name__=='__main__': unittest.main()
