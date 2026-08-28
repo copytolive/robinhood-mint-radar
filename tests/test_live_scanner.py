@@ -38,8 +38,11 @@ class LiveScannerTests(unittest.TestCase):
     def _scanner(self,last=1000,tip=12000):
         s=LiveRadarScanner.__new__(LiveRadarScanner)
         s.db=_DB(last);s.rpc=_RPC(tip);s.diag=[];s._topics={};s._selectors={};s._block_time={};s._tx_cache={}
+        s._analysis_rows_cache=[];s._analysis_pruned=0;s._analysis_overflow=0
         s._init_signatures=lambda:None
+        s._prepare_analysis_rows=lambda:[]
         s._prewarm_enrichment=lambda:None
+        s._stage=lambda *a,**k:None
         s.build_status=lambda tip,safe,first,to,started:{'chain':{'safe_block':safe},'scan':{'from_block':first,'to_block':to},'live_ready':'READY','money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY','watchlist':[],'best_live_observation':None,'manual_packages':[],'diagnostics':[]}
         return s
 
@@ -79,6 +82,19 @@ class LiveScannerTests(unittest.TestCase):
         self.assertEqual(out['scan']['from_block'],1001)
         self.assertEqual(out['scan']['to_block'],11990)
         self.assertEqual(out['scan']['lag_seconds'],0)
+
+    def test_blocks_produced_during_analysis_are_deferred_not_tail_scanned(self):
+        s=self._scanner(last=11900,tip=12000);ranges=[]
+        s._scan_range_or_raise=lambda a,b:ranges.append((a,b))
+        tips=iter([12000,12000,12400])
+        s.rpc.block_number=lambda:next(tips)
+        out=s.scan_once()
+        self.assertEqual(ranges,[(11901,11990)])
+        self.assertEqual(s.db.last,11990)
+        self.assertEqual(out['scan']['to_block'],11990)
+        self.assertEqual(out['scan']['next_block'],11991)
+        self.assertEqual(out['chain']['safe_block'],12390)
+        self.assertEqual(out['scan']['lag_blocks'],400)
 
     def test_recorded_historical_gap_is_visible_in_status(self):
         s=self._scanner(last=11900,tip=12000);s._scan_range_or_raise=lambda a,b:None
