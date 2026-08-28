@@ -13,10 +13,10 @@ TRANSFER_TOPIC='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3
 DEFAULT_DB=os.getenv('RADAR_DB','data/radar.sqlite')
 SCAN_INTERVAL=float(os.getenv('RADAR_SCAN_INTERVAL','15'))
 INITIAL_LOOKBACK_BLOCKS=int(os.getenv('RADAR_INITIAL_LOOKBACK_BLOCKS','120'))
-# Legacy 60-block chunks could never catch a high-throughput L2 once enrichment
-# took longer than block production. Keep the old knob for compatibility, but
-# use a much larger bounded catch-up window for continuous operation.
-CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','60'))
+# Robinhood Chain is a high-throughput L2. A 60-block cursor advances too slowly
+# once contract/market enrichment is included, so continuous scans use a much
+# larger bounded catch-up window while preserving every block in sequence.
+CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','5000'))
 MAX_CATCHUP_BLOCKS=int(os.getenv('RADAR_MAX_CATCHUP_BLOCKS','5000'))
 MAX_READY_LAG_BLOCKS=int(os.getenv('RADAR_MAX_READY_LAG_BLOCKS','120'))
 CONFIRMATION_BLOCKS=int(os.getenv('RADAR_CONFIRMATION_BLOCKS','10'))
