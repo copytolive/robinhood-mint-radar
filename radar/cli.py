@@ -74,6 +74,11 @@ def finalize_status(status):
     return status
 
 
+def _strict_retryable(args,status=None):
+    """Strict one-shot probes may retry transient/stale observations, never approve them."""
+    return bool(args.strict and args.once and (status is None or status.get('live_ready')!='READY'))
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description='Read-only Robinhood Chain NFT mint radar')
     p.add_argument('--db',default=config.DEFAULT_DB)
@@ -81,12 +86,15 @@ def main(argv=None):
     p.add_argument('--once',action='store_true')
     p.add_argument('--public-lookback',type=int,default=None)
     p.add_argument('--interval',type=float,default=config.SCAN_INTERVAL)
-    p.add_argument('--strict',action='store_true',help='exit nonzero on live scan failure')
+    p.add_argument('--strict',action='store_true',help='require a READY live scan; transient one-shot probes retry before failing')
     args=p.parse_args(argv)
 
     scanner=None
+    strict_attempt=0
+    strict_max_attempts=3 if args.strict and args.once else 1
     try:
         while True:
+            strict_attempt+=1
             try:
                 if scanner is None:
                     scanner=RadarScanner(args.db)
@@ -94,15 +102,29 @@ def main(argv=None):
                 write_status(args.status,status)
                 alert=notify_qualified(status,scanner.db)
                 print(json.dumps({'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'scanner_lag_blocks':status.get('scan',{}).get('lag_blocks'),'scanner_lag_seconds':status.get('scan',{}).get('lag_seconds'),'analysis_age_seconds':status.get('scan',{}).get('analysis_age_seconds'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}))
+
+                if _strict_retryable(args,status):
+                    if strict_attempt<strict_max_attempts:
+                        print(f'[RETRY] strict live probe {strict_attempt}/{strict_max_attempts} was NOT_READY; retrying with warm caches/checkpoint...',file=sys.stderr)
+                        time.sleep(min(2.0,float(strict_attempt)))
+                        continue
+                    return 2
             except Exception as exc:
                 status=degraded_status(exc);write_status(args.status,status)
                 print(json.dumps({'live_ready':'NOT_READY','error':str(exc),'status_path':args.status}),file=sys.stderr)
                 if scanner is not None:
                     scanner.close();scanner=None
+                if _strict_retryable(args):
+                    if strict_attempt<strict_max_attempts:
+                        print(f'[RETRY] strict live probe {strict_attempt}/{strict_max_attempts} failed transiently; retrying...',file=sys.stderr)
+                        time.sleep(min(2.0,float(strict_attempt)))
+                        continue
+                    return 2
                 if args.strict:
                     return 2
             if args.once:
                 return 0
+            strict_attempt=0
             time.sleep(args.interval)
     finally:
         if scanner is not None:
