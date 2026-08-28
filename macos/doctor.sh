@@ -55,9 +55,14 @@ while [ "$ATTEMPT" -le 3 ]; do
 import sys, time
 from radar import config
 from radar.live_scanner import LiveRadarScanner
+from radar.rpc import RPCClient
 
 path=sys.argv[1]
 s=LiveRadarScanner(path)
+# A doctor probe must fail/retry quickly on a sick public RPC instead of
+# spending minutes inside per-call retries. The durable scanner keeps its
+# stronger retry policy and is validated by the following priming gate.
+s.rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=5,retries=1)
 try:
     chain=s.rpc.chain_id()
     if chain != config.CHAIN_ID:
