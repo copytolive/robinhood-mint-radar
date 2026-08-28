@@ -35,6 +35,10 @@ MAX_READY_LAG_SECONDS=int(os.getenv('RADAR_MAX_READY_LAG_SECONDS','60'))
 CONFIRMATION_BLOCKS=int(os.getenv('RADAR_CONFIRMATION_BLOCKS','10'))
 REORG_REWIND_BLOCKS=int(os.getenv('RADAR_REORG_REWIND_BLOCKS','120'))
 MAX_CANDIDATES=int(os.getenv('RADAR_MAX_CANDIDATES','20'))
+# Hard wall-clock budget for expensive live contract/ownership enrichment.
+# If more possible qualifiers exist than this budget, the scanner fails closed
+# with ANALYSIS_QUEUE_OVERFLOW instead of silently approving a partial queue.
+MAX_ANALYSIS_ROWS=int(os.getenv('RADAR_MAX_ANALYSIS_ROWS','4'))
 OPENSea_API_KEY=os.getenv('OPENSEA_API_KEY','').strip()
 OPENSEA_CHAIN=os.getenv('OPENSEA_CHAIN','robinhood')
 STATUS_PATH=os.getenv('RADAR_STATUS_PATH','public/status.json')
