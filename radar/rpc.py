@@ -1,4 +1,5 @@
 import json
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -8,13 +9,18 @@ class RPCError(RuntimeError): pass
 
 class RPCClient:
     def __init__(self,url,timeout=15,retries=4):
-        self.url=url; self.timeout=timeout; self.retries=retries; self._id=0
+        self.url=url; self.timeout=timeout; self.retries=retries; self._id=0; self._id_lock=threading.Lock()
+
+    def _next_id(self):
+        with self._id_lock:
+            self._id+=1
+            return self._id
 
     def call(self,method,params=None):
         params=params or []; last=None
         for attempt in range(self.retries+1):
-            self._id+=1
-            payload=json.dumps({'jsonrpc':'2.0','id':self._id,'method':method,'params':params}).encode()
+            request_id=self._next_id()
+            payload=json.dumps({'jsonrpc':'2.0','id':request_id,'method':method,'params':params}).encode()
             req=urllib.request.Request(self.url,data=payload,headers={'content-type':'application/json','user-agent':'copytolive-robinhood-mint-radar/1.4'})
             try:
                 with urlopen(req,timeout=self.timeout) as resp: body=json.loads(resp.read().decode())
@@ -34,12 +40,7 @@ class RPCClient:
         if address:q['address']=address
         return self.call('eth_getLogs',[q]) or []
     def logs(self,from_block,to_block,topics,address=None):
-        """Read logs without silently skipping a provider-limited range.
-
-        Try the requested range first. If the public RPC rejects/times out on a
-        large range, bisect it recursively. A single-block failure is surfaced
-        to the scanner so its durable checkpoint cannot safely advance.
-        """
+        """Read logs without silently skipping a provider-limited range."""
         try:
             return self._logs_once(from_block,to_block,topics,address)
         except RPCError:
