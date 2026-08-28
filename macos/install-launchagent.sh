@@ -15,7 +15,6 @@ AGENT_DIR="$HOME/Library/LaunchAgents"
 PLIST="$AGENT_DIR/$LABEL.plist"
 mkdir -p "$AGENT_DIR" "$REPO_DIR/data" "$REPO_DIR/logs" "$REPO_DIR/public"
 
-# XML-escape dynamic paths safely.
 xml_escape() {
   printf '%s' "$1" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&apos;/g'
 }
@@ -31,6 +30,8 @@ cat > "$PLIST" <<EOF
   <key>Label</key><string>$LABEL</string>
   <key>ProgramArguments</key>
   <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-s</string>
     <string>/bin/sh</string>
     <string>$R/run-local.sh</string>
   </array>
@@ -57,5 +58,6 @@ launchctl kickstart -k "$DOMAIN/$LABEL" >/dev/null 2>&1 || true
 
 echo "INSTALLED: $PLIST"
 echo "SERVICE: $DOMAIN/$LABEL"
+echo "POWER: prevents system sleep while on AC power"
 echo "LOG: $REPO_DIR/logs/radar.out.log"
 echo "STATUS: $REPO_DIR/public/status.json"
