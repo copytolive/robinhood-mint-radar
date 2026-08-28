@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+    "collection": "0x21a589dee77457b81beeff90d4f8319459b2b01a",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x21a589dee77457b81beeff90d4f8319459b2b01a",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -21,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 100,
-      "mints_1m": 100,
-      "mints_5m": 100,
-      "mints_60m": 100,
-      "raw_units_1m": 100,
-      "raw_units_5m": 100,
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
       "recent_mint_concentration": 1.0,
       "unique_recent_minters": 1,
-      "velocity_1m": 100.0,
-      "velocity_5m": 20.0
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "CYBERCREW GEN02",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+    "name": "Blueprinted Robinhood",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x21a589dee77457b81beeff90d4f8319459b2b01a",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1473,
+    "predicted_probability": 0.1094,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+      "owner": "0x818d634b9f1ef6209a32ffdec7e545df1735db02",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 37,
+    "score": 31,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 0,
-      "mint_velocity": 20,
+      "mint_velocity": 15,
       "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 6
+      "sell_through": 5
     },
-    "sell_through": 0.6274,
+    "sell_through": 0.5598559855985599,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 6274
+      "max_supply": 3333,
+      "total_supply": 1866
     },
-    "ticker": "CCGEN02"
+    "ticker": "Blueprinted - RH"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,21 +90,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48659853,
-    "latest_block_age_seconds": 1,
+    "latest_block": 48667289,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48659843,
+    "safe_block": 48667279,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 221184,
+    "bytes": 86016,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787956570,
+  "generated_at": 1787957322,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,37 +136,37 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 8.737,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 4.381,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 13.37,
-    "from_block": 48659603,
+    "duration_seconds": 11.875,
+    "from_block": 48667065,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 121,
-    "lag_seconds": 12,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 95,
+    "lag_seconds": 10,
     "live_observations": 1,
-    "next_block": 48659723,
+    "next_block": 48667185,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 13,
-    "to_block": 48659722,
-    "total_mint_units_stored": 117
+    "secondary_sales_stored": 7,
+    "to_block": 48667184,
+    "total_mint_units_stored": 14
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48659603-48659722",
+  "status": "SCANNING 48667065-48667184",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+      "collection": "0x21a589dee77457b81beeff90d4f8319459b2b01a",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x21a589dee77457b81beeff90d4f8319459b2b01a",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 100,
-        "mints_1m": 100,
-        "mints_5m": 100,
-        "mints_60m": 100,
-        "raw_units_1m": 100,
-        "raw_units_5m": 100,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 100.0,
-        "velocity_5m": 20.0
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "CYBERCREW GEN02",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x7b7d36b4e8111e1665b42a6c2f06676852ef24fa",
+      "name": "Blueprinted Robinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x21a589dee77457b81beeff90d4f8319459b2b01a",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1473,
+      "predicted_probability": 0.1094,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+        "owner": "0x818d634b9f1ef6209a32ffdec7e545df1735db02",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 37,
+      "score": 31,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 20,
+        "mint_velocity": 15,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 6
+        "sell_through": 5
       },
-      "sell_through": 0.6274,
+      "sell_through": 0.5598559855985599,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 6274
+        "max_supply": 3333,
+        "total_supply": 1866
       },
-      "ticker": "CCGEN02"
+      "ticker": "Blueprinted - RH"
     }
   ],
   "win_rate_pct": 0.0
