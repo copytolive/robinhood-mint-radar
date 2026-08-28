@@ -8,7 +8,7 @@ from radar.rpc import RPCClient, RPCError
 class _DB:
     def __init__(self,last=1000):
         self.last=last
-        self.meta={'last_block_hash':'0xhash1000'} if last is not None else {}
+        self.meta={'last_block_hash':f'0xhash{last}'} if last is not None else {}
     def last_block(self): return self.last
     def get_meta(self,key,default=None): return self.meta.get(key,default)
     def set_meta(self,key,value):
