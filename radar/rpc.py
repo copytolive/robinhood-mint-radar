@@ -2,6 +2,7 @@ import json
 import time
 import urllib.error
 import urllib.request
+from .tls import urlopen
 
 class RPCError(RuntimeError): pass
 
@@ -16,7 +17,7 @@ class RPCClient:
             payload=json.dumps({'jsonrpc':'2.0','id':self._id,'method':method,'params':params}).encode()
             req=urllib.request.Request(self.url,data=payload,headers={'content-type':'application/json','user-agent':'copytolive-robinhood-mint-radar/1.3'})
             try:
-                with urllib.request.urlopen(req,timeout=self.timeout) as resp: body=json.loads(resp.read().decode())
+                with urlopen(req,timeout=self.timeout) as resp: body=json.loads(resp.read().decode())
                 if 'error' in body: raise RPCError(f"{method}: {body['error']}")
                 return body.get('result')
             except (urllib.error.URLError,TimeoutError,json.JSONDecodeError,RPCError) as exc:
