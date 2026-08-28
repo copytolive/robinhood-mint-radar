@@ -13,6 +13,38 @@ _CRITICAL_LOG_FAILURES={
     'SEAPORT_LOG_SCAN_FAILED',
 }
 
+# Ethereum ABI signatures are deterministic. Asking a remote JSON-RPC node to
+# hash standard signatures on every scanner startup created minutes of avoidable
+# latency when the public RPC was slow or resetting connections. Keep canonical
+# standard hashes/selectors local and only resolve the Hoodsea-specific hashes
+# and optional non-standard getters lazily.
+_STATIC_TOPICS={
+    'erc721':config.TRANSFER_TOPIC,
+    'erc1155_single':'0xc3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62',
+    'erc1155_batch':'0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb',
+    'seaport_fulfilled':'0x9d9af8e38d66c62e2c12f0225249fd9d721c54b83f48d9352c97c6cacdcb6f31',
+}
+_STATIC_SELECTORS={
+    'supports':'0x01ffc9a7',
+    'totalSupply':'0x18160ddd',
+    'totalMinted':'0xa2309ff8',
+    'maxSupply':'0xd5abeb01',
+    'name':'0x06fdde03',
+    'symbol':'0x95d89b41',
+    'owner':'0x8da5cb5b',
+}
+_DYNAMIC_TOPIC_SIGS={
+    'hoodsea_launch':'CollectionLaunched(address,address,string,string,uint256,uint256)',
+    'hoodsea_sold':'NFTSold(uint256,uint256,address,address)',
+}
+_DYNAMIC_SELECTOR_SIGS={
+    'mintPrice':'mintPrice()',
+    'mintPriceWei':'mintPriceWei()',
+    'info':'info()',
+}
+_DYNAMIC_TOPIC_CACHE={}
+_DYNAMIC_SELECTOR_CACHE={}
+
 
 class LiveRadarScanner(BaseRadarScanner):
     """Continuous scanner that must catch its durable cursor up to the live tip.
@@ -22,6 +54,46 @@ class LiveRadarScanner(BaseRadarScanner):
     and readiness is measured in both elapsed chain time and an absolute block
     cap (important on Robinhood Chain where many blocks can arrive per second).
     """
+
+    def _init_signatures(self):
+        if self._topics:
+            return
+        self._topics=dict(_STATIC_TOPICS)
+        self._selectors=dict(_STATIC_SELECTORS)
+        for key,sig in _DYNAMIC_TOPIC_SIGS.items():
+            value=_DYNAMIC_TOPIC_CACHE.get(key)
+            if not value:
+                try:
+                    value=self.rpc.sha3_text(sig)
+                    _DYNAMIC_TOPIC_CACHE[key]=value
+                except Exception as exc:
+                    raise RPCError(f'{key.upper()}_TOPIC_UNAVAILABLE:{exc}') from exc
+            self._topics[key]=value
+
+    def _ensure_dynamic_selector(self,name):
+        if self._selectors.get(name):
+            return self._selectors[name]
+        sig=_DYNAMIC_SELECTOR_SIGS.get(name)
+        if not sig:
+            return None
+        value=_DYNAMIC_SELECTOR_CACHE.get(name)
+        if not value:
+            try:
+                value=self.rpc.selector(sig)
+                _DYNAMIC_SELECTOR_CACHE[name]=value
+            except Exception as exc:
+                self._diag('SIGNATURES',f'{name.upper()}_SELECTOR_UNAVAILABLE',exc)
+                return None
+        self._selectors[name]=value
+        return value
+
+    def contract_snapshot(self,address):
+        # Resolve optional price/Hoodsea getters only when a collection actually
+        # reaches deep enrichment. A quiet-chain doctor run therefore performs
+        # no remote selector hashing at all beyond the two Hoodsea event topics.
+        for name in _DYNAMIC_SELECTOR_SIGS:
+            self._ensure_dynamic_selector(name)
+        return super().contract_snapshot(address)
 
     def _scan_range_or_raise(self,from_block,to_block):
         before=len(self.diag)
@@ -99,9 +171,6 @@ class LiveRadarScanner(BaseRadarScanner):
         max_ranges=50
         chunk=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS))
 
-        # Keep refreshing the safe tip until the cursor is fresh in *time*, not
-        # merely within a tiny fixed block count. This also lets doctor/public
-        # lookback scans tolerate a fast-moving sequencer without false failure.
         while ranges<max_ranges:
             while cursor<=safe and ranges<max_ranges:
                 end=min(safe,cursor+chunk-1)
