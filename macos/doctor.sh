@@ -4,6 +4,19 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 REPO_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
 cd "$REPO_DIR"
 
+# Upgrade only the known legacy default. Preserve any deliberate custom value.
+# The one-download installer preserves .env across updates, so without this
+# migration an older Mac would remain permanently limited to 60 blocks/cycle.
+if [ -f .env ]; then
+  if grep -q '^RADAR_CHUNK_BLOCKS=60$' .env; then
+    awk '{if ($0=="RADAR_CHUNK_BLOCKS=60") print "RADAR_CHUNK_BLOCKS=5000"; else print $0}' .env > .env.radar-migrate
+    mv .env.radar-migrate .env
+    echo "[PASS] env migration: RADAR_CHUNK_BLOCKS 60 -> 5000"
+  fi
+  grep -q '^RADAR_MAX_CATCHUP_BLOCKS=' .env || echo 'RADAR_MAX_CATCHUP_BLOCKS=5000' >> .env
+  grep -q '^RADAR_MAX_READY_LAG_BLOCKS=' .env || echo 'RADAR_MAX_READY_LAG_BLOCKS=120' >> .env
+fi
+
 PYTHON_BIN=${PYTHON_BIN:-$(command -v python3 || true)}
 if [ -z "$PYTHON_BIN" ]; then
   echo "[FAIL] python3 not found"
@@ -33,7 +46,9 @@ assert d['mode']=='READ_ONLY'
 assert d['wallet_execution']=='MANUAL_ONLY'
 assert d['chain']['chain_id']==4663
 assert d['live_ready']=='READY'
+assert int(d.get('scan',{}).get('lag_blocks',0)) <= 120
 print('[PASS] live chain:', d['chain']['latest_block'])
+print('[PASS] scanner lag:', d.get('scan',{}).get('lag_blocks',0))
 print('[PASS] wallet execution:', d['wallet_execution'])
 print('[PASS] qualified:', d['scan']['qualified_candidates'])
 PY
