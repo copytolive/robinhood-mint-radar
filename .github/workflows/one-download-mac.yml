@@ -17,14 +17,15 @@ permissions:
   contents: read
 
 jobs:
-  arm64-system-python:
+  arm64-system-python-broken-ca:
     runs-on: macos-15
     steps:
       - name: Download exactly one installer file
         run: curl -fsSL "https://raw.githubusercontent.com/copytolive/robinhood-mint-radar/${GITHUB_SHA}/Robinhood-Mint-Radar.command" -o "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
-      - name: Run exactly one install command
+      - name: Run one install command with deliberately broken Python CA path
         env:
           RADAR_INSTALL_DRY_RUN: '1'
+          SSL_CERT_FILE: '/tmp/definitely-missing-robinhood-ca.pem'
         run: sh "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
 
   intel-managed-python:
