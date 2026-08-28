@@ -43,6 +43,10 @@ def run_cycle(db,status,timeout_seconds):
         _CHILD=None
 
 
+def _log(payload):
+    print(json.dumps(payload),file=sys.stderr,flush=True)
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description='Self-healing supervisor for Robinhood Mint Radar')
     p.add_argument('--db',default=os.getenv('RADAR_DB','data/radar.sqlite'))
@@ -54,14 +58,17 @@ def main(argv=None):
     for sig in (signal.SIGTERM,signal.SIGINT):
         try:signal.signal(sig,_handle_signal)
         except Exception:pass
-    print(json.dumps({'supervisor':'STARTED','cycle_timeout_seconds':args.cycle_timeout,'interval_seconds':args.interval}),flush=True)
+    _log({'supervisor':'STARTED','cycle_timeout_seconds':args.cycle_timeout,'interval_seconds':args.interval})
+    cycle=0
     while not _STOP:
+        cycle+=1
+        _log({'supervisor_cycle':'START','cycle':cycle})
         result=run_cycle(args.db,args.status,args.cycle_timeout)
-        print(json.dumps({'supervisor_cycle':result}),flush=True)
+        _log({'supervisor_cycle':'END','cycle':cycle,**result})
         if _STOP:break
         deadline=time.time()+max(1.0,args.interval)
         while not _STOP and time.time()<deadline:time.sleep(min(1.0,max(0.0,deadline-time.time())))
-    print(json.dumps({'supervisor':'STOPPED'}),flush=True)
+    _log({'supervisor':'STOPPED','cycles':cycle})
     return 0
 
 
