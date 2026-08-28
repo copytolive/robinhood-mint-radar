@@ -2,6 +2,7 @@ import json
 import urllib.error
 import urllib.parse
 import urllib.request
+from .tls import urlopen
 
 class OpenSeaClient:
     def __init__(self, api_key='', chain='robinhood', timeout=12):
@@ -13,7 +14,7 @@ class OpenSeaClient:
         if not self.api_key:
             return None
         req=urllib.request.Request(url,headers={'x-api-key':self.api_key,'accept':'application/json','user-agent':'copytolive-robinhood-mint-radar/1.0'})
-        with urllib.request.urlopen(req,timeout=self.timeout) as r:
+        with urlopen(req,timeout=self.timeout) as r:
             return json.loads(r.read().decode())
 
     def collection_market(self,address):
