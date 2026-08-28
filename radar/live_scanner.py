@@ -2,6 +2,7 @@ import time
 from . import config
 from .rpc import RPCError
 from .scanner import RadarScanner as BaseRadarScanner
+from .signatures import TOPICS,SELECTORS
 
 
 _CRITICAL_LOG_FAILURES={
@@ -13,87 +14,51 @@ _CRITICAL_LOG_FAILURES={
     'SEAPORT_LOG_SCAN_FAILED',
 }
 
-# Ethereum ABI signatures are deterministic. Asking a remote JSON-RPC node to
-# hash standard signatures on every scanner startup created minutes of avoidable
-# latency when the public RPC was slow or resetting connections. Keep canonical
-# standard hashes/selectors local and only resolve the Hoodsea-specific hashes
-# and optional non-standard getters lazily.
-_STATIC_TOPICS={
-    'erc721':config.TRANSFER_TOPIC,
-    'erc1155_single':'0xc3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62',
-    'erc1155_batch':'0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb',
-    'seaport_fulfilled':'0x9d9af8e38d66c62e2c12f0225249fd9d721c54b83f48d9352c97c6cacdcb6f31',
-}
-_STATIC_SELECTORS={
-    'supports':'0x01ffc9a7',
-    'totalSupply':'0x18160ddd',
-    'totalMinted':'0xa2309ff8',
-    'maxSupply':'0xd5abeb01',
-    'name':'0x06fdde03',
-    'symbol':'0x95d89b41',
-    'owner':'0x8da5cb5b',
-}
-_DYNAMIC_TOPIC_SIGS={
-    'hoodsea_launch':'CollectionLaunched(address,address,string,string,uint256,uint256)',
-    'hoodsea_sold':'NFTSold(uint256,uint256,address,address)',
-}
-_DYNAMIC_SELECTOR_SIGS={
-    'mintPrice':'mintPrice()',
-    'mintPriceWei':'mintPriceWei()',
-    'info':'info()',
-}
-_DYNAMIC_TOPIC_CACHE={}
-_DYNAMIC_SELECTOR_CACHE={}
-
 
 class LiveRadarScanner(BaseRadarScanner):
-    """Continuous scanner that must catch its durable cursor up to the live tip.
+    """Continuous scanner with a durable live ingest cursor.
 
-    Every block is preserved in order. Expensive enrichment is delayed until
-    catch-up is complete, checkpoints advance only after successful log scans,
-    and readiness is measured in both elapsed chain time and an absolute block
-    cap (important on Robinhood Chain where many blocks can arrive per second).
+    Event topics/selectors are deterministic local constants, every block is
+    preserved in order, expensive enrichment is cached briefly, and a second
+    tail-ingest pass runs after enrichment so analysis latency cannot leave the
+    durable cursor minutes behind the chain.
     """
 
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self._snapshot_cache={}
+        self._ownership_cache={}
+        original_ownership=self.explorer.ownership
+
+        def cached_ownership(address,total_supply=None):
+            key=address.lower()
+            now=time.time()
+            cached=self._ownership_cache.get(key)
+            if cached and now-cached[0] <= 60 and cached[1]==total_supply:
+                return cached[2]
+            value=original_ownership(address,total_supply)
+            self._ownership_cache[key]=(now,total_supply,value)
+            return value
+
+        self.explorer.ownership=cached_ownership
+
     def _init_signatures(self):
+        """Load deterministic keccak constants without any web3_sha3 RPC calls."""
         if self._topics:
             return
-        self._topics=dict(_STATIC_TOPICS)
-        self._selectors=dict(_STATIC_SELECTORS)
-        for key,sig in _DYNAMIC_TOPIC_SIGS.items():
-            value=_DYNAMIC_TOPIC_CACHE.get(key)
-            if not value:
-                try:
-                    value=self.rpc.sha3_text(sig)
-                    _DYNAMIC_TOPIC_CACHE[key]=value
-                except Exception as exc:
-                    raise RPCError(f'{key.upper()}_TOPIC_UNAVAILABLE:{exc}') from exc
-            self._topics[key]=value
-
-    def _ensure_dynamic_selector(self,name):
-        if self._selectors.get(name):
-            return self._selectors[name]
-        sig=_DYNAMIC_SELECTOR_SIGS.get(name)
-        if not sig:
-            return None
-        value=_DYNAMIC_SELECTOR_CACHE.get(name)
-        if not value:
-            try:
-                value=self.rpc.selector(sig)
-                _DYNAMIC_SELECTOR_CACHE[name]=value
-            except Exception as exc:
-                self._diag('SIGNATURES',f'{name.upper()}_SELECTOR_UNAVAILABLE',exc)
-                return None
-        self._selectors[name]=value
-        return value
+        self._topics=dict(TOPICS)
+        self._selectors=dict(SELECTORS)
 
     def contract_snapshot(self,address):
-        # Resolve optional price/Hoodsea getters only when a collection actually
-        # reaches deep enrichment. A quiet-chain doctor run therefore performs
-        # no remote selector hashing at all beyond the two Hoodsea event topics.
-        for name in _DYNAMIC_SELECTOR_SIGS:
-            self._ensure_dynamic_selector(name)
-        return super().contract_snapshot(address)
+        """Cache expensive contract enrichment briefly between live cycles."""
+        key=address.lower()
+        now=time.time()
+        cached=self._snapshot_cache.get(key)
+        if cached and now-cached[0] <= 60:
+            return cached[1]
+        value=super().contract_snapshot(address)
+        self._snapshot_cache[key]=(now,value)
+        return value
 
     def _scan_range_or_raise(self,from_block,to_block):
         before=len(self.diag)
@@ -144,6 +109,18 @@ class LiveRadarScanner(BaseRadarScanner):
             seconds<=config.MAX_READY_LAG_SECONDS
         )
 
+    def _catch_up(self,cursor,safe,chunk,max_ranges):
+        processed_to=cursor-1
+        ranges=0
+        while cursor<=safe and ranges<max_ranges:
+            end=min(safe,cursor+chunk-1)
+            self._scan_range_or_raise(cursor,end)
+            self._checkpoint(end)
+            processed_to=end
+            cursor=end+1
+            ranges+=1
+        return processed_to,ranges
+
     def scan_once(self,public_lookback=None):
         started=time.time();self.diag=[];self._init_signatures()
         chain=self.rpc.chain_id()
@@ -171,18 +148,16 @@ class LiveRadarScanner(BaseRadarScanner):
         max_ranges=50
         chunk=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS))
 
+        # Initial catch-up. Keep refreshing the tip until the cursor is genuinely
+        # fresh, while preserving every block and checkpointing only good ranges.
         while ranges<max_ranges:
-            while cursor<=safe and ranges<max_ranges:
-                end=min(safe,cursor+chunk-1)
-                self._scan_range_or_raise(cursor,end)
-                self._checkpoint(end)
-                processed_to=end
-                cursor=end+1
-                ranges+=1
-
-            tip_now=self.rpc.block_number()
-            safe_now=max(0,tip_now-config.CONFIRMATION_BLOCKS)
-            tip,safe=tip_now,safe_now
+            done,used=self._catch_up(cursor,safe,chunk,max_ranges-ranges)
+            if done>=cursor:
+                processed_to=done
+                cursor=done+1
+            ranges+=used
+            tip=self.rpc.block_number()
+            safe=max(0,tip-config.CONFIRMATION_BLOCKS)
             lag_blocks,lag_seconds=self._lag_metrics(safe,processed_to)
             if self._lag_is_ready(lag_blocks,lag_seconds):
                 break
@@ -191,10 +166,23 @@ class LiveRadarScanner(BaseRadarScanner):
         if processed_to<first:
             processed_to=min(first,safe)
 
+        # Candidate enrichment can involve Blockscout and multiple eth_call reads.
+        # Measure its age explicitly instead of hiding that time inside READY.
+        analysis_started=time.time()
         status=self.build_status(tip,safe,first,processed_to,started)
+        analysis_age=time.time()-analysis_started
 
-        # Enrichment itself takes time. Refresh the chain tip after enrichment so
-        # the published readiness reflects completion-time freshness.
+        # Tail catch-up after enrichment. Blocks that arrived while scoring was
+        # running are ingested before publication, so the durable cursor stays live.
+        final_tip=self.rpc.block_number()
+        final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS)
+        tail_cursor=processed_to+1
+        if tail_cursor<=final_safe:
+            tail_done,_=self._catch_up(tail_cursor,final_safe,chunk,20)
+            if tail_done>=tail_cursor:
+                processed_to=tail_done
+
+        # Completion-time tip sample and freshness metrics.
         final_tip=self.rpc.block_number()
         final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS)
         lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
@@ -210,4 +198,6 @@ class LiveRadarScanner(BaseRadarScanner):
         scan['blocks_processed']=max(0,processed_to-first+1)
         scan['lag_blocks']=lag_blocks
         scan['lag_seconds']=lag_seconds
+        scan['analysis_age_seconds']=round(analysis_age,3)
+        scan['duration_seconds']=round(time.time()-started,3)
         return status
