@@ -27,6 +27,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Prove read-only RPC failover path
+        run: |
+          python - <<'PY'
+          from radar import config
+          from radar.rpc import RPCClient
+          assert config.RPC_FALLBACK_URLS, 'no read-only fallback RPCs configured'
+          # Force the primary to fail. At least one configured fallback must
+          # independently prove chain 4663 and answer a current block read.
+          c=RPCClient(
+              'https://127.0.0.1:1',
+              timeout=4,
+              retries=0,
+              fallback_urls=config.RPC_FALLBACK_URLS,
+              expected_chain_id=config.CHAIN_ID,
+          )
+          chain=c.chain_id(); block=c.block_number()
+          assert chain==4663 and block>0
+          print({'chain_id':chain,'block':block,'active_rpc':c.url,'failovers':c.failovers})
+          PY
       - name: Scan latest Robinhood blocks
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
@@ -48,7 +67,7 @@ jobs:
           # secondary CI guard without weakening economic freshness/readiness.
           assert float(s.get('duration_seconds',10**9)) <= 120
           assert not any(c.get('qualified') for c in (d.get('watchlist') or []) if c.get('action')!='MANUAL_MINT_CANDIDATE')
-          print(json.dumps({
+          print({
             'latest_block':d.get('chain',{}).get('latest_block'),
             'live_ready':d['live_ready'],
             'lag_blocks':s.get('lag_blocks'),
@@ -56,7 +75,7 @@ jobs:
             'analysis_age_seconds':s.get('analysis_age_seconds'),
             'duration_seconds':s.get('duration_seconds'),
             'qualified':s.get('qualified_candidates')
-          }))
+          })
           PY
       - name: Persist public snapshot
         shell: bash
