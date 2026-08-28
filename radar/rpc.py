@@ -4,6 +4,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from .tls import urlopen
 
 class RPCError(RuntimeError): pass
@@ -45,6 +46,23 @@ class RPCClient:
         if 'error' in body:raise RPCError(f"{method}: {body['error']}")
         return body.get('result')
 
+    def _request_batch(self,url,calls):
+        ids=[];payload=[]
+        for method,params in calls:
+            request_id=self._next_id();ids.append(request_id)
+            payload.append({'jsonrpc':'2.0','id':request_id,'method':method,'params':params or []})
+        req=urllib.request.Request(url,data=json.dumps(payload).encode(),headers={'content-type':'application/json','user-agent':'copytolive-robinhood-mint-radar/1.5'})
+        with urlopen(req,timeout=self.timeout) as resp:body=json.loads(resp.read().decode())
+        if not isinstance(body,list):raise RPCError(f'JSON_RPC_BATCH_UNSUPPORTED:{type(body).__name__}')
+        by_id={item.get('id'):item for item in body if isinstance(item,dict)}
+        results=[]
+        for request_id,(method,_params) in zip(ids,calls):
+            item=by_id.get(request_id)
+            if item is None:raise RPCError(f'{method}: BATCH_RESPONSE_MISSING_ID:{request_id}')
+            if 'error' in item:raise RPCError(f"{method}: {item['error']}")
+            results.append(item.get('result'))
+        return results
+
     def _verify_chain(self,url):
         if self.expected_chain_id is None:return
         if self._validated.get(url):return
@@ -84,9 +102,43 @@ class RPCClient:
                 continue
         raise RPCError(f"{method} failed on all RPC endpoints: {' | '.join(errors)}")
 
+    def batch_call(self,calls):
+        calls=list(calls or [])
+        if not calls:return []
+        errors=[]
+        with self._state_lock:start=self._active_idx
+        for offset in range(len(self.urls)):
+            idx=(start+offset)%len(self.urls);url=self.urls[idx];last=None
+            try:
+                self._verify_chain(url)
+                for attempt in range(self.retries+1):
+                    try:
+                        result=self._request_batch(url,calls);self._mark_success(idx,url);return result
+                    except (urllib.error.URLError,TimeoutError,OSError,json.JSONDecodeError,RPCError) as exc:
+                        last=exc
+                        if attempt<self.retries:time.sleep(min(1.0,0.25*(attempt+1)))
+                raise RPCError(str(last))
+            except (urllib.error.URLError,TimeoutError,OSError,json.JSONDecodeError,RPCError,ValueError) as exc:
+                errors.append(f'{url}: {type(exc).__name__}: {exc}')
+                continue
+        raise RPCError(f"batch failed on all RPC endpoints: {' | '.join(errors)}")
+
     def chain_id(self):return int(self.call('eth_chainId'),16)
     def block_number(self):return int(self.call('eth_blockNumber'),16)
     def block(self,number):return self.call('eth_getBlockByNumber',[hex(number),False])
+    def blocks(self,numbers,batch_size=64,max_workers=16):
+        nums=list(dict.fromkeys(int(n) for n in numbers))
+        out={}
+        for i in range(0,len(nums),max(1,int(batch_size))):
+            chunk=nums[i:i+max(1,int(batch_size))]
+            try:
+                rows=self.batch_call([('eth_getBlockByNumber',[hex(n),False]) for n in chunk])
+            except RPCError:
+                workers=max(1,min(int(max_workers),len(chunk)))
+                with ThreadPoolExecutor(max_workers=workers) as pool:
+                    rows=list(pool.map(self.block,chunk))
+            out.update({n:row for n,row in zip(chunk,rows)})
+        return out
     def transaction(self,tx_hash):return self.call('eth_getTransactionByHash',[tx_hash])
     def _logs_once(self,from_block,to_block,topics,address=None):
         q={'fromBlock':hex(from_block),'toBlock':hex(to_block),'topics':topics}
