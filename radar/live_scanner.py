@@ -4,7 +4,7 @@ from . import config
 from .explorer import BlockscoutClient
 from .rpc import RPCClient,RPCError
 from .safety import evaluate_safety
-from .scanner import RadarScanner as BaseRadarScanner,decode_string_word,data_word
+from .scanner import RadarScanner as BaseRadarScanner,decode_string_word,data_word,uint_hex
 from .signatures import TOPICS,SELECTORS
 
 
@@ -23,6 +23,9 @@ class LiveRadarScanner(BaseRadarScanner):
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
+        # A live cycle must never spend minutes inside one public-RPC call.
+        # Fail fast and let the outer continuous loop retry on the next cycle.
+        self.rpc=RPCClient(kwargs.get('rpc_url') or config.DEFAULT_RPC_URL,timeout=5,retries=1)
         self._snapshot_cache={}
         self._ownership_cache={}
         self.enrich_rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=4,retries=1)
@@ -60,6 +63,19 @@ class LiveRadarScanner(BaseRadarScanner):
         try:
             data=sel+interface_id[2:].rjust(64,'0');out=self.enrich_rpc.eth_call(address,data);return bool(int(out,16)) if out and out!='0x' else False
         except Exception:return None
+
+    def _observed_zero_price(self,events):
+        """Infer zero-value mint tx with bounded enrichment RPC, never the long ingest RPC."""
+        for e in events[:3]:
+            txh=e.get('tx_hash')
+            if not txh:continue
+            try:
+                if txh not in self._tx_cache:self._tx_cache[txh]=self.enrich_rpc.transaction(txh) or {}
+                tx=self._tx_cache[txh];value=uint_hex(tx.get('value'),None)
+                if value==0:return 0,'OBSERVED_MINT_TX_VALUE_ZERO'
+                if value is not None and value>0:return None,'OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED'
+            except Exception:continue
+        return None,None
 
     def contract_snapshot(self,address):
         key=address.lower();now=time.time();cached=self._snapshot_cache.get(key)
