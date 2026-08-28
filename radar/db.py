@@ -4,10 +4,22 @@ import sqlite3
 import time
 from .calibration import probability_from_score
 
+
+class _ExactIntSum:
+    """SQLite aggregate that sums arbitrary-size decimal integers exactly."""
+    def __init__(self):
+        self.total=0
+    def step(self,value):
+        if value not in (None,''):
+            self.total+=int(value)
+    def finalize(self):
+        return str(self.total)
+
+
 SCHEMA='''
 CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS launches(tx_hash TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,collection TEXT NOT NULL,creator TEXT,name TEXT,ticker TEXT,mint_price_wei TEXT,mint_start INTEGER,raw_json TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS mint_events(event_id TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,tx_hash TEXT NOT NULL,log_index INTEGER NOT NULL,collection TEXT NOT NULL,standard TEXT NOT NULL,recipient TEXT,quantity INTEGER NOT NULL DEFAULT 1,token_id TEXT,raw_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS launches(tx_hash TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,collection TEXT NOT NULL,creator TEXT,name TEXT,ticker TEXT,mint_price_wei TEXT,mint_start TEXT,raw_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS mint_events(event_id TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,tx_hash TEXT NOT NULL,log_index INTEGER NOT NULL,collection TEXT NOT NULL,standard TEXT NOT NULL,recipient TEXT,quantity TEXT NOT NULL DEFAULT '1',token_id TEXT,raw_json TEXT NOT NULL);
 CREATE INDEX IF NOT EXISTS idx_mint_collection_time ON mint_events(collection,block_time);
 CREATE TABLE IF NOT EXISTS market_events(event_id TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,tx_hash TEXT NOT NULL,log_index INTEGER NOT NULL,collection TEXT NOT NULL,event_type TEXT NOT NULL,token_id TEXT,price_wei TEXT,seller TEXT,buyer TEXT,raw_json TEXT NOT NULL);
 CREATE INDEX IF NOT EXISTS idx_market_collection_time ON market_events(collection,block_time);
@@ -17,18 +29,50 @@ CREATE TABLE IF NOT EXISTS outcomes(id INTEGER PRIMARY KEY AUTOINCREMENT,collect
 CREATE TABLE IF NOT EXISTS shadow_positions(collection TEXT PRIMARY KEY,first_observed INTEGER NOT NULL,last_observed INTEGER NOT NULL,entry_score REAL NOT NULL,entry_action TEXT NOT NULL,entry_probability REAL,entry_floor_eth REAL,last_floor_eth REAL,peak_floor_eth REAL);
 '''
 
+
 class RadarDB:
     def __init__(self,path):
         self.path=path; os.makedirs(os.path.dirname(path) or '.',exist_ok=True)
         self.conn=sqlite3.connect(path,timeout=5.0); self.conn.row_factory=sqlite3.Row
+        self.conn.create_aggregate('EXACT_INT_SUM',1,_ExactIntSum)
         self.conn.execute('PRAGMA foreign_keys=ON'); self.conn.execute('PRAGMA busy_timeout=5000'); self.conn.execute('PRAGMA synchronous=NORMAL')
         try:self.conn.execute('PRAGMA journal_mode=WAL')
         except sqlite3.DatabaseError:pass
         self.conn.executescript(SCHEMA); self._migrate(); self.conn.commit()
     def _columns(self,t):return {r[1] for r in self.conn.execute(f'PRAGMA table_info({t})').fetchall()}
+    def _column_type(self,t,n):
+        for r in self.conn.execute(f'PRAGMA table_info({t})').fetchall():
+            if r[1]==n:return (r[2] or '').upper()
+        return None
     def _ensure_col(self,t,n,d):
         if n not in self._columns(t):self.conn.execute(f'ALTER TABLE {t} ADD COLUMN {n} {d}')
+    def _migrate_uint256_columns(self):
+        # Solidity quantities are uint256. Python's sqlite3 driver only accepts
+        # signed 64-bit INTEGER bindings, so contract values must be persisted
+        # as exact decimal TEXT. Rebuild legacy tables atomically when needed.
+        if self._column_type('mint_events','quantity')!='TEXT':
+            self.conn.executescript('''
+BEGIN IMMEDIATE;
+ALTER TABLE mint_events RENAME TO mint_events_legacy_u256;
+CREATE TABLE mint_events(event_id TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,tx_hash TEXT NOT NULL,log_index INTEGER NOT NULL,collection TEXT NOT NULL,standard TEXT NOT NULL,recipient TEXT,quantity TEXT NOT NULL DEFAULT '1',token_id TEXT,raw_json TEXT NOT NULL);
+INSERT INTO mint_events(event_id,block_number,block_time,tx_hash,log_index,collection,standard,recipient,quantity,token_id,raw_json)
+SELECT event_id,block_number,block_time,tx_hash,log_index,collection,standard,recipient,CAST(quantity AS TEXT),token_id,raw_json FROM mint_events_legacy_u256;
+DROP TABLE mint_events_legacy_u256;
+CREATE INDEX IF NOT EXISTS idx_mint_collection_time ON mint_events(collection,block_time);
+COMMIT;
+''')
+        if self._column_type('launches','mint_start')!='TEXT':
+            self.conn.executescript('''
+BEGIN IMMEDIATE;
+ALTER TABLE launches RENAME TO launches_legacy_u256;
+CREATE TABLE launches(tx_hash TEXT PRIMARY KEY,block_number INTEGER NOT NULL,block_time INTEGER NOT NULL,collection TEXT NOT NULL,creator TEXT,name TEXT,ticker TEXT,mint_price_wei TEXT,mint_start TEXT,raw_json TEXT NOT NULL);
+INSERT INTO launches(tx_hash,block_number,block_time,collection,creator,name,ticker,mint_price_wei,mint_start,raw_json)
+SELECT tx_hash,block_number,block_time,collection,creator,name,ticker,mint_price_wei,CASE WHEN mint_start IS NULL THEN NULL ELSE CAST(mint_start AS TEXT) END,raw_json FROM launches_legacy_u256;
+DROP TABLE launches_legacy_u256;
+COMMIT;
+''')
     def _migrate(self):
+        self._migrate_uint256_columns()
         for n,d in [('payment_token','TEXT'),('payment_amount','TEXT'),('source','TEXT'),('order_hash','TEXT'),('bundle_size','INTEGER DEFAULT 1')]:self._ensure_col('market_events',n,d)
         for n,d in [('predicted_score','REAL'),('predicted_probability','REAL')]:self._ensure_col('outcomes',n,d)
         self._ensure_col('shadow_positions','entry_probability','REAL')
@@ -39,9 +83,11 @@ class RadarDB:
     def last_block(self):
         v=self.get_meta('last_block'); return int(v) if v is not None else None
     def add_launch(self,x):
-        self.conn.execute('INSERT OR IGNORE INTO launches(tx_hash,block_number,block_time,collection,creator,name,ticker,mint_price_wei,mint_start,raw_json) VALUES(?,?,?,?,?,?,?,?,?,?)',(x['tx_hash'],x['block_number'],x['block_time'],x['collection'],x.get('creator'),x.get('name'),x.get('ticker'),str(x.get('mint_price_wei')) if x.get('mint_price_wei') is not None else None,x.get('mint_start'),json.dumps(x.get('raw',{}),separators=(',',':')))); self.conn.commit()
+        mint_start=x.get('mint_start')
+        self.conn.execute('INSERT OR IGNORE INTO launches(tx_hash,block_number,block_time,collection,creator,name,ticker,mint_price_wei,mint_start,raw_json) VALUES(?,?,?,?,?,?,?,?,?,?)',(x['tx_hash'],x['block_number'],x['block_time'],x['collection'],x.get('creator'),x.get('name'),x.get('ticker'),str(x.get('mint_price_wei')) if x.get('mint_price_wei') is not None else None,str(int(mint_start)) if mint_start is not None else None,json.dumps(x.get('raw',{}),separators=(',',':')))); self.conn.commit()
     def add_mint(self,x):
-        self.conn.execute('INSERT OR IGNORE INTO mint_events(event_id,block_number,block_time,tx_hash,log_index,collection,standard,recipient,quantity,token_id,raw_json) VALUES(?,?,?,?,?,?,?,?,?,?,?)',(x['event_id'],x['block_number'],x['block_time'],x['tx_hash'],x['log_index'],x['collection'],x['standard'],x.get('recipient'),int(x.get('quantity',1)),x.get('token_id'),json.dumps(x.get('raw',{}),separators=(',',':')))); self.conn.commit()
+        quantity=str(int(x.get('quantity',1)))
+        self.conn.execute('INSERT OR IGNORE INTO mint_events(event_id,block_number,block_time,tx_hash,log_index,collection,standard,recipient,quantity,token_id,raw_json) VALUES(?,?,?,?,?,?,?,?,?,?,?)',(x['event_id'],x['block_number'],x['block_time'],x['tx_hash'],x['log_index'],x['collection'],x['standard'],x.get('recipient'),quantity,x.get('token_id'),json.dumps(x.get('raw',{}),separators=(',',':')))); self.conn.commit()
     def add_market_sale(self,x):
         self.conn.execute('INSERT OR IGNORE INTO market_events(event_id,block_number,block_time,tx_hash,log_index,collection,event_type,token_id,price_wei,seller,buyer,raw_json,payment_token,payment_amount,source,order_hash,bundle_size) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(x['event_id'],x['block_number'],x['block_time'],x['tx_hash'],x['log_index'],x['collection'],x.get('event_type','NFT_SOLD'),x.get('token_id'),str(x.get('price_wei')) if x.get('price_wei') is not None else None,x.get('seller'),x.get('buyer'),json.dumps(x.get('raw',{}),separators=(',',':')),x.get('payment_token'),str(x.get('payment_amount')) if x.get('payment_amount') is not None else None,x.get('source'),x.get('order_hash'),int(x.get('bundle_size') or 1))); self.conn.commit()
     def market_window(self,c,s):return [dict(r) for r in self.conn.execute('SELECT * FROM market_events WHERE lower(collection)=lower(?) AND block_time>=? ORDER BY block_time DESC',(c,s)).fetchall()]
@@ -50,9 +96,15 @@ class RadarDB:
         return {'sales_24h':len(uniq),'native_sales_24h':len(native),'volume_eth_24h':sum(int(r['price_wei']) for r in native)/1e18 if native else 0.0,'sources':sorted({r.get('source') or 'ONCHAIN' for r in rows})}
     def total_market_sales(self):return int(self.conn.execute("SELECT COUNT(*) n FROM market_events WHERE event_type='NFT_SOLD'").fetchone()['n'])
     def launches_map(self):return {r['collection'].lower():dict(r) for r in self.conn.execute('SELECT * FROM launches').fetchall()}
-    def recent_collections(self,s):return [dict(r) for r in self.conn.execute('SELECT collection,standard,SUM(quantity) minted,COUNT(*) events,COUNT(DISTINCT recipient) recipients,MAX(block_time) last_time FROM mint_events WHERE block_time>=? GROUP BY collection,standard ORDER BY last_time DESC',(s,)).fetchall()]
+    def recent_collections(self,s):
+        rows=self.conn.execute('SELECT collection,standard,EXACT_INT_SUM(quantity) minted,COUNT(*) events,COUNT(DISTINCT recipient) recipients,MAX(block_time) last_time FROM mint_events WHERE block_time>=? GROUP BY collection,standard ORDER BY last_time DESC',(s,)).fetchall()
+        out=[]
+        for r in rows:
+            d=dict(r);d['minted']=int(d.get('minted') or 0);out.append(d)
+        return out
     def mint_window(self,c,s):return [dict(r) for r in self.conn.execute('SELECT recipient,quantity,block_time,tx_hash,token_id FROM mint_events WHERE lower(collection)=lower(?) AND block_time>=? ORDER BY block_time DESC',(c,s)).fetchall()]
-    def total_mints(self):return int(self.conn.execute('SELECT COALESCE(SUM(quantity),0) n FROM mint_events').fetchone()['n'])
+    def total_mints(self):
+        r=self.conn.execute('SELECT EXACT_INT_SUM(quantity) n FROM mint_events').fetchone();return int((r['n'] if r else None) or 0)
     def total_launches(self):return int(self.conn.execute('SELECT COUNT(*) n FROM launches').fetchone()['n'])
     def add_observation(self,c,p):self.conn.execute('INSERT INTO observations(observed_at,collection,payload) VALUES(?,?,?)',(int(time.time()),c,json.dumps(p,separators=(',',':'))));self.conn.commit()
     def observe_shadow(self,candidate,now=None):
