@@ -17,11 +17,10 @@ _CRITICAL_LOG_FAILURES={
 class LiveRadarScanner(BaseRadarScanner):
     """Continuous scanner that must catch its durable cursor up to the live tip.
 
-    The original scanner enriched candidates after every small cursor advance.
-    On a fast L2 that let block production outrun the scanner. This subclass
-    preserves every block in order, checkpoints each successful range, delays
-    expensive enrichment until catch-up is complete, and refuses to advance a
-    checkpoint when a critical log family failed.
+    Every block is preserved in order. Expensive enrichment is delayed until
+    catch-up is complete, checkpoints advance only after successful log scans,
+    and readiness is measured in both elapsed chain time and an absolute block
+    cap (important on Robinhood Chain where many blocks can arrive per second).
     """
 
     def _scan_range_or_raise(self,from_block,to_block):
@@ -37,8 +36,6 @@ class LiveRadarScanner(BaseRadarScanner):
         bh=(self.rpc.block(block_number) or {}).get('hash')
         if not bh:
             raise RPCError(f'CHECKPOINT_BLOCK_HASH_UNAVAILABLE:{block_number}')
-        # Hash first, block number second. If the process dies between writes,
-        # the previous last_block remains conservative rather than skipping.
         self.db.set_meta('last_block_hash',bh)
         self.db.set_meta('last_block',block_number)
 
@@ -58,6 +55,22 @@ class LiveRadarScanner(BaseRadarScanner):
             self.db.set_meta('last_block',rewind)
             return rewind
         return last
+
+    def _lag_metrics(self,safe_block,processed_to):
+        if safe_block is None or processed_to is None:
+            return None,None
+        blocks=max(0,int(safe_block)-int(processed_to))
+        safe_ts=self.block_time(int(safe_block))
+        cursor_ts=self.block_time(int(processed_to))
+        seconds=max(0,int(safe_ts)-int(cursor_ts))
+        return blocks,seconds
+
+    def _lag_is_ready(self,blocks,seconds):
+        return (
+            blocks is not None and seconds is not None and
+            blocks<=config.MAX_READY_LAG_BLOCKS and
+            seconds<=config.MAX_READY_LAG_SECONDS
+        )
 
     def scan_once(self,public_lookback=None):
         started=time.time();self.diag=[];self._init_signatures()
@@ -86,36 +99,46 @@ class LiveRadarScanner(BaseRadarScanner):
         max_ranges=50
         chunk=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS))
 
-        while True:
-            while cursor<=safe:
+        # Keep refreshing the safe tip until the cursor is fresh in *time*, not
+        # merely within a tiny fixed block count. This also lets doctor/public
+        # lookback scans tolerate a fast-moving sequencer without false failure.
+        while ranges<max_ranges:
+            while cursor<=safe and ranges<max_ranges:
                 end=min(safe,cursor+chunk-1)
                 self._scan_range_or_raise(cursor,end)
                 self._checkpoint(end)
                 processed_to=end
                 cursor=end+1
                 ranges+=1
-                if ranges>=max_ranges:
-                    break
-
-            # Public one-shot snapshots intentionally inspect one explicit tip
-            # window. Continuous/local mode refreshes the target until genuinely
-            # near the latest safe tip.
-            if public_lookback is not None or ranges>=max_ranges:
-                break
 
             tip_now=self.rpc.block_number()
             safe_now=max(0,tip_now-config.CONFIRMATION_BLOCKS)
-            lag=max(0,safe_now-processed_to)
             tip,safe=tip_now,safe_now
-            if lag<=config.MAX_READY_LAG_BLOCKS:
+            lag_blocks,lag_seconds=self._lag_metrics(safe,processed_to)
+            if self._lag_is_ready(lag_blocks,lag_seconds):
                 break
             cursor=processed_to+1
 
-        # Refresh once more so readiness compares the processed cursor with a
-        # current tip, not the tip captured before a long catch-up.
-        tip=self.rpc.block_number()
-        safe=max(0,tip-config.CONFIRMATION_BLOCKS)
         if processed_to<first:
             processed_to=min(first,safe)
 
-        return self.build_status(tip,safe,first,processed_to,started)
+        status=self.build_status(tip,safe,first,processed_to,started)
+
+        # Enrichment itself takes time. Refresh the chain tip after enrichment so
+        # the published readiness reflects completion-time freshness.
+        final_tip=self.rpc.block_number()
+        final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS)
+        lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
+        status.setdefault('chain',{})['latest_block']=final_tip
+        status['chain']['safe_block']=final_safe
+        try:
+            status['chain']['latest_block_age_seconds']=max(0,int(time.time())-int(self.block_time(final_tip)))
+        except Exception:
+            pass
+        scan=status.setdefault('scan',{})
+        scan['from_block']=first
+        scan['to_block']=processed_to
+        scan['blocks_processed']=max(0,processed_to-first+1)
+        scan['lag_blocks']=lag_blocks
+        scan['lag_seconds']=lag_seconds
+        return status
