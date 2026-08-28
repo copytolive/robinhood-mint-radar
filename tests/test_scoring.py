@@ -18,4 +18,12 @@ class ScoreTests(unittest.TestCase):
         self.assertFalse(score['qualified'])
         self.assertIn('MARKET_EVIDENCE_UNAVAILABLE',score['hard_gates'])
 
+    def test_erc1155_raw_quantity_does_not_inflate_velocity(self):
+        now=10000
+        events=[{'block_time':now-5,'quantity':87020367,'recipient':'0x'+'1'*40}]
+        m=compute_metrics(events,now)
+        self.assertEqual(m['mints_1m'],1)
+        self.assertEqual(m['velocity_1m'],1.0)
+        self.assertEqual(m['raw_units_1m'],87020367)
+
 if __name__=='__main__': unittest.main()
