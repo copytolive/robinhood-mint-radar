@@ -2,6 +2,7 @@ import json
 import urllib.parse
 import urllib.request
 from .safety import analyze_source
+from .tls import urlopen
 
 class BlockscoutClient:
     def __init__(self,base_api,timeout=12,v2_base=None):
@@ -10,7 +11,7 @@ class BlockscoutClient:
 
     def _get_json(self,url):
         req=urllib.request.Request(url,headers={'accept':'application/json','user-agent':'copytolive-robinhood-mint-radar/1.3'})
-        with urllib.request.urlopen(req,timeout=self.timeout) as r:return json.loads(r.read().decode())
+        with urlopen(req,timeout=self.timeout) as r:return json.loads(r.read().decode())
 
     def verification(self,address):
         url=self.base_api+'?'+urllib.parse.urlencode({'module':'contract','action':'getsourcecode','address':address})
