@@ -56,6 +56,15 @@ class LiveScannerTests(unittest.TestCase):
         self.assertEqual(s._selectors['mintPriceWei'],'0xcb2c9722')
         self.assertEqual(s._selectors['info'],'0x370158ea')
 
+    def test_zero_price_inference_uses_bounded_enrichment_rpc(self):
+        class LongRPC:
+            def transaction(self,txh): raise AssertionError('long ingest RPC must not be used for mint tx inference')
+        class EnrichRPC:
+            def transaction(self,txh): return {'value':'0x0'}
+        s=LiveRadarScanner.__new__(LiveRadarScanner)
+        s.rpc=LongRPC();s.enrich_rpc=EnrichRPC();s._tx_cache={}
+        self.assertEqual(s._observed_zero_price([{'tx_hash':'0xabc'}]),(0,'OBSERVED_MINT_TX_VALUE_ZERO'))
+
     def test_backlog_is_consumed_in_multiple_chunks_before_status(self):
         s=self._scanner(last=1000,tip=12000);ranges=[]
         s._scan_range_or_raise=lambda a,b:ranges.append((a,b))
