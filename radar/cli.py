@@ -50,6 +50,13 @@ def finalize_status(status):
         analysis_age=None
     scan['analysis_age_seconds']=analysis_age
 
+    # LiveScanner performs a tail-ingest after candidate enrichment. Keep the
+    # headline range aligned with that durable cursor instead of the earlier
+    # pre-enrichment range returned by BaseRadarScanner.build_status().
+    scanned_from=scan.get('from_block')
+    if scanned_from is not None and scanned_to is not None:
+        status['status']=f'SCANNING {scanned_from}-{scanned_to}'
+
     block_stale=lag_blocks is None or lag_blocks>config.MAX_READY_LAG_BLOCKS
     time_stale=lag_seconds is not None and lag_seconds>config.MAX_READY_LAG_SECONDS
     analysis_stale=analysis_age is not None and analysis_age>config.MAX_READY_LAG_SECONDS
