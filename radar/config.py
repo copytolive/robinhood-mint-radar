@@ -18,7 +18,10 @@ INITIAL_LOOKBACK_BLOCKS=int(os.getenv('RADAR_INITIAL_LOOKBACK_BLOCKS','120'))
 # larger bounded catch-up window while preserving every block in sequence.
 CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','5000'))
 MAX_CATCHUP_BLOCKS=int(os.getenv('RADAR_MAX_CATCHUP_BLOCKS','5000'))
-MAX_READY_LAG_BLOCKS=int(os.getenv('RADAR_MAX_READY_LAG_BLOCKS','120'))
+# Readiness is primarily time-based because this chain can advance many blocks
+# per second. The block cap remains as an absolute sanity/fail-closed guard.
+MAX_READY_LAG_BLOCKS=int(os.getenv('RADAR_MAX_READY_LAG_BLOCKS','2000'))
+MAX_READY_LAG_SECONDS=int(os.getenv('RADAR_MAX_READY_LAG_SECONDS','60'))
 CONFIRMATION_BLOCKS=int(os.getenv('RADAR_CONFIRMATION_BLOCKS','10'))
 REORG_REWIND_BLOCKS=int(os.getenv('RADAR_REORG_REWIND_BLOCKS','120'))
 MAX_CANDIDATES=int(os.getenv('RADAR_MAX_CANDIDATES','20'))
