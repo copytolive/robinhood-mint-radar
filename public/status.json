@@ -1,26 +1,117 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+    "hard_gates": [
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 0.1,
+      "unique_recent_minters": 10,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "JUICE BRODAS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.2433,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "HIGH",
+      "reasons": [
+        "COLLECTIBLE_CONTRACT_NAME",
+        "NFT_METADATA_INTERFACE"
+      ],
+      "state": "PASS"
+    },
+    "safety": {
+      "capabilities": [
+        "BURN",
+        "MINT",
+        "UPGRADE"
+      ],
+      "confidence": "MEDIUM",
+      "contract_name": "ERC721SeaDropCloneable",
+      "hard_risks": [],
+      "owner": "0x1bf6c7c6315979999ebb81e7a2b304ba6209bf8a",
+      "owner_active": true,
+      "proxy": false,
+      "review_risks": [
+        "ACTIVE_PRIVILEGED_OWNER",
+        "MUTABLE_BASE_URI",
+        "MUTABLE_CONTRACT_URI",
+        "MUTABLE_MAX_SUPPLY",
+        "OWNER_MINT_CAPABILITY"
+      ],
+      "state": "REVIEW",
+      "verified": true
+    },
+    "score": 49,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 3,
+      "holder_growth": 5,
+      "mint_velocity": 15,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 0
+    },
+    "sell_through": 0.0018333333333333333,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 6000,
+      "total_supply": 11
+    },
+    "ticker": "juice brodas"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48467045,
+    "latest_block": 48468254,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48467035,
+    "safe_block": 48468244,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 122880,
+    "bytes": 135168,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787937104,
+  "generated_at": 1787937227,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -52,27 +143,120 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.054,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 12,
+    "analysis_age_seconds": 7.221,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 7,
     "blocks_processed": 120,
-    "duration_seconds": 12.2,
-    "from_block": 48466801,
+    "duration_seconds": 17.273,
+    "from_block": 48467964,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 115,
-    "lag_seconds": 12,
-    "live_observations": 0,
-    "next_block": 48466921,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 161,
+    "lag_seconds": 16,
+    "live_observations": 1,
+    "next_block": 48468084,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 42,
-    "to_block": 48466920,
-    "total_mint_units_stored": 28
+    "secondary_sales_stored": 44,
+    "to_block": 48468083,
+    "total_mint_units_stored": 40
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48466801-48466920",
+  "status": "SCANNING 48467964-48468083",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 0.1,
+        "unique_recent_minters": 10,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "JUICE BRODAS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xccca3e0ed323c81dd4a4cf04063cc87ddb21e3c1",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2433,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDropCloneable",
+        "hard_risks": [],
+        "owner": "0x1bf6c7c6315979999ebb81e7a2b304ba6209bf8a",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
+        "verified": true
+      },
+      "score": 49,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 5,
+        "mint_velocity": 15,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": 0.0018333333333333333,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 6000,
+        "total_supply": 11
+      },
+      "ticker": "juice brodas"
+    }
+  ],
   "win_rate_pct": 0.0
 }
