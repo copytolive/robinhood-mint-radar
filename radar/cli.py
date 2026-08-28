@@ -4,7 +4,8 @@ import sys
 import time
 from . import config
 from .notify import notify_qualified
-from .scanner import RadarScanner, write_status
+from .live_scanner import LiveRadarScanner as RadarScanner
+from .scanner import write_status
 
 
 def degraded_status(exc):
