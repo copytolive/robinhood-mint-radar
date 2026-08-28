@@ -177,13 +177,6 @@ fi
 cd "$INSTALL_DIR"
 PYTHON_BIN="$PYTHON_BIN" sh macos/doctor.sh || fail "live doctor did not pass"
 
-if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
-  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-launchagent.sh
-  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-dashboard-launchagent.sh
-  echo "ONE_DOWNLOAD_DRY_RUN=PASS"
-  exit 0
-fi
-
 # 5) Prime one real local scan synchronously before LaunchAgents start.
 # This writes a fresh status file and advances the durable SQLite checkpoint.
 # The old installer deleted status.json and then waited for a potentially slow
@@ -201,6 +194,13 @@ rm -f public/status.json
 ) || fail "local scanner priming scan failed"
 validate_status_file public/status.json || fail "primed local status is not healthy"
 echo "[PASS] local checkpoint primed"
+
+if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
+  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-launchagent.sh
+  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-dashboard-launchagent.sh
+  echo "ONE_DOWNLOAD_DRY_RUN=PASS"
+  exit 0
+fi
 
 # 6) Install scanner + dashboard as user LaunchAgents.
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-launchagent.sh || fail "scanner LaunchAgent install failed"
