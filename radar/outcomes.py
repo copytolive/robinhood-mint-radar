@@ -11,11 +11,13 @@ def main(argv=None):
     p.add_argument('--exit-value-usd',required=True,type=float)
     p.add_argument('--gas-usd',default=0.0,type=float)
     p.add_argument('--package-id',default=None)
+    p.add_argument('--predicted-score',default=None,type=float)
+    p.add_argument('--predicted-probability',default=None,type=float)
     a=p.parse_args(argv)
     db=RadarDB(a.db)
     try:
-        net=db.record_outcome(a.collection,a.decision,a.entry_cost_usd,a.exit_value_usd,a.gas_usd,a.package_id)
-        print(json.dumps({'recorded':True,'collection':a.collection,'realized_net_usd':net}))
+        net=db.record_outcome(a.collection,a.decision,a.entry_cost_usd,a.exit_value_usd,a.gas_usd,a.package_id,a.predicted_score,a.predicted_probability)
+        print(json.dumps({'recorded':True,'collection':a.collection,'realized_net_usd':net,'predicted_score':a.predicted_score,'predicted_probability':a.predicted_probability}))
     finally: db.close()
     return 0
 
