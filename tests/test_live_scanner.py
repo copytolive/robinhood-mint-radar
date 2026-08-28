@@ -19,7 +19,10 @@ class _DB:
 
 
 class _RPC:
-    def __init__(self,tip=12000): self.tip=tip
+    def __init__(self,tip=12000):
+        self.tip=tip
+        self.url='https://example.invalid'
+        self.failovers=0
     def chain_id(self): return config.CHAIN_ID
     def block_number(self): return self.tip
     def block(self,n): return {'hash':f'0xhash{n}','timestamp':hex(1000)}
