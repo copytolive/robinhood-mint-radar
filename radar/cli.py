@@ -4,7 +4,7 @@ import sys
 import time
 from . import config
 from .notify import notify_qualified
-from .live_scanner import LiveRadarScanner as RadarScanner
+from .fast_live_scanner import FastLiveRadarScanner as RadarScanner
 from .scanner import write_status
 
 
