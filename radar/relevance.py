@@ -1,4 +1,4 @@
-_DENY_NAME=('positionmanager','nonfungibleposition','liquidityposition','stakingposition','loanposition','debtposition','vaultposition','receipt','vestingposition','uniswap','algebra','camelot','clamm','lpposition','liquidity manager')
+_DENY_NAME=('positionmanager','nonfungibleposition','liquidityposition','stakingposition','loanposition','debtposition','vaultposition','receipt','vestingposition','uniswap','algebra','camelot','clamm','lpposition','liquidity manager','position nft','positions')
 _POSITIVE_NAME=('hoodsea','erc721seadrop','seadrop','erc721','erc1155','nft')
 _POSITIVE_SOURCE=('tokenuri(','contracturi(','baseuri','erc721','erc1155')
 
