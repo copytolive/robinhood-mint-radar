@@ -21,4 +21,4 @@ exec "$PYTHON_BIN" -m radar.supervisor \
   --db "${RADAR_DB:-data/radar.sqlite}" \
   --status "${RADAR_STATUS_PATH:-public/status.json}" \
   --interval "${RADAR_SCAN_INTERVAL:-15}" \
-  --cycle-timeout "${RADAR_CYCLE_TIMEOUT_SECONDS:-120}"
+  --cycle-timeout "${RADAR_CYCLE_TIMEOUT_SECONDS:-90}"
