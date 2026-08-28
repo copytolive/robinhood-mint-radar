@@ -9,8 +9,9 @@ class StatusTimestampTests(unittest.TestCase):
             'generated_at':100,
             'live_ready':'READY',
             'money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY',
+            'status':'SCANNING 900-950',
             'chain':{'safe_block':1000},
-            'scan':{'to_block':1000,'qualified_candidates':0},
+            'scan':{'from_block':900,'to_block':1000,'qualified_candidates':0},
             'watchlist':[],
             'best_live_observation':None,
             'manual_packages':[],
@@ -22,3 +23,4 @@ class StatusTimestampTests(unittest.TestCase):
         self.assertEqual(out['generated_at'],1000)
         self.assertEqual(out['live_ready'],'READY')
         self.assertEqual(out['scan']['lag_blocks'],0)
+        self.assertEqual(out['status'],'SCANNING 900-1000')
