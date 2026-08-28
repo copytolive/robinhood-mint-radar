@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+    "collection": "0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 0.5,
-      "unique_recent_minters": 2,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 15,
+      "mints_1m": 15,
+      "mints_5m": 15,
+      "mints_60m": 15,
+      "raw_units_1m": 15,
+      "raw_units_5m": 15,
+      "recent_mint_concentration": 0.0667,
+      "unique_recent_minters": 15,
+      "velocity_1m": 15.0,
+      "velocity_5m": 3.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "EarlyMen",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+    "name": "Internet Monke",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1841,
+    "predicted_probability": 0.3329,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xdc1f1bf4c9bc2f084481922d139d4abb33bf216c",
+      "owner": "0x7692eb5f7de0bef814495926ee99d2bedba0a8de",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 42,
+    "score": 58,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 15,
+      "distribution": 5,
+      "holder_growth": 7,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.0015,
+    "sell_through": 0.015,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 15
+      "max_supply": 5000,
+      "total_supply": 75
     },
-    "ticker": "EarlyMen"
+    "ticker": "IM"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48697212,
-    "latest_block_age_seconds": 4,
+    "latest_block": 48704800,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48697202,
+    "safe_block": 48704790,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 94208,
+    "bytes": 110592,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787960344,
+  "generated_at": 1787961109,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,37 +135,37 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 10.77,
+    "analysis_age_seconds": 6.184,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 16.953,
-    "from_block": 48696960,
+    "duration_seconds": 14.978,
+    "from_block": 48704543,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 123,
+    "lag_blocks": 128,
     "lag_seconds": 13,
     "live_observations": 1,
-    "next_block": 48697080,
+    "next_block": 48704663,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 3,
-    "to_block": 48697079,
-    "total_mint_units_stored": 22
+    "secondary_sales_stored": 1,
+    "to_block": 48704662,
+    "total_mint_units_stored": 38
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48696960-48697079",
+  "status": "SCANNING 48704543-48704662",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+      "collection": "0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -178,27 +178,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 15,
+        "mints_1m": 15,
+        "mints_5m": 15,
+        "mints_60m": 15,
+        "raw_units_1m": 15,
+        "raw_units_5m": 15,
+        "recent_mint_concentration": 0.0667,
+        "unique_recent_minters": 15,
+        "velocity_1m": 15.0,
+        "velocity_5m": 3.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "EarlyMen",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x6ca4e39040c5c0cdd4e2ffd387d38bf6647e0a2a",
+      "name": "Internet Monke",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x4c1d5064d9a9a7cf9bffb61ebdec53a8c6c87854",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1841,
+      "predicted_probability": 0.3329,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -213,7 +213,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xdc1f1bf4c9bc2f084481922d139d4abb33bf216c",
+        "owner": "0x7692eb5f7de0bef814495926ee99d2bedba0a8de",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,24 +222,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 42,
+      "score": 58,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 15,
+        "distribution": 5,
+        "holder_growth": 7,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.0015,
+      "sell_through": 0.015,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 15
+        "max_supply": 5000,
+        "total_supply": 75
       },
-      "ticker": "EarlyMen"
+      "ticker": "IM"
     }
   ],
   "win_rate_pct": 0.0
