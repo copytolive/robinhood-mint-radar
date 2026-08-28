@@ -50,9 +50,6 @@ def finalize_status(status):
         analysis_age=None
     scan['analysis_age_seconds']=analysis_age
 
-    # LiveScanner performs a tail-ingest after candidate enrichment. Keep the
-    # headline range aligned with that durable cursor instead of the earlier
-    # pre-enrichment range returned by BaseRadarScanner.build_status().
     scanned_from=scan.get('from_block')
     if scanned_from is not None and scanned_to is not None:
         status['status']=f'SCANNING {scanned_from}-{scanned_to}'
@@ -82,8 +79,12 @@ def finalize_status(status):
 
 
 def _strict_retryable(args,status=None):
-    """Strict one-shot probes may retry transient/stale observations, never approve them."""
     return bool(args.strict and args.once and (status is None or status.get('live_ready')!='READY'))
+
+
+def _rpc_state(scanner):
+    rpc=getattr(scanner,'rpc',None) if scanner is not None else None
+    return {'active_rpc':getattr(rpc,'url',None),'rpc_failovers':getattr(rpc,'failovers',None)}
 
 
 def main(argv=None):
@@ -108,7 +109,9 @@ def main(argv=None):
                 status=finalize_status(scanner.scan_once(public_lookback=args.public_lookback))
                 write_status(args.status,status)
                 alert=notify_qualified(status,scanner.db)
-                print(json.dumps({'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'scanner_lag_blocks':status.get('scan',{}).get('lag_blocks'),'scanner_lag_seconds':status.get('scan',{}).get('lag_seconds'),'analysis_age_seconds':status.get('scan',{}).get('analysis_age_seconds'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}))
+                payload={'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'scanner_lag_blocks':status.get('scan',{}).get('lag_blocks'),'scanner_lag_seconds':status.get('scan',{}).get('lag_seconds'),'analysis_age_seconds':status.get('scan',{}).get('analysis_age_seconds'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}
+                payload.update(_rpc_state(scanner))
+                print(json.dumps(payload))
 
                 if _strict_retryable(args,status):
                     if strict_attempt<strict_max_attempts:
@@ -117,8 +120,9 @@ def main(argv=None):
                         continue
                     return 2
             except Exception as exc:
+                state=_rpc_state(scanner)
                 status=degraded_status(exc);write_status(args.status,status)
-                print(json.dumps({'live_ready':'NOT_READY','error':str(exc),'status_path':args.status}),file=sys.stderr)
+                print(json.dumps({'live_ready':'NOT_READY','error':str(exc),'status_path':args.status,**state}),file=sys.stderr)
                 if scanner is not None:
                     scanner.close();scanner=None
                 if _strict_retryable(args):
