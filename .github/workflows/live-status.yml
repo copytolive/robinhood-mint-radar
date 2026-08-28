@@ -62,10 +62,7 @@ jobs:
           assert int(s.get('lag_blocks',10**9)) <= 2000
           assert int(s.get('lag_seconds',10**9)) <= 60
           assert float(s.get('analysis_age_seconds',10**9)) <= 60
-          # Cold public snapshots may spend >90s on provider/enrichment while still
-          # finishing within the strict 60s live-lag gate. Keep wall-clock as a
-          # secondary CI guard without weakening economic freshness/readiness.
-          assert float(s.get('duration_seconds',10**9)) <= 120
+          assert float(s.get('duration_seconds',10**9)) <= 90
           assert not any(c.get('qualified') for c in (d.get('watchlist') or []) if c.get('action')!='MANUAL_MINT_CANDIDATE')
           print({
             'latest_block':d.get('chain',{}).get('latest_block'),
@@ -74,6 +71,9 @@ jobs:
             'lag_seconds':s.get('lag_seconds'),
             'analysis_age_seconds':s.get('analysis_age_seconds'),
             'duration_seconds':s.get('duration_seconds'),
+            'analysis_rows_considered':s.get('analysis_rows_considered'),
+            'analysis_rows_pruned':s.get('analysis_rows_pruned'),
+            'qualification_queue_overflow':s.get('qualification_queue_overflow'),
             'qualified':s.get('qualified_candidates')
           })
           PY
@@ -83,10 +83,27 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/status.json
-          if git diff --cached --quiet; then
-            echo 'No status change to commit'
-            exit 0
-          fi
-          git commit -m 'chore: refresh live Robinhood snapshot [skip ci]'
-          git push origin HEAD:main
+          STATUS_TMP="$(mktemp)"
+          cp public/status.json "$STATUS_TMP"
+          trap 'rm -f "$STATUS_TMP"' EXIT
+
+          for attempt in 1 2 3; do
+            echo "Snapshot persist attempt $attempt/3..."
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$STATUS_TMP" public/status.json
+            git add public/status.json
+            if git diff --cached --quiet; then
+              echo 'No status change to commit'
+              exit 0
+            fi
+            git commit -m 'chore: refresh live Robinhood snapshot [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'SNAPSHOT_PERSIST=PASS'
+              exit 0
+            fi
+            echo '[RETRY] main advanced during snapshot persist; rebasing generated status onto latest main...'
+            sleep "$attempt"
+          done
+          echo 'SNAPSHOT_PERSIST=FAILED after 3 race-safe attempts' >&2
+          exit 1
