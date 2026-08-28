@@ -10,8 +10,8 @@ class RPCError(RuntimeError): pass
 
 _OFFICIAL_MAINNET='https://rpc.mainnet.chain.robinhood.com'
 _DEFAULT_PUBLIC_FALLBACKS=(
-    'https://rpc.nodeflare.app/robinhood/public',
     'https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public',
+    'https://rpc.nodeflare.app/robinhood/public',
 )
 
 class RPCClient:
