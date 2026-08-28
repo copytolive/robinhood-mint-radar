@@ -23,6 +23,35 @@ jobs:
         run: sh macos/doctor.sh
       - name: One-command installer dry run
         run: RADAR_INSTALL_DRY_RUN=1 sh install-mac.command
+      - name: Supervisor live smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f /tmp/radar-supervisor.sqlite /tmp/radar-supervisor.sqlite-wal /tmp/radar-supervisor.sqlite-shm /tmp/radar-supervisor-status.json
+          RADAR_DB=/tmp/radar-supervisor.sqlite \
+          RADAR_STATUS_PATH=/tmp/radar-supervisor-status.json \
+          RADAR_SCAN_INTERVAL=1 \
+          RADAR_CYCLE_TIMEOUT_SECONDS=90 \
+          sh run-local.sh >/tmp/radar-supervisor.out 2>/tmp/radar-supervisor.err &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true; wait "$pid" 2>/dev/null || true' EXIT
+          ok=0
+          for i in {1..120}; do
+            if [ -f /tmp/radar-supervisor-status.json ] && python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/radar-supervisor-status.json'))
+          raise SystemExit(0 if d.get('live_ready')=='READY' and d.get('wallet_execution')=='MANUAL_ONLY' else 1)
+          PY
+            then ok=1; break; fi
+            sleep 1
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo '--- supervisor stdout ---'; cat /tmp/radar-supervisor.out || true
+            echo '--- supervisor stderr ---'; cat /tmp/radar-supervisor.err || true
+            exit 1
+          fi
+          grep -q 'supervisor.*STARTED' /tmp/radar-supervisor.err
+          echo 'MAC_SUPERVISOR_SMOKE=PASS'
       - name: Local dashboard smoke
         shell: bash
         run: |
