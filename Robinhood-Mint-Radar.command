@@ -30,8 +30,6 @@ curl_download() {
   if curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 "$URL" -o "$OUT"; then
     return 0
   fi
-  # A broken inherited SSL_CERT_FILE can also break curl. Retry with curl's
-  # normal macOS trust configuration; certificate verification stays enabled.
   echo "Retrying download with macOS default TLS trust..."
   env -u SSL_CERT_FILE curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 "$URL" -o "$OUT"
 }
@@ -107,6 +105,22 @@ launchagent_running() {
   launchctl print "$1" 2>/dev/null | grep -q 'state = running'
 }
 
+stop_existing_launchagents() {
+  DOMAIN="gui/$(id -u)"
+  for LABEL in \
+    com.copytolive.robinhood-mint-radar-dashboard \
+    com.copytolive.robinhood-mint-radar
+  do
+    PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
+    if [ -f "$PLIST" ]; then
+      launchctl bootout "$DOMAIN" "$PLIST" >/dev/null 2>&1 || \
+        launchctl bootout "$DOMAIN/$LABEL" >/dev/null 2>&1 || true
+    else
+      launchctl bootout "$DOMAIN/$LABEL" >/dev/null 2>&1 || true
+    fi
+  done
+}
+
 # 2) Resolve Python 3.10+.
 PYTHON_BIN=$(command -v python3 || true)
 if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
@@ -177,10 +191,15 @@ fi
 cd "$INSTALL_DIR"
 PYTHON_BIN="$PYTHON_BIN" sh macos/doctor.sh || fail "live doctor did not pass"
 
+# A retry/update may have old LaunchAgents still alive from an earlier attempt.
+# Stop them before touching the shared SQLite checkpoint/status to avoid races.
+if [ "${RADAR_INSTALL_DRY_RUN:-0}" != "1" ]; then
+  echo "Stopping previous scanner/dashboard instance..."
+  stop_existing_launchagents
+fi
+
 # 5) Prime one real local scan synchronously before LaunchAgents start.
 # This writes a fresh status file and advances the durable SQLite checkpoint.
-# The old installer deleted status.json and then waited for a potentially slow
-# first daemon bootstrap, which could falsely fail after 90 seconds.
 echo "Priming local scanner checkpoint..."
 rm -f public/status.json
 (
