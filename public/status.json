@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+    "action": "WAIT",
+    "collection": "0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 50,
-      "mints_1m": 50,
-      "mints_5m": 50,
-      "mints_60m": 50,
-      "raw_units_1m": 50,
-      "raw_units_5m": 50,
-      "recent_mint_concentration": 0.02,
-      "unique_recent_minters": 50,
-      "velocity_1m": 50.0,
-      "velocity_5m": 10.0
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "STONE OF ROBIN",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Rabbit Hood Society",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.0929,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xb4dd42710c2220625ca29ab5613a7d995e40a669",
+      "owner": "0x7f3a0d3699bce3c5849c7381b2fe82aee7dd94b6",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 28,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 2
     },
-    "sell_through": 0.041404140414041404,
+    "sell_through": 0.2972972972972973,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 138
+      "max_supply": 888,
+      "total_supply": 264
     },
-    "ticker": "STONE OF ROBIN"
+    "ticker": "CARROT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +90,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48479185,
+    "latest_block": 48520475,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48479175,
+    "safe_block": 48520465,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 540672,
+    "bytes": 126976,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787938330,
+  "generated_at": 1787942497,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -115,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -135,40 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.532,
+    "analysis_age_seconds": 4.089,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_rows_pruned": 10,
     "blocks_processed": 120,
-    "duration_seconds": 7.188,
-    "from_block": 48478986,
+    "duration_seconds": 5.894,
+    "from_block": 48520291,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 70,
-    "lag_seconds": 7,
-    "live_observations": 2,
-    "next_block": 48479106,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 55,
+    "lag_seconds": 6,
+    "live_observations": 1,
+    "next_block": 48520411,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 15,
-    "to_block": 48479105,
-    "total_mint_units_stored": 394
+    "secondary_sales_stored": 3,
+    "to_block": 48520410,
+    "total_mint_units_stored": 53
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48478986-48479105",
+  "status": "SCANNING 48520291-48520410",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+      "action": "WAIT",
+      "collection": "0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -178,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 50,
-        "mints_1m": 50,
-        "mints_5m": 50,
-        "mints_60m": 50,
-        "raw_units_1m": 50,
-        "raw_units_5m": 50,
-        "recent_mint_concentration": 0.02,
-        "unique_recent_minters": 50,
-        "velocity_1m": 50.0,
-        "velocity_5m": 10.0
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "STONE OF ROBIN",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xbd021b8f34063948a01a09fcf3c8b700519397d5",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Rabbit Hood Society",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x207d22fa76c16dfe88dd31b3a977c9df8a2f60b7",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3661,
+      "predicted_probability": 0.0929,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -213,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xb4dd42710c2220625ca29ab5613a7d995e40a669",
+        "owner": "0x7f3a0d3699bce3c5849c7381b2fe82aee7dd94b6",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,107 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 61,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.041404140414041404,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 3333,
-        "total_supply": 138
-      },
-      "ticker": "STONE OF ROBIN"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x2097b4858bc369944238ed67089754536fae4b9e",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2097b4858bc369944238ed67089754536fae4b9e",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 328,
-        "mints_1m": 328,
-        "mints_5m": 328,
-        "mints_60m": 328,
-        "raw_units_1m": 328,
-        "raw_units_5m": 328,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 328.0,
-        "velocity_5m": 65.6
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Floaties Pool Chan NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x2097b4858bc369944238ed67089754536fae4b9e",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2168,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x4d8451989d54581a59787c954b37c0443c2114ad",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 46,
+      "score": 28,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "mint_velocity": 15,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 2
       },
-      "sell_through": 0.06282628262826283,
+      "sell_through": 0.2972972972972973,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 349
+        "max_supply": 888,
+        "total_supply": 264
       },
-      "ticker": "9"
+      "ticker": "CARROT"
     }
   ],
   "win_rate_pct": 0.0
