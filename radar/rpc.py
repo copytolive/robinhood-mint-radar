@@ -7,7 +7,7 @@ from .tls import urlopen
 class RPCError(RuntimeError): pass
 
 class RPCClient:
-    def __init__(self,url,timeout=15,retries=2):
+    def __init__(self,url,timeout=15,retries=4):
         self.url=url; self.timeout=timeout; self.retries=retries; self._id=0
 
     def call(self,method,params=None):
@@ -20,9 +20,9 @@ class RPCClient:
                 with urlopen(req,timeout=self.timeout) as resp: body=json.loads(resp.read().decode())
                 if 'error' in body: raise RPCError(f"{method}: {body['error']}")
                 return body.get('result')
-            except (urllib.error.URLError,TimeoutError,json.JSONDecodeError,RPCError) as exc:
+            except (urllib.error.URLError,TimeoutError,OSError,json.JSONDecodeError,RPCError) as exc:
                 last=exc
-                if attempt<self.retries: time.sleep(0.5*(attempt+1))
+                if attempt<self.retries: time.sleep(min(2.0,0.5*(attempt+1)))
         raise RPCError(f'{method} failed after retries: {last}')
 
     def chain_id(self): return int(self.call('eth_chainId'),16)
