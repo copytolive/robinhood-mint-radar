@@ -20,6 +20,14 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Compile Python
         run: python -m compileall -q radar
+      - name: POSIX shell syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          sh -n Robinhood-Mint-Radar.command
+          sh -n run-local.sh
+          sh -n serve-local.sh
+          for f in macos/*.sh; do sh -n "$f"; done
       - name: Static safety assertions
         shell: bash
         run: |
@@ -34,6 +42,7 @@ jobs:
           assert d.get('money_readiness') in (
               'WAIT FOR QUALIFIED OPPORTUNITY',
               'CATCHING UP — WAIT FOR LIVE TIP',
+              'ANALYSIS REFRESHING — WAIT',
               'QUALIFIED OPPORTUNITY AVAILABLE',
           )
           if d.get('live_ready')!='READY':
