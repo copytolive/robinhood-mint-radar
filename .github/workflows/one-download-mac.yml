@@ -1,0 +1,39 @@
+name: One Download Mac Installer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Robinhood-Mint-Radar.command'
+      - 'macos/**'
+      - 'run-local.sh'
+      - 'serve-local.sh'
+      - 'radar/**'
+      - 'tests/**'
+      - '.github/workflows/one-download-mac.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  arm64-system-python:
+    runs-on: macos-15
+    steps:
+      - name: Download exactly one installer file
+        run: curl -fsSL "https://raw.githubusercontent.com/copytolive/robinhood-mint-radar/${GITHUB_SHA}/Robinhood-Mint-Radar.command" -o "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
+      - name: Run exactly one install command
+        env:
+          RADAR_INSTALL_DRY_RUN: '1'
+        run: sh "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
+
+  intel-managed-python:
+    runs-on: macos-15-intel
+    steps:
+      - name: Download exactly one installer file
+        run: curl -fsSL "https://raw.githubusercontent.com/copytolive/robinhood-mint-radar/${GITHUB_SHA}/Robinhood-Mint-Radar.command" -o "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
+      - name: Run exactly one install command with private runtime fallback
+        env:
+          RADAR_INSTALL_DRY_RUN: '1'
+          RADAR_FORCE_MANAGED_PYTHON: '1'
+        run: sh "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
