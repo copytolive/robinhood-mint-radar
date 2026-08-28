@@ -10,7 +10,7 @@ from .scanner import write_status
 
 def degraded_status(exc):
     now=int(time.time())
-    return {'schema_version':'1.3','generated_at':now,'mode':'READ_ONLY','wallet_execution':'MANUAL_ONLY','status':'DEGRADED','money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY','live_ready':'NOT_READY','scan':{'blocks_processed':0,'lag_blocks':None,'total_mint_units_stored':0,'hoodsea_launches_stored':0,'live_observations':0,'qualified_candidates':0},'best_live_observation':None,'watchlist':[],'manual_packages':[],'learning':{'status':'PREDICTION_UNCERTIFIED','qualified_samples':0},'diagnostics':[{'stage':'BOOTSTRAP','reason':'LIVE_SCAN_FAILED','error':f'{type(exc).__name__}: {exc}','ts':now}],'limitations':['No live opportunity may be approved while chain data is unavailable.']}
+    return {'schema_version':'1.3','generated_at':now,'mode':'READ_ONLY','wallet_execution':'MANUAL_ONLY','status':'DEGRADED','money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY','live_ready':'NOT_READY','scan':{'blocks_processed':0,'lag_blocks':None,'lag_seconds':None,'total_mint_units_stored':0,'hoodsea_launches_stored':0,'live_observations':0,'qualified_candidates':0},'best_live_observation':None,'watchlist':[],'manual_packages':[],'learning':{'status':'PREDICTION_UNCERTIFIED','qualified_samples':0},'diagnostics':[{'stage':'BOOTSTRAP','reason':'LIVE_SCAN_FAILED','error':f'{type(exc).__name__}: {exc}','ts':now}],'limitations':['No live opportunity may be approved while chain data is unavailable.']}
 
 
 def _block_candidate_while_catching_up(candidate):
@@ -25,18 +25,29 @@ def _block_candidate_while_catching_up(candidate):
 
 
 def finalize_status(status):
-    """Fail closed on scanner backlog, then stamp completion time."""
+    """Fail closed on stale scanner data, then stamp completion time."""
     scan=status.setdefault('scan',{})
     chain=status.get('chain') or {}
     safe=chain.get('safe_block')
     scanned_to=scan.get('to_block')
     try:
-        lag=max(0,int(safe)-int(scanned_to))
+        lag_blocks=max(0,int(safe)-int(scanned_to))
     except (TypeError,ValueError):
-        lag=None
-    scan['lag_blocks']=lag
+        lag_blocks=None
+    scan['lag_blocks']=lag_blocks
 
-    if lag is None or lag>config.MAX_READY_LAG_BLOCKS:
+    lag_seconds=scan.get('lag_seconds')
+    try:
+        lag_seconds=None if lag_seconds is None else max(0,int(lag_seconds))
+    except (TypeError,ValueError):
+        lag_seconds=None
+    scan['lag_seconds']=lag_seconds
+
+    block_stale=lag_blocks is None or lag_blocks>config.MAX_READY_LAG_BLOCKS
+    # Old/synthetic statuses may not contain lag_seconds; the absolute block cap
+    # remains fail-closed. LiveRadarScanner always publishes both metrics.
+    time_stale=lag_seconds is not None and lag_seconds>config.MAX_READY_LAG_SECONDS
+    if block_stale or time_stale:
         status['live_ready']='NOT_READY'
         status['money_readiness']='CATCHING UP — WAIT FOR LIVE TIP'
         status['manual_packages']=[]
@@ -45,7 +56,7 @@ def finalize_status(status):
             _block_candidate_while_catching_up(candidate)
         _block_candidate_while_catching_up(status.get('best_live_observation'))
         diagnostics=status.setdefault('diagnostics',[])
-        diagnostics.append({'stage':'LIVE_DOCTOR','reason':'SCANNER_BACKLOG','error':f'lag_blocks={lag}; ready_threshold={config.MAX_READY_LAG_BLOCKS}','ts':int(time.time())})
+        diagnostics.append({'stage':'LIVE_DOCTOR','reason':'SCANNER_BACKLOG','error':f'lag_blocks={lag_blocks}/{config.MAX_READY_LAG_BLOCKS}; lag_seconds={lag_seconds}/{config.MAX_READY_LAG_SECONDS}','ts':int(time.time())})
         status['diagnostics']=diagnostics[-10:]
 
     status['generated_at']=int(time.time())
@@ -68,7 +79,7 @@ def main(argv=None):
             status=finalize_status(scanner.scan_once(public_lookback=args.public_lookback))
             write_status(args.status,status)
             alert=notify_qualified(status,scanner.db)
-            print(json.dumps({'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'scanner_lag':status.get('scan',{}).get('lag_blocks'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}))
+            print(json.dumps({'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'scanner_lag_blocks':status.get('scan',{}).get('lag_blocks'),'scanner_lag_seconds':status.get('scan',{}).get('lag_seconds'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}))
         except Exception as exc:
             status=degraded_status(exc); write_status(args.status,status)
             print(json.dumps({'live_ready':'NOT_READY','error':str(exc),'status_path':args.status}),file=sys.stderr)
