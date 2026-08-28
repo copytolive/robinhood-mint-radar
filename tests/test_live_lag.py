@@ -10,7 +10,7 @@ class LiveLagTests(unittest.TestCase):
             'live_ready':'READY',
             'money_readiness':'QUALIFIED OPPORTUNITY AVAILABLE',
             'chain':{'safe_block':20000},
-            'scan':{'to_block':10000,'lag_seconds':600,'qualified_candidates':1},
+            'scan':{'to_block':10000,'lag_seconds':600,'analysis_age_seconds':1,'qualified_candidates':1},
             'watchlist':[dict(candidate)],
             'best_live_observation':dict(candidate),
             'manual_packages':[dict(candidate)],
@@ -25,12 +25,31 @@ class LiveLagTests(unittest.TestCase):
         self.assertEqual(out['watchlist'][0]['action'],'WAIT')
         self.assertTrue(any(d.get('reason')=='SCANNER_BACKLOG' for d in out['diagnostics']))
 
+    def test_stale_analysis_blocks_package_even_when_cursor_is_live(self):
+        candidate={'qualified':True,'qualification_path':'MARKET_CONFIRMED','action':'MANUAL_MINT_CANDIDATE','hard_gates':[]}
+        status={
+            'live_ready':'READY',
+            'money_readiness':'QUALIFIED OPPORTUNITY AVAILABLE',
+            'chain':{'safe_block':20000},
+            'scan':{'to_block':20000,'lag_seconds':0,'analysis_age_seconds':config.MAX_READY_LAG_SECONDS+1,'qualified_candidates':1},
+            'watchlist':[dict(candidate)],
+            'best_live_observation':dict(candidate),
+            'manual_packages':[dict(candidate)],
+            'diagnostics':[],
+        }
+        out=finalize_status(status)
+        self.assertEqual(out['live_ready'],'NOT_READY')
+        self.assertEqual(out['money_readiness'],'ANALYSIS REFRESHING — WAIT')
+        self.assertEqual(out['manual_packages'],[])
+        self.assertIn('ANALYSIS_TOO_OLD',out['watchlist'][0]['hard_gates'])
+        self.assertTrue(any(d.get('reason')=='ANALYSIS_STALE' for d in out['diagnostics']))
+
     def test_near_tip_can_remain_ready(self):
         status={
             'live_ready':'READY',
             'money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY',
             'chain':{'safe_block':20000},
-            'scan':{'to_block':20000,'lag_seconds':0,'qualified_candidates':0},
+            'scan':{'to_block':20000,'lag_seconds':0,'analysis_age_seconds':1,'qualified_candidates':0},
             'watchlist':[],
             'best_live_observation':None,
             'manual_packages':[],
@@ -45,7 +64,7 @@ class LiveLagTests(unittest.TestCase):
             'live_ready':'READY',
             'money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY',
             'chain':{'safe_block':48340242},
-            'scan':{'to_block':48340096,'lag_seconds':14,'qualified_candidates':0},
+            'scan':{'to_block':48340096,'lag_seconds':14,'analysis_age_seconds':1,'qualified_candidates':0},
             'watchlist':[],
             'best_live_observation':None,
             'manual_packages':[],
