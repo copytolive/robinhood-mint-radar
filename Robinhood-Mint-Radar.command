@@ -115,6 +115,16 @@ assert float(scan.get('analysis_age_seconds',10**9)) <= 60
 PY
 }
 
+status_progress() {
+  "$PYTHON_BIN" - "public/status.json" <<'PY' 2>/dev/null || true
+import json,sys
+try:s=json.load(open(sys.argv[1]))
+except Exception:raise SystemExit(0)
+sc=s.get('scan') or {}
+print('[PROGRESS] service status:',s.get('live_ready'),'lag=',sc.get('lag_seconds'),'s /',sc.get('lag_blocks'),'blocks','analysis=',sc.get('analysis_age_seconds'),'s')
+PY
+}
+
 launchagent_running() { launchctl print "$1" 2>/dev/null | grep -q 'state = running'; }
 
 stop_existing_launchagents() {
@@ -136,7 +146,6 @@ valid_python "$PYTHON_BIN" || fail "Python 3.10+ is unavailable"
 echo "Runtime: $($PYTHON_BIN --version 2>&1)"
 
 if [ "${RADAR_TEST_BROKEN_PYTHON_CA:-0}" = "1" ]; then SSL_CERT_FILE="/tmp/definitely-missing-robinhood-python-ca.pem"; export SSL_CERT_FILE; fi
-
 if ! tls_probe; then
   echo "Repairing Python TLS trust store..."
   FOUND_CA=""
@@ -175,11 +184,8 @@ fi
 if [ -f ./.env ]; then set -a; . ./.env; set +a; fi
 DB_PATH="${RADAR_DB:-data/radar.sqlite}"
 
-# If a durable checkpoint is so old that sequential catch-up cannot finish in
-# an installer-sized window, preserve the current DB, record the exact gap, and
-# rebase only the live cursor near the confirmed tip. Existing observations,
-# outcomes, and learning tables remain intact. The recorded historical gap is
-# explicit evidence that those blocks were not backfilled by this recovery.
+# Preserve old data and explicitly record any unrecovered historical gap if a
+# stale cursor is too far behind for an interactive installer.
 "$PYTHON_BIN" - "$DB_PATH" <<'PY'
 import os, sys, time
 from radar import config
@@ -187,82 +193,37 @@ from radar.db import RadarDB
 from radar.rpc import RPCClient
 path=sys.argv[1]
 if not os.path.exists(path):
-    print('[PASS] live cursor: fresh database')
-    raise SystemExit(0)
+    print('[PASS] live cursor: fresh database');raise SystemExit(0)
 db=RadarDB(path)
 try:
     last=db.last_block()
-    if last is None:
-        print('[PASS] live cursor: no prior checkpoint')
-        raise SystemExit(0)
+    if last is None:print('[PASS] live cursor: no prior checkpoint');raise SystemExit(0)
     rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=5,retries=1)
-    tip=rpc.block_number(); safe=max(0,tip-config.CONFIRMATION_BLOCKS)
-    lag=max(0,safe-last)
-    threshold=max(5000,config.MAX_CATCHUP_BLOCKS)
-    if lag<=threshold:
-        print(f'[PASS] live cursor backlog: {lag} blocks (sequential catch-up allowed)')
-        raise SystemExit(0)
-    backup_dir=os.path.join(os.path.dirname(path) or '.','recovery-backups')
-    backup=db.backup(backup_dir=backup_dir,keep=10)
-    new_cursor=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS)
-    bh=(rpc.block(new_cursor) or {}).get('hash')
-    if not bh:
-        raise RuntimeError(f'cannot obtain recovery cursor hash for block {new_cursor}')
-    gap_from=last+1; gap_to=max(gap_from-1,new_cursor-1)
-    db.set_meta('recovery_backup',backup)
-    db.set_meta('historical_gap_from',gap_from)
-    db.set_meta('historical_gap_to',gap_to)
-    db.set_meta('historical_gap_recorded_at',int(time.time()))
-    db.set_meta('last_block',new_cursor)
-    db.set_meta('last_block_hash',bh)
-    print(f'[RECOVERY] stale live cursor: {lag} blocks behind')
-    print(f'[RECOVERY] database backup: {backup}')
-    print(f'[RECOVERY] historical gap recorded: {gap_from}-{gap_to}')
-    print(f'[RECOVERY] live cursor rebased to: {new_cursor}')
-finally:
-    db.close()
+    tip=rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);lag=max(0,safe-last);threshold=max(5000,config.MAX_CATCHUP_BLOCKS)
+    if lag<=threshold:print(f'[PASS] live cursor backlog: {lag} blocks');raise SystemExit(0)
+    backup_dir=os.path.join(os.path.dirname(path) or '.','recovery-backups');backup=db.backup(backup_dir=backup_dir,keep=10)
+    new_cursor=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS);bh=(rpc.block(new_cursor) or {}).get('hash')
+    if not bh:raise RuntimeError(f'cannot obtain recovery cursor hash for block {new_cursor}')
+    gap_from=last+1;gap_to=max(gap_from-1,new_cursor-1)
+    db.set_meta('recovery_backup',backup);db.set_meta('historical_gap_from',gap_from);db.set_meta('historical_gap_to',gap_to);db.set_meta('historical_gap_recorded_at',int(time.time()));db.set_meta('last_block',new_cursor);db.set_meta('last_block_hash',bh)
+    print(f'[RECOVERY] stale live cursor: {lag} blocks behind');print(f'[RECOVERY] database backup: {backup}');print(f'[RECOVERY] historical gap recorded: {gap_from}-{gap_to}');print(f'[RECOVERY] live cursor rebased to: {new_cursor}')
+finally:db.close()
 PY
 
-run_priming_with_watchdog() {
-  "$PYTHON_BIN" - "$DB_PATH" "public/status.json" <<'PY'
-import os, subprocess, sys, time
-_db,_status=sys.argv[1],sys.argv[2]
-cmd=[sys.executable,'-m','radar','--once','--strict','--db',_db,'--status',_status]
-started=time.time(); deadline=started+180
-p=subprocess.Popen(cmd,env=os.environ.copy())
-next_heartbeat=started+15
-while p.poll() is None:
-    now=time.time()
-    if now>=deadline:
-        print('[WATCHDOG] priming exceeded 180s; terminating this attempt...',flush=True)
-        p.terminate()
-        try:p.wait(timeout=10)
-        except subprocess.TimeoutExpired:
-            p.kill();p.wait()
-        raise SystemExit(124)
-    if now>=next_heartbeat:
-        print(f'[PROGRESS] local priming still running: {int(now-started)}s',flush=True)
-        next_heartbeat=now+15
-    time.sleep(1)
-raise SystemExit(p.returncode)
+# Fast durable bootstrap only. Candidate enrichment belongs to the real
+# background service and is no longer duplicated synchronously by the installer.
+echo "Bootstrapping durable live checkpoint..."
+"$PYTHON_BIN" - "$DB_PATH" <<'PY'
+import sys
+from radar import config
+from radar.live_scanner import LiveRadarScanner
+path=sys.argv[1];s=LiveRadarScanner(path)
+try:
+    tip=s.rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);start=max(0,safe-2)
+    added=s._scan_range_or_raise(start,safe);s._checkpoint(safe)
+    print(f'[PASS] durable live bootstrap: {start}-{safe} / {added} observations')
+finally:s.close()
 PY
-}
-
-echo "Priming local scanner checkpoint..."
-PRIME_OK=0
-PRIME_ATTEMPT=1
-while [ "$PRIME_ATTEMPT" -le 3 ]; do
-  rm -f public/status.json
-  echo "Local priming attempt $PRIME_ATTEMPT/3..."
-  if run_priming_with_watchdog; then
-    if validate_status_file public/status.json; then PRIME_OK=1; break; fi
-  fi
-  echo "[WARN] local priming attempt $PRIME_ATTEMPT did not reach healthy READY"
-  PRIME_ATTEMPT=$((PRIME_ATTEMPT+1))
-  [ "$PRIME_ATTEMPT" -le 3 ] && sleep 2 || true
-done
-if [ "$PRIME_OK" -ne 1 ]; then fail "local scanner priming exhausted 3 bounded attempts"; fi
-echo "[PASS] local checkpoint primed"
 
 if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
   PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-launchagent.sh
@@ -272,31 +233,43 @@ if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
   exit 0
 fi
 
+rm -f public/status.json
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-launchagent.sh || fail "scanner LaunchAgent install failed"
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-dashboard-launchagent.sh || fail "dashboard LaunchAgent install failed"
 
-UID_NOW=$(id -u); SCANNER_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar"; DASHBOARD_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar-dashboard"
-OK=0; I=0
+UID_NOW=$(id -u);SCANNER_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar";DASHBOARD_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar-dashboard"
+OK=0;I=0
 while [ "$I" -lt 30 ]; do
-  if launchagent_running "$SCANNER_SERVICE" && launchagent_running "$DASHBOARD_SERVICE"; then OK=1; break; fi
-  I=$((I+1)); sleep 1
+  if launchagent_running "$SCANNER_SERVICE" && launchagent_running "$DASHBOARD_SERVICE"; then OK=1;break;fi
+  I=$((I+1));sleep 1
 done
 [ "$OK" -eq 1 ] || fail "LaunchAgents were loaded but did not stay running"
 echo "[PASS] scanner LaunchAgent running"
 echo "[PASS] dashboard LaunchAgent running"
 
-OK=0; I=0
-while [ "$I" -lt 30 ]; do
-  if curl -fsS --max-time 2 "http://127.0.0.1:$PORT/status.json" >/dev/null 2>&1 && validate_status_file public/status.json; then OK=1; break; fi
-  I=$((I+1)); sleep 1
+# Wait for the real service, not a duplicate foreground scan. Keep the user
+# informed and keep services running while transient RPC errors self-recover.
+echo "Waiting for background scanner READY..."
+OK=0;I=0
+while [ "$I" -lt 180 ]; do
+  if [ -f public/status.json ] && validate_status_file public/status.json; then OK=1;break;fi
+  I=$((I+1))
+  if [ $((I % 15)) -eq 0 ]; then status_progress; fi
+  sleep 1
 done
-[ "$OK" -eq 1 ] || fail "local dashboard did not serve the healthy scanner status"
+if [ "$OK" -ne 1 ]; then
+  status_progress
+  fail "background scanner did not reach READY within 180s"
+fi
+
+echo "[PASS] background scanner READY"
+if ! curl -fsS --max-time 3 "http://127.0.0.1:$PORT/status.json" >/dev/null 2>&1; then fail "local dashboard did not serve status";fi
+echo "[PASS] local dashboard serving healthy status"
 
 PYTHON_BIN="$PYTHON_BIN" "$PYTHON_BIN" -m radar.audit >/dev/null || fail "final readiness audit failed"
-
-URL="http://127.0.0.1:$PORT/"; open "$URL" >/dev/null 2>&1 || true
+URL="http://127.0.0.1:$PORT/";open "$URL" >/dev/null 2>&1 || true
 INSTALL_COMPLETE=1
-INSTALL_SERVICES_STOPPED=0
+
 echo ""
 echo "========================================"
 echo "INSTALLATION PASS"
