@@ -32,7 +32,7 @@ class SupervisorTests(unittest.TestCase):
                 out=supervisor.run_cycle(os.path.join(d,'db.sqlite'),status,10)
             self.assertEqual(out['state'],'TIMEOUT')
             self.assertEqual(out['returncode'],124)
-            data=json.load(open(status))
+            with open(status) as fh:data=json.load(fh)
             self.assertEqual(data['live_ready'],'NOT_READY')
             self.assertEqual(data['wallet_execution'],'MANUAL_ONLY')
             self.assertEqual(data['manual_packages'],[])
