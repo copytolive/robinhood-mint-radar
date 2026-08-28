@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+    "collection": "0x8ed76df1e4498230caf1d0c72845d26928fb483f",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8ed76df1e4498230caf1d0c72845d26928fb483f",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -19,27 +19,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 21,
-      "mints_1m": 21,
-      "mints_5m": 21,
-      "mints_60m": 21,
-      "raw_units_1m": 21,
-      "raw_units_5m": 21,
-      "recent_mint_concentration": 0.0952,
-      "unique_recent_minters": 17,
-      "velocity_1m": 21.0,
-      "velocity_5m": 4.2
+      "mints_15m": 3,
+      "mints_1m": 3,
+      "mints_5m": 3,
+      "mints_60m": 3,
+      "raw_units_1m": 3,
+      "raw_units_5m": 3,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 3.0,
+      "velocity_5m": 0.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "kaijukaki",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+    "name": "Trump Brokers",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x8ed76df1e4498230caf1d0c72845d26928fb483f",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:TimeoutError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3222,
+    "predicted_probability": 0.1094,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -52,69 +52,64 @@
     },
     "safety": {
       "capabilities": [
-        "BLACKLIST",
         "BURN",
         "MINT",
-        "UPGRADE",
-        "WITHDRAW"
+        "UPGRADE"
       ],
       "confidence": "MEDIUM",
-      "contract_name": "ArchetypeErc721a",
+      "contract_name": "ERC721SeaDropCloneable",
       "hard_risks": [],
-      "owner": "0x71c9155fdf7aea366e8cdfd1ee67460218f1ba93",
+      "owner": "0x0949ae9b871d5d62c19c409a067ea4cde07cd157",
       "owner_active": true,
       "proxy": false,
       "review_risks": [
         "ACTIVE_PRIVILEGED_OWNER",
-        "BLACKLIST_CAPABILITY",
-        "LOW_LEVEL_CALL_CAPABILITY",
         "MUTABLE_BASE_URI",
+        "MUTABLE_CONTRACT_URI",
         "MUTABLE_MAX_SUPPLY",
-        "MUTABLE_ROYALTY",
-        "TX_ORIGIN_PRESENT",
-        "WITHDRAW_CAPABILITY"
+        "OWNER_MINT_CAPABILITY"
       ],
       "state": "REVIEW",
       "verified": true
     },
-    "score": 57,
+    "score": 31,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 8,
-      "mint_velocity": 20,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 4,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": null,
+    "sell_through": 0.0058505850585058505,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 3032
+      "max_supply": 8888,
+      "total_supply": 52
     },
-    "ticker": "KAIJU"
+    "ticker": "Trump"
   },
   "capital_deployed_usd": 0,
   "chain": {
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48410937,
-    "latest_block_age_seconds": 6,
+    "latest_block": 48432686,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "safe_block": 48410927,
+    "safe_block": 48432676,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 106496,
+    "bytes": 102400,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787931430,
+  "generated_at": 1787933631,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -146,33 +141,33 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 14.306,
-    "blocks_processed": 262,
-    "duration_seconds": 75.196,
-    "from_block": 48410197,
+    "analysis_age_seconds": 14.298,
+    "blocks_processed": 301,
+    "duration_seconds": 47.747,
+    "from_block": 48432155,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 469,
-    "lag_seconds": 47,
+    "irrelevant_filtered": 2,
+    "lag_blocks": 221,
+    "lag_seconds": 22,
     "live_observations": 4,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 3,
-    "to_block": 48410458,
-    "total_mint_units_stored": 34
+    "secondary_sales_stored": 18,
+    "to_block": 48432455,
+    "total_mint_units_stored": 17
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48410197-48410458",
+  "status": "SCANNING 48432155-48432455",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+      "collection": "0x8ed76df1e4498230caf1d0c72845d26928fb483f",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8ed76df1e4498230caf1d0c72845d26928fb483f",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -184,27 +179,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 21,
-        "mints_1m": 21,
-        "mints_5m": 21,
-        "mints_60m": 21,
-        "raw_units_1m": 21,
-        "raw_units_5m": 21,
-        "recent_mint_concentration": 0.0952,
-        "unique_recent_minters": 17,
-        "velocity_1m": 21.0,
-        "velocity_5m": 4.2
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "kaijukaki",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x58f6e4ffc960ff0acec431f905565e1c2355c7ec",
+      "name": "Trump Brokers",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x8ed76df1e4498230caf1d0c72845d26928fb483f",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:TimeoutError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3222,
+      "predicted_probability": 0.1094,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,110 +212,14 @@
       },
       "safety": {
         "capabilities": [
-          "BLACKLIST",
           "BURN",
           "MINT",
-          "UPGRADE",
-          "WITHDRAW"
+          "UPGRADE"
         ],
         "confidence": "MEDIUM",
-        "contract_name": "ArchetypeErc721a",
+        "contract_name": "ERC721SeaDropCloneable",
         "hard_risks": [],
-        "owner": "0x71c9155fdf7aea366e8cdfd1ee67460218f1ba93",
-        "owner_active": true,
-        "proxy": false,
-        "review_risks": [
-          "ACTIVE_PRIVILEGED_OWNER",
-          "BLACKLIST_CAPABILITY",
-          "LOW_LEVEL_CALL_CAPABILITY",
-          "MUTABLE_BASE_URI",
-          "MUTABLE_MAX_SUPPLY",
-          "MUTABLE_ROYALTY",
-          "TX_ORIGIN_PRESENT",
-          "WITHDRAW_CAPABILITY"
-        ],
-        "state": "REVIEW",
-        "verified": true
-      },
-      "score": 57,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 8,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 3032
-      },
-      "ticker": "KAIJU"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x67186ecb7c7fe5ad786cc940482a2d1f89bb9de4",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x67186ecb7c7fe5ad786cc940482a2d1f89bb9de4",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 2,
-        "mints_1m": 2,
-        "mints_5m": 2,
-        "mints_60m": 2,
-        "raw_units_1m": 2,
-        "raw_units_5m": 2,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 2.0,
-        "velocity_5m": 0.4
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Sherwood Outlaws",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x67186ecb7c7fe5ad786cc940482a2d1f89bb9de4",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:TimeoutError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1339,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME",
-          "NFT_METADATA_INTERFACE"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [
-          "BURN",
-          "MINT"
-        ],
-        "confidence": "MEDIUM",
-        "contract_name": "ERC721SeaDrop",
-        "hard_risks": [],
-        "owner": "0xc967ca1b03a0025ce4cab83695692ee0b0ee79fe",
+        "owner": "0x0949ae9b871d5d62c19c409a067ea4cde07cd157",
         "owner_active": true,
         "proxy": false,
         "review_risks": [
@@ -333,34 +232,34 @@
         "state": "REVIEW",
         "verified": true
       },
-      "score": 35,
+      "score": 31,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 1,
-        "mint_velocity": 3,
+        "mint_velocity": 4,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 5
+        "sell_through": 0
       },
-      "sell_through": 0.5497749774977497,
+      "sell_through": 0.0058505850585058505,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 3054
+        "max_supply": 8888,
+        "total_supply": 52
       },
-      "ticker": "band"
+      "ticker": "Trump"
     },
     {
       "action": "WAIT",
-      "collection": "0xe5143de9d3ccbc31ffb4e7fc66d8320e0e2693d2",
+      "collection": "0xc0d38c8553270baf0df7fd947f386209ae4aa865",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe5143de9d3ccbc31ffb4e7fc66d8320e0e2693d2",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc0d38c8553270baf0df7fd947f386209ae4aa865",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REJECT",
@@ -374,27 +273,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "raw_units_1m": 1,
-        "raw_units_5m": 1,
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Button Presser",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xe5143de9d3ccbc31ffb4e7fc66d8320e0e2693d2",
+      "name": "Oddkin",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc0d38c8553270baf0df7fd947f386209ae4aa865",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:TimeoutError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.0692,
+      "predicted_probability": 0.0878,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -411,31 +310,31 @@
         "hard_risks": [
           "UNVERIFIED_CONTRACT"
         ],
-        "owner": null,
-        "owner_active": false,
+        "owner": "0x33eadd5e2901fd4247c246ed062c4600f473c6be",
+        "owner_active": true,
         "proxy": false,
         "review_risks": [],
         "state": "REJECT",
         "verified": false
       },
-      "score": 23,
+      "score": 27,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 15,
         "safety": 0,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 1
       },
-      "sell_through": null,
+      "sell_through": 0.12016201620162016,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 59899
+        "max_supply": 4444,
+        "total_supply": 534
       },
-      "ticker": "PRESSER"
+      "ticker": "ODDKIN"
     },
     {
       "action": "WAIT",
@@ -478,7 +377,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.0438,
+      "predicted_probability": 0.0469,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -515,7 +414,7 @@
         "state": "REVIEW",
         "verified": true
       },
-      "score": 16,
+      "score": 17,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
@@ -524,15 +423,107 @@
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 2
       },
-      "sell_through": 0.1112,
+      "sell_through": 0.2048,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5000,
-        "total_supply": 556
+        "total_supply": 1024
       },
       "ticker": "BROKER"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xbbaf4eac0b849a1bb1d647beb94ffca7fc019072",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbbaf4eac0b849a1bb1d647beb94ffca7fc019072",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 2,
+        "mints_1m": 2,
+        "mints_5m": 2,
+        "mints_60m": 2,
+        "raw_units_1m": 2,
+        "raw_units_5m": 2,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 2.0,
+        "velocity_5m": 0.4
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "WERD a FAKE",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xbbaf4eac0b849a1bb1d647beb94ffca7fc019072",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:TimeoutError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.0409,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDrop",
+        "hard_risks": [],
+        "owner": "0x36c994055952e24220f0ccd45357774e25645701",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
+        "verified": true
+      },
+      "score": 15,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 3,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 1
+      },
+      "sell_through": 0.19735231950161308,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 8989,
+        "total_supply": 1774
+      },
+      "ticker": "WERD"
     }
   ],
   "win_rate_pct": 0.0
