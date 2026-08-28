@@ -51,13 +51,11 @@ elif [ ! -f "$INSTALL_DIR/.env" ]; then
 fi
 chmod +x "$INSTALL_DIR"/*.sh "$INSTALL_DIR"/*.command "$INSTALL_DIR"/macos/*.sh 2>/dev/null || true
 
-# 2) Resolve Python 3.10+. If macOS has none, install a private managed Python.
 valid_python() {
   [ -n "${1:-}" ] && "$1" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3,10) else 1)' >/dev/null 2>&1
 }
-PYTHON_BIN=$(command -v python3 || true)
-if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
-if ! valid_python "$PYTHON_BIN"; then
+
+install_managed_python() {
   echo "Installing private Python runtime..."
   mkdir -p "$RUNTIME_DIR/uv" "$RUNTIME_DIR/python"
   curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 \
@@ -69,11 +67,81 @@ if ! valid_python "$PYTHON_BIN"; then
   env UV_PYTHON_INSTALL_DIR="$RUNTIME_DIR/python" "$UV_BIN" python install 3.12 >/dev/null \
     || fail "could not install Python 3.12"
   PYTHON_BIN=$(env UV_PYTHON_INSTALL_DIR="$RUNTIME_DIR/python" "$UV_BIN" python find 3.12 2>/dev/null || true)
+}
+
+tls_probe() {
+  "$PYTHON_BIN" - <<'PY' >/dev/null 2>&1
+import os, socket, ssl
+host='rpc.mainnet.chain.robinhood.com'
+cafile=os.environ.get('SSL_CERT_FILE')
+ctx=ssl.create_default_context(cafile=cafile) if cafile else ssl.create_default_context()
+with socket.create_connection((host,443),timeout=10) as raw:
+    with ctx.wrap_socket(raw,server_hostname=host) as tls:
+        if not tls.getpeercert():
+            raise RuntimeError('no peer certificate')
+PY
+}
+
+# 2) Resolve Python 3.10+.
+PYTHON_BIN=$(command -v python3 || true)
+if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
+if ! valid_python "$PYTHON_BIN"; then
+  install_managed_python
 fi
 valid_python "$PYTHON_BIN" || fail "Python 3.10+ is unavailable"
 echo "Runtime: $($PYTHON_BIN --version 2>&1)"
 
-# 3) Full live doctor before background installation.
+# 3) Repair Python TLS trust without ever disabling certificate verification.
+if ! tls_probe; then
+  echo "Repairing Python TLS trust store..."
+  FOUND_CA=""
+  for CA in \
+    /etc/ssl/cert.pem \
+    /private/etc/ssl/cert.pem \
+    /opt/homebrew/etc/ca-certificates/cert.pem \
+    /usr/local/etc/ca-certificates/cert.pem \
+    /opt/homebrew/etc/openssl@3/cert.pem \
+    /usr/local/etc/openssl@3/cert.pem
+  do
+    if [ -s "$CA" ]; then
+      SSL_CERT_FILE="$CA"; export SSL_CERT_FILE
+      if tls_probe; then FOUND_CA="$CA"; break; fi
+    fi
+  done
+
+  if [ -z "$FOUND_CA" ]; then
+    CA_BUNDLE="$INSTALL_DIR/data/macos-ca.pem"
+    : > "$CA_BUNDLE"
+    if [ -x /usr/bin/security ]; then
+      /usr/bin/security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain >> "$CA_BUNDLE" 2>/dev/null || true
+      /usr/bin/security find-certificate -a -p /Library/Keychains/System.keychain >> "$CA_BUNDLE" 2>/dev/null || true
+      USER_KEYCHAIN=$(/usr/bin/security default-keychain -d user 2>/dev/null | tr -d '"' || true)
+      if [ -n "$USER_KEYCHAIN" ] && [ -f "$USER_KEYCHAIN" ]; then
+        /usr/bin/security find-certificate -a -p "$USER_KEYCHAIN" >> "$CA_BUNDLE" 2>/dev/null || true
+      fi
+    fi
+    if [ -s "$CA_BUNDLE" ]; then
+      SSL_CERT_FILE="$CA_BUNDLE"; export SSL_CERT_FILE
+      if tls_probe; then FOUND_CA="$CA_BUNDLE"; fi
+    fi
+  fi
+
+  if [ -z "$FOUND_CA" ]; then
+    echo "System Python TLS is unhealthy; switching to private Python runtime..."
+    install_managed_python
+    valid_python "$PYTHON_BIN" || fail "private Python runtime is unavailable"
+    unset SSL_CERT_FILE || true
+    if ! tls_probe; then
+      CA_BUNDLE="$INSTALL_DIR/data/macos-ca.pem"
+      if [ -s "$CA_BUNDLE" ]; then SSL_CERT_FILE="$CA_BUNDLE"; export SSL_CERT_FILE; fi
+    fi
+    tls_probe || fail "verified TLS connection to Robinhood Chain could not be established"
+  else
+    echo "TLS CA: $FOUND_CA"
+  fi
+fi
+
+# 4) Full live doctor before background installation.
 cd "$INSTALL_DIR"
 PYTHON_BIN="$PYTHON_BIN" sh macos/doctor.sh || fail "live doctor did not pass"
 
@@ -87,11 +155,11 @@ fi
 # Remove cloud snapshot so final checks prove the local scanner wrote a fresh one.
 rm -f public/status.json
 
-# 4) Install scanner + dashboard as user LaunchAgents.
+# 5) Install scanner + dashboard as user LaunchAgents.
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-launchagent.sh || fail "scanner LaunchAgent install failed"
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-dashboard-launchagent.sh || fail "dashboard LaunchAgent install failed"
 
-# 5) Prove both services are running and the local status is fresh/read-only.
+# 6) Prove both services are running and the local status is fresh/read-only.
 UID_NOW=$(id -u)
 launchctl print "gui/$UID_NOW/com.copytolive.robinhood-mint-radar" >/dev/null 2>&1 || fail "scanner service is not loaded"
 launchctl print "gui/$UID_NOW/com.copytolive.robinhood-mint-radar-dashboard" >/dev/null 2>&1 || fail "dashboard service is not loaded"
