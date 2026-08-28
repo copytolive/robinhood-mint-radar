@@ -158,9 +158,6 @@ class LiveRadarScanner(BaseRadarScanner):
         rows=self._analysis_rows_cache or self._prepare_analysis_rows()
         if not rows or not hasattr(self.db,'mint_window'):return
         now=int(time.time())
-        # Deliberately serial at the orchestration level: SQLite and candidate
-        # state remain on this thread. contract_snapshot still parallelizes only
-        # pure RPC/HTTP calls internally.
         for row in rows:
             events=self.db.mint_window(row['collection'],now-3600)
             self.contract_snapshot(row['collection'])
@@ -226,15 +223,17 @@ class LiveRadarScanner(BaseRadarScanner):
             cursor=processed_to+1
         if processed_to<first:processed_to=min(first,safe)
         analysis_started=time.time();self._stage('SELECT');self._prepare_analysis_rows();self._stage('ENRICH',rows=len(self._analysis_rows_cache),overflow=self._analysis_overflow);self._prewarm_enrichment();self._stage('SCORE');status=self.build_status(tip,safe,first,processed_to,started);analysis_age=time.time()-analysis_started
-        final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);tail_cursor=processed_to+1;self._stage('TAIL',from_block=tail_cursor,safe_block=final_safe)
-        if tail_cursor<=final_safe:
-            tail_done,_=self._catch_up(tail_cursor,final_safe,chunk,20)
-            if tail_done>=tail_cursor:processed_to=tail_done
-        final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
+
+        # Do not synchronously ingest blocks produced while enrichment ran.
+        # If the elapsed analysis keeps lag <= readiness limits, publishing now
+        # is both fresher and safer. If it exceeds the limits, finalize_status
+        # fails closed. The durable checkpoint makes the next cycle start at
+        # processed_to+1, so no block is silently discarded.
+        final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to);self._stage('TAIL_DEFERRED',next_block=processed_to+1,safe_block=final_safe,lag_seconds=lag_seconds)
         status.setdefault('chain',{})['latest_block']=final_tip;status['chain']['safe_block']=final_safe;status['chain']['active_rpc']=self.rpc.url;status['chain']['rpc_failovers']=self.rpc.failovers
         try:status['chain']['latest_block_age_seconds']=max(0,int(time.time())-int(self.block_time(final_tip)))
         except Exception:pass
-        scan=status.setdefault('scan',{});scan['from_block']=first;scan['to_block']=processed_to;scan['blocks_processed']=max(0,processed_to-first+1);scan['lag_blocks']=lag_blocks;scan['lag_seconds']=lag_seconds;scan['analysis_age_seconds']=round(analysis_age,3);scan['duration_seconds']=round(time.time()-started,3)
+        scan=status.setdefault('scan',{});scan['from_block']=first;scan['to_block']=processed_to;scan['blocks_processed']=max(0,processed_to-first+1);scan['lag_blocks']=lag_blocks;scan['lag_seconds']=lag_seconds;scan['analysis_age_seconds']=round(analysis_age,3);scan['duration_seconds']=round(time.time()-started,3);scan['next_block']=processed_to+1
         gap_from=self.db.get_meta('historical_gap_from');gap_to=self.db.get_meta('historical_gap_to')
         if gap_from is not None and gap_to is not None:
             try:
