@@ -1,0 +1,49 @@
+name: MacBook Smoke
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/status.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macbook:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Shell and plist validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          sh -n run-local.sh
+          sh -n serve-local.sh
+          sh -n macos/doctor.sh
+          sh -n macos/install-launchagent.sh
+          sh -n macos/uninstall-launchagent.sh
+          plutil -lint macos/com.copytolive.robinhood-mint-radar.plist.example
+      - name: MacBook live doctor
+        shell: bash
+        run: sh macos/doctor.sh
+      - name: Local dashboard smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m radar --once --public-lookback 3 --db /tmp/radar-mac-dashboard.sqlite --status public/status.json --strict
+          sh serve-local.sh >/tmp/radar-dashboard.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/ >/tmp/radar-index.html; then break; fi
+            sleep 1
+          done
+          grep -q 'Robinhood Mint Radar' /tmp/radar-index.html
+          curl -fsS http://127.0.0.1:4173/status.json | python3 -m json.tool >/dev/null
+          echo 'MAC_DASHBOARD_SMOKE=PASS'
