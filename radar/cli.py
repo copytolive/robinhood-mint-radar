@@ -12,6 +12,12 @@ def degraded_status(exc):
     return {'schema_version':'1.3','generated_at':now,'mode':'READ_ONLY','wallet_execution':'MANUAL_ONLY','status':'DEGRADED','money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY','live_ready':'NOT_READY','scan':{'blocks_processed':0,'total_mint_units_stored':0,'hoodsea_launches_stored':0,'live_observations':0,'qualified_candidates':0},'best_live_observation':None,'watchlist':[],'manual_packages':[],'learning':{'status':'PREDICTION_UNCERTIFIED','qualified_samples':0},'diagnostics':[{'stage':'BOOTSTRAP','reason':'LIVE_SCAN_FAILED','error':f'{type(exc).__name__}: {exc}','ts':now}],'limitations':['No live opportunity may be approved while chain data is unavailable.']}
 
 
+def finalize_status(status):
+    """Stamp completion time immediately before the public snapshot is written."""
+    status['generated_at']=int(time.time())
+    return status
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description='Read-only Robinhood Chain NFT mint radar')
     p.add_argument('--db',default=config.DEFAULT_DB)
@@ -25,7 +31,7 @@ def main(argv=None):
         scanner=None
         try:
             scanner=RadarScanner(args.db)
-            status=scanner.scan_once(public_lookback=args.public_lookback)
+            status=finalize_status(scanner.scan_once(public_lookback=args.public_lookback))
             write_status(args.status,status)
             alert=notify_qualified(status,scanner.db)
             print(json.dumps({'live_ready':status['live_ready'],'latest_block':status.get('chain',{}).get('latest_block'),'qualified':status['scan']['qualified_candidates'],'alert':alert.get('state'),'status_path':args.status}))
