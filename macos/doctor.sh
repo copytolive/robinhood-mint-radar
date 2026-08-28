@@ -4,9 +4,7 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 REPO_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
 cd "$REPO_DIR"
 
-# Upgrade only the known legacy default. Preserve any deliberate custom value.
-# The one-download installer preserves .env across updates, so without this
-# migration an older Mac would remain permanently limited to 60 blocks/cycle.
+# Upgrade only known legacy defaults. Preserve deliberate custom values.
 if [ -f .env ]; then
   if grep -q '^RADAR_CHUNK_BLOCKS=60$' .env; then
     awk '{if ($0=="RADAR_CHUNK_BLOCKS=60") print "RADAR_CHUNK_BLOCKS=5000"; else print $0}' .env > .env.radar-migrate
@@ -14,7 +12,21 @@ if [ -f .env ]; then
     echo "[PASS] env migration: RADAR_CHUNK_BLOCKS 60 -> 5000"
   fi
   grep -q '^RADAR_MAX_CATCHUP_BLOCKS=' .env || echo 'RADAR_MAX_CATCHUP_BLOCKS=5000' >> .env
-  grep -q '^RADAR_MAX_READY_LAG_BLOCKS=' .env || echo 'RADAR_MAX_READY_LAG_BLOCKS=120' >> .env
+  if grep -q '^RADAR_MAX_READY_LAG_BLOCKS=120$' .env; then
+    awk '{if ($0=="RADAR_MAX_READY_LAG_BLOCKS=120") print "RADAR_MAX_READY_LAG_BLOCKS=2000"; else print $0}' .env > .env.radar-migrate
+    mv .env.radar-migrate .env
+    echo "[PASS] env migration: RADAR_MAX_READY_LAG_BLOCKS 120 -> 2000"
+  else
+    grep -q '^RADAR_MAX_READY_LAG_BLOCKS=' .env || echo 'RADAR_MAX_READY_LAG_BLOCKS=2000' >> .env
+  fi
+  grep -q '^RADAR_MAX_READY_LAG_SECONDS=' .env || echo 'RADAR_MAX_READY_LAG_SECONDS=60' >> .env
+fi
+
+# Load the same persisted settings that the LaunchAgent will use.
+if [ -f .env ]; then
+  set -a
+  . ./.env
+  set +a
 fi
 
 PYTHON_BIN=${PYTHON_BIN:-$(command -v python3 || true)}
@@ -39,16 +51,22 @@ TMP_STATUS="/tmp/robinhood-mint-radar-doctor-$$.json"
 trap 'rm -f "$TMP_DB" "$TMP_STATUS"' EXIT INT TERM
 "$PYTHON_BIN" -m radar --once --public-lookback 3 --db "$TMP_DB" --status "$TMP_STATUS" --strict
 "$PYTHON_BIN" - "$TMP_STATUS" <<'PY'
-import json, sys
+import json, os, sys
 p=sys.argv[1]
 d=json.load(open(p))
 assert d['mode']=='READ_ONLY'
 assert d['wallet_execution']=='MANUAL_ONLY'
 assert d['chain']['chain_id']==4663
 assert d['live_ready']=='READY'
-assert int(d.get('scan',{}).get('lag_blocks',0)) <= 120
+scan=d.get('scan',{})
+lag_blocks=int(scan.get('lag_blocks',10**9))
+lag_seconds=int(scan.get('lag_seconds',10**9))
+max_blocks=int(os.environ.get('RADAR_MAX_READY_LAG_BLOCKS','2000'))
+max_seconds=int(os.environ.get('RADAR_MAX_READY_LAG_SECONDS','60'))
+assert lag_blocks <= max_blocks
+assert lag_seconds <= max_seconds
 print('[PASS] live chain:', d['chain']['latest_block'])
-print('[PASS] scanner lag:', d.get('scan',{}).get('lag_blocks',0))
+print('[PASS] scanner lag:', f'{lag_blocks} blocks / {lag_seconds}s')
 print('[PASS] wallet execution:', d['wallet_execution'])
 print('[PASS] qualified:', d['scan']['qualified_candidates'])
 PY
