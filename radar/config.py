@@ -2,7 +2,15 @@ import os
 
 CHAIN_ID=4663
 CHAIN_HEX=hex(CHAIN_ID)
-DEFAULT_RPC_URL=os.getenv('RH_RPC_URL','https://rpc.mainnet.chain.robinhood.com')
+DEFAULT_RPC_URL=os.getenv('RH_RPC_URL','https://rpc.mainnet.chain.robinhood.com').strip()
+# Robinhood documents the public RPC as rate-limited and not production-grade.
+# Keep it primary, but allow verified read-only fallbacks so one endpoint reset
+# cannot stall the scanner. Custom fallbacks may be supplied as comma-separated
+# RH_RPC_FALLBACK_URLS; an empty value disables fallbacks.
+_DEFAULT_RPC_FALLBACKS='https://rpc.nodeflare.app/robinhood/public,https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public'
+_raw_fallbacks=os.getenv('RH_RPC_FALLBACK_URLS',_DEFAULT_RPC_FALLBACKS)
+RPC_FALLBACK_URLS=tuple(x.strip() for x in _raw_fallbacks.split(',') if x.strip() and x.strip()!=DEFAULT_RPC_URL)
+RPC_URLS=(DEFAULT_RPC_URL,)+RPC_FALLBACK_URLS
 BLOCKSCOUT_API=os.getenv('BLOCKSCOUT_API','https://robinhoodchain.blockscout.com/api')
 BLOCKSCOUT_V2=os.getenv('BLOCKSCOUT_V2','https://robinhoodchain.blockscout.com/api/v2')
 HOODSEA_LAUNCHPAD='0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b'
