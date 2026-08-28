@@ -34,11 +34,22 @@ class BlockscoutClient:
             for item in items:
                 try: vals.append(int(item.get('value') or 0))
                 except Exception: pass
-            holder_count=int(counters.get('token_holders_count') or len(items))
+            raw_count=counters.get('token_holders_count')
+            try:counter_count=int(raw_count) if raw_count not in (None,'') else None
+            except Exception:counter_count=None
+            sampled=len(items); complete=not bool(holders.get('next_page_params'))
+            counter_consistent=counter_count is None or counter_count>=sampled
+            holder_count=counter_count if counter_consistent else None
             denom=int(total_supply or 0)
-            complete=not bool(holders.get('next_page_params'))
             if denom<=0 and complete: denom=sum(vals)
             top=(max(vals)/denom) if vals and denom>0 else None
-            return {'state':'LIVE','holders_count':holder_count,'sampled_holders':len(items),'top_holder_share':round(top,6) if top is not None else None,'complete_page':complete,'source':'BLOCKSCOUT_V2'}
+            out={'state':'LIVE','holders_count':holder_count,'sampled_holders':sampled,'top_holder_share':round(top,6) if top is not None else None,'complete_page':complete,'source':'BLOCKSCOUT_V2'}
+            if not counter_consistent:
+                out['holders_count_state']='INCONSISTENT'
+                out['holders_count_lower_bound']=sampled
+                out['reason']='BLOCKSCOUT_HOLDER_COUNTER_LT_SAMPLE'
+            else:
+                out['holders_count_state']='LIVE'
+            return out
         except Exception as exc:
             return {'state':'UNAVAILABLE','reason':f'BLOCKSCOUT_HOLDERS_ERROR:{type(exc).__name__}','source':'BLOCKSCOUT_V2'}
