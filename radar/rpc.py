@@ -1,4 +1,5 @@
 import json
+import os
 import threading
 import time
 import urllib.error
@@ -7,8 +8,19 @@ from .tls import urlopen
 
 class RPCError(RuntimeError): pass
 
+_OFFICIAL_MAINNET='https://rpc.mainnet.chain.robinhood.com'
+_DEFAULT_PUBLIC_FALLBACKS=(
+    'https://rpc.nodeflare.app/robinhood/public',
+    'https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public',
+)
+
 class RPCClient:
     def __init__(self,url,timeout=15,retries=4,fallback_urls=None,expected_chain_id=None):
+        primary=(url or '').strip().rstrip('/')
+        if fallback_urls is None and primary==_OFFICIAL_MAINNET:
+            raw=os.getenv('RH_RPC_FALLBACK_URLS')
+            fallback_urls=([x.strip() for x in raw.split(',') if x.strip()] if raw is not None else list(_DEFAULT_PUBLIC_FALLBACKS))
+            if expected_chain_id is None:expected_chain_id=4663
         urls=[url]+list(fallback_urls or [])
         self.urls=[]
         for item in urls:
