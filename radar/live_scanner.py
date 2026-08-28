@@ -143,5 +143,11 @@ class LiveRadarScanner(BaseRadarScanner):
         try:status['chain']['latest_block_age_seconds']=max(0,int(time.time())-int(self.block_time(final_tip)))
         except Exception:pass
         scan=status.setdefault('scan',{});scan['from_block']=first;scan['to_block']=processed_to;scan['blocks_processed']=max(0,processed_to-first+1);scan['lag_blocks']=lag_blocks;scan['lag_seconds']=lag_seconds;scan['analysis_age_seconds']=round(analysis_age,3);scan['duration_seconds']=round(time.time()-started,3)
+        gap_from=self.db.get_meta('historical_gap_from');gap_to=self.db.get_meta('historical_gap_to')
+        if gap_from is not None and gap_to is not None:
+            try:
+                gf=int(gap_from);gt=int(gap_to)
+                if gt>=gf:scan['historical_gap']={'state':'RECORDED_NOT_BACKFILLED','from_block':gf,'to_block':gt,'blocks':gt-gf+1}
+            except (TypeError,ValueError):pass
         status['status']=f'SCANNING {first}-{processed_to}'
         return status
