@@ -7,7 +7,9 @@ DEFAULT_RPC_URL=os.getenv('RH_RPC_URL','https://rpc.mainnet.chain.robinhood.com'
 # Keep it primary, but allow verified read-only fallbacks so one endpoint reset
 # cannot stall the scanner. Custom fallbacks may be supplied as comma-separated
 # RH_RPC_FALLBACK_URLS; an empty value disables fallbacks.
-_DEFAULT_RPC_FALLBACKS='https://rpc.nodeflare.app/robinhood/public,https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public'
+# BlockReq is first because the forced-live failover probe currently proves it
+# answers chain 4663 after the official endpoint is deliberately disabled.
+_DEFAULT_RPC_FALLBACKS='https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public,https://rpc.nodeflare.app/robinhood/public'
 _raw_fallbacks=os.getenv('RH_RPC_FALLBACK_URLS',_DEFAULT_RPC_FALLBACKS)
 RPC_FALLBACK_URLS=tuple(x.strip() for x in _raw_fallbacks.split(',') if x.strip() and x.strip()!=DEFAULT_RPC_URL)
 RPC_URLS=(DEFAULT_RPC_URL,)+RPC_FALLBACK_URLS
