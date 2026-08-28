@@ -4,125 +4,148 @@ TapeOut-style, read-only opportunity radar for NFT mint activity on **Robinhood 
 
 > **Machine searches and verifies. Wallet execution stays manual.**
 
-## What V1 does
+The system never stores a wallet private key or seed phrase and never signs or sends a transaction.
 
-- Reads Robinhood Chain mainnet (`chainId 4663`) through JSON-RPC.
-- Detects ERC-721 mint transfers and ERC-1155 `TransferSingle` / `TransferBatch` mints.
-- Watches the Hoodsea launchpad `CollectionLaunched` event and records creator/name/ticker/mint price.
-- Persists local history and block checkpoints in SQLite and resumes after restart.
-- Computes 1m/5m/15m/60m mint momentum, acceleration, recent unique minters, and recent mint concentration.
-- Queries Blockscout for contract verification/source risk indicators.
-- Supports the official OpenSea API for collection floor/volume/sales evidence when `OPENSEA_API_KEY` is configured.
-- Scores opportunities 0–100, then applies hard gates. A high score **cannot override** missing required evidence.
-- Publishes a TapeOut-style GitHub Pages dashboard and runs Chromium browser acceptance after deploy.
-- Produces `MANUAL_MINT_CANDIDATE` packages only. It never signs or sends a transaction.
+## V1.3 status
 
-## Safety contract
+V1.3 is an operational scanner, not a landing-page mockup. It:
 
-- **No wallet private keys or seed phrases.**
-- **No automatic minting or transaction signing.**
-- LIVE views never fabricate missing market data: unavailable data is shown as `UNAVAILABLE` and qualification fails closed.
-- Public RPC endpoints are rate-limited; production operators should use a dedicated read-only RPC provider when needed.
-- A safety PASS is not a guarantee that a collection is safe or profitable.
+- reads Robinhood Chain mainnet (`chainId 4663`) via JSON-RPC;
+- scans confirmed blocks with a configurable confirmation lag and checkpoint-hash reorg detection;
+- detects ERC-721 mints and correctly expands ERC-1155 `TransferSingle` and `TransferBatch` mint quantities;
+- detects Hoodsea `CollectionLaunched` and `NFTSold` events;
+- reads generic Seaport 1.6 `OrderFulfilled` events from `0x0000000000000068F116a894984e2DB1123eB395`;
+- rejects known non-collectible ERC-721 false positives such as position/liquidity-manager NFTs;
+- checks ERC-165, verified source, owner privileges, mutability, proxy/delegatecall, owner/role mint, pause/freeze/blacklist, upgrade/withdraw and other static risk indicators;
+- uses Blockscout v2 holder data for current holder count and top-holder concentration when available;
+- can recognize an observed zero-value mint transaction as conservative evidence of a free mint;
+- scores price asymmetry, mint velocity, acceleration, sell-through, secondary activity, holder growth, distribution and safety;
+- has strict `MARKET_CONFIRMED` and `EARLY_ONCHAIN_ONLY` qualification paths;
+- refuses a manual package when relevance, safety, trusted execution surface or required economic evidence is not good enough;
+- persists history/checkpoints in SQLite WAL mode, runs integrity checks, retention, backups and restart recovery;
+- records manual realized outcomes and shadow observations for Brier/ECE/MAE calibration;
+- emits deduplicated macOS notifications only for a real `MANUAL_MINT_CANDIDATE`;
+- serves a local TapeOut-style dashboard.
 
-## Network sources
+A safety PASS is a conservative software filter, **not a formal smart-contract audit or a guarantee of profit**.
 
-- Robinhood Chain mainnet: chain ID `4663`
-- Public RPC fallback: `https://rpc.mainnet.chain.robinhood.com`
+## Data sources
+
+- Robinhood Chain RPC: `https://rpc.mainnet.chain.robinhood.com`
+- Chain ID: `4663`
 - Blockscout: `https://robinhoodchain.blockscout.com`
 - Hoodsea launchpad: `0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b`
+- Seaport 1.6: `0x0000000000000068F116a894984e2DB1123eB395`
+- OpenSea API: optional enrichment only
 
-## Architecture
+Without an OpenSea API key, the radar can still use **fulfilled on-chain Seaport/Hoodsea sales** as secondary-market evidence. An API key is still useful for data that are not fully available on-chain before execution, such as active floor/orderbook enrichment.
+
+## MacBook — one-command install
+
+Requirements: macOS and Python 3.10+.
+
+```bash
+git clone https://github.com/copytolive/robinhood-mint-radar.git
+cd robinhood-mint-radar
+cp .env.example .env
+sh install-mac.command
+```
+
+The installer first runs the live doctor. If it passes, it installs two user LaunchAgents:
+
+1. continuous scanner;
+2. localhost dashboard.
+
+Then open:
 
 ```text
-Robinhood Chain
-      ↓
-ERC-721 / ERC-1155 / Hoodsea discovery
-      ↓
-contract + source checks
-      ↓
-mint economics
-      ↓
-momentum + recent-flow concentration
-      ↓
-OpenSea market evidence (when configured)
-      ↓
-score 0–100
-      ↓
-hard gates
-      ↓
-WAIT / WATCH / MANUAL_MINT_CANDIDATE
-      ↓
-manual wallet decision only
+http://127.0.0.1:4173/
 ```
 
-## Local continuous runner
-
-Requires Python 3.10+ and no third-party Python packages.
+Run the audit at any time:
 
 ```bash
-cp .env.example .env   # optional reference only; run-local.sh does not auto-source it
+python3 -m radar.audit
+```
+
+Uninstall the background stack:
+
+```bash
+sh macos/uninstall-stack.sh
+```
+
+The Mac scanner runs while the Mac user session is awake and online. `launchd` restarts the process after failure/login; confirmed-block checkpoints and reorg detection protect restart continuity.
+
+## Manual run
+
+```bash
+cp .env.example .env
 ./run-local.sh
 ```
 
-Default files:
+Defaults:
 
 - SQLite: `data/radar.sqlite`
-- Dashboard snapshot: `public/status.json`
-- Scan interval: 15 seconds
+- status: `public/status.json`
+- scan interval: 15 seconds
+- confirmed-block lag: 10 blocks
+- observation retention: 30 days
+- event retention: 90 days
+- backups: daily, keep 7
 
-To use a dedicated read-only RPC:
+## Qualification
 
-```bash
-export RH_RPC_URL='https://your-read-only-rpc'
-./run-local.sh
+A high score can **never override hard gates**.
+
+Typical hard gates include:
+
+- `NFT_RELEVANCE_NOT_PASS`
+- `SAFETY_REJECT` / `SAFETY_REVIEW_REQUIRED`
+- `UNVERIFIED_CONTRACT`
+- `MINT_PRICE_UNKNOWN`
+- `OWNERSHIP_CONCENTRATION_HIGH`
+- `TRUSTED_EXECUTION_SURFACE_UNAVAILABLE`
+- `MARKET_EVIDENCE_UNAVAILABLE`
+- `EARLY_ONCHAIN_REQUIREMENTS_NOT_MET`
+
+The conservative Hoodsea early path requires, among other conditions: a known Hoodsea launch, free mint, relevance PASS, safety PASS, at least 20 recent unique minters, 5-minute velocity of at least 2/min, and at least 10% sell-through. It does **not** allow arbitrary unknown collections to bypass market evidence.
+
+## Prediction calibration
+
+The calibration engine is implemented but deliberately reports:
+
+```text
+PREDICTION_UNCERTIFIED
 ```
 
-To enable official OpenSea collection statistics:
+until enough real realized or matured shadow samples exist. It will not fabricate a win rate or probability-certification status. With more samples it advances through `CALIBRATION_WARMUP` and, only when empirical error is acceptable, `CALIBRATED`.
+
+Record a manual outcome without giving the program wallet access:
 
 ```bash
-export OPENSEA_API_KEY='your-key'
-export OPENSEA_CHAIN='robinhood'
-./run-local.sh
+python3 -m radar.outcomes \
+  --collection 0x... \
+  --entry-cost-usd 1.00 \
+  --exit-value-usd 2.50 \
+  --gas-usd 0.05 \
+  --predicted-score 90
 ```
-
-Without an OpenSea API key, the **market evidence gate is `UNAVAILABLE` and fails closed**. The scanner still discovers and scores on-chain activity, but it will not claim a fully qualified opportunity that depends on missing market evidence.
-
-## macOS restart recovery
-
-`macos/com.copytolive.robinhood-mint-radar.plist.example` is a LaunchAgent template. Replace `REPLACE_WITH_REPO_PATH` with the clone path, copy the plist to `~/Library/LaunchAgents/`, then load it with `launchctl` if you want the local scanner to restart with your Mac user session.
-
-## Public dashboard
-
-GitHub Actions runs a read-only snapshot on push, manual dispatch, and a five-minute schedule. It generates `public/status.json`, deploys `public/` to GitHub Pages, then opens the deployed page in headless Chromium and stores a full-page screenshot as workflow evidence.
-
-Public snapshots are periodic. The Mac runner is the continuous 15-second scanner.
-
-## Qualification model
-
-Score components total 100 points:
-
-| Component | Max |
-|---|---:|
-| Price asymmetry | 15 |
-| Mint velocity | 20 |
-| Acceleration | 15 |
-| Sell-through | 10 |
-| Secondary liquidity | 15 |
-| Holder/minter growth | 10 |
-| Distribution proxy | 5 |
-| Safety | 10 |
-
-Hard gates include safety rejection, unverified contract, unavailable required market evidence, and unknown mint price. These are deliberately conservative and will evolve only from measured outcomes.
 
 ## Tests
 
 ```bash
-python -m unittest discover -s tests -v
+python3 -m unittest discover -s tests -v
+python3 -m compileall radar
 ```
 
-CI also compiles all Python files and checks the no-auto-wallet safety contract.
+GitHub Actions also validates the project on a real hosted macOS ARM runner, runs a live Robinhood doctor, dry-runs the one-command Mac installer, starts the localhost dashboard, and checks its JSON endpoint.
 
-## Non-goals
+## Important limitations
 
-This repository does not promise returns, does not predict a guaranteed +1,000%, and does not bypass mint rules, allowlists, rate limits, or wallet confirmations. It is an evidence and ranking system for manual decisions.
+- No software can guarantee that an NFT will rise 1,000% or more.
+- Static source analysis is not a formal security audit.
+- Active OpenSea floor/bid/orderbook data are not all derivable from fulfilled on-chain events; the official API remains optional enrichment for those fields.
+- A non-zero mint transaction value is **not** automatically treated as exact per-NFT mint price because a transaction can contain multiple units or fees.
+- A generic collection without a trusted mint/market execution surface stays blocked rather than sending the user to an unverified URL.
+- Empirical calibration needs time and real outcomes.
+- Installing on a specific physical Mac can only be proven by running the installer/audit on that Mac; hosted macOS CI proves compatibility, not possession/control of the user's machine.
