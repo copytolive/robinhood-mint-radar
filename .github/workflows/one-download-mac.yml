@@ -25,7 +25,7 @@ jobs:
       - name: Run one install command with deliberately broken Python CA path
         env:
           RADAR_INSTALL_DRY_RUN: '1'
-          SSL_CERT_FILE: '/tmp/definitely-missing-robinhood-ca.pem'
+          RADAR_TEST_BROKEN_PYTHON_CA: '1'
         run: sh "$RUNNER_TEMP/Robinhood-Mint-Radar.command"
 
   intel-managed-python:
