@@ -48,7 +48,7 @@ def main(argv=None):
     p.add_argument('--db',default=os.getenv('RADAR_DB','data/radar.sqlite'))
     p.add_argument('--status',default=os.getenv('RADAR_STATUS_PATH','public/status.json'))
     p.add_argument('--interval',type=float,default=float(os.getenv('RADAR_SCAN_INTERVAL','15')))
-    p.add_argument('--cycle-timeout',type=float,default=float(os.getenv('RADAR_CYCLE_TIMEOUT_SECONDS','120')))
+    p.add_argument('--cycle-timeout',type=float,default=float(os.getenv('RADAR_CYCLE_TIMEOUT_SECONDS','90')))
     args=p.parse_args(argv)
     if args.cycle_timeout<10:args.cycle_timeout=10
     for sig in (signal.SIGTERM,signal.SIGINT):
