@@ -1,11 +1,12 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x58daec3116aae6d93017baaea7749052e8a04fa7",
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58daec3116aae6d93017baaea7749052e8a04fa7",
+    "collection": "0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
     "hard_gates": [
-      "MARKET_EVIDENCE_UNAVAILABLE",
-      "MINT_PRICE_UNKNOWN"
+      "SAFETY_REJECT",
+      "MINT_PRICE_UNKNOWN",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
       "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
@@ -13,34 +14,65 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 4,
-      "mints_1m": 4,
-      "mints_5m": 4,
-      "mints_60m": 4,
-      "recent_mint_concentration": 0.25,
-      "unique_recent_minters": 4,
-      "velocity_1m": 4.0,
-      "velocity_5m": 0.8
+      "mints_15m": 104,
+      "mints_1m": 104,
+      "mints_5m": 104,
+      "mints_60m": 104,
+      "recent_mint_concentration": 0.0096,
+      "unique_recent_minters": 104,
+      "velocity_1m": 104.0,
+      "velocity_5m": 20.8
     },
     "mint_price_eth": null,
-    "name": null,
-    "opensea_url": "https://opensea.io/assets/robinhood/0x58daec3116aae6d93017baaea7749052e8a04fa7",
+    "name": "Hoodemons",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+    "predicted_probability": 0.1841,
+    "qualification_path": null,
     "qualified": false,
+    "relevance": {
+      "confidence": "HIGH",
+      "reasons": [
+        "COLLECTIBLE_CONTRACT_NAME",
+        "NFT_METADATA_INTERFACE"
+      ],
+      "state": "PASS"
+    },
     "safety": {
-      "contract_name": "PositionManager",
+      "capabilities": [
+        "BLACKLIST",
+        "BURN",
+        "MINT",
+        "UPGRADE",
+        "WITHDRAW"
+      ],
+      "confidence": "HIGH",
+      "contract_name": "ArchetypeErc721a",
+      "hard_risks": [
+        "TX_ORIGIN_AUTH"
+      ],
+      "owner": "0x0d6838d856346047b09a080058d2d48f8a956b1b",
+      "owner_active": true,
       "proxy": false,
-      "state": "PASS",
-      "suspicious": [],
+      "review_risks": [
+        "ACTIVE_PRIVILEGED_OWNER",
+        "BLACKLIST_CAPABILITY",
+        "LOW_LEVEL_CALL_CAPABILITY",
+        "MUTABLE_BASE_URI",
+        "MUTABLE_MAX_SUPPLY",
+        "MUTABLE_ROYALTY",
+        "WITHDRAW_CAPABILITY"
+      ],
+      "state": "REJECT",
       "verified": true
     },
-    "score": 25,
+    "score": 42,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 2,
-      "mint_velocity": 6,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
       "price_asymmetry": 0,
-      "safety": 10,
+      "safety": 0,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
@@ -48,23 +80,31 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": null
+      "total_supply": 345
     },
-    "ticker": null
+    "ticker": "DEMONS"
   },
   "capital_deployed_usd": 0,
   "chain": {
     "chain_id": 4663,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48157789,
-    "latest_block_age_seconds": 6,
+    "latest_block": 48166970,
+    "latest_block_age_seconds": 5,
     "name": "Robinhood Chain",
-    "rpc": "https://rpc.mainnet.chain.robinhood.com"
+    "rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
+  },
+  "db": {
+    "bytes": 208896,
+    "integrity": "ok",
+    "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787905868,
+  "generated_at": 1787906795,
   "learning": {
     "brier": null,
+    "calibration_curve": [],
+    "calibration_samples": 0,
     "ece": null,
     "observed_win_rate_pct": 0.0,
     "qualified_samples": 0,
@@ -77,9 +117,11 @@
     "status": "PREDICTION_UNCERTIFIED"
   },
   "limitations": [
-    "OpenSea stats require OPENSEA_API_KEY; verified free Hoodsea collections can instead use conservative EARLY_ONCHAIN_ONLY evidence, while other missing-market cases fail closed.",
+    "Static contract safety analysis is conservative but is not a formal audit or guarantee.",
+    "On-chain Seaport evidence removes the OpenSea API-key dependency for observed sales; floor/offer enrichment still benefits from the official OpenSea API.",
     "Recent mint concentration is a recent-flow proxy, not full current ownership concentration.",
-    "Public GitHub Pages snapshots are periodic; the local runner is the continuous scanner."
+    "Prediction calibration remains uncertified until enough realized or matured shadow outcomes exist.",
+    "Public snapshots are periodic; the Mac runner is continuous while the Mac is awake and online."
   ],
   "live_ready": "READY",
   "manual_packages": [],
@@ -90,26 +132,28 @@
   "realized_net_usd": 0,
   "scan": {
     "blocks_processed": 60,
-    "duration_seconds": 45.867,
-    "from_block": 48157730,
+    "duration_seconds": 65.322,
+    "from_block": 48166911,
     "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 2,
     "live_observations": 4,
     "qualified_candidates": 0,
     "secondary_sales_stored": 0,
-    "to_block": 48157789,
-    "total_mint_units_stored": 10
+    "to_block": 48166970,
+    "total_mint_units_stored": 113
   },
-  "schema_version": "1.0",
-  "status": "SCANNING 48157730-48157789",
+  "schema_version": "1.2",
+  "status": "SCANNING 48166911-48166970",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x58daec3116aae6d93017baaea7749052e8a04fa7",
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58daec3116aae6d93017baaea7749052e8a04fa7",
+      "collection": "0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
       "hard_gates": [
-        "MARKET_EVIDENCE_UNAVAILABLE",
-        "MINT_PRICE_UNKNOWN"
+        "SAFETY_REJECT",
+        "MINT_PRICE_UNKNOWN",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
         "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
@@ -117,34 +161,65 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 4,
-        "mints_1m": 4,
-        "mints_5m": 4,
-        "mints_60m": 4,
-        "recent_mint_concentration": 0.25,
-        "unique_recent_minters": 4,
-        "velocity_1m": 4.0,
-        "velocity_5m": 0.8
+        "mints_15m": 104,
+        "mints_1m": 104,
+        "mints_5m": 104,
+        "mints_60m": 104,
+        "recent_mint_concentration": 0.0096,
+        "unique_recent_minters": 104,
+        "velocity_1m": 104.0,
+        "velocity_5m": 20.8
       },
       "mint_price_eth": null,
-      "name": null,
-      "opensea_url": "https://opensea.io/assets/robinhood/0x58daec3116aae6d93017baaea7749052e8a04fa7",
+      "name": "Hoodemons",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+      "predicted_probability": 0.1841,
+      "qualification_path": null,
       "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
+        ],
+        "state": "PASS"
+      },
       "safety": {
-        "contract_name": "PositionManager",
+        "capabilities": [
+          "BLACKLIST",
+          "BURN",
+          "MINT",
+          "UPGRADE",
+          "WITHDRAW"
+        ],
+        "confidence": "HIGH",
+        "contract_name": "ArchetypeErc721a",
+        "hard_risks": [
+          "TX_ORIGIN_AUTH"
+        ],
+        "owner": "0x0d6838d856346047b09a080058d2d48f8a956b1b",
+        "owner_active": true,
         "proxy": false,
-        "state": "PASS",
-        "suspicious": [],
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "BLACKLIST_CAPABILITY",
+          "LOW_LEVEL_CALL_CAPABILITY",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "MUTABLE_ROYALTY",
+          "WITHDRAW_CAPABILITY"
+        ],
+        "state": "REJECT",
         "verified": true
       },
-      "score": 25,
+      "score": 42,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 6,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
         "price_asymmetry": 0,
-        "safety": 10,
+        "safety": 0,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
@@ -152,17 +227,18 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": null
+        "total_supply": 345
       },
-      "ticker": null
+      "ticker": "DEMONS"
     },
     {
       "action": "WAIT",
       "collection": "0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
       "hard_gates": [
-        "MARKET_EVIDENCE_UNAVAILABLE",
-        "MINT_PRICE_UNKNOWN"
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
         "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
@@ -180,16 +256,39 @@
         "velocity_5m": 0.4
       },
       "mint_price_eth": null,
-      "name": null,
+      "name": "Fatty Cats",
       "opensea_url": "https://opensea.io/assets/robinhood/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "predicted_probability": 0.0692,
+      "qualification_path": null,
       "qualified": false,
-      "safety": {
-        "contract_name": "ERC721SeaDropCloneable",
-        "proxy": false,
-        "state": "REVIEW",
-        "suspicious": [
-          "MUTABLE_MAX_SUPPLY"
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
         ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDropCloneable",
+        "hard_risks": [],
+        "owner": "0xcd8b32eca7aee0f56e31417601942bcf0a737a9d",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
         "verified": true
       },
       "score": 23,
@@ -203,76 +302,22 @@
         "secondary_liquidity": 0,
         "sell_through": 8
       },
-      "sell_through": 0.8297029702970297,
+      "sell_through": 0.8633663366336634,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5555,
-        "total_supply": 4609
+        "total_supply": 4796
       },
-      "ticker": null
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x9fd1a81bc2fe4f65d666778aa8a314f7cf86e282",
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9fd1a81bc2fe4f65d666778aa8a314f7cf86e282",
-      "hard_gates": [
-        "MARKET_EVIDENCE_UNAVAILABLE",
-        "MINT_PRICE_UNKNOWN"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 2,
-        "mints_1m": 2,
-        "mints_5m": 2,
-        "mints_60m": 2,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 2.0,
-        "velocity_5m": 0.4
-      },
-      "mint_price_eth": null,
-      "name": null,
-      "opensea_url": "https://opensea.io/assets/robinhood/0x9fd1a81bc2fe4f65d666778aa8a314f7cf86e282",
-      "qualified": false,
-      "safety": {
-        "contract_name": "ERC721SeaDropCloneable",
-        "proxy": false,
-        "state": "REVIEW",
-        "suspicious": [
-          "MUTABLE_MAX_SUPPLY"
-        ],
-        "verified": true
-      },
-      "score": 15,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 3,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 1
-      },
-      "sell_through": 0.182,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 4000,
-        "total_supply": 728
-      },
-      "ticker": null
+      "ticker": "FC"
     },
     {
       "action": "WAIT",
       "collection": "0xe30fe14a99692993753f52440d3ad56db2c75a56",
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe30fe14a99692993753f52440d3ad56db2c75a56",
       "hard_gates": [
-        "MARKET_EVIDENCE_UNAVAILABLE",
-        "MINT_PRICE_UNKNOWN"
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
         "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
@@ -280,46 +325,141 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 2,
-        "mints_1m": 2,
-        "mints_5m": 2,
-        "mints_60m": 2,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 2.0,
-        "velocity_5m": 0.4
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
       },
       "mint_price_eth": null,
-      "name": null,
+      "name": "Crypto2Punk2Robinhood",
       "opensea_url": "https://opensea.io/assets/robinhood/0xe30fe14a99692993753f52440d3ad56db2c75a56",
+      "predicted_probability": 0.0501,
+      "qualification_path": null,
       "qualified": false,
-      "safety": {
-        "contract_name": "ERC721SeaDropCloneable",
-        "proxy": false,
-        "state": "REVIEW",
-        "suspicious": [
-          "MUTABLE_MAX_SUPPLY"
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
         ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDropCloneable",
+        "hard_risks": [],
+        "owner": "0xf085468f1385a044f6b407b016a1fabff0172c60",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
         "verified": true
       },
-      "score": 15,
+      "score": 18,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 1,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 6
+      },
+      "sell_through": 0.699,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 5000,
+        "total_supply": 3495
+      },
+      "ticker": "CPR"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x5d8a52eb257b3a023f6807f524665385f93dad98",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5d8a52eb257b3a023f6807f524665385f93dad98",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REJECT",
+        "UNVERIFIED_CONTRACT",
+        "MINT_PRICE_UNKNOWN",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "recent_mint_concentration": 0.6667,
+        "unique_recent_minters": 2,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
+      },
+      "mint_price_eth": null,
+      "name": "StockCat",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x5d8a52eb257b3a023f6807f524665385f93dad98",
+      "predicted_probability": 0.0334,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "HIGH",
+        "contract_name": null,
+        "hard_risks": [
+          "UNVERIFIED_CONTRACT"
+        ],
+        "owner": "0x5eafab2e910c0f37a3f2b2b6be0eae2bbe7b64d3",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [],
+        "state": "REJECT",
+        "verified": false
+      },
+      "score": 12,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 1,
-        "mint_velocity": 3,
+        "mint_velocity": 4,
         "price_asymmetry": 0,
-        "safety": 4,
+        "safety": 0,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.0274,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5000,
-        "total_supply": 137
+        "max_supply": null,
+        "total_supply": null
       },
-      "ticker": null
+      "ticker": "SCAT"
     }
   ],
   "win_rate_pct": 0.0
