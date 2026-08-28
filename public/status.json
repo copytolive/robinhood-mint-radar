@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+    "collection": "0xe30fe14a99692993753f52440d3ad56db2c75a56",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe30fe14a99692993753f52440d3ad56db2c75a56",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -19,23 +19,26 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 2,
-      "mints_1m": 2,
-      "mints_5m": 2,
-      "mints_60m": 2,
-      "recent_mint_concentration": 0.5,
-      "unique_recent_minters": 2,
-      "velocity_1m": 2.0,
-      "velocity_5m": 0.4
+      "mints_15m": 1,
+      "mints_1m": 1,
+      "mints_5m": 1,
+      "mints_60m": 1,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 1.0,
+      "velocity_5m": 0.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Fatty Cats",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+    "name": "Crypto2Punk2Robinhood",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xe30fe14a99692993753f52440d3ad56db2c75a56",
     "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "complete_page": false,
+      "holders_count": 3392,
+      "sampled_holders": 50,
       "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
+      "state": "LIVE",
+      "top_holder_share": 0.031177
     },
     "predicted_probability": 0.1615,
     "qualification_path": null,
@@ -57,7 +60,7 @@
       "confidence": "MEDIUM",
       "contract_name": "ERC721SeaDropCloneable",
       "hard_risks": [],
-      "owner": "0xcd8b32eca7aee0f56e31417601942bcf0a737a9d",
+      "owner": "0xf085468f1385a044f6b407b016a1fabff0172c60",
       "owner_active": true,
       "proxy": false,
       "review_risks": [
@@ -73,32 +76,32 @@
     "score": 39,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 3,
+      "distribution": 5,
+      "holder_growth": 0,
+      "mint_velocity": 1,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 9
+      "sell_through": 7
     },
-    "sell_through": 0.9287128712871288,
+    "sell_through": 0.7698,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 5159
+      "max_supply": 5000,
+      "total_supply": 3849
     },
-    "ticker": "FC"
+    "ticker": "CPR"
   },
   "capital_deployed_usd": 0,
   "chain": {
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48179832,
+    "latest_block": 48183720,
     "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "safe_block": 48179822,
+    "safe_block": 48183710,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +110,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787908088,
+  "generated_at": 1787908481,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -140,29 +143,29 @@
   "realized_net_usd": 0,
   "scan": {
     "blocks_processed": 60,
-    "duration_seconds": 79.208,
-    "from_block": 48179763,
+    "duration_seconds": 70.903,
+    "from_block": 48183651,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "live_observations": 4,
+    "live_observations": 3,
     "qualified_candidates": 0,
     "secondary_sales_stored": 0,
-    "to_block": 48179822,
-    "total_mint_units_stored": 8
+    "to_block": 48183710,
+    "total_mint_units_stored": 6
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48179763-48179822",
+  "status": "SCANNING 48183651-48183710",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "collection": "0xe30fe14a99692993753f52440d3ad56db2c75a56",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe30fe14a99692993753f52440d3ad56db2c75a56",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -174,23 +177,26 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 2,
-        "mints_1m": 2,
-        "mints_5m": 2,
-        "mints_60m": 2,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 2.0,
-        "velocity_5m": 0.4
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Fatty Cats",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "name": "Crypto2Punk2Robinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe30fe14a99692993753f52440d3ad56db2c75a56",
       "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "complete_page": false,
+        "holders_count": 3392,
+        "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
+        "state": "LIVE",
+        "top_holder_share": 0.031177
       },
       "predicted_probability": 0.1615,
       "qualification_path": null,
@@ -212,7 +218,7 @@
         "confidence": "MEDIUM",
         "contract_name": "ERC721SeaDropCloneable",
         "hard_risks": [],
-        "owner": "0xcd8b32eca7aee0f56e31417601942bcf0a737a9d",
+        "owner": "0xf085468f1385a044f6b407b016a1fabff0172c60",
         "owner_active": true,
         "proxy": false,
         "review_risks": [
@@ -228,33 +234,32 @@
       "score": 39,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 3,
+        "distribution": 5,
+        "holder_growth": 0,
+        "mint_velocity": 1,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 9
+        "sell_through": 7
       },
-      "sell_through": 0.9287128712871288,
+      "sell_through": 0.7698,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 5159
+        "max_supply": 5000,
+        "total_supply": 3849
       },
-      "ticker": "FC"
+      "ticker": "CPR"
     },
     {
       "action": "WAIT",
-      "collection": "0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+      "collection": "0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
@@ -276,44 +281,51 @@
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Hoodemons",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+      "name": "Fauna Hoodie",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
       "ownership": {
-        "complete_page": false,
-        "holders_count": 0,
-        "sampled_holders": 50,
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
-        "state": "LIVE",
-        "top_holder_share": 0.00438
+        "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1152,
+      "predicted_probability": 0.0878,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "MEDIUM",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "NFT_METADATA_INTERFACE",
+          "VERIFIED_NFT_SOURCE"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
-        "capabilities": [],
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "WITHDRAW"
+        ],
         "confidence": "MEDIUM",
-        "contract_name": null,
+        "contract_name": "FaunaHoodie",
         "hard_risks": [],
-        "owner": "0x0d6838d856346047b09a080058d2d48f8a956b1b",
+        "owner": "0xd5e29d112fe83013a3fa9cc469712f5affecefe7",
         "owner_active": true,
-        "proxy": null,
+        "proxy": false,
         "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
+          "ACTIVE_PRIVILEGED_OWNER",
+          "LOW_LEVEL_CALL_CAPABILITY",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_ROYALTY",
+          "OWNER_MINT_CAPABILITY",
+          "WITHDRAW_CAPABILITY"
         ],
         "state": "REVIEW",
-        "verified": null
+        "verified": true
       },
-      "score": 32,
+      "score": 27,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
+        "distribution": 0,
         "holder_growth": 0,
         "mint_velocity": 1,
         "price_asymmetry": 15,
@@ -325,22 +337,22 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 4795
+        "total_supply": 645
       },
-      "ticker": "DEMONS"
+      "ticker": "HOODIE"
     },
     {
       "action": "WAIT",
-      "collection": "0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "collection": "0x506299a40423435cbf5ec118a4694a9213523907",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x506299a40423435cbf5ec118a4694a9213523907",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -354,147 +366,73 @@
         "mints_1m": 3,
         "mints_5m": 3,
         "mints_60m": 3,
-        "recent_mint_concentration": 0.3333,
-        "unique_recent_minters": 3,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
         "velocity_1m": 3.0,
         "velocity_5m": 0.6
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Fauna Hoodie",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1094,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xd5e29d112fe83013a3fa9cc469712f5affecefe7",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 31,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 4,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 30
-      },
-      "ticker": "HOODIE"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x07f44c47743a2f36414a82b9f558ecfcf0eedcef",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x07f44c47743a2f36414a82b9f558ecfcf0eedcef",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
-      },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "up Position NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x07f44c47743a2f36414a82b9f558ecfcf0eedcef",
+      "name": "Goat Streets Robinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x506299a40423435cbf5ec118a4694a9213523907",
       "ownership": {
         "complete_page": false,
-        "holders_count": 1486,
+        "holders_count": 0,
         "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
         "state": "LIVE",
-        "top_holder_share": 0.06462
+        "top_holder_share": 0.092937
       },
-      "predicted_probability": 0.0469,
+      "predicted_probability": 0.0536,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
         "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
         ],
         "state": "PASS"
       },
       "safety": {
-        "capabilities": [],
+        "capabilities": [
+          "BURN",
+          "MINT"
+        ],
         "confidence": "MEDIUM",
-        "contract_name": null,
+        "contract_name": "ERC721SeaDrop",
         "hard_risks": [],
-        "owner": "0x0eea30aba3f07abfa20e4b544f55e0f917d9dfd8",
+        "owner": "0xdfed475ab76d18d7e5c7f839a199fc33d264c1b6",
         "owner_active": true,
-        "proxy": null,
+        "proxy": false,
         "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
         ],
         "state": "REVIEW",
-        "verified": null
+        "verified": true
       },
-      "score": 17,
+      "score": 19,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
+        "distribution": 3,
         "holder_growth": 0,
-        "mint_velocity": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 1
       },
-      "sell_through": null,
+      "sell_through": 0.12106210621062106,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 28954
+        "max_supply": 2222,
+        "total_supply": 269
       },
-      "ticker": "UP-POS"
+      "ticker": "GSS"
     }
   ],
   "win_rate_pct": 0.0
