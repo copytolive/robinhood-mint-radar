@@ -20,6 +20,13 @@ if [ -f .env ]; then
     grep -q '^RADAR_MAX_READY_LAG_BLOCKS=' .env || echo 'RADAR_MAX_READY_LAG_BLOCKS=2000' >> .env
   fi
   grep -q '^RADAR_MAX_READY_LAG_SECONDS=' .env || echo 'RADAR_MAX_READY_LAG_SECONDS=60' >> .env
+  if grep -q '^RADAR_CYCLE_TIMEOUT_SECONDS=120$' .env; then
+    awk '{if ($0=="RADAR_CYCLE_TIMEOUT_SECONDS=120") print "RADAR_CYCLE_TIMEOUT_SECONDS=90"; else print $0}' .env > .env.radar-migrate
+    mv .env.radar-migrate .env
+    echo "[PASS] env migration: RADAR_CYCLE_TIMEOUT_SECONDS 120 -> 90"
+  else
+    grep -q '^RADAR_CYCLE_TIMEOUT_SECONDS=' .env || echo 'RADAR_CYCLE_TIMEOUT_SECONDS=90' >> .env
+  fi
 fi
 
 if [ -f .env ]; then set -a; . ./.env; set +a; fi
@@ -43,9 +50,6 @@ trap 'rm -f "$TMP_DB" "$TMP_DB-wal" "$TMP_DB-shm"' EXIT INT TERM
 
 # Doctor is intentionally a bounded preflight: prove verified RPC/TLS access,
 # correct chain, recent blocks, critical log reads, and SQLite checkpoint writes.
-# Full candidate enrichment/readiness is validated immediately afterwards by
-# the installer's durable priming scan, so doctor must not duplicate a long
-# candidate analysis on a throw-away DB while this fast chain keeps advancing.
 DOCTOR_OK=0
 ATTEMPT=1
 while [ "$ATTEMPT" -le 3 ]; do
@@ -59,9 +63,6 @@ from radar.rpc import RPCClient
 
 path=sys.argv[1]
 s=LiveRadarScanner(path)
-# A doctor probe must fail/retry quickly on a sick public RPC instead of
-# spending minutes inside per-call retries. The durable scanner keeps its
-# stronger retry policy and is validated by the following priming gate.
 s.rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=5,retries=1)
 try:
     chain=s.rpc.chain_id()
@@ -70,7 +71,6 @@ try:
     tip=s.rpc.block_number()
     safe=max(0,tip-config.CONFIRMATION_BLOCKS)
     start=max(0,safe-2)
-    # Critical topic failures raise and therefore fail the doctor.
     added=s._scan_range_or_raise(start,safe)
     s._checkpoint(safe)
     final_tip=s.rpc.block_number()
@@ -86,6 +86,8 @@ try:
     print('[PASS] latest block age:', f'{age}s')
     print('[PASS] log ingest probe:', f'{start}-{safe} / {added} observations')
     print('[PASS] durable checkpoint:', safe)
+    print('[PASS] active RPC:', s.rpc.url)
+    print('[PASS] RPC failovers:', s.rpc.failovers)
     print('[PASS] wallet execution: MANUAL_ONLY')
 finally:
     s.close()
