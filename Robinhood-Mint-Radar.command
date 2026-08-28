@@ -56,6 +56,7 @@ valid_python() {
   [ -n "${1:-}" ] && "$1" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3,10) else 1)' >/dev/null 2>&1
 }
 PYTHON_BIN=$(command -v python3 || true)
+if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
 if ! valid_python "$PYTHON_BIN"; then
   echo "Installing private Python runtime..."
   mkdir -p "$RUNTIME_DIR/uv" "$RUNTIME_DIR/python"
@@ -75,6 +76,13 @@ echo "Runtime: $($PYTHON_BIN --version 2>&1)"
 # 3) Full live doctor before background installation.
 cd "$INSTALL_DIR"
 PYTHON_BIN="$PYTHON_BIN" sh macos/doctor.sh || fail "live doctor did not pass"
+
+if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
+  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-launchagent.sh
+  PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-dashboard-launchagent.sh
+  echo "ONE_DOWNLOAD_DRY_RUN=PASS"
+  exit 0
+fi
 
 # Remove cloud snapshot so final checks prove the local scanner wrote a fresh one.
 rm -f public/status.json
