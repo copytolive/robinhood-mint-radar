@@ -10,7 +10,7 @@ class LiveLagTests(unittest.TestCase):
             'live_ready':'READY',
             'money_readiness':'QUALIFIED OPPORTUNITY AVAILABLE',
             'chain':{'safe_block':20000},
-            'scan':{'to_block':10000,'qualified_candidates':1},
+            'scan':{'to_block':10000,'lag_seconds':600,'qualified_candidates':1},
             'watchlist':[dict(candidate)],
             'best_live_observation':dict(candidate),
             'manual_packages':[dict(candidate)],
@@ -30,7 +30,7 @@ class LiveLagTests(unittest.TestCase):
             'live_ready':'READY',
             'money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY',
             'chain':{'safe_block':20000},
-            'scan':{'to_block':20000,'qualified_candidates':0},
+            'scan':{'to_block':20000,'lag_seconds':0,'qualified_candidates':0},
             'watchlist':[],
             'best_live_observation':None,
             'manual_packages':[],
@@ -40,9 +40,27 @@ class LiveLagTests(unittest.TestCase):
         self.assertEqual(out['live_ready'],'READY')
         self.assertEqual(out['scan']['lag_blocks'],0)
 
+    def test_fast_chain_146_blocks_is_ready_when_only_seconds_behind(self):
+        status={
+            'live_ready':'READY',
+            'money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY',
+            'chain':{'safe_block':48340242},
+            'scan':{'to_block':48340096,'lag_seconds':14,'qualified_candidates':0},
+            'watchlist':[],
+            'best_live_observation':None,
+            'manual_packages':[],
+            'diagnostics':[],
+        }
+        out=finalize_status(status)
+        self.assertEqual(out['scan']['lag_blocks'],146)
+        self.assertEqual(out['scan']['lag_seconds'],14)
+        self.assertEqual(out['live_ready'],'READY')
+
     def test_high_throughput_chunk_is_not_legacy_60(self):
         self.assertGreaterEqual(config.CHUNK_BLOCKS,1000)
         self.assertGreaterEqual(config.MAX_CATCHUP_BLOCKS,config.CHUNK_BLOCKS)
+        self.assertGreaterEqual(config.MAX_READY_LAG_BLOCKS,1000)
+        self.assertLessEqual(config.MAX_READY_LAG_SECONDS,120)
 
 
 if __name__=='__main__':
