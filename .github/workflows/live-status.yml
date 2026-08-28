@@ -1,0 +1,56 @@
+name: Continuous Public Snapshot
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/status.json'
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robinhood-mint-radar-live-status
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan latest Robinhood blocks
+        env:
+          OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+        run: python -m radar --once --public-lookback 60 --db /tmp/radar-public.sqlite --status public/status.json
+      - name: Validate snapshot contract
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('public/status.json'))
+          assert d['mode']=='READ_ONLY'
+          assert d['wallet_execution']=='MANUAL_ONLY'
+          assert d['live_ready'] in ('READY','NOT_READY')
+          print(json.dumps({'latest_block':d.get('chain',{}).get('latest_block'),'live_ready':d['live_ready'],'qualified':d['scan']['qualified_candidates']}))
+          PY
+      - name: Persist public snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/status.json
+          if git diff --cached --quiet; then
+            echo 'No status change to commit'
+            exit 0
+          fi
+          git commit -m 'chore: refresh live Robinhood snapshot [skip ci]'
+          git push origin HEAD:main
