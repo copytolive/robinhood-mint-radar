@@ -28,15 +28,7 @@ def activity_core(metrics):
 
 
 def cheap_analysis_class(metrics,has_market=False,known_launch=False):
-    """Fail-safe upper-bound triage before expensive enrichment.
-
-    REGULAR_POSSIBLE means the candidate can still mathematically reach 85 if
-    every unknown expensive component receives its maximum points. EARLY_POSSIBLE
-    applies the stricter Hoodsea-only 80-point path and its cheap activity gates.
-    WATCH means it cannot qualify from currently known evidence but can still
-    theoretically reach score 60; SKIP means even an optimistic upper bound is
-    below WATCH and therefore cannot produce a manual package this cycle.
-    """
+    """Fail-safe upper-bound triage before expensive enrichment."""
     core=activity_core(metrics)
     regular=bool(has_market and core+55>=85)
     early=bool(
@@ -56,15 +48,12 @@ class LiveRadarScanner(BaseRadarScanner):
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
-        # A live cycle must never spend minutes inside one public-RPC call.
         self.rpc=RPCClient(kwargs.get('rpc_url') or config.DEFAULT_RPC_URL,timeout=5,retries=1)
         self._snapshot_cache={}
         self._ownership_cache={}
         self._analysis_rows_cache=[]
         self._analysis_pruned=0
         self._analysis_overflow=0
-        # Enrichment is optional evidence: fail fast, fail closed, and let the
-        # next cycle retry rather than blocking live ingest.
         self.enrich_rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=2.5,retries=0)
         self.enrich_explorer=BlockscoutClient(config.BLOCKSCOUT_API,timeout=3,v2_base=config.BLOCKSCOUT_V2)
         def cached_ownership(address,total_supply=None):
@@ -102,7 +91,6 @@ class LiveRadarScanner(BaseRadarScanner):
         except Exception:return None
 
     def _observed_zero_price(self,events):
-        """Infer zero-value mint tx with bounded enrichment RPC, never the ingest RPC."""
         for e in events[:3]:
             txh=e.get('tx_hash')
             if not txh:continue
@@ -120,8 +108,6 @@ class LiveRadarScanner(BaseRadarScanner):
         def get_code():
             try:return self.enrich_rpc.code(address)
             except Exception as exc:self._diag('CONTRACT_CHECK','GET_CODE_FAILED',exc);return None
-        # Keep nested concurrency bounded. The old 8x10 fan-out could create ~80
-        # simultaneous network operations on a laptop and trigger provider resets.
         with ThreadPoolExecutor(max_workers=4) as pool:
             futures={'code':pool.submit(get_code),'ver':pool.submit(self.enrich_explorer.verification,address),'total':pool.submit(self._e_uint,address,'totalSupply'),'minted':pool.submit(self._e_uint,address,'totalMinted'),'max':pool.submit(self._e_uint,address,'maxSupply'),'price_wei':pool.submit(self._e_uint,address,'mintPriceWei'),'price':pool.submit(self._e_uint,address,'mintPrice'),'name':pool.submit(self._e_string,address,'name'),'symbol':pool.submit(self._e_string,address,'symbol'),'owner':pool.submit(self._e_address,address,'owner'),'erc721':pool.submit(self._e_supports,address,'0x80ac58cd'),'erc1155':pool.submit(self._e_supports,address,'0xd9b67a26')}
             r={k:f.result() for k,f in futures.items()}
@@ -151,32 +137,26 @@ class LiveRadarScanner(BaseRadarScanner):
             elif cls=='WATCH':watches.append(ranked)
             else:skipped+=1
         qualifiers.sort(reverse=True,key=lambda x:(x[0],x[1]));watches.sort(reverse=True,key=lambda x:(x[0],x[1]))
-        # Analyze every plausible qualifier unless an abnormal burst exceeds the
-        # hard UI candidate cap. If that happens, the cycle is explicitly fail-closed.
-        maxq=max(1,config.MAX_CANDIDATES)
-        self._analysis_overflow=max(0,len(qualifiers)-maxq)
+        maxq=max(1,config.MAX_CANDIDATES);self._analysis_overflow=max(0,len(qualifiers)-maxq)
         selected=[x[2] for x in qualifiers[:maxq]]
         if not self._analysis_overflow:
-            watch_slots=max(0,min(4,config.MAX_CANDIDATES-len(selected)))
-            selected.extend(x[2] for x in watches[:watch_slots])
+            watch_slots=max(0,min(4,config.MAX_CANDIDATES-len(selected)));selected.extend(x[2] for x in watches[:watch_slots])
         self._analysis_rows_cache=selected
         self._analysis_pruned=skipped+max(0,len(watches)-max(0,min(4,config.MAX_CANDIDATES-len(qualifiers[:maxq]))))
         return selected
 
     def _prewarm_enrichment(self):
         rows=self._analysis_rows_cache or self._prepare_analysis_rows();now=int(time.time())
-        def warm(row):
-            addr=row['collection'];snap=self.contract_snapshot(addr);self.explorer.ownership(addr,snap['supply'].get('total_supply'))
-            # Pre-fill tx cache so price inference does not become a serial tail.
-            self._observed_zero_price(self.db.mint_window(addr,now-3600))
-        if rows:
-            with ThreadPoolExecutor(max_workers=min(3,len(rows))) as pool:list(pool.map(warm,rows))
+        # SQLite connections are intentionally single-threaded. Materialize all
+        # event windows on the scanner thread, then pass immutable data to workers.
+        work=[(row,self.db.mint_window(row['collection'],now-3600)) for row in rows]
+        def warm(item):
+            row,events=item;addr=row['collection'];snap=self.contract_snapshot(addr);self.explorer.ownership(addr,snap['supply'].get('total_supply'));self._observed_zero_price(events)
+        if work:
+            with ThreadPoolExecutor(max_workers=min(3,len(work))) as pool:list(pool.map(warm,work))
 
     def build_status(self,tip,safe_block,from_block,to_block,started_at):
-        # Base build_status is retained as the canonical scoring/hard-gate logic.
-        # Feed it only the cheap-ceiling-selected rows for this cycle.
-        selected=list(self._analysis_rows_cache or self._prepare_analysis_rows())
-        original=self.db.recent_collections
+        selected=list(self._analysis_rows_cache or self._prepare_analysis_rows());original=self.db.recent_collections
         self.db.recent_collections=lambda _since:list(selected)
         try:status=super().build_status(tip,safe_block,from_block,to_block,started_at)
         finally:self.db.recent_collections=original
