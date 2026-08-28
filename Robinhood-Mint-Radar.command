@@ -9,7 +9,29 @@ UV_VERSION="0.11.15"
 UV_INSTALLER="https://astral.sh/uv/${UV_VERSION}/install.sh"
 PORT="${RADAR_DASHBOARD_PORT:-4173}"
 TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/robinhood-mint-radar.XXXXXX")
-trap 'rm -rf "$TMP_DIR"' EXIT INT TERM
+INSTALL_SERVICES_STOPPED=0
+INSTALL_COMPLETE=0
+PYTHON_BIN=""
+
+restore_background_services() {
+  [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ] && return 0
+  [ -n "${PYTHON_BIN:-}" ] || return 0
+  if [ -f "$INSTALL_DIR/macos/install-launchagent.sh" ]; then PYTHON_BIN="$PYTHON_BIN" sh "$INSTALL_DIR/macos/install-launchagent.sh" >/dev/null 2>&1 || true; fi
+  if [ -f "$INSTALL_DIR/macos/install-dashboard-launchagent.sh" ]; then PYTHON_BIN="$PYTHON_BIN" sh "$INSTALL_DIR/macos/install-dashboard-launchagent.sh" >/dev/null 2>&1 || true; fi
+}
+
+cleanup() {
+  RC=$?
+  rm -rf "$TMP_DIR" >/dev/null 2>&1 || true
+  if [ "${INSTALL_SERVICES_STOPPED:-0}" = "1" ] && [ "${INSTALL_COMPLETE:-0}" != "1" ]; then
+    echo "Restoring background services after interrupted/failed install..." >&2
+    restore_background_services
+  fi
+  exit "$RC"
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
 fail() {
   echo ""
@@ -107,12 +129,6 @@ stop_existing_launchagents() {
   done
 }
 
-restore_background_services() {
-  [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ] && return 0
-  if [ -f "$INSTALL_DIR/macos/install-launchagent.sh" ]; then PYTHON_BIN="$PYTHON_BIN" sh "$INSTALL_DIR/macos/install-launchagent.sh" >/dev/null 2>&1 || true; fi
-  if [ -f "$INSTALL_DIR/macos/install-dashboard-launchagent.sh" ]; then PYTHON_BIN="$PYTHON_BIN" sh "$INSTALL_DIR/macos/install-dashboard-launchagent.sh" >/dev/null 2>&1 || true; fi
-}
-
 PYTHON_BIN=$(command -v python3 || true)
 if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
 if ! valid_python "$PYTHON_BIN"; then install_managed_python; fi
@@ -150,38 +166,109 @@ fi
 cd "$INSTALL_DIR"
 PYTHON_BIN="$PYTHON_BIN" sh macos/doctor.sh || fail "live doctor did not pass"
 
-if [ "${RADAR_INSTALL_DRY_RUN:-0}" != "1" ]; then echo "Stopping previous scanner/dashboard instance..."; stop_existing_launchagents; fi
+if [ "${RADAR_INSTALL_DRY_RUN:-0}" != "1" ]; then
+  echo "Stopping previous scanner/dashboard instance..."
+  stop_existing_launchagents
+  INSTALL_SERVICES_STOPPED=1
+fi
 
-# Prime the durable DB with retry protection. A public RPC reset must not leave
-# a previously healthy installation permanently stopped.
+if [ -f ./.env ]; then set -a; . ./.env; set +a; fi
+DB_PATH="${RADAR_DB:-data/radar.sqlite}"
+
+# If a durable checkpoint is so old that sequential catch-up cannot finish in
+# an installer-sized window, preserve the current DB, record the exact gap, and
+# rebase only the live cursor near the confirmed tip. Existing observations,
+# outcomes, and learning tables remain intact. The recorded historical gap is
+# explicit evidence that those blocks were not backfilled by this recovery.
+"$PYTHON_BIN" - "$DB_PATH" <<'PY'
+import os, sys, time
+from radar import config
+from radar.db import RadarDB
+from radar.rpc import RPCClient
+path=sys.argv[1]
+if not os.path.exists(path):
+    print('[PASS] live cursor: fresh database')
+    raise SystemExit(0)
+db=RadarDB(path)
+try:
+    last=db.last_block()
+    if last is None:
+        print('[PASS] live cursor: no prior checkpoint')
+        raise SystemExit(0)
+    rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=5,retries=1)
+    tip=rpc.block_number(); safe=max(0,tip-config.CONFIRMATION_BLOCKS)
+    lag=max(0,safe-last)
+    threshold=max(5000,config.MAX_CATCHUP_BLOCKS)
+    if lag<=threshold:
+        print(f'[PASS] live cursor backlog: {lag} blocks (sequential catch-up allowed)')
+        raise SystemExit(0)
+    backup_dir=os.path.join(os.path.dirname(path) or '.','recovery-backups')
+    backup=db.backup(backup_dir=backup_dir,keep=10)
+    new_cursor=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS)
+    bh=(rpc.block(new_cursor) or {}).get('hash')
+    if not bh:
+        raise RuntimeError(f'cannot obtain recovery cursor hash for block {new_cursor}')
+    gap_from=last+1; gap_to=max(gap_from-1,new_cursor-1)
+    db.set_meta('recovery_backup',backup)
+    db.set_meta('historical_gap_from',gap_from)
+    db.set_meta('historical_gap_to',gap_to)
+    db.set_meta('historical_gap_recorded_at',int(time.time()))
+    db.set_meta('last_block',new_cursor)
+    db.set_meta('last_block_hash',bh)
+    print(f'[RECOVERY] stale live cursor: {lag} blocks behind')
+    print(f'[RECOVERY] database backup: {backup}')
+    print(f'[RECOVERY] historical gap recorded: {gap_from}-{gap_to}')
+    print(f'[RECOVERY] live cursor rebased to: {new_cursor}')
+finally:
+    db.close()
+PY
+
+run_priming_with_watchdog() {
+  "$PYTHON_BIN" - "$DB_PATH" "public/status.json" <<'PY'
+import os, subprocess, sys, time
+_db,_status=sys.argv[1],sys.argv[2]
+cmd=[sys.executable,'-m','radar','--once','--strict','--db',_db,'--status',_status]
+started=time.time(); deadline=started+180
+p=subprocess.Popen(cmd,env=os.environ.copy())
+next_heartbeat=started+15
+while p.poll() is None:
+    now=time.time()
+    if now>=deadline:
+        print('[WATCHDOG] priming exceeded 180s; terminating this attempt...',flush=True)
+        p.terminate()
+        try:p.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            p.kill();p.wait()
+        raise SystemExit(124)
+    if now>=next_heartbeat:
+        print(f'[PROGRESS] local priming still running: {int(now-started)}s',flush=True)
+        next_heartbeat=now+15
+    time.sleep(1)
+raise SystemExit(p.returncode)
+PY
+}
+
 echo "Priming local scanner checkpoint..."
 PRIME_OK=0
 PRIME_ATTEMPT=1
 while [ "$PRIME_ATTEMPT" -le 3 ]; do
   rm -f public/status.json
   echo "Local priming attempt $PRIME_ATTEMPT/3..."
-  if (
-    if [ -f ./.env ]; then set -a; . ./.env; set +a; fi
-    export PYTHONUNBUFFERED=1
-    "$PYTHON_BIN" -m radar --once --strict --db "${RADAR_DB:-data/radar.sqlite}" --status public/status.json
-  ); then
+  if run_priming_with_watchdog; then
     if validate_status_file public/status.json; then PRIME_OK=1; break; fi
   fi
   echo "[WARN] local priming attempt $PRIME_ATTEMPT did not reach healthy READY"
   PRIME_ATTEMPT=$((PRIME_ATTEMPT+1))
   [ "$PRIME_ATTEMPT" -le 3 ] && sleep 2 || true
 done
-if [ "$PRIME_OK" -ne 1 ]; then
-  echo "Restoring background services after priming failure..." >&2
-  restore_background_services
-  fail "local scanner priming exhausted 3 attempts"
-fi
+if [ "$PRIME_OK" -ne 1 ]; then fail "local scanner priming exhausted 3 bounded attempts"; fi
 echo "[PASS] local checkpoint primed"
 
 if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
   PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-launchagent.sh
   PYTHON_BIN="$PYTHON_BIN" sh -n macos/install-dashboard-launchagent.sh
   echo "ONE_DOWNLOAD_DRY_RUN=PASS"
+  INSTALL_COMPLETE=1
   exit 0
 fi
 
@@ -208,6 +295,8 @@ done
 PYTHON_BIN="$PYTHON_BIN" "$PYTHON_BIN" -m radar.audit >/dev/null || fail "final readiness audit failed"
 
 URL="http://127.0.0.1:$PORT/"; open "$URL" >/dev/null 2>&1 || true
+INSTALL_COMPLETE=1
+INSTALL_SERVICES_STOPPED=0
 echo ""
 echo "========================================"
 echo "INSTALLATION PASS"
