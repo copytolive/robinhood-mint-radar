@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+    "action": "WATCH",
+    "collection": "0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -19,35 +19,35 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 5,
-      "mints_1m": 5,
-      "mints_5m": 5,
-      "mints_60m": 5,
-      "recent_mint_concentration": 0.2,
-      "unique_recent_minters": 5,
-      "velocity_1m": 5.0,
-      "velocity_5m": 1.0
+      "mints_15m": 604,
+      "mints_1m": 604,
+      "mints_5m": 604,
+      "mints_60m": 604,
+      "recent_mint_concentration": 0.0497,
+      "unique_recent_minters": 24,
+      "velocity_1m": 604.0,
+      "velocity_5m": 120.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Fauna Hoodie",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+    "name": "HoodChillios Yacht Club",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
     "ownership": {
       "complete_page": false,
-      "holders_count": 1,
+      "holders_count": 3,
       "sampled_holders": 50,
       "source": "BLOCKSCOUT_V2",
       "state": "LIVE",
-      "top_holder_share": 0.030947
+      "top_holder_share": 0.0032
     },
-    "predicted_probability": 0.1688,
+    "predicted_probability": 0.4888,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "reasons": [
-        "NFT_METADATA_INTERFACE",
-        "VERIFIED_NFT_SOURCE"
+        "COLLECTIBLE_CONTRACT_NAME",
+        "NFT_METADATA_INTERFACE"
       ],
       "state": "PASS"
     },
@@ -55,63 +55,62 @@
       "capabilities": [
         "BURN",
         "MINT",
-        "WITHDRAW"
+        "UPGRADE"
       ],
       "confidence": "MEDIUM",
-      "contract_name": "FaunaHoodie",
+      "contract_name": "ERC721SeaDropCloneable",
       "hard_risks": [],
-      "owner": "0xd5e29d112fe83013a3fa9cc469712f5affecefe7",
+      "owner": "0x1348e01e1e64a6f1603139937bb8a47d7f009830",
       "owner_active": true,
       "proxy": false,
       "review_risks": [
         "ACTIVE_PRIVILEGED_OWNER",
-        "LOW_LEVEL_CALL_CAPABILITY",
         "MUTABLE_BASE_URI",
-        "MUTABLE_ROYALTY",
-        "OWNER_MINT_CAPABILITY",
-        "WITHDRAW_CAPABILITY"
+        "MUTABLE_CONTRACT_URI",
+        "MUTABLE_MAX_SUPPLY",
+        "OWNER_MINT_CAPABILITY"
       ],
       "state": "REVIEW",
       "verified": true
     },
-    "score": 40,
+    "score": 71,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
-      "holder_growth": 2,
-      "mint_velocity": 7,
+      "holder_growth": 10,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 10
     },
-    "sell_through": null,
+    "sell_through": 1,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 3199
+      "max_supply": 10000,
+      "total_supply": 10000
     },
-    "ticker": "HOODIE"
+    "ticker": "HoodChilliosYachtCl"
   },
   "capital_deployed_usd": 0,
   "chain": {
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48197200,
-    "latest_block_age_seconds": 6,
+    "latest_block": 48206392,
+    "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "safe_block": 48197190,
+    "safe_block": 48206382,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 851968,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787909891,
+  "generated_at": 1787910839,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -123,7 +122,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -144,29 +143,29 @@
   "realized_net_usd": 0,
   "scan": {
     "blocks_processed": 60,
-    "duration_seconds": 53.86,
-    "from_block": 48197131,
+    "duration_seconds": 76.392,
+    "from_block": 48206323,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "live_observations": 2,
+    "irrelevant_filtered": 0,
+    "live_observations": 5,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 2,
-    "to_block": 48197190,
-    "total_mint_units_stored": 8
+    "secondary_sales_stored": 1,
+    "to_block": 48206382,
+    "total_mint_units_stored": 87020975
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48197131-48197190",
+  "status": "SCANNING 48206323-48206382",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "action": "WATCH",
+      "collection": "0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -178,28 +177,209 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 5,
-        "mints_1m": 5,
-        "mints_5m": 5,
-        "mints_60m": 5,
-        "recent_mint_concentration": 0.2,
-        "unique_recent_minters": 5,
-        "velocity_1m": 5.0,
-        "velocity_5m": 1.0
+        "mints_15m": 604,
+        "mints_1m": 604,
+        "mints_5m": 604,
+        "mints_60m": 604,
+        "recent_mint_concentration": 0.0497,
+        "unique_recent_minters": 24,
+        "velocity_1m": 604.0,
+        "velocity_5m": 120.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Fauna Hoodie",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "name": "HoodChillios Yacht Club",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x9f05d5886adb9b3e950c52de97e8e483a8c94122",
+      "ownership": {
+        "complete_page": false,
+        "holders_count": 3,
+        "sampled_holders": 50,
+        "source": "BLOCKSCOUT_V2",
+        "state": "LIVE",
+        "top_holder_share": 0.0032
+      },
+      "predicted_probability": 0.4888,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDropCloneable",
+        "hard_risks": [],
+        "owner": "0x1348e01e1e64a6f1603139937bb8a47d7f009830",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
+        "verified": true
+      },
+      "score": 71,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 10
+      },
+      "sell_through": 1,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 10000,
+        "total_supply": 10000
+      },
+      "ticker": "HoodChilliosYachtCl"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xc676b97ea246ef85a5c11949552ddf5a1e3da138",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc676b97ea246ef85a5c11949552ddf5a1e3da138",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "OWNERSHIP_CONCENTRATION_HIGH",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 87020367,
+        "mints_1m": 87020367,
+        "mints_5m": 87020367,
+        "mints_60m": 87020367,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 87020367.0,
+        "velocity_5m": 17404073.4
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Liquidity Book Token",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc676b97ea246ef85a5c11949552ddf5a1e3da138",
+      "ownership": {
+        "complete_page": true,
+        "holders_count": 1,
+        "sampled_holders": 1,
+        "source": "BLOCKSCOUT_V2",
+        "state": "LIVE",
+        "top_holder_share": 1.0
+      },
+      "predicted_probability": 0.2715,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE",
+          "WITHDRAW"
+        ],
+        "confidence": "HIGH",
+        "contract_name": "LBPair",
+        "hard_risks": [],
+        "owner": null,
+        "owner_active": false,
+        "proxy": false,
+        "review_risks": [],
+        "state": "PASS",
+        "verified": true
+      },
+      "score": 52,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 10,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC1155",
+      "supply": {
+        "max_supply": null,
+        "total_supply": null
+      },
+      "ticker": "LBT"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x7af5c56a3bd82eba2d53a18755f346d3f18dda62",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7af5c56a3bd82eba2d53a18755f346d3f18dda62",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 2,
+        "mints_1m": 2,
+        "mints_5m": 2,
+        "mints_60m": 2,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
+        "velocity_1m": 2.0,
+        "velocity_5m": 0.4
+      },
+      "mint_price_eth": 0.0001,
+      "mint_price_source": "CONTRACT",
+      "name": "WORLD404",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x7af5c56a3bd82eba2d53a18755f346d3f18dda62",
       "ownership": {
         "complete_page": false,
         "holders_count": 1,
         "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
         "state": "LIVE",
-        "top_holder_share": 0.030947
+        "top_holder_share": 0.01145
       },
-      "predicted_probability": 0.1688,
+      "predicted_probability": 0.1037,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -212,34 +392,34 @@
       },
       "safety": {
         "capabilities": [
-          "BURN",
           "MINT",
           "WITHDRAW"
         ],
         "confidence": "MEDIUM",
-        "contract_name": "FaunaHoodie",
+        "contract_name": "World404",
         "hard_risks": [],
-        "owner": "0xd5e29d112fe83013a3fa9cc469712f5affecefe7",
+        "owner": "0xbecb933e9f3ac65f3e8d8f4acf108abf54e38260",
         "owner_active": true,
         "proxy": false,
         "review_risks": [
           "ACTIVE_PRIVILEGED_OWNER",
           "LOW_LEVEL_CALL_CAPABILITY",
           "MUTABLE_BASE_URI",
-          "MUTABLE_ROYALTY",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MINT_PRICE",
           "OWNER_MINT_CAPABILITY",
           "WITHDRAW_CAPABILITY"
         ],
         "state": "REVIEW",
         "verified": true
       },
-      "score": 40,
+      "score": 30,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
-        "holder_growth": 2,
-        "mint_velocity": 7,
-        "price_asymmetry": 15,
+        "holder_growth": 1,
+        "mint_velocity": 3,
+        "price_asymmetry": 10,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
@@ -248,9 +428,9 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 3199
+        "total_supply": 262
       },
-      "ticker": "HOODIE"
+      "ticker": "W404"
     },
     {
       "action": "WAIT",
@@ -292,9 +472,9 @@
         "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
         "state": "LIVE",
-        "top_holder_share": 0.016426
+        "top_holder_share": 0.0125
       },
-      "predicted_probability": 0.0692,
+      "predicted_probability": 0.0829,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -326,7 +506,7 @@
         "state": "REVIEW",
         "verified": true
       },
-      "score": 23,
+      "score": 26,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -335,15 +515,110 @@
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 6
+        "sell_through": 9
       },
-      "sell_through": 0.684968496849685,
+      "sell_through": 0.9000900090009001,
       "standard": "ERC721",
       "supply": {
         "max_supply": 2222,
-        "total_supply": 1522
+        "total_supply": 2000
       },
       "ticker": "GSS"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Fauna Hoodie",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x42607bb725faeb8fa5d003de56441cd0d9a3d542",
+      "ownership": {
+        "complete_page": false,
+        "holders_count": 6,
+        "sampled_holders": 50,
+        "source": "BLOCKSCOUT_V2",
+        "state": "LIVE",
+        "top_holder_share": 0.024111
+      },
+      "predicted_probability": 0.0469,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "MEDIUM",
+        "reasons": [
+          "NFT_METADATA_INTERFACE",
+          "VERIFIED_NFT_SOURCE"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "WITHDRAW"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "FaunaHoodie",
+        "hard_risks": [],
+        "owner": "0xd5e29d112fe83013a3fa9cc469712f5affecefe7",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "LOW_LEVEL_CALL_CAPABILITY",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_ROYALTY",
+          "OWNER_MINT_CAPABILITY",
+          "WITHDRAW_CAPABILITY"
+        ],
+        "state": "REVIEW",
+        "verified": true
+      },
+      "score": 17,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 0,
+        "mint_velocity": 1,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": null,
+        "total_supply": 4023
+      },
+      "ticker": "HOODIE"
     }
   ],
   "win_rate_pct": 0.0
