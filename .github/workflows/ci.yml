@@ -25,5 +25,6 @@ jobs:
         run: |
           set -euo pipefail
           grep -Fq 'MANUAL_ONLY' radar/scanner.py
-          grep -Fq 'No automatic minting' README.md
+          grep -Fq 'never signs or sends a transaction' README.md
+          grep -Fq 'private key or seed phrase' README.md
           grep -Fq 'WAIT FOR QUALIFIED OPPORTUNITY' public/status.json
