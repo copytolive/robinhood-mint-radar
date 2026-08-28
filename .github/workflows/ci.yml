@@ -27,4 +27,16 @@ jobs:
           grep -Fq 'MANUAL_ONLY' radar/scanner.py
           grep -Fq 'never signs or sends a transaction' README.md
           grep -Fq 'private key or seed phrase' README.md
-          grep -Fq 'WAIT FOR QUALIFIED OPPORTUNITY' public/status.json
+          python - <<'PY'
+          import json
+          d=json.load(open('public/status.json'))
+          assert d.get('wallet_execution')=='MANUAL_ONLY'
+          assert d.get('money_readiness') in (
+              'WAIT FOR QUALIFIED OPPORTUNITY',
+              'CATCHING UP — WAIT FOR LIVE TIP',
+              'QUALIFIED OPPORTUNITY AVAILABLE',
+          )
+          if d.get('live_ready')!='READY':
+              assert d.get('manual_packages')==[]
+              assert int((d.get('scan') or {}).get('qualified_candidates') or 0)==0
+          PY
