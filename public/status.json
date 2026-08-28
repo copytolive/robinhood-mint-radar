@@ -1,121 +1,111 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+    "collection": "0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 3,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 3,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.00087
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "recent_mint_concentration": 0.1,
-      "unique_recent_minters": 10,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 1,
+      "mints_1m": 1,
+      "mints_5m": 1,
+      "mints_60m": 1,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 1.0,
+      "velocity_5m": 0.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Hoodemons",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
+    "name": "Fatty Cats",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
     "ownership": {
       "complete_page": false,
-      "holders_count": 0,
+      "holders_count": 4062,
       "sampled_holders": 50,
       "source": "BLOCKSCOUT_V2",
       "state": "LIVE",
-      "top_holder_share": 0.003257
+      "top_holder_share": 0.01354
     },
-    "predicted_probability": 0.2619,
+    "predicted_probability": 0.2083,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
       "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_CONTRACT_NAME",
-        "NFT_METADATA_INTERFACE"
+        "SECONDARY_MARKET_OBSERVED"
       ],
       "state": "PASS"
     },
     "safety": {
-      "capabilities": [
-        "BLACKLIST",
-        "BURN",
-        "MINT",
-        "UPGRADE",
-        "WITHDRAW"
-      ],
+      "capabilities": [],
       "confidence": "MEDIUM",
-      "contract_name": "ArchetypeErc721a",
+      "contract_name": null,
       "hard_risks": [],
-      "owner": "0x0d6838d856346047b09a080058d2d48f8a956b1b",
+      "owner": "0xcd8b32eca7aee0f56e31417601942bcf0a737a9d",
       "owner_active": true,
-      "proxy": false,
+      "proxy": null,
       "review_risks": [
-        "ACTIVE_PRIVILEGED_OWNER",
-        "BLACKLIST_CAPABILITY",
-        "LOW_LEVEL_CALL_CAPABILITY",
-        "MUTABLE_BASE_URI",
-        "MUTABLE_MAX_SUPPLY",
-        "MUTABLE_ROYALTY",
-        "TX_ORIGIN_PRESENT",
-        "WITHDRAW_CAPABILITY"
+        "VERIFICATION_UNAVAILABLE"
       ],
       "state": "REVIEW",
-      "verified": true
+      "verified": null
     },
-    "score": 51,
+    "score": 45,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
-      "holder_growth": 5,
-      "mint_velocity": 15,
+      "holder_growth": 0,
+      "mint_velocity": 1,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 0
+      "secondary_liquidity": 4,
+      "sell_through": 9
     },
-    "sell_through": null,
+    "sell_through": 0.9173717371737173,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 3377
+      "max_supply": 5555,
+      "total_supply": 5096
     },
-    "ticker": "DEMONS"
+    "ticker": "FC"
   },
   "capital_deployed_usd": 0,
   "chain": {
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48174539,
-    "latest_block_age_seconds": 4,
+    "latest_block": 48176804,
+    "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "safe_block": 48174529,
+    "safe_block": 48176794,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 86016,
+    "bytes": 90112,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787907557,
+  "generated_at": 1787907783,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -148,20 +138,201 @@
   "realized_net_usd": 0,
   "scan": {
     "blocks_processed": 60,
-    "duration_seconds": 78.134,
-    "from_block": 48174470,
+    "duration_seconds": 87.931,
+    "from_block": 48176735,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 3,
-    "live_observations": 2,
+    "irrelevant_filtered": 2,
+    "live_observations": 4,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 4,
-    "to_block": 48174529,
-    "total_mint_units_stored": 15
+    "secondary_sales_stored": 10,
+    "to_block": 48176794,
+    "total_mint_units_stored": 12
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48174470-48174529",
+  "status": "SCANNING 48176735-48176794",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      ],
+      "market": {
+        "floor_price": null,
+        "native_sales_24h": 3,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 3,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.00087
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Fatty Cats",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x4f7d26507b370e38a5efc66537f4c5ad58c6df6f",
+      "ownership": {
+        "complete_page": false,
+        "holders_count": 4062,
+        "sampled_holders": 50,
+        "source": "BLOCKSCOUT_V2",
+        "state": "LIVE",
+        "top_holder_share": 0.01354
+      },
+      "predicted_probability": 0.2083,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "SECONDARY_MARKET_OBSERVED"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xcd8b32eca7aee0f56e31417601942bcf0a737a9d",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 45,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 0,
+        "mint_velocity": 1,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 4,
+        "sell_through": 9
+      },
+      "sell_through": 0.9173717371737173,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 5555,
+        "total_supply": 5096
+      },
+      "ticker": "FC"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xe30fe14a99692993753f52440d3ad56db2c75a56",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe30fe14a99692993753f52440d3ad56db2c75a56",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Crypto2Punk2Robinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe30fe14a99692993753f52440d3ad56db2c75a56",
+      "ownership": {
+        "complete_page": false,
+        "holders_count": 8,
+        "sampled_holders": 50,
+        "source": "BLOCKSCOUT_V2",
+        "state": "LIVE",
+        "top_holder_share": 0.033985
+      },
+      "predicted_probability": 0.1615,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME",
+          "NFT_METADATA_INTERFACE"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [
+          "BURN",
+          "MINT",
+          "UPGRADE"
+        ],
+        "confidence": "MEDIUM",
+        "contract_name": "ERC721SeaDropCloneable",
+        "hard_risks": [],
+        "owner": "0xf085468f1385a044f6b407b016a1fabff0172c60",
+        "owner_active": true,
+        "proxy": false,
+        "review_risks": [
+          "ACTIVE_PRIVILEGED_OWNER",
+          "MUTABLE_BASE_URI",
+          "MUTABLE_CONTRACT_URI",
+          "MUTABLE_MAX_SUPPLY",
+          "OWNER_MINT_CAPABILITY"
+        ],
+        "state": "REVIEW",
+        "verified": true
+      },
+      "score": 39,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 0,
+        "mint_velocity": 1,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 7
+      },
+      "sell_through": 0.7062,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 5000,
+        "total_supply": 3531
+      },
+      "ticker": "CPR"
+    },
     {
       "action": "WAIT",
       "collection": "0xf53680ddecefb321b5d677a116431b27cfcaa6ec",
@@ -182,14 +353,14 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "recent_mint_concentration": 0.1,
-        "unique_recent_minters": 10,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -201,9 +372,9 @@
         "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
         "state": "LIVE",
-        "top_holder_share": 0.003257
+        "top_holder_share": 0.002773
       },
-      "predicted_probability": 0.2619,
+      "predicted_probability": 0.1405,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -241,12 +412,12 @@
         "state": "REVIEW",
         "verified": true
       },
-      "score": 51,
+      "score": 36,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
-        "holder_growth": 5,
-        "mint_velocity": 15,
+        "holder_growth": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
@@ -256,21 +427,23 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 3377
+        "total_supply": 4328
       },
       "ticker": "DEMONS"
     },
     {
       "action": "WAIT",
-      "collection": "0xd9b8fbd61033145c5496132153ce675756313b71",
+      "collection": "0x5d8a52eb257b3a023f6807f524665385f93dad98",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd9b8fbd61033145c5496132153ce675756313b71",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5d8a52eb257b3a023f6807f524665385f93dad98",
       "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REJECT",
+        "UNVERIFIED_CONTRACT",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -280,65 +453,59 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Slvr Vote Escrow",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xd9b8fbd61033145c5496132153ce675756313b71",
+      "name": "StockCat",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x5d8a52eb257b3a023f6807f524665385f93dad98",
       "ownership": {
         "complete_page": false,
-        "holders_count": 897,
+        "holders_count": 2,
         "sampled_holders": 50,
         "source": "BLOCKSCOUT_V2",
         "state": "LIVE",
         "top_holder_share": null
       },
-      "predicted_probability": 0.0878,
+      "predicted_probability": 0.0829,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "MEDIUM",
+        "confidence": "LOW",
         "reasons": [
-          "NFT_METADATA_INTERFACE",
-          "VERIFIED_NFT_SOURCE"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
-        "capabilities": [
-          "BURN",
-          "MINT",
-          "UPGRADE",
-          "WITHDRAW"
+        "capabilities": [],
+        "confidence": "HIGH",
+        "contract_name": null,
+        "hard_risks": [
+          "UNVERIFIED_CONTRACT"
         ],
-        "confidence": "MEDIUM",
-        "contract_name": "SlvrVoteEscrow",
-        "hard_risks": [],
-        "owner": "0x11111972fe1b7e52d36609bcaf8702c65b025b46",
+        "owner": "0x5eafab2e910c0f37a3f2b2b6be0eae2bbe7b64d3",
         "owner_active": true,
         "proxy": false,
-        "review_risks": [
-          "WITHDRAW_CAPABILITY"
-        ],
-        "state": "REVIEW",
-        "verified": true
+        "review_risks": [],
+        "state": "REJECT",
+        "verified": false
       },
-      "score": 27,
+      "score": 26,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 15,
-        "safety": 4,
+        "safety": 0,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
@@ -348,7 +515,7 @@
         "max_supply": null,
         "total_supply": null
       },
-      "ticker": "veSLVR"
+      "ticker": "SCAT"
     }
   ],
   "win_rate_pct": 0.0
