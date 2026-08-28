@@ -25,6 +25,17 @@ fail() {
   exit 2
 }
 
+curl_download() {
+  URL="$1"; OUT="$2"
+  if curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 "$URL" -o "$OUT"; then
+    return 0
+  fi
+  # A broken inherited SSL_CERT_FILE can also break curl. Retry with curl's
+  # normal macOS trust configuration; certificate verification stays enabled.
+  echo "Retrying download with macOS default TLS trust..."
+  env -u SSL_CERT_FILE curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 "$URL" -o "$OUT"
+}
+
 [ "$(uname -s)" = "Darwin" ] || fail "macOS is required"
 command -v curl >/dev/null 2>&1 || fail "curl is required"
 command -v unzip >/dev/null 2>&1 || fail "unzip is required"
@@ -33,8 +44,7 @@ echo "=== $APP_NAME ==="
 echo "Installing read-only scanner. Wallet execution remains manual."
 
 # 1) Download/update the application without requiring git.
-curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 \
-  "$ZIP_URL" -o "$TMP_DIR/radar.zip" || fail "could not download application"
+curl_download "$ZIP_URL" "$TMP_DIR/radar.zip" || fail "could not download application"
 unzip -q "$TMP_DIR/radar.zip" -d "$TMP_DIR" || fail "could not unpack application"
 SRC_DIR="$TMP_DIR/robinhood-mint-radar-main"
 [ -d "$SRC_DIR/radar" ] || fail "downloaded package is incomplete"
@@ -58,8 +68,7 @@ valid_python() {
 install_managed_python() {
   echo "Installing private Python runtime..."
   mkdir -p "$RUNTIME_DIR/uv" "$RUNTIME_DIR/python"
-  curl --proto '=https' --tlsv1.2 -fL --retry 4 --retry-delay 2 --connect-timeout 20 \
-    "$UV_INSTALLER" -o "$TMP_DIR/uv-install.sh" || fail "could not download Python runtime installer"
+  curl_download "$UV_INSTALLER" "$TMP_DIR/uv-install.sh" || fail "could not download Python runtime installer"
   env UV_UNMANAGED_INSTALL="$RUNTIME_DIR/uv" UV_NO_MODIFY_PATH=1 sh "$TMP_DIR/uv-install.sh" >/dev/null \
     || fail "could not install runtime manager"
   UV_BIN="$RUNTIME_DIR/uv/uv"
@@ -90,6 +99,13 @@ if ! valid_python "$PYTHON_BIN"; then
 fi
 valid_python "$PYTHON_BIN" || fail "Python 3.10+ is unavailable"
 echo "Runtime: $($PYTHON_BIN --version 2>&1)"
+
+# Test hook used by CI to reproduce the exact class of Python trust-store fault
+# reported on a real Mac. It is never enabled during a normal install.
+if [ "${RADAR_TEST_BROKEN_PYTHON_CA:-0}" = "1" ]; then
+  SSL_CERT_FILE="/tmp/definitely-missing-robinhood-python-ca.pem"
+  export SSL_CERT_FILE
+fi
 
 # 3) Repair Python TLS trust without ever disabling certificate verification.
 if ! tls_probe; then
