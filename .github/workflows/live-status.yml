@@ -33,8 +33,6 @@ jobs:
           from radar import config
           from radar.rpc import RPCClient
           assert config.RPC_FALLBACK_URLS, 'no read-only fallback RPCs configured'
-          # Force the primary to fail. At least one configured fallback must
-          # independently prove chain 4663 and answer a current block read.
           c=RPCClient(
               'https://127.0.0.1:1',
               timeout=4,
@@ -46,10 +44,46 @@ jobs:
           assert chain==4663 and block>0
           print({'chain_id':chain,'block':block,'active_rpc':c.url,'failovers':c.failovers})
           PY
-      - name: Scan latest Robinhood blocks
+      - name: Scan latest Robinhood blocks through watchdog
+        shell: bash
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
-        run: python -m radar --once --public-lookback 60 --db /tmp/radar-public.sqlite --status public/status.json
+        run: |
+          set -euo pipefail
+          rm -f /tmp/radar-public.sqlite /tmp/radar-public.sqlite-wal /tmp/radar-public.sqlite-shm public/status.json
+          python -m radar.supervisor \
+            --db /tmp/radar-public.sqlite \
+            --status public/status.json \
+            --interval 1 \
+            --cycle-timeout 90 \
+            >/tmp/radar-public.out 2>/tmp/radar-public.err &
+          pid=$!
+          cleanup() { kill "$pid" 2>/dev/null || true; wait "$pid" 2>/dev/null || true; }
+          trap cleanup EXIT
+          ok=0
+          for i in $(seq 1 200); do
+            if [ -f public/status.json ] && python - <<'PY'
+          import json
+          try:
+              d=json.load(open('public/status.json'))
+          except Exception:
+              raise SystemExit(1)
+          raise SystemExit(0 if d.get('live_ready')=='READY' and d.get('wallet_execution')=='MANUAL_ONLY' else 1)
+          PY
+            then
+              ok=1
+              break
+            fi
+            sleep 1
+          done
+          cleanup
+          trap - EXIT
+          echo '--- supervisor stderr ---'
+          cat /tmp/radar-public.err || true
+          echo '--- scanner stdout ---'
+          cat /tmp/radar-public.out || true
+          [ "$ok" -eq 1 ] || { echo 'PUBLIC_SNAPSHOT_READY=FAILED' >&2; exit 1; }
+          echo 'PUBLIC_SNAPSHOT_READY=PASS'
       - name: Validate snapshot contract and freshness
         run: |
           python - <<'PY'
