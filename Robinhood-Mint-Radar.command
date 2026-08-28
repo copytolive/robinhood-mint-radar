@@ -91,6 +91,22 @@ with socket.create_connection((host,443),timeout=10) as raw:
 PY
 }
 
+validate_status_file() {
+  "$PYTHON_BIN" - "$1" <<'PY' >/dev/null 2>&1
+import json,sys,time
+s=json.load(open(sys.argv[1]))
+assert s.get('mode')=='READ_ONLY'
+assert s.get('wallet_execution')=='MANUAL_ONLY'
+assert s.get('live_ready')=='READY'
+assert s.get('chain',{}).get('chain_id')==4663
+assert time.time()-float(s.get('generated_at',0)) < 180
+PY
+}
+
+launchagent_running() {
+  launchctl print "$1" 2>/dev/null | grep -q 'state = running'
+}
+
 # 2) Resolve Python 3.10+.
 PYTHON_BIN=$(command -v python3 || true)
 if [ "${RADAR_FORCE_MANAGED_PYTHON:-0}" = "1" ]; then PYTHON_BIN=""; fi
@@ -168,37 +184,60 @@ if [ "${RADAR_INSTALL_DRY_RUN:-0}" = "1" ]; then
   exit 0
 fi
 
-# Remove cloud snapshot so final checks prove the local scanner wrote a fresh one.
+# 5) Prime one real local scan synchronously before LaunchAgents start.
+# This writes a fresh status file and advances the durable SQLite checkpoint.
+# The old installer deleted status.json and then waited for a potentially slow
+# first daemon bootstrap, which could falsely fail after 90 seconds.
+echo "Priming local scanner checkpoint..."
 rm -f public/status.json
+(
+  if [ -f ./.env ]; then
+    set -a
+    . ./.env
+    set +a
+  fi
+  export PYTHONUNBUFFERED=1
+  "$PYTHON_BIN" -m radar --once --strict --db "${RADAR_DB:-data/radar.sqlite}" --status public/status.json
+) || fail "local scanner priming scan failed"
+validate_status_file public/status.json || fail "primed local status is not healthy"
+echo "[PASS] local checkpoint primed"
 
-# 5) Install scanner + dashboard as user LaunchAgents.
+# 6) Install scanner + dashboard as user LaunchAgents.
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-launchagent.sh || fail "scanner LaunchAgent install failed"
 PYTHON_BIN="$PYTHON_BIN" sh macos/install-dashboard-launchagent.sh || fail "dashboard LaunchAgent install failed"
 
-# 6) Prove both services are running and the local status is fresh/read-only.
+# 7) Prove both services are actually running, not merely registered.
 UID_NOW=$(id -u)
-launchctl print "gui/$UID_NOW/com.copytolive.robinhood-mint-radar" >/dev/null 2>&1 || fail "scanner service is not loaded"
-launchctl print "gui/$UID_NOW/com.copytolive.robinhood-mint-radar-dashboard" >/dev/null 2>&1 || fail "dashboard service is not loaded"
+SCANNER_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar"
+DASHBOARD_SERVICE="gui/$UID_NOW/com.copytolive.robinhood-mint-radar-dashboard"
 
 OK=0
 I=0
-while [ "$I" -lt 90 ]; do
-  if [ -f public/status.json ] && curl -fsS --max-time 2 "http://127.0.0.1:$PORT/status.json" >/dev/null 2>&1; then
-    if "$PYTHON_BIN" - "public/status.json" <<'PY' >/dev/null 2>&1
-import json,sys,time
-s=json.load(open(sys.argv[1]))
-assert s.get('mode')=='READ_ONLY'
-assert s.get('wallet_execution')=='MANUAL_ONLY'
-assert s.get('live_ready')=='READY'
-assert s.get('chain',{}).get('chain_id')==4663
-assert time.time()-float(s.get('generated_at',0)) < 180
-PY
-    then OK=1; break; fi
+while [ "$I" -lt 30 ]; do
+  if launchagent_running "$SCANNER_SERVICE" && launchagent_running "$DASHBOARD_SERVICE"; then
+    OK=1
+    break
   fi
   I=$((I+1))
   sleep 1
 done
-[ "$OK" -eq 1 ] || fail "local scanner/dashboard did not become healthy"
+[ "$OK" -eq 1 ] || fail "LaunchAgents were loaded but did not stay running"
+echo "[PASS] scanner LaunchAgent running"
+echo "[PASS] dashboard LaunchAgent running"
+
+# 8) Dashboard must serve the already-proven fresh local status.
+OK=0
+I=0
+while [ "$I" -lt 30 ]; do
+  if curl -fsS --max-time 2 "http://127.0.0.1:$PORT/status.json" >/dev/null 2>&1 \
+     && validate_status_file public/status.json; then
+    OK=1
+    break
+  fi
+  I=$((I+1))
+  sleep 1
+done
+[ "$OK" -eq 1 ] || fail "local dashboard did not serve the healthy scanner status"
 
 PYTHON_BIN="$PYTHON_BIN" "$PYTHON_BIN" -m radar.audit >/dev/null || fail "final readiness audit failed"
 
