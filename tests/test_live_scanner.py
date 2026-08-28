@@ -14,6 +14,7 @@ class _DB:
     def set_meta(self,key,value):
         self.meta[key]=str(value)
         if key=='last_block': self.last=int(value)
+    def recent_collections(self,since): return []
 
 
 class _RPC:
