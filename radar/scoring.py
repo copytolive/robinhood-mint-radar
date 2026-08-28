@@ -2,9 +2,10 @@ from collections import Counter
 
 def _clamp(v,lo,hi):return max(lo,min(hi,v))
 def compute_metrics(events,now):
-    def qty(seconds):return sum(int(e.get('quantity',1)) for e in events if now-int(e['block_time'])<=seconds)
-    q1,q5,q15,q60=qty(60),qty(300),qty(900),qty(3600);v1=q1/1.0;v5=q5/5.0;prev5=max(0,q15-q5)/10.0;accel=(v5/prev5-1.0) if prev5>0 else (1.0 if v5>0 else 0.0);recipients=[e.get('recipient') for e in events if e.get('recipient')];c=Counter(recipients);total=sum(c.values());top=max(c.values())/total if total else None
-    return {'mints_1m':q1,'mints_5m':q5,'mints_15m':q15,'mints_60m':q60,'velocity_1m':round(v1,3),'velocity_5m':round(v5,3),'acceleration_5m':round(accel,3),'unique_recent_minters':len(c),'recent_mint_concentration':round(top,4) if top is not None else None}
+    def event_count(seconds):return sum(1 for e in events if now-int(e['block_time'])<=seconds)
+    def raw_units(seconds):return sum(int(e.get('quantity',1)) for e in events if now-int(e['block_time'])<=seconds)
+    q1,q5,q15,q60=event_count(60),event_count(300),event_count(900),event_count(3600);v1=q1/1.0;v5=q5/5.0;prev5=max(0,q15-q5)/10.0;accel=(v5/prev5-1.0) if prev5>0 else (1.0 if v5>0 else 0.0);recipients=[e.get('recipient') for e in events if e.get('recipient')];c=Counter(recipients);total=sum(c.values());top=max(c.values())/total if total else None
+    return {'mints_1m':q1,'mints_5m':q5,'mints_15m':q15,'mints_60m':q60,'raw_units_1m':raw_units(60),'raw_units_5m':raw_units(300),'velocity_1m':round(v1,3),'velocity_5m':round(v5,3),'acceleration_5m':round(accel,3),'unique_recent_minters':len(c),'recent_mint_concentration':round(top,4) if top is not None else None}
 def score_candidate(mint_price_eth,metrics,supply,safety,market,relevance=None,is_hoodsea=False,launch=False,ownership=None,execution=None):
     relevance=relevance or {'state':'PASS'};ownership=ownership or {'state':'UNAVAILABLE'};execution=execution or {'state':'TRUSTED'};parts={}
     parts['price_asymmetry']=0 if mint_price_eth is None else (15 if mint_price_eth==0 else (13 if mint_price_eth<=0.00003 else (10 if mint_price_eth<=0.0001 else 3)))
