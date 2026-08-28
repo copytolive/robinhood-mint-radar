@@ -1,3 +1,5 @@
+import json
+import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from . import config
@@ -55,12 +57,15 @@ class LiveRadarScanner(BaseRadarScanner):
         self._analysis_pruned=0
         self._analysis_overflow=0
         self.enrich_rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=2.5,retries=0)
-        self.enrich_explorer=BlockscoutClient(config.BLOCKSCOUT_API,timeout=3,v2_base=config.BLOCKSCOUT_V2)
+        self.enrich_explorer=BlockscoutClient(config.BLOCKSCOUT_API,timeout=2,v2_base=config.BLOCKSCOUT_V2)
         def cached_ownership(address,total_supply=None):
             key=address.lower();now=time.time();cached=self._ownership_cache.get(key)
             if cached and now-cached[0] <= 60 and cached[1]==total_supply:return cached[2]
             value=self.enrich_explorer.ownership(address,total_supply);self._ownership_cache[key]=(now,total_supply,value);return value
         self.explorer.ownership=cached_ownership
+
+    def _stage(self,name,**payload):
+        print(json.dumps({'radar_stage':name,**payload}),file=sys.stderr,flush=True)
 
     def _init_signatures(self):
         if self._topics:return
@@ -125,6 +130,9 @@ class LiveRadarScanner(BaseRadarScanner):
         value={'safety':safety,'supply':{'total_supply':total,'max_supply':r['max']},'mint_price_wei':price,'name':snap_name,'ticker':snap_ticker,'is_hoodsea':is_hoodsea,'contract_name':cname,'source_text':ver.get('source_text') or '','interfaces':{'erc721':r['erc721'],'erc1155':r['erc1155']}};self._snapshot_cache[key]=(now,value);return value
 
     def _prepare_analysis_rows(self):
+        required=('launches_map','recent_collections','mint_window','market_summary')
+        if not all(hasattr(self.db,name) for name in required):
+            self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;return []
         now=int(time.time());launches=self.db.launches_map();rows=self.db.recent_collections(now-3600)[:config.MAX_CANDIDATES*3]
         qualifiers=[];watches=[];skipped=0
         for row in rows:
@@ -137,25 +145,30 @@ class LiveRadarScanner(BaseRadarScanner):
             elif cls=='WATCH':watches.append(ranked)
             else:skipped+=1
         qualifiers.sort(reverse=True,key=lambda x:(x[0],x[1]));watches.sort(reverse=True,key=lambda x:(x[0],x[1]))
-        maxq=max(1,config.MAX_CANDIDATES);self._analysis_overflow=max(0,len(qualifiers)-maxq)
-        selected=[x[2] for x in qualifiers[:maxq]]
+        budget=max(1,min(config.MAX_ANALYSIS_ROWS,config.MAX_CANDIDATES));self._analysis_overflow=max(0,len(qualifiers)-budget)
+        selected=[x[2] for x in qualifiers[:budget]]
+        watch_slots=0
         if not self._analysis_overflow:
-            watch_slots=max(0,min(4,config.MAX_CANDIDATES-len(selected)));selected.extend(x[2] for x in watches[:watch_slots])
+            watch_slots=max(0,min(2,budget-len(selected)));selected.extend(x[2] for x in watches[:watch_slots])
         self._analysis_rows_cache=selected
-        self._analysis_pruned=skipped+max(0,len(watches)-max(0,min(4,config.MAX_CANDIDATES-len(qualifiers[:maxq]))))
+        self._analysis_pruned=skipped+max(0,len(watches)-watch_slots)
         return selected
 
     def _prewarm_enrichment(self):
-        rows=self._analysis_rows_cache or self._prepare_analysis_rows();now=int(time.time())
-        # SQLite connections are intentionally single-threaded. Materialize all
-        # event windows on the scanner thread, then pass immutable data to workers.
-        work=[(row,self.db.mint_window(row['collection'],now-3600)) for row in rows]
-        def warm(item):
-            row,events=item;addr=row['collection'];snap=self.contract_snapshot(addr);self.explorer.ownership(addr,snap['supply'].get('total_supply'));self._observed_zero_price(events)
-        if work:
-            with ThreadPoolExecutor(max_workers=min(3,len(work))) as pool:list(pool.map(warm,work))
+        rows=self._analysis_rows_cache or self._prepare_analysis_rows()
+        if not rows or not hasattr(self.db,'mint_window'):return
+        now=int(time.time())
+        # Deliberately serial at the orchestration level: SQLite and candidate
+        # state remain on this thread. contract_snapshot still parallelizes only
+        # pure RPC/HTTP calls internally.
+        for row in rows:
+            events=self.db.mint_window(row['collection'],now-3600)
+            self.contract_snapshot(row['collection'])
+            self._observed_zero_price(events)
 
     def build_status(self,tip,safe_block,from_block,to_block,started_at):
+        if not hasattr(self.db,'recent_collections'):
+            return super().build_status(tip,safe_block,from_block,to_block,started_at)
         selected=list(self._analysis_rows_cache or self._prepare_analysis_rows());original=self.db.recent_collections
         self.db.recent_collections=lambda _since:list(selected)
         try:status=super().build_status(tip,safe_block,from_block,to_block,started_at)
@@ -197,14 +210,14 @@ class LiveRadarScanner(BaseRadarScanner):
         return processed_to,ranges
 
     def scan_once(self,public_lookback=None):
-        started=time.time();self.diag=[];self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;self._init_signatures();chain=self.rpc.chain_id()
+        started=time.time();self.diag=[];self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;self._init_signatures();self._stage('START');chain=self.rpc.chain_id()
         if chain!=config.CHAIN_ID:raise RPCError(f'WRONG_CHAIN_ID:{chain}')
         tip=self.rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);last=self._verify_checkpoint(self.db.last_block(),self.db.get_meta('last_block_hash'))
         if public_lookback is not None:first=max(0,safe-public_lookback+1)
         elif last is None:first=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS+1)
         else:first=last+1
         if first>safe:first=safe
-        cursor=first;processed_to=first-1;ranges=0;max_ranges=50;chunk=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS))
+        cursor=first;processed_to=first-1;ranges=0;max_ranges=50;chunk=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS));self._stage('INGEST',from_block=first,safe_block=safe)
         while ranges<max_ranges:
             done,used=self._catch_up(cursor,safe,chunk,max_ranges-ranges)
             if done>=cursor:processed_to=done;cursor=done+1
@@ -212,8 +225,8 @@ class LiveRadarScanner(BaseRadarScanner):
             if self._lag_is_ready(lag_blocks,lag_seconds):break
             cursor=processed_to+1
         if processed_to<first:processed_to=min(first,safe)
-        analysis_started=time.time();self._prepare_analysis_rows();self._prewarm_enrichment();status=self.build_status(tip,safe,first,processed_to,started);analysis_age=time.time()-analysis_started
-        final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);tail_cursor=processed_to+1
+        analysis_started=time.time();self._stage('SELECT');self._prepare_analysis_rows();self._stage('ENRICH',rows=len(self._analysis_rows_cache),overflow=self._analysis_overflow);self._prewarm_enrichment();self._stage('SCORE');status=self.build_status(tip,safe,first,processed_to,started);analysis_age=time.time()-analysis_started
+        final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);tail_cursor=processed_to+1;self._stage('TAIL',from_block=tail_cursor,safe_block=final_safe)
         if tail_cursor<=final_safe:
             tail_done,_=self._catch_up(tail_cursor,final_safe,chunk,20)
             if tail_done>=tail_cursor:processed_to=tail_done
@@ -228,5 +241,5 @@ class LiveRadarScanner(BaseRadarScanner):
                 gf=int(gap_from);gt=int(gap_to)
                 if gt>=gf:scan['historical_gap']={'state':'RECORDED_NOT_BACKFILLED','from_block':gf,'to_block':gt,'blocks':gt-gf+1}
             except (TypeError,ValueError):pass
-        status['status']=f'SCANNING {first}-{processed_to}'
+        status['status']=f'SCANNING {first}-{processed_to}';self._stage('DONE',duration_seconds=scan['duration_seconds'],lag_seconds=lag_seconds,analysis_age_seconds=scan['analysis_age_seconds'])
         return status
