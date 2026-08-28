@@ -4,6 +4,7 @@ from . import config
 from .explorer import BlockscoutClient
 from .rpc import RPCClient,RPCError
 from .safety import evaluate_safety
+from .scoring import compute_metrics
 from .scanner import RadarScanner as BaseRadarScanner,decode_string_word,data_word,uint_hex
 from .signatures import TOPICS,SELECTORS
 
@@ -18,18 +19,54 @@ _CRITICAL_LOG_FAILURES={
 }
 
 
+def activity_core(metrics):
+    """Score points knowable without contract/explorer enrichment."""
+    velocity=int(max(0,min(20,float(metrics.get('velocity_1m') or 0)*1.5)))
+    acceleration=int(max(0,min(15,max(0,float(metrics.get('acceleration_5m') or 0))*7.5)))
+    holders=int(max(0,min(10,float(metrics.get('unique_recent_minters') or 0)/2)))
+    return velocity+acceleration+holders
+
+
+def cheap_analysis_class(metrics,has_market=False,known_launch=False):
+    """Fail-safe upper-bound triage before expensive enrichment.
+
+    REGULAR_POSSIBLE means the candidate can still mathematically reach 85 if
+    every unknown expensive component receives its maximum points. EARLY_POSSIBLE
+    applies the stricter Hoodsea-only 80-point path and its cheap activity gates.
+    WATCH means it cannot qualify from currently known evidence but can still
+    theoretically reach score 60; SKIP means even an optimistic upper bound is
+    below WATCH and therefore cannot produce a manual package this cycle.
+    """
+    core=activity_core(metrics)
+    regular=bool(has_market and core+55>=85)
+    early=bool(
+        known_launch
+        and int(metrics.get('unique_recent_minters') or 0)>=20
+        and float(metrics.get('velocity_5m') or 0)>=2
+        and core+40>=80
+    )
+    if regular:return 'REGULAR_POSSIBLE'
+    if early:return 'EARLY_POSSIBLE'
+    if known_launch or (has_market and core+55>=60) or core+40>=60:return 'WATCH'
+    return 'SKIP'
+
+
 class LiveRadarScanner(BaseRadarScanner):
     """Continuous scanner with durable ingest and bounded fail-closed enrichment."""
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         # A live cycle must never spend minutes inside one public-RPC call.
-        # Fail fast and let the outer continuous loop retry on the next cycle.
         self.rpc=RPCClient(kwargs.get('rpc_url') or config.DEFAULT_RPC_URL,timeout=5,retries=1)
         self._snapshot_cache={}
         self._ownership_cache={}
-        self.enrich_rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=4,retries=1)
-        self.enrich_explorer=BlockscoutClient(config.BLOCKSCOUT_API,timeout=5,v2_base=config.BLOCKSCOUT_V2)
+        self._analysis_rows_cache=[]
+        self._analysis_pruned=0
+        self._analysis_overflow=0
+        # Enrichment is optional evidence: fail fast, fail closed, and let the
+        # next cycle retry rather than blocking live ingest.
+        self.enrich_rpc=RPCClient(config.DEFAULT_RPC_URL,timeout=2.5,retries=0)
+        self.enrich_explorer=BlockscoutClient(config.BLOCKSCOUT_API,timeout=3,v2_base=config.BLOCKSCOUT_V2)
         def cached_ownership(address,total_supply=None):
             key=address.lower();now=time.time();cached=self._ownership_cache.get(key)
             if cached and now-cached[0] <= 60 and cached[1]==total_supply:return cached[2]
@@ -65,7 +102,7 @@ class LiveRadarScanner(BaseRadarScanner):
         except Exception:return None
 
     def _observed_zero_price(self,events):
-        """Infer zero-value mint tx with bounded enrichment RPC, never the long ingest RPC."""
+        """Infer zero-value mint tx with bounded enrichment RPC, never the ingest RPC."""
         for e in events[:3]:
             txh=e.get('tx_hash')
             if not txh:continue
@@ -83,7 +120,9 @@ class LiveRadarScanner(BaseRadarScanner):
         def get_code():
             try:return self.enrich_rpc.code(address)
             except Exception as exc:self._diag('CONTRACT_CHECK','GET_CODE_FAILED',exc);return None
-        with ThreadPoolExecutor(max_workers=10) as pool:
+        # Keep nested concurrency bounded. The old 8x10 fan-out could create ~80
+        # simultaneous network operations on a laptop and trigger provider resets.
+        with ThreadPoolExecutor(max_workers=4) as pool:
             futures={'code':pool.submit(get_code),'ver':pool.submit(self.enrich_explorer.verification,address),'total':pool.submit(self._e_uint,address,'totalSupply'),'minted':pool.submit(self._e_uint,address,'totalMinted'),'max':pool.submit(self._e_uint,address,'maxSupply'),'price_wei':pool.submit(self._e_uint,address,'mintPriceWei'),'price':pool.submit(self._e_uint,address,'mintPrice'),'name':pool.submit(self._e_string,address,'name'),'symbol':pool.submit(self._e_string,address,'symbol'),'owner':pool.submit(self._e_address,address,'owner'),'erc721':pool.submit(self._e_supports,address,'0x80ac58cd'),'erc1155':pool.submit(self._e_supports,address,'0xd9b67a26')}
             r={k:f.result() for k,f in futures.items()}
         ver=r['ver'] or {'verified':None,'source_text':'','review_risks':['VERIFICATION_UNAVAILABLE'],'hard_risks':[],'capabilities':[]};total=r['total'] if r['total'] is not None else r['minted'];price=r['price_wei'] if r['price_wei'] is not None else r['price'];cname=ver.get('contract_name') or '';is_hoodsea='hoodseanft' in cname.lower();snap_name=r['name'];snap_ticker=r['symbol']
@@ -99,12 +138,56 @@ class LiveRadarScanner(BaseRadarScanner):
             safety['review_risks']=sorted(set(safety.get('review_risks',[])+['CONTRACT_CODE_UNAVAILABLE']))
         value={'safety':safety,'supply':{'total_supply':total,'max_supply':r['max']},'mint_price_wei':price,'name':snap_name,'ticker':snap_ticker,'is_hoodsea':is_hoodsea,'contract_name':cname,'source_text':ver.get('source_text') or '','interfaces':{'erc721':r['erc721'],'erc1155':r['erc1155']}};self._snapshot_cache[key]=(now,value);return value
 
+    def _prepare_analysis_rows(self):
+        now=int(time.time());launches=self.db.launches_map();rows=self.db.recent_collections(now-3600)[:config.MAX_CANDIDATES*3]
+        qualifiers=[];watches=[];skipped=0
+        for row in rows:
+            addr=row['collection'];events=self.db.mint_window(addr,now-3600);metrics=compute_metrics(events,now)
+            launch=launches.get(addr.lower());onchain=self.db.market_summary(addr,now-86400)
+            has_market=bool(onchain.get('sales_24h',0)>0 or config.OPENSea_API_KEY)
+            cls=cheap_analysis_class(metrics,has_market=has_market,known_launch=bool(launch))
+            ranked=(activity_core(metrics),int(row.get('last_time') or 0),row)
+            if cls in ('REGULAR_POSSIBLE','EARLY_POSSIBLE'):qualifiers.append(ranked)
+            elif cls=='WATCH':watches.append(ranked)
+            else:skipped+=1
+        qualifiers.sort(reverse=True,key=lambda x:(x[0],x[1]));watches.sort(reverse=True,key=lambda x:(x[0],x[1]))
+        # Analyze every plausible qualifier unless an abnormal burst exceeds the
+        # hard UI candidate cap. If that happens, the cycle is explicitly fail-closed.
+        maxq=max(1,config.MAX_CANDIDATES)
+        self._analysis_overflow=max(0,len(qualifiers)-maxq)
+        selected=[x[2] for x in qualifiers[:maxq]]
+        if not self._analysis_overflow:
+            watch_slots=max(0,min(4,config.MAX_CANDIDATES-len(selected)))
+            selected.extend(x[2] for x in watches[:watch_slots])
+        self._analysis_rows_cache=selected
+        self._analysis_pruned=skipped+max(0,len(watches)-max(0,min(4,config.MAX_CANDIDATES-len(qualifiers[:maxq]))))
+        return selected
+
     def _prewarm_enrichment(self):
-        now=int(time.time());rows=self.db.recent_collections(now-3600)[:config.MAX_CANDIDATES*3];rows=rows[:max(config.MAX_CANDIDATES,8)]
+        rows=self._analysis_rows_cache or self._prepare_analysis_rows();now=int(time.time())
         def warm(row):
-            snap=self.contract_snapshot(row['collection']);self.explorer.ownership(row['collection'],snap['supply'].get('total_supply'))
+            addr=row['collection'];snap=self.contract_snapshot(addr);self.explorer.ownership(addr,snap['supply'].get('total_supply'))
+            # Pre-fill tx cache so price inference does not become a serial tail.
+            self._observed_zero_price(self.db.mint_window(addr,now-3600))
         if rows:
-            with ThreadPoolExecutor(max_workers=min(8,len(rows))) as pool:list(pool.map(warm,rows))
+            with ThreadPoolExecutor(max_workers=min(3,len(rows))) as pool:list(pool.map(warm,rows))
+
+    def build_status(self,tip,safe_block,from_block,to_block,started_at):
+        # Base build_status is retained as the canonical scoring/hard-gate logic.
+        # Feed it only the cheap-ceiling-selected rows for this cycle.
+        selected=list(self._analysis_rows_cache or self._prepare_analysis_rows())
+        original=self.db.recent_collections
+        self.db.recent_collections=lambda _since:list(selected)
+        try:status=super().build_status(tip,safe_block,from_block,to_block,started_at)
+        finally:self.db.recent_collections=original
+        scan=status.setdefault('scan',{});scan['analysis_rows_considered']=len(selected);scan['analysis_rows_pruned']=self._analysis_pruned;scan['qualification_queue_overflow']=self._analysis_overflow
+        if self._analysis_overflow:
+            status['live_ready']='NOT_READY';status['money_readiness']='ANALYSIS QUEUE — WAIT';status['manual_packages']=[];scan['qualified_candidates']=0
+            for c in status.get('watchlist') or []:
+                if 'ANALYSIS_QUEUE_OVERFLOW' not in c.setdefault('hard_gates',[]):c['hard_gates'].append('ANALYSIS_QUEUE_OVERFLOW')
+                c['qualified']=False;c['qualification_path']=None;c['action']='WAIT'
+            d=status.setdefault('diagnostics',[]);d.append({'stage':'ANALYSIS','reason':'QUALIFICATION_QUEUE_OVERFLOW','error':f'skipped_possible_qualifiers={self._analysis_overflow}','ts':int(time.time())});status['diagnostics']=d[-10:]
+        return status
 
     def _scan_range_or_raise(self,from_block,to_block):
         before=len(self.diag);added=super().scan_logs(from_block,to_block);failures=[d for d in self.diag[before:] if d.get('reason') in _CRITICAL_LOG_FAILURES]
@@ -134,7 +217,7 @@ class LiveRadarScanner(BaseRadarScanner):
         return processed_to,ranges
 
     def scan_once(self,public_lookback=None):
-        started=time.time();self.diag=[];self._init_signatures();chain=self.rpc.chain_id()
+        started=time.time();self.diag=[];self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;self._init_signatures();chain=self.rpc.chain_id()
         if chain!=config.CHAIN_ID:raise RPCError(f'WRONG_CHAIN_ID:{chain}')
         tip=self.rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);last=self._verify_checkpoint(self.db.last_block(),self.db.get_meta('last_block_hash'))
         if public_lookback is not None:first=max(0,safe-public_lookback+1)
@@ -149,13 +232,13 @@ class LiveRadarScanner(BaseRadarScanner):
             if self._lag_is_ready(lag_blocks,lag_seconds):break
             cursor=processed_to+1
         if processed_to<first:processed_to=min(first,safe)
-        analysis_started=time.time();self._prewarm_enrichment();status=self.build_status(tip,safe,first,processed_to,started);analysis_age=time.time()-analysis_started
+        analysis_started=time.time();self._prepare_analysis_rows();self._prewarm_enrichment();status=self.build_status(tip,safe,first,processed_to,started);analysis_age=time.time()-analysis_started
         final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);tail_cursor=processed_to+1
         if tail_cursor<=final_safe:
             tail_done,_=self._catch_up(tail_cursor,final_safe,chunk,20)
             if tail_done>=tail_cursor:processed_to=tail_done
         final_tip=self.rpc.block_number();final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS);lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
-        status.setdefault('chain',{})['latest_block']=final_tip;status['chain']['safe_block']=final_safe
+        status.setdefault('chain',{})['latest_block']=final_tip;status['chain']['safe_block']=final_safe;status['chain']['active_rpc']=self.rpc.url;status['chain']['rpc_failovers']=self.rpc.failovers
         try:status['chain']['latest_block_age_seconds']=max(0,int(time.time())-int(self.block_time(final_tip)))
         except Exception:pass
         scan=status.setdefault('scan',{});scan['from_block']=first;scan['to_block']=processed_to;scan['blocks_processed']=max(0,processed_to-first+1);scan['lag_blocks']=lag_blocks;scan['lag_seconds']=lag_seconds;scan['analysis_age_seconds']=round(analysis_age,3);scan['duration_seconds']=round(time.time()-started,3)
