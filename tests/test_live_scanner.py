@@ -15,6 +15,7 @@ class _DB:
         self.meta[key]=str(value)
         if key=='last_block': self.last=int(value)
     def recent_collections(self,since): return []
+    def launches_map(self): return {}
 
 
 class _RPC:
