@@ -31,15 +31,29 @@ jobs:
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
         run: python -m radar --once --public-lookback 60 --db /tmp/radar-public.sqlite --status public/status.json
-      - name: Validate snapshot contract
+      - name: Validate snapshot contract and freshness
         run: |
           python - <<'PY'
           import json
           d=json.load(open('public/status.json'))
+          s=d.get('scan',{})
           assert d['mode']=='READ_ONLY'
           assert d['wallet_execution']=='MANUAL_ONLY'
-          assert d['live_ready'] in ('READY','NOT_READY')
-          print(json.dumps({'latest_block':d.get('chain',{}).get('latest_block'),'live_ready':d['live_ready'],'qualified':d['scan']['qualified_candidates']}))
+          assert d['live_ready']=='READY', d.get('diagnostics')
+          assert int(s.get('lag_blocks',10**9)) <= 2000
+          assert int(s.get('lag_seconds',10**9)) <= 60
+          assert float(s.get('analysis_age_seconds',10**9)) <= 60
+          assert float(s.get('duration_seconds',10**9)) <= 90
+          assert not any(c.get('qualified') for c in (d.get('watchlist') or []) if c.get('action')!='MANUAL_MINT_CANDIDATE')
+          print(json.dumps({
+            'latest_block':d.get('chain',{}).get('latest_block'),
+            'live_ready':d['live_ready'],
+            'lag_blocks':s.get('lag_blocks'),
+            'lag_seconds':s.get('lag_seconds'),
+            'analysis_age_seconds':s.get('analysis_age_seconds'),
+            'duration_seconds':s.get('duration_seconds'),
+            'qualified':s.get('qualified_candidates')
+          }))
           PY
       - name: Persist public snapshot
         shell: bash
