@@ -48,9 +48,10 @@ mkdir -p data public logs
 
 TMP_DB="/tmp/robinhood-mint-radar-doctor-$$.sqlite"
 TMP_STATUS="/tmp/robinhood-mint-radar-doctor-$$.json"
-trap 'rm -f "$TMP_DB" "$TMP_STATUS"' EXIT INT TERM
-"$PYTHON_BIN" -m radar --once --public-lookback 3 --db "$TMP_DB" --status "$TMP_STATUS" --strict
-"$PYTHON_BIN" - "$TMP_STATUS" <<'PY'
+trap 'rm -f "$TMP_DB" "$TMP_DB-wal" "$TMP_DB-shm" "$TMP_STATUS"' EXIT INT TERM
+
+validate_doctor_status() {
+  "$PYTHON_BIN" - "$TMP_STATUS" <<'PY'
 import json, os, sys
 p=sys.argv[1]
 d=json.load(open(p))
@@ -67,9 +68,33 @@ assert lag_blocks <= max_blocks
 assert lag_seconds <= max_seconds
 print('[PASS] live chain:', d['chain']['latest_block'])
 print('[PASS] scanner lag:', f'{lag_blocks} blocks / {lag_seconds}s')
+print('[PASS] analysis age:', f"{scan.get('analysis_age_seconds',0)}s")
 print('[PASS] wallet execution:', d['wallet_execution'])
 print('[PASS] qualified:', d['scan']['qualified_candidates'])
 PY
+}
+
+DOCTOR_OK=0
+ATTEMPT=1
+while [ "$ATTEMPT" -le 3 ]; do
+  rm -f "$TMP_DB" "$TMP_DB-wal" "$TMP_DB-shm" "$TMP_STATUS"
+  echo "Live doctor attempt $ATTEMPT/3..."
+  if "$PYTHON_BIN" -m radar --once --public-lookback 3 --db "$TMP_DB" --status "$TMP_STATUS" --strict; then
+    if validate_doctor_status; then
+      DOCTOR_OK=1
+      break
+    fi
+  fi
+  echo "[WARN] live doctor attempt $ATTEMPT did not reach READY"
+  ATTEMPT=$((ATTEMPT+1))
+  [ "$ATTEMPT" -le 3 ] && sleep 2 || true
+done
+
+if [ "$DOCTOR_OK" -ne 1 ]; then
+  echo "[FAIL] live doctor exhausted 3 independent probes" >&2
+  if [ -f "$TMP_STATUS" ]; then cat "$TMP_STATUS" >&2 || true; fi
+  exit 2
+fi
 
 if command -v plutil >/dev/null 2>&1; then
   plutil -lint macos/com.copytolive.robinhood-mint-radar.plist.example >/dev/null
