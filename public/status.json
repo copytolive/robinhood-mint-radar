@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+    "collection": "0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,21 +20,21 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 146,
-      "mints_1m": 146,
-      "mints_5m": 146,
-      "mints_60m": 146,
-      "raw_units_1m": 146,
-      "raw_units_5m": 146,
-      "recent_mint_concentration": 0.0068,
-      "unique_recent_minters": 146,
-      "velocity_1m": 146.0,
-      "velocity_5m": 29.2
+      "mints_15m": 34,
+      "mints_1m": 34,
+      "mints_5m": 34,
+      "mints_60m": 34,
+      "raw_units_1m": 34,
+      "raw_units_5m": 34,
+      "recent_mint_concentration": 0.0294,
+      "unique_recent_minters": 34,
+      "velocity_1m": 34.0,
+      "velocity_5m": 6.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Stoned Brokers",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+    "name": "Pipkits",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xe0465b91f7abb8f2783888d27e2d818cb1f95216",
+      "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -75,13 +75,13 @@
       "secondary_liquidity": 0,
       "sell_through": 1
     },
-    "sell_through": 0.12571428571428572,
+    "sell_through": 0.104,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4200,
-      "total_supply": 528
+      "max_supply": 6000,
+      "total_supply": 624
     },
-    "ticker": "Stoned Brokers"
+    "ticker": "Pipkits"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48979980,
-    "latest_block_age_seconds": 1,
+    "latest_block": 48987614,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48979970,
+    "safe_block": 48987604,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 327680,
+    "bytes": 118784,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787988894,
+  "generated_at": 1787989664,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,37 +135,37 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 6.152,
+    "analysis_age_seconds": 5.476,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 9.228,
-    "from_block": 48979779,
+    "duration_seconds": 8.784,
+    "from_block": 48987404,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 72,
+    "lag_blocks": 81,
     "lag_seconds": 8,
     "live_observations": 1,
-    "next_block": 48979899,
+    "next_block": 48987524,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 18,
-    "to_block": 48979898,
-    "total_mint_units_stored": 205
+    "secondary_sales_stored": 4,
+    "to_block": 48987523,
+    "total_mint_units_stored": 46
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48979779-48979898",
+  "status": "SCANNING 48987404-48987523",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+      "collection": "0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -178,21 +178,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 146,
-        "mints_1m": 146,
-        "mints_5m": 146,
-        "mints_60m": 146,
-        "raw_units_1m": 146,
-        "raw_units_5m": 146,
-        "recent_mint_concentration": 0.0068,
-        "unique_recent_minters": 146,
-        "velocity_1m": 146.0,
-        "velocity_5m": 29.2
+        "mints_15m": 34,
+        "mints_1m": 34,
+        "mints_5m": 34,
+        "mints_60m": 34,
+        "raw_units_1m": 34,
+        "raw_units_5m": 34,
+        "recent_mint_concentration": 0.0294,
+        "unique_recent_minters": 34,
+        "velocity_1m": 34.0,
+        "velocity_5m": 6.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Stoned Brokers",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x05b4d3d86eb25e3c24f624241ce04a6d4bd70358",
+      "name": "Pipkits",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -213,7 +213,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xe0465b91f7abb8f2783888d27e2d818cb1f95216",
+        "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -233,13 +233,13 @@
         "secondary_liquidity": 0,
         "sell_through": 1
       },
-      "sell_through": 0.12571428571428572,
+      "sell_through": 0.104,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4200,
-        "total_supply": 528
+        "max_supply": 6000,
+        "total_supply": 624
       },
-      "ticker": "Stoned Brokers"
+      "ticker": "Pipkits"
     }
   ],
   "win_rate_pct": 0.0
