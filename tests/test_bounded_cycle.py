@@ -58,7 +58,7 @@ class BoundedCycleTests(unittest.TestCase):
         s=Harness(last=100,tips=[1000,1100])
         old=config.INGEST_CYCLE_BUDGET_SECONDS
         config.INGEST_CYCLE_BUDGET_SECONDS=5
-        ticks=iter([0,0,10,11,12,13,14,15,16,17,18,19,20])
+        ticks=iter([0,10,11,12,13,14,15,16,17,18,19,20])
         try:
             with patch('radar.bounded_fast_live_scanner.time.time',side_effect=lambda:next(ticks)):
                 status=s.scan_once()
