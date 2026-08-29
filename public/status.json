@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 20,
-      "mints_1m": 20,
-      "mints_5m": 20,
-      "mints_60m": 20,
-      "raw_units_1m": 20,
-      "raw_units_5m": 20,
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
       "recent_mint_concentration": 1.0,
       "unique_recent_minters": 1,
-      "velocity_1m": 20.0,
-      "velocity_5m": 4.0
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": 69000.0,
     "mint_price_source": "CONTRACT",
@@ -40,7 +40,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1275,
+    "predicted_probability": 0.0982,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -64,12 +64,12 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 34,
+    "score": 29,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 0,
-      "mint_velocity": 20,
+      "mint_velocity": 15,
       "price_asymmetry": 3,
       "safety": 4,
       "secondary_liquidity": 0,
@@ -79,7 +79,7 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": 89
+      "total_supply": 226
     },
     "ticker": "GLOMPB"
   },
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49040879,
+    "latest_block": 49048394,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49040869,
+    "safe_block": 49048384,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 131072,
+    "bytes": 106496,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787995038,
+  "generated_at": 1787995795,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,26 +135,26 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.221,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 1.877,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 5.105,
-    "from_block": 49040700,
+    "duration_seconds": 4.489,
+    "from_block": 49048231,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 50,
-    "lag_seconds": 5,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 34,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 49040820,
+    "next_block": 49048351,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 12,
-    "to_block": 49040819,
-    "total_mint_units_stored": 52
+    "secondary_sales_stored": 14,
+    "to_block": 49048350,
+    "total_mint_units_stored": 26
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49040700-49040819",
+  "status": "SCANNING 49048231-49048350",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -178,16 +178,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 20,
-        "mints_1m": 20,
-        "mints_5m": 20,
-        "mints_60m": 20,
-        "raw_units_1m": 20,
-        "raw_units_5m": 20,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 20.0,
-        "velocity_5m": 4.0
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": 69000.0,
       "mint_price_source": "CONTRACT",
@@ -198,7 +198,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1275,
+      "predicted_probability": 0.0982,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -222,12 +222,12 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 34,
+      "score": 29,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 20,
+        "mint_velocity": 15,
         "price_asymmetry": 3,
         "safety": 4,
         "secondary_liquidity": 0,
@@ -237,7 +237,7 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 89
+        "total_supply": 226
       },
       "ticker": "GLOMPB"
     }
