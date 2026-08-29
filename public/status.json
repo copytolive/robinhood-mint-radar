@@ -1,17 +1,16 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+    "action": "WATCH",
+    "collection": "0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -21,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 29,
-      "mints_1m": 29,
-      "mints_5m": 29,
-      "mints_60m": 29,
-      "raw_units_1m": 29,
-      "raw_units_5m": 29,
-      "recent_mint_concentration": 0.3448,
-      "unique_recent_minters": 4,
-      "velocity_1m": 29.0,
-      "velocity_5m": 5.8
+      "mints_15m": 158,
+      "mints_1m": 158,
+      "mints_5m": 158,
+      "mints_60m": 158,
+      "raw_units_1m": 158,
+      "raw_units_5m": 158,
+      "recent_mint_concentration": 0.019,
+      "unique_recent_minters": 54,
+      "velocity_1m": 158.0,
+      "velocity_5m": 31.6
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "hoodbots",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Feral Monsta",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1213,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x8858953cc1951aedd4a603ef48107706370a705a",
+      "owner": "0x151d799be50adea3e8cec29c830f8f2789641f21",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,13 +64,13 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 33,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 2,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
-      "price_asymmetry": 0,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
@@ -80,9 +79,9 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": 7682
+      "total_supply": 4452
     },
-    "ticker": "BOT"
+    "ticker": "FMT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49549443,
-    "latest_block_age_seconds": 1,
+    "latest_block": 49558663,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49549433,
+    "safe_block": 49558653,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788046419,
+  "generated_at": 1788047352,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -117,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -137,42 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.586,
+    "analysis_age_seconds": 3.908,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 5.854,
-    "from_block": 49549264,
+    "duration_seconds": 11.35,
+    "from_block": 49558452,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 50,
-    "lag_seconds": 5,
+    "lag_blocks": 82,
+    "lag_seconds": 8,
     "live_observations": 1,
-    "next_block": 49549384,
+    "next_block": 49558572,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49549383,
+    "to_block": 49558571,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49549264-49549383",
+  "status": "SCANNING 49558452-49558571",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+      "action": "WATCH",
+      "collection": "0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -182,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 29,
-        "mints_1m": 29,
-        "mints_5m": 29,
-        "mints_60m": 29,
-        "raw_units_1m": 29,
-        "raw_units_5m": 29,
-        "recent_mint_concentration": 0.3448,
-        "unique_recent_minters": 4,
-        "velocity_1m": 29.0,
-        "velocity_5m": 5.8
+        "mints_15m": 158,
+        "mints_1m": 158,
+        "mints_5m": 158,
+        "mints_60m": 158,
+        "raw_units_1m": 158,
+        "raw_units_5m": 158,
+        "recent_mint_concentration": 0.019,
+        "unique_recent_minters": 54,
+        "velocity_1m": 158.0,
+        "velocity_5m": 31.6
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "hoodbots",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x1a482a9dbadfd313da69e94e46a1687eb3a22374",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Feral Monsta",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x1fea4f6b06779e8c8e04b6a46081ebcd7f489469",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1213,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x8858953cc1951aedd4a603ef48107706370a705a",
+        "owner": "0x151d799be50adea3e8cec29c830f8f2789641f21",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,13 +224,13 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 33,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
@@ -241,9 +239,9 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 7682
+        "total_supply": 4452
       },
-      "ticker": "BOT"
+      "ticker": "FMT"
     }
   ],
   "win_rate_pct": 0.0
