@@ -1,109 +1,26 @@
 {
-  "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 12,
-      "mints_1m": 12,
-      "mints_5m": 12,
-      "mints_60m": 12,
-      "raw_units_1m": 12,
-      "raw_units_5m": 12,
-      "recent_mint_concentration": 0.0833,
-      "unique_recent_minters": 12,
-      "velocity_1m": 12.0,
-      "velocity_5m": 2.4
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "CONTRACT",
-    "name": "Office Apes",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.2912,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0x9088e896ae7657f3e602c504eccfb696d66f2192",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 54,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 6,
-      "mint_velocity": 18,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 1
-    },
-    "sell_through": 0.1906,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 10000,
-      "total_supply": 1906
-    },
-    "ticker": "OAPES"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49193069,
-    "latest_block_age_seconds": 2,
+    "latest_block": 49200529,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49193059,
+    "safe_block": 49200519,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 192512,
+    "bytes": 122880,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788010398,
+  "generated_at": 1788011152,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,112 +52,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 6.653,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 8,
+    "analysis_age_seconds": 2.017,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 11.254,
-    "from_block": 49192840,
+    "duration_seconds": 4.472,
+    "from_block": 49200375,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 100,
-    "lag_seconds": 10,
-    "live_observations": 1,
-    "next_block": 49192960,
+    "lag_blocks": 25,
+    "lag_seconds": 3,
+    "live_observations": 0,
+    "next_block": 49200495,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 10,
-    "to_block": 49192959,
-    "total_mint_units_stored": 94
+    "secondary_sales_stored": 18,
+    "to_block": 49200494,
+    "total_mint_units_stored": 38
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49192840-49192959",
+  "status": "SCANNING 49200375-49200494",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WAIT",
-      "collection": "0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 12,
-        "mints_1m": 12,
-        "mints_5m": 12,
-        "mints_60m": 12,
-        "raw_units_1m": 12,
-        "raw_units_5m": 12,
-        "recent_mint_concentration": 0.0833,
-        "unique_recent_minters": 12,
-        "velocity_1m": 12.0,
-        "velocity_5m": 2.4
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "CONTRACT",
-      "name": "Office Apes",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x8eca5d15f73aa90360c9541c60d3bd10cb55692a",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2912,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x9088e896ae7657f3e602c504eccfb696d66f2192",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 54,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 6,
-        "mint_velocity": 18,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 1
-      },
-      "sell_through": 0.1906,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 10000,
-        "total_supply": 1906
-      },
-      "ticker": "OAPES"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
