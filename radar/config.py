@@ -29,9 +29,10 @@ INITIAL_LOOKBACK_BLOCKS=int(os.getenv('RADAR_INITIAL_LOOKBACK_BLOCKS','120'))
 CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','5000'))
 MAX_CATCHUP_BLOCKS=int(os.getenv('RADAR_MAX_CATCHUP_BLOCKS','5000'))
 # Hard wall-clock budget for ingest inside one supervised cycle. The supervisor
-# kills the child at 90s; keeping ingest below this budget leaves deterministic
-# headroom for analysis/status publication instead of dying mid-cycle.
-INGEST_CYCLE_BUDGET_SECONDS=float(os.getenv('RADAR_INGEST_CYCLE_BUDGET_SECONDS','35'))
+# kills the child at 90s; keeping ingest bounded leaves deterministic headroom
+# for analysis/status publication. Real Mac telemetry showed ~1.3k blocks can
+# take roughly 55-65s, so 55s converges without chasing the moving tail.
+INGEST_CYCLE_BUDGET_SECONDS=float(os.getenv('RADAR_INGEST_CYCLE_BUDGET_SECONDS','55'))
 # If an outage leaves the durable cursor far behind, trying to replay an
 # unbounded live backlog can exceed the supervisor cycle deadline forever.
 # Real Mac telemetry showed a ~13k-block backlog growing despite repeated 90s
