@@ -1,6 +1,6 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
+    "action": "WAIT",
     "collection": "0x0312f67d373af6eff2d9c31279460291a4c81fdf",
     "execution": {
       "source": null,
@@ -10,32 +10,33 @@
     "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0312f67d373af6eff2d9c31279460291a4c81fdf",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 4,
+      "native_sales_24h": 6,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 4,
+      "sales_24h": 6,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.0050248
+      "volume_eth_24h": 0.00821
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 14,
-      "mints_1m": 14,
-      "mints_5m": 14,
-      "mints_60m": 14,
-      "raw_units_1m": 14,
-      "raw_units_5m": 14,
-      "recent_mint_concentration": 0.0714,
-      "unique_recent_minters": 14,
-      "velocity_1m": 14.0,
-      "velocity_5m": 2.8
+      "mints_15m": 6,
+      "mints_1m": 6,
+      "mints_5m": 6,
+      "mints_60m": 6,
+      "raw_units_1m": 6,
+      "raw_units_5m": 6,
+      "recent_mint_concentration": 0.1667,
+      "unique_recent_minters": 6,
+      "velocity_1m": 6.0,
+      "velocity_5m": 1.2
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
     "name": "Tenurevault",
     "opensea_url": "https://opensea.io/assets/robinhood/0x0312f67d373af6eff2d9c31279460291a4c81fdf",
     "ownership": {
@@ -43,7 +44,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.5021,
+    "predicted_probability": 0.2,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -67,22 +68,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 72,
+    "score": 44,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 7,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 3,
+      "holder_growth": 3,
+      "mint_velocity": 9,
+      "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 6,
-      "sell_through": 8
+      "secondary_liquidity": 9,
+      "sell_through": 9
     },
-    "sell_through": 0.8187818781878188,
+    "sell_through": 0.9693969396939695,
     "standard": "ERC721",
     "supply": {
       "max_supply": 3333,
-      "total_supply": 2729
+      "total_supply": 3231
     },
     "ticker": "TVT"
   },
@@ -92,21 +93,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49139696,
+    "latest_block": 49146711,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49139686,
+    "safe_block": 49146701,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 225280,
+    "bytes": 122880,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788005009,
+  "generated_at": 1788005716,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -118,7 +119,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -138,30 +139,30 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 9.278,
-    "analysis_rows_considered": 3,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 3.598,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 1,
     "blocks_processed": 120,
-    "duration_seconds": 14.224,
-    "from_block": 49139437,
+    "duration_seconds": 6.02,
+    "from_block": 49146522,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 130,
-    "lag_seconds": 14,
-    "live_observations": 2,
-    "next_block": 49139557,
+    "lag_blocks": 60,
+    "lag_seconds": 6,
+    "live_observations": 1,
+    "next_block": 49146642,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 58,
-    "to_block": 49139556,
-    "total_mint_units_stored": 96
+    "secondary_sales_stored": 19,
+    "to_block": 49146641,
+    "total_mint_units_stored": 37
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49139437-49139556",
+  "status": "SCANNING 49146522-49146641",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
+      "action": "WAIT",
       "collection": "0x0312f67d373af6eff2d9c31279460291a4c81fdf",
       "execution": {
         "source": null,
@@ -171,32 +172,33 @@
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0312f67d373af6eff2d9c31279460291a4c81fdf",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 4,
+        "native_sales_24h": 6,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 4,
+        "sales_24h": 6,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.0050248
+        "volume_eth_24h": 0.00821
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 14,
-        "mints_1m": 14,
-        "mints_5m": 14,
-        "mints_60m": 14,
-        "raw_units_1m": 14,
-        "raw_units_5m": 14,
-        "recent_mint_concentration": 0.0714,
-        "unique_recent_minters": 14,
-        "velocity_1m": 14.0,
-        "velocity_5m": 2.8
+        "mints_15m": 6,
+        "mints_1m": 6,
+        "mints_5m": 6,
+        "mints_60m": 6,
+        "raw_units_1m": 6,
+        "raw_units_5m": 6,
+        "recent_mint_concentration": 0.1667,
+        "unique_recent_minters": 6,
+        "velocity_1m": 6.0,
+        "velocity_5m": 1.2
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
       "name": "Tenurevault",
       "opensea_url": "https://opensea.io/assets/robinhood/0x0312f67d373af6eff2d9c31279460291a4c81fdf",
       "ownership": {
@@ -204,7 +206,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.5021,
+      "predicted_probability": 0.2,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -228,107 +230,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 72,
+      "score": 44,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 7,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "distribution": 3,
+        "holder_growth": 3,
+        "mint_velocity": 9,
+        "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 6,
-        "sell_through": 8
+        "secondary_liquidity": 9,
+        "sell_through": 9
       },
-      "sell_through": 0.8187818781878188,
+      "sell_through": 0.9693969396939695,
       "standard": "ERC721",
       "supply": {
         "max_supply": 3333,
-        "total_supply": 2729
+        "total_supply": 3231
       },
       "ticker": "TVT"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x1d88f2e49c4acd43af728f9f2d865bb874cef819",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1d88f2e49c4acd43af728f9f2d865bb874cef819",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 14,
-        "mints_1m": 14,
-        "mints_5m": 14,
-        "mints_60m": 14,
-        "raw_units_1m": 14,
-        "raw_units_5m": 14,
-        "recent_mint_concentration": 0.7143,
-        "unique_recent_minters": 5,
-        "velocity_1m": 14.0,
-        "velocity_5m": 2.8
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Tenurevault NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x1d88f2e49c4acd43af728f9f2d865bb874cef819",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2343,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x5f0f4bf632f10c492306d545e8785ea98d276834",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 48,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.0024,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 10000,
-        "total_supply": 24
-      },
-      "ticker": "Tenurevault"
     }
   ],
   "win_rate_pct": 0.0
