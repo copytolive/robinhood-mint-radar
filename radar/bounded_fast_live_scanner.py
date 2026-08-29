@@ -1,3 +1,5 @@
+import json
+import os
 import time
 
 from . import config
@@ -40,6 +42,104 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
                 }
                 for a,b in gaps
             ]
+        return status
+
+    def _previous_scan_counters(self):
+        """Read last published non-gating counters without scanning full tables."""
+        path=os.getenv('RADAR_STATUS_PATH',config.STATUS_PATH)
+        try:
+            with open(path,'r') as f:
+                old=json.load(f)
+            scan=old.get('scan') or {}
+            return {
+                'total_mint_units_stored':scan.get('total_mint_units_stored'),
+                'secondary_sales_stored':scan.get('secondary_sales_stored'),
+                'hoodsea_launches_stored':scan.get('hoodsea_launches_stored'),
+            }
+        except Exception:
+            return {
+                'total_mint_units_stored':None,
+                'secondary_sales_stored':None,
+                'hoodsea_launches_stored':None,
+            }
+
+    def _runtime_db_operational(self):
+        """O(1) connection probe for the live loop; full integrity stays in doctor."""
+        try:
+            row=self.db.conn.execute('SELECT 1').fetchone()
+            return bool(row and int(row[0])==1)
+        except Exception:
+            return False
+
+    def build_status(self,tip,safe_block,from_block,to_block,started_at):
+        """Build a live status without repeated full-database scans.
+
+        Base build_status historically ran PRAGMA integrity_check up to three
+        times and EXACT_INT_SUM over the complete mint table every live cycle.
+        Those are useful doctor/maintenance operations, but on a long-lived Mac
+        database they can consume the entire 90-second watchdog after SCORE.
+        Candidate scoring and every hard gate are unchanged here.
+        """
+        previous=self._previous_scan_counters()
+        operational=self._runtime_db_operational()
+        self._stage('STATUS_BUILD_START',db_operational=operational)
+
+        old_maintain=self._maybe_maintain
+        old_integrity=self.db.integrity_check
+        old_health=self.db.db_health
+        old_mints=self.db.total_mints
+        old_market=self.db.total_market_sales
+        old_launches=self.db.total_launches
+
+        def runtime_integrity():
+            return 'ok' if operational else 'runtime_probe_failed'
+
+        def runtime_health():
+            try:journal=self.db.conn.execute('PRAGMA journal_mode').fetchone()[0]
+            except Exception:journal='unknown'
+            try:size=os.path.getsize(self.db.path)
+            except OSError:size=0
+            return {
+                'journal_mode':journal,
+                'integrity':'RUNTIME_OPERATIONAL' if operational else 'RUNTIME_PROBE_FAILED',
+                'full_integrity':'DEFERRED_TO_DOCTOR',
+                'bytes':size,
+            }
+
+        self._maybe_maintain=lambda _now:None
+        self.db.integrity_check=runtime_integrity
+        self.db.db_health=runtime_health
+        self.db.total_mints=lambda:previous['total_mint_units_stored']
+        self.db.total_market_sales=lambda:previous['secondary_sales_stored']
+        self.db.total_launches=lambda:previous['hoodsea_launches_stored']
+        try:
+            status=super().build_status(tip,safe_block,from_block,to_block,started_at)
+        finally:
+            self._maybe_maintain=old_maintain
+            self.db.integrity_check=old_integrity
+            self.db.db_health=old_health
+            self.db.total_mints=old_mints
+            self.db.total_market_sales=old_market
+            self.db.total_launches=old_launches
+
+        if not operational:
+            status['live_ready']='NOT_READY'
+            status['money_readiness']='DATABASE RUNTIME CHECK FAILED — WAIT'
+            status['manual_packages']=[]
+            status.setdefault('scan',{})['qualified_candidates']=0
+            for c in status.get('watchlist') or []:
+                c['qualified']=False
+                c['qualification_path']=None
+                c['action']='WAIT'
+                if 'DATABASE_RUNTIME_CHECK_FAILED' not in c.setdefault('hard_gates',[]):
+                    c['hard_gates'].append('DATABASE_RUNTIME_CHECK_FAILED')
+            d=status.setdefault('diagnostics',[])
+            d.append({'stage':'DB','reason':'RUNTIME_DB_PROBE_FAILED','error':'SELECT 1 failed','ts':int(time.time())})
+            status['diagnostics']=d[-10:]
+
+        scan=status.setdefault('scan',{})
+        scan['heavy_db_metrics_state']='DEFERRED_TO_DOCTOR_OR_MAINTENANCE'
+        self._stage('STATUS_BUILD_DONE',seconds=round(time.time()-started_at,3),db_operational=operational)
         return status
 
     def _catchup_status(self,tip,target_safe,first,processed_to,started,ranges,reason):
