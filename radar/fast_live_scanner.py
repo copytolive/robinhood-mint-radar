@@ -210,15 +210,23 @@ class FastLiveRadarScanner(LiveRadarScanner):
         if last is None:return
         tip=self.rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);lag=max(0,safe-int(last))
         threshold=max(int(config.RUNTIME_REBASE_LAG_BLOCKS),int(config.INITIAL_LOOKBACK_BLOCKS))
-        if lag<=threshold:return
+        lag_seconds=None
+        try:
+            safe_ts=self.block_time(safe);last_ts=self.block_time(int(last));lag_seconds=max(0,int(safe_ts)-int(last_ts))
+        except Exception:
+            pass
+        stale_blocks=lag>threshold
+        stale_time=lag_seconds is not None and lag_seconds>int(config.RUNTIME_REBASE_LAG_SECONDS)
+        if not stale_blocks and not stale_time:return
         new_first=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS+1);checkpoint=max(0,new_first-1)
         gap_from=int(last)+1;gap_to=checkpoint
         if gap_to>=gap_from:self._record_historical_gap(gap_from,gap_to)
         block=self.rpc.block(checkpoint) or {};block_hash=block.get('hash')
         if not block_hash:raise RPCError(f'RUNTIME_REBASE_HASH_UNAVAILABLE:{checkpoint}')
         self.db.set_meta('last_block_hash',block_hash);self.db.set_meta('last_block',checkpoint)
-        self._diag('LIVE_RECOVERY','RUNTIME_CURSOR_REBASED',f'lag_blocks={lag}; gap={gap_from}-{gap_to}; resume={new_first}')
-        self._stage('RUNTIME_REBASE',lag_blocks=lag,gap_from=gap_from,gap_to=gap_to,resume_from=new_first)
+        detail=f'lag_blocks={lag}; lag_seconds={lag_seconds}; gap={gap_from}-{gap_to}; resume={new_first}'
+        self._diag('LIVE_RECOVERY','RUNTIME_CURSOR_REBASED',detail)
+        self._stage('RUNTIME_REBASE',lag_blocks=lag,lag_seconds=lag_seconds,gap_from=gap_from,gap_to=gap_to,resume_from=new_first)
 
     def scan_once(self,public_lookback=None):
         self._runtime_rebase_if_stale(public_lookback=public_lookback)
