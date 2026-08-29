@@ -1,109 +1,26 @@
 {
-  "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x41c1b814d65e700703b5f766b3eb170b964fac36",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x41c1b814d65e700703b5f766b3eb170b964fac36",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 90,
-      "mints_1m": 90,
-      "mints_5m": 90,
-      "mints_60m": 90,
-      "raw_units_1m": 90,
-      "raw_units_5m": 90,
-      "recent_mint_concentration": 0.1,
-      "unique_recent_minters": 10,
-      "velocity_1m": 90.0,
-      "velocity_5m": 18.0
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "lemon",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x41c1b814d65e700703b5f766b3eb170b964fac36",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.4009,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0xdea8fe316a3a239aef7aee13f734bcd72c8572d0",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 64,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 5,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 10
-    },
-    "sell_through": 1,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 100,
-      "total_supply": 100
-    },
-    "ticker": "lemon"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48757931,
+    "latest_block": 48765359,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48757921,
+    "safe_block": 48765349,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 204800,
+    "bytes": 90112,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787966467,
+  "generated_at": 1787967217,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -115,7 +32,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -135,112 +52,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 13.28,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 1.552,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 21.103,
-    "from_block": 48757628,
+    "duration_seconds": 3.171,
+    "from_block": 48765210,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 174,
-    "lag_seconds": 17,
-    "live_observations": 1,
-    "next_block": 48757748,
+    "lag_blocks": 20,
+    "lag_seconds": 2,
+    "live_observations": 0,
+    "next_block": 48765330,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 1,
-    "to_block": 48757747,
-    "total_mint_units_stored": 112
+    "secondary_sales_stored": 5,
+    "to_block": 48765329,
+    "total_mint_units_stored": 18
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48757628-48757747",
+  "status": "SCANNING 48765210-48765329",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WATCH",
-      "collection": "0x41c1b814d65e700703b5f766b3eb170b964fac36",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x41c1b814d65e700703b5f766b3eb170b964fac36",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 90,
-        "mints_1m": 90,
-        "mints_5m": 90,
-        "mints_60m": 90,
-        "raw_units_1m": 90,
-        "raw_units_5m": 90,
-        "recent_mint_concentration": 0.1,
-        "unique_recent_minters": 10,
-        "velocity_1m": 90.0,
-        "velocity_5m": 18.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "lemon",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x41c1b814d65e700703b5f766b3eb170b964fac36",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4009,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xdea8fe316a3a239aef7aee13f734bcd72c8572d0",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 64,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 5,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 10
-      },
-      "sell_through": 1,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 100,
-        "total_supply": 100
-      },
-      "ticker": "lemon"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
