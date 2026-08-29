@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0xfd3fe2927befbde311356b18754c43b2e7254591",
+    "collection": "0x0ec3e836f198ba141fd5de673cc5554565139346",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfd3fe2927befbde311356b18754c43b2e7254591",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0ec3e836f198ba141fd5de673cc5554565139346",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,21 +20,21 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 1665,
-      "mints_1m": 1665,
-      "mints_5m": 1665,
-      "mints_60m": 1665,
-      "raw_units_1m": 1665,
-      "raw_units_5m": 1665,
-      "recent_mint_concentration": 0.0198,
-      "unique_recent_minters": 51,
-      "velocity_1m": 1665.0,
-      "velocity_5m": 333.0
+      "mints_15m": 42,
+      "mints_1m": 42,
+      "mints_5m": 42,
+      "mints_60m": 42,
+      "raw_units_1m": 42,
+      "raw_units_5m": 42,
+      "recent_mint_concentration": 0.0238,
+      "unique_recent_minters": 42,
+      "velocity_1m": 42.0,
+      "velocity_5m": 8.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Hoodier",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xfd3fe2927befbde311356b18754c43b2e7254591",
+    "name": "CRT Monitor PUNKS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x0ec3e836f198ba141fd5de673cc5554565139346",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xa0131596f07eff0aae53a50be850def3bb9540af",
+      "owner": "0x9c09c90e534cc5a606bbc07f010582dec46dbd32",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -75,13 +75,13 @@
       "secondary_liquidity": 0,
       "sell_through": 1
     },
-    "sell_through": 0.14445722286114307,
+    "sell_through": 0.1305,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 19999,
-      "total_supply": 2889
+      "max_supply": 10000,
+      "total_supply": 1305
     },
-    "ticker": "Hoodier"
+    "ticker": "CRTPUNKS"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49283447,
-    "latest_block_age_seconds": 6,
+    "latest_block": 49291061,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49283437,
+    "safe_block": 49291051,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 2072576,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788019550,
+  "generated_at": 1788020318,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.697,
+    "analysis_age_seconds": 4.1,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 8,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 9.473,
-    "from_block": 49283261,
+    "duration_seconds": 9.817,
+    "from_block": 49290866,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
+    "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 0,
-    "lag_blocks": 57,
-    "lag_seconds": 6,
+    "lag_blocks": 66,
+    "lag_seconds": 7,
     "live_observations": 2,
-    "next_block": 49283381,
+    "next_block": 49290986,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49283380,
-    "total_mint_units_stored": null
+    "to_block": 49290985,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49283261-49283380",
+  "status": "SCANNING 49290866-49290985",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0xfd3fe2927befbde311356b18754c43b2e7254591",
+      "collection": "0x0ec3e836f198ba141fd5de673cc5554565139346",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfd3fe2927befbde311356b18754c43b2e7254591",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0ec3e836f198ba141fd5de673cc5554565139346",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,21 +180,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 1665,
-        "mints_1m": 1665,
-        "mints_5m": 1665,
-        "mints_60m": 1665,
-        "raw_units_1m": 1665,
-        "raw_units_5m": 1665,
-        "recent_mint_concentration": 0.0198,
-        "unique_recent_minters": 51,
-        "velocity_1m": 1665.0,
-        "velocity_5m": 333.0
+        "mints_15m": 42,
+        "mints_1m": 42,
+        "mints_5m": 42,
+        "mints_60m": 42,
+        "raw_units_1m": 42,
+        "raw_units_5m": 42,
+        "recent_mint_concentration": 0.0238,
+        "unique_recent_minters": 42,
+        "velocity_1m": 42.0,
+        "velocity_5m": 8.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Hoodier",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xfd3fe2927befbde311356b18754c43b2e7254591",
+      "name": "CRT Monitor PUNKS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x0ec3e836f198ba141fd5de673cc5554565139346",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xa0131596f07eff0aae53a50be850def3bb9540af",
+        "owner": "0x9c09c90e534cc5a606bbc07f010582dec46dbd32",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -235,74 +235,71 @@
         "secondary_liquidity": 0,
         "sell_through": 1
       },
-      "sell_through": 0.14445722286114307,
+      "sell_through": 0.1305,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 19999,
-        "total_supply": 2889
+        "max_supply": 10000,
+        "total_supply": 1305
       },
-      "ticker": "Hoodier"
+      "ticker": "CRTPUNKS"
     },
     {
       "action": "WAIT",
-      "collection": "0xf8b7ec0dc101d16f68f7942ea5e41a2a3698f172",
+      "collection": "0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf8b7ec0dc101d16f68f7942ea5e41a2a3698f172",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
-        "floor_price": null,
-        "native_sales_24h": 1,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 1,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.000488
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 15,
-        "mints_1m": 15,
-        "mints_5m": 15,
-        "mints_60m": 15,
-        "raw_units_1m": 15,
-        "raw_units_5m": 15,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 15.0,
-        "velocity_5m": 3.0
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
-      "mint_price_eth": 0.000509,
-      "mint_price_source": "CONTRACT",
-      "name": "VRAM MINER",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf8b7ec0dc101d16f68f7942ea5e41a2a3698f172",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "123CATS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1339,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6ddc3c7d445f0edcd4233a1f1b79ca61ee60af93",
+        "owner": "0x664d8df54ec43ad9bee7af5920aa90e197001e9a",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -311,24 +308,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 35,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 3,
+        "mint_velocity": 15,
+        "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 1,
+        "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": null,
+      "sell_through": 0.03487804878048781,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 875
+        "max_supply": 12300,
+        "total_supply": 429
       },
-      "ticker": "VRAM"
+      "ticker": "123CATS"
     }
   ],
   "win_rate_pct": 0.0
