@@ -1,3 +1,4 @@
+import json
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -153,3 +154,61 @@ class FastLiveRadarScanner(LiveRadarScanner):
         while cursor<=safe and ranges<max_ranges:
             end=min(safe,cursor+effective-1);self._scan_range_or_raise(cursor,end);self._checkpoint(end);processed_to=end;cursor=end+1;ranges+=1
         return processed_to,ranges
+
+    def _historical_gap_ranges(self):
+        ranges=[]
+        raw=self.db.get_meta('historical_gaps_json')
+        if raw:
+            try:
+                for item in json.loads(raw):
+                    if isinstance(item,(list,tuple)) and len(item)==2:
+                        ranges.append((int(item[0]),int(item[1])))
+            except Exception:
+                pass
+        legacy_from=self.db.get_meta('historical_gap_from');legacy_to=self.db.get_meta('historical_gap_to')
+        if legacy_from is not None and legacy_to is not None:
+            try:ranges.append((int(legacy_from),int(legacy_to)))
+            except (TypeError,ValueError):pass
+        normalized=[]
+        for start,end in sorted(ranges):
+            if end<start:continue
+            if normalized and start<=normalized[-1][1]+1:
+                normalized[-1]=(normalized[-1][0],max(normalized[-1][1],end))
+            else:normalized.append((start,end))
+        return normalized
+
+    def _record_historical_gap(self,start,end):
+        start=int(start);end=int(end)
+        if end<start:return
+        ranges=self._historical_gap_ranges();ranges.append((start,end));normalized=[]
+        for a,b in sorted(ranges):
+            if normalized and a<=normalized[-1][1]+1:normalized[-1]=(normalized[-1][0],max(normalized[-1][1],b))
+            else:normalized.append((a,b))
+        self.db.set_meta('historical_gaps_json',json.dumps([[a,b] for a,b in normalized],separators=(',',':')))
+
+    def _runtime_rebase_if_stale(self,public_lookback=None):
+        if public_lookback is not None:return
+        last=self.db.last_block()
+        if last is None:return
+        tip=self.rpc.block_number();safe=max(0,tip-config.CONFIRMATION_BLOCKS);lag=max(0,safe-int(last))
+        threshold=max(int(config.RUNTIME_REBASE_LAG_BLOCKS),int(config.INITIAL_LOOKBACK_BLOCKS))
+        if lag<=threshold:return
+        new_first=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS+1);checkpoint=max(0,new_first-1)
+        gap_from=int(last)+1;gap_to=checkpoint
+        if gap_to>=gap_from:self._record_historical_gap(gap_from,gap_to)
+        block=self.rpc.block(checkpoint) or {};block_hash=block.get('hash')
+        if not block_hash:raise RPCError(f'RUNTIME_REBASE_HASH_UNAVAILABLE:{checkpoint}')
+        self.db.set_meta('last_block_hash',block_hash);self.db.set_meta('last_block',checkpoint)
+        self._diag('LIVE_RECOVERY','RUNTIME_CURSOR_REBASED',f'lag_blocks={lag}; gap={gap_from}-{gap_to}; resume={new_first}')
+        self._stage('RUNTIME_REBASE',lag_blocks=lag,gap_from=gap_from,gap_to=gap_to,resume_from=new_first)
+
+    def scan_once(self,public_lookback=None):
+        self._runtime_rebase_if_stale(public_lookback=public_lookback)
+        status=super().scan_once(public_lookback=public_lookback)
+        gaps=self._historical_gap_ranges()
+        if gaps:
+            status.setdefault('scan',{})['historical_gaps']=[
+                {'state':'RECORDED_NOT_BACKFILLED','from_block':a,'to_block':b,'blocks':b-a+1}
+                for a,b in gaps
+            ]
+        return status
