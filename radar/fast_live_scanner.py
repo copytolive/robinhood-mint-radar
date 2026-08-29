@@ -41,6 +41,24 @@ class FastLiveRadarScanner(LiveRadarScanner):
         )
         self.max_ingest_range_blocks=max(16,int(os.getenv('RADAR_MAX_INGEST_RANGE_BLOCKS','128')))
 
+    def _prewarm_enrichment(self):
+        """Warm bounded candidate network data concurrently, never SQLite from workers."""
+        rows=self._analysis_rows_cache or self._prepare_analysis_rows()
+        if not rows or not hasattr(self.db,'mint_window'):return
+        now=int(time.time())
+        prepared=[(row,self.db.mint_window(row['collection'],now-3600)) for row in rows]
+
+        def warm(item):
+            row,events=item
+            snap=self.contract_snapshot(row['collection'])
+            try:self.explorer.ownership(row['collection'],snap.get('supply',{}).get('total_supply'))
+            except Exception:pass
+            self._observed_zero_price(events)
+
+        workers=max(1,min(len(prepared),int(config.MAX_ANALYSIS_ROWS),4))
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            list(pool.map(warm,prepared))
+
     def _query_specs(self,from_block,to_block):
         self._init_signatures()
         specs=[]
