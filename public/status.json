@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x0ec3e836f198ba141fd5de673cc5554565139346",
+    "collection": "0x8971719aaef042312653bda0c99ee0162a3fe47a",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0ec3e836f198ba141fd5de673cc5554565139346",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8971719aaef042312653bda0c99ee0162a3fe47a",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 42,
-      "mints_1m": 42,
-      "mints_5m": 42,
-      "mints_60m": 42,
-      "raw_units_1m": 42,
-      "raw_units_5m": 42,
-      "recent_mint_concentration": 0.0238,
-      "unique_recent_minters": 42,
-      "velocity_1m": 42.0,
-      "velocity_5m": 8.4
+      "mints_15m": 25,
+      "mints_1m": 25,
+      "mints_5m": 25,
+      "mints_60m": 25,
+      "raw_units_1m": 25,
+      "raw_units_5m": 25,
+      "recent_mint_concentration": 0.04,
+      "unique_recent_minters": 25,
+      "velocity_1m": 25.0,
+      "velocity_5m": 5.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "CRT Monitor PUNKS",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0ec3e836f198ba141fd5de673cc5554565139346",
+    "name": "AcoSpace Tsest",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x8971719aaef042312653bda0c99ee0162a3fe47a",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.4888,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x9c09c90e534cc5a606bbc07f010582dec46dbd32",
+      "owner": "0x57e25b6da5a685b025e234ffd51ee97f6b646e1e",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 71,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 1
+      "sell_through": 10
     },
-    "sell_through": 0.1305,
+    "sell_through": 1,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 1305
+      "max_supply": 25,
+      "total_supply": 25
     },
-    "ticker": "CRTPUNKS"
+    "ticker": "SsTY"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49291061,
-    "latest_block_age_seconds": 4,
+    "latest_block": 49298602,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49291051,
+    "safe_block": 49298592,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 315392,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788020318,
+  "generated_at": 1788021073,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 2
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.1,
+    "analysis_age_seconds": 2.508,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 11,
     "blocks_processed": 120,
-    "duration_seconds": 9.817,
-    "from_block": 49290866,
+    "duration_seconds": 10.547,
+    "from_block": 49298373,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 66,
-    "lag_seconds": 7,
+    "lag_blocks": 100,
+    "lag_seconds": 10,
     "live_observations": 2,
-    "next_block": 49290986,
+    "next_block": 49298493,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49290985,
-    "total_mint_units_stored": 0
+    "to_block": 49298492,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49290866-49290985",
+  "status": "SCANNING 49298373-49298492",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x0ec3e836f198ba141fd5de673cc5554565139346",
+      "collection": "0x8971719aaef042312653bda0c99ee0162a3fe47a",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0ec3e836f198ba141fd5de673cc5554565139346",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8971719aaef042312653bda0c99ee0162a3fe47a",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 42,
-        "mints_1m": 42,
-        "mints_5m": 42,
-        "mints_60m": 42,
-        "raw_units_1m": 42,
-        "raw_units_5m": 42,
-        "recent_mint_concentration": 0.0238,
-        "unique_recent_minters": 42,
-        "velocity_1m": 42.0,
-        "velocity_5m": 8.4
+        "mints_15m": 25,
+        "mints_1m": 25,
+        "mints_5m": 25,
+        "mints_60m": 25,
+        "raw_units_1m": 25,
+        "raw_units_5m": 25,
+        "recent_mint_concentration": 0.04,
+        "unique_recent_minters": 25,
+        "velocity_1m": 25.0,
+        "velocity_5m": 5.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "CRT Monitor PUNKS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0ec3e836f198ba141fd5de673cc5554565139346",
+      "name": "AcoSpace Tsest",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x8971719aaef042312653bda0c99ee0162a3fe47a",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.4888,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x9c09c90e534cc5a606bbc07f010582dec46dbd32",
+        "owner": "0x57e25b6da5a685b025e234ffd51ee97f6b646e1e",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 71,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -233,25 +233,25 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 10
       },
-      "sell_through": 0.1305,
+      "sell_through": 1,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 1305
+        "max_supply": 25,
+        "total_supply": 25
       },
-      "ticker": "CRTPUNKS"
+      "ticker": "SsTY"
     },
     {
-      "action": "WAIT",
-      "collection": "0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
+      "action": "WATCH",
+      "collection": "0x0c6df7041820f5400177620ac6d80c555026dd47",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0c6df7041820f5400177620ac6d80c555026dd47",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -264,27 +264,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 192,
+        "mints_1m": 192,
+        "mints_5m": 192,
+        "mints_60m": 192,
+        "raw_units_1m": 192,
+        "raw_units_5m": 192,
+        "recent_mint_concentration": 0.1042,
+        "unique_recent_minters": 59,
+        "velocity_1m": 192.0,
+        "velocity_5m": 38.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "123CATS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x39740112d5eb045ebaf5cc0b6e311ffce411a2e2",
+      "name": "NETNET BROKERS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x0c6df7041820f5400177620ac6d80c555026dd47",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.3891,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -299,7 +299,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x664d8df54ec43ad9bee7af5920aa90e197001e9a",
+        "owner": "0x8534d863542f95ce8fad31bfa46449b6720d648c",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -308,24 +308,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 63,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "distribution": 3,
+        "holder_growth": 10,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 4
       },
-      "sell_through": 0.03487804878048781,
+      "sell_through": 0.43461489006043463,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 12300,
-        "total_supply": 429
+        "max_supply": 7777,
+        "total_supply": 3380
       },
-      "ticker": "123CATS"
+      "ticker": "NETNET"
     }
   ],
   "win_rate_pct": 0.0
