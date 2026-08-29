@@ -14,8 +14,8 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
     A supervised cycle therefore snapshots the safe tip once, processes only
     toward that immutable target, and defers newly-produced blocks to the next
     cycle. If the ingest wall-clock budget is exhausted first, the cycle exits
-    normally with a fail-closed CATCHING_UP status instead of being killed by
-    the 90-second supervisor watchdog.
+    normally fail-closed unless the processed checkpoint is already inside both
+    live-readiness lag limits; in that case analysis may proceed immediately.
     """
 
     def __init__(self,*args,**kwargs):
@@ -142,15 +142,40 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
         self._stage('STATUS_BUILD_DONE',seconds=round(time.time()-started_at,3),db_operational=operational)
         return status
 
-    def _catchup_status(self,tip,target_safe,first,processed_to,started,ranges,reason):
-        # Keep fail-closed catch-up publication deliberately cheap. Do not run
-        # full-table uint256 sums, DB integrity scans, or block-time RPC reads
-        # in the watchdog tail. Exact counters return on the next live analysis.
-        try:final_tip=self.rpc.block_number()
-        except Exception:final_tip=tip
-        final_safe=max(0,int(final_tip)-config.CONFIRMATION_BLOCKS)
+    def _lag_snapshot(self,tip,processed_to):
+        final_tip=int(tip)
+        final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS)
         lag_blocks=max(0,final_safe-int(processed_to))
         lag_seconds=None
+        try:
+            lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
+        except Exception:
+            pass
+        return final_tip,final_safe,lag_blocks,lag_seconds
+
+    def _ready_window_after_budget(self,processed_to):
+        """Allow analysis only when both block and chain-time freshness are safe."""
+        try:final_tip=self.rpc.block_number()
+        except Exception:return False,None,None,None,None
+        final_tip,final_safe,lag_blocks,lag_seconds=self._lag_snapshot(final_tip,processed_to)
+        ready=self._lag_is_ready(lag_blocks,lag_seconds)
+        self._stage(
+            'INGEST_READY_CHECK',
+            processed_to=processed_to,
+            safe_block=final_safe,
+            lag_blocks=lag_blocks,
+            lag_seconds=lag_seconds,
+            ready=bool(ready),
+        )
+        return bool(ready),final_tip,final_safe,lag_blocks,lag_seconds
+
+    def _catchup_status(self,tip,target_safe,first,processed_to,started,ranges,reason):
+        # Keep fail-closed catch-up publication deliberately cheap. Heavy DB
+        # metrics/integrity stay deferred, but expose real block + chain-time lag
+        # so the dashboard never hides a stale cursor behind lag_seconds=None.
+        try:final_tip=self.rpc.block_number()
+        except Exception:final_tip=tip
+        final_tip,final_safe,lag_blocks,lag_seconds=self._lag_snapshot(final_tip,processed_to)
         diagnostics=list(self.diag)
         diagnostics.append({
             'stage':'INGEST',
@@ -219,7 +244,7 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
             ],
         }
         self._attach_historical_gaps(status)
-        self._stage('DONE_CATCHUP',duration_seconds=status['scan']['duration_seconds'],lag_blocks=lag_blocks,next_block=processed_to+1)
+        self._stage('DONE_CATCHUP',duration_seconds=status['scan']['duration_seconds'],lag_blocks=lag_blocks,lag_seconds=lag_seconds,next_block=processed_to+1)
         return status
 
     def scan_once(self,public_lookback=None):
@@ -253,11 +278,17 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
         max_ranges=50
         effective=max(1,min(config.CHUNK_BLOCKS,config.MAX_CATCHUP_BLOCKS,self.max_ingest_range_blocks))
         ingest_deadline=started+max(5.0,float(config.INGEST_CYCLE_BUDGET_SECONDS))
+        ready_window=False
         self._stage('INGEST',from_block=first,safe_block=target_safe,target_frozen=True,budget_seconds=config.INGEST_CYCLE_BUDGET_SECONDS)
 
         while cursor<=target_safe and ranges<max_ranges:
             if ranges and time.time()>=ingest_deadline:
                 self._stage('INGEST_DEFERRED',next_block=cursor,target_safe=target_safe,ranges=ranges,reason='WALL_CLOCK_BUDGET_PRE_RANGE')
+                ready_window,live_tip,live_safe,lag_blocks,lag_seconds=self._ready_window_after_budget(processed_to)
+                if ready_window:
+                    tip=live_tip;target_safe=live_safe
+                    self._stage('INGEST_READY_WINDOW',next_block=cursor,lag_blocks=lag_blocks,lag_seconds=lag_seconds)
+                    break
                 return self._catchup_status(tip,target_safe,first,processed_to,started,ranges,'INGEST_BUDGET_EXHAUSTED')
             end=min(target_safe,cursor+effective-1)
             self._scan_range_or_raise(cursor,end)
@@ -267,9 +298,14 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
             ranges+=1
             if cursor<=target_safe and time.time()>=ingest_deadline:
                 self._stage('INGEST_DEFERRED',next_block=cursor,target_safe=target_safe,ranges=ranges,reason='WALL_CLOCK_BUDGET')
+                ready_window,live_tip,live_safe,lag_blocks,lag_seconds=self._ready_window_after_budget(processed_to)
+                if ready_window:
+                    tip=live_tip;target_safe=live_safe
+                    self._stage('INGEST_READY_WINDOW',next_block=cursor,lag_blocks=lag_blocks,lag_seconds=lag_seconds)
+                    break
                 return self._catchup_status(tip,target_safe,first,processed_to,started,ranges,'INGEST_BUDGET_EXHAUSTED')
 
-        if cursor<=target_safe:
+        if cursor<=target_safe and not ready_window:
             self._stage('INGEST_DEFERRED',next_block=cursor,target_safe=target_safe,ranges=ranges,reason='RANGE_BUDGET')
             return self._catchup_status(tip,target_safe,first,processed_to,started,ranges,'INGEST_RANGE_BUDGET_EXHAUSTED')
 
