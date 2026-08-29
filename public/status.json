@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "collection": "0xeffd07576320bc9fb5848235e24eaf2f57635c29",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xeffd07576320bc9fb5848235e24eaf2f57635c29",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 82,
-      "mints_1m": 82,
-      "mints_5m": 82,
-      "mints_60m": 82,
-      "raw_units_1m": 82,
-      "raw_units_5m": 82,
-      "recent_mint_concentration": 0.0244,
-      "unique_recent_minters": 41,
-      "velocity_1m": 82.0,
-      "velocity_5m": 16.4
+      "mints_15m": 370,
+      "mints_1m": 370,
+      "mints_5m": 370,
+      "mints_60m": 370,
+      "raw_units_1m": 370,
+      "raw_units_5m": 370,
+      "recent_mint_concentration": 0.0054,
+      "unique_recent_minters": 197,
+      "velocity_1m": 370.0,
+      "velocity_5m": 74.0
     },
     "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Violet Voyager",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "mint_price_source": "CONTRACT",
+    "name": "Crayfish",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xeffd07576320bc9fb5848235e24eaf2f57635c29",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4251,
+    "predicted_probability": 0.4375,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x3c3f8edad9a5479044df9ca129218416feea059e",
+      "owner": "0xef2391661d986a263cdd420b100fa9c43ec77cd6",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 66,
+    "score": 67,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 5
+      "sell_through": 6
     },
-    "sell_through": 0.5886588658865887,
+    "sell_through": 0.6944,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2222,
-      "total_supply": 1308
+      "max_supply": 5000,
+      "total_supply": 3472
     },
-    "ticker": "Violet Voyager"
+    "ticker": "CRAYFISH"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49268256,
-    "latest_block_age_seconds": 0,
+    "latest_block": 49275780,
+    "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49268246,
+    "safe_block": 49275770,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 544768,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788018003,
+  "generated_at": 1788018773,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.487,
+    "analysis_age_seconds": 3.058,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 5.637,
-    "from_block": 49268092,
+    "duration_seconds": 4.811,
+    "from_block": 49275626,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 35,
-    "lag_seconds": 4,
+    "lag_blocks": 25,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 49268212,
+    "next_block": 49275746,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49268211,
+    "to_block": 49275745,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49268092-49268211",
+  "status": "SCANNING 49275626-49275745",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "collection": "0xeffd07576320bc9fb5848235e24eaf2f57635c29",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xeffd07576320bc9fb5848235e24eaf2f57635c29",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 82,
-        "mints_1m": 82,
-        "mints_5m": 82,
-        "mints_60m": 82,
-        "raw_units_1m": 82,
-        "raw_units_5m": 82,
-        "recent_mint_concentration": 0.0244,
-        "unique_recent_minters": 41,
-        "velocity_1m": 82.0,
-        "velocity_5m": 16.4
+        "mints_15m": 370,
+        "mints_1m": 370,
+        "mints_5m": 370,
+        "mints_60m": 370,
+        "raw_units_1m": 370,
+        "raw_units_5m": 370,
+        "recent_mint_concentration": 0.0054,
+        "unique_recent_minters": 197,
+        "velocity_1m": 370.0,
+        "velocity_5m": 74.0
       },
       "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Violet Voyager",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "mint_price_source": "CONTRACT",
+      "name": "Crayfish",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xeffd07576320bc9fb5848235e24eaf2f57635c29",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4251,
+      "predicted_probability": 0.4375,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x3c3f8edad9a5479044df9ca129218416feea059e",
+        "owner": "0xef2391661d986a263cdd420b100fa9c43ec77cd6",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 66,
+      "score": 67,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -233,15 +233,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 5
+        "sell_through": 6
       },
-      "sell_through": 0.5886588658865887,
+      "sell_through": 0.6944,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2222,
-        "total_supply": 1308
+        "max_supply": 5000,
+        "total_supply": 3472
       },
-      "ticker": "Violet Voyager"
+      "ticker": "CRAYFISH"
     }
   ],
   "win_rate_pct": 0.0
