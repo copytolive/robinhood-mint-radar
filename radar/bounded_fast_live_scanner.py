@@ -16,6 +16,18 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
     the 90-second supervisor watchdog.
     """
 
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        # recent_collections() filters by block_time first. Existing databases
+        # only had (collection, block_time), which can force a large table scan
+        # as the local event history grows. These indexes are idempotent and
+        # also accelerate retention deletes; no wallet/execution state changes.
+        started=time.time()
+        self.db.conn.execute('CREATE INDEX IF NOT EXISTS idx_mint_time ON mint_events(block_time)')
+        self.db.conn.execute('CREATE INDEX IF NOT EXISTS idx_market_time ON market_events(block_time)')
+        self.db.conn.commit()
+        self._stage('DB_TIME_INDEX_READY',seconds=round(time.time()-started,3))
+
     def _attach_historical_gaps(self,status):
         gaps=self._historical_gap_ranges()
         if gaps:
