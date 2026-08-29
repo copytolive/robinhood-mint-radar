@@ -1,26 +1,110 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 90,
+      "mints_1m": 90,
+      "mints_5m": 90,
+      "mints_60m": 90,
+      "raw_units_1m": 90,
+      "raw_units_5m": 90,
+      "recent_mint_concentration": 0.1111,
+      "unique_recent_minters": 9,
+      "velocity_1m": 90.0,
+      "velocity_5m": 18.0
+    },
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Good Boys",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.1615,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x271624cab4ef371330df85a4773139233bdac3e2",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 39,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 3,
+      "holder_growth": 4,
+      "mint_velocity": 20,
+      "price_asymmetry": 0,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 1
+    },
+    "sell_through": 0.13887102996013886,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 7777,
+      "total_supply": 1080
+    },
+    "ticker": "GOODBOY"
+  },
   "capital_deployed_usd": 0,
   "chain": {
-    "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "active_rpc": "https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48888316,
-    "latest_block_age_seconds": 2,
+    "latest_block": 48895194,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 0,
-    "safe_block": 48888306,
+    "rpc_failovers": 1,
+    "safe_block": 48895184,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 188416,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787979636,
+  "generated_at": 1787980327,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -52,27 +136,113 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.766,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 1.627,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 10.675,
-    "from_block": 48888108,
+    "duration_seconds": 8.085,
+    "from_block": 48894948,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 0,
-    "lag_blocks": 79,
-    "lag_seconds": 8,
-    "live_observations": 0,
-    "next_block": 48888228,
+    "lag_blocks": 117,
+    "lag_seconds": 12,
+    "live_observations": 1,
+    "next_block": 48895068,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 7,
-    "to_block": 48888227,
-    "total_mint_units_stored": 8
+    "secondary_sales_stored": 0,
+    "to_block": 48895067,
+    "total_mint_units_stored": 99
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48888108-48888227",
+  "status": "SCANNING 48894948-48895067",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 90,
+        "mints_1m": 90,
+        "mints_5m": 90,
+        "mints_60m": 90,
+        "raw_units_1m": 90,
+        "raw_units_5m": 90,
+        "recent_mint_concentration": 0.1111,
+        "unique_recent_minters": 9,
+        "velocity_1m": 90.0,
+        "velocity_5m": 18.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Good Boys",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1615,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x271624cab4ef371330df85a4773139233bdac3e2",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 39,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 4,
+        "mint_velocity": 20,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 1
+      },
+      "sell_through": 0.13887102996013886,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 7777,
+        "total_supply": 1080
+      },
+      "ticker": "GOODBOY"
+    }
+  ],
   "win_rate_pct": 0.0
 }
