@@ -44,10 +44,22 @@ class RuntimeRecoveryTests(unittest.TestCase):
         self.assertEqual(gaps,[[101,expected_checkpoint]])
         self.assertTrue(any(d.get('reason')=='RUNTIME_CURSOR_REBASED' for d in s.diag))
 
+    def test_realistic_13k_block_backlog_rebases_before_watchdog_loop(self):
+        tip=50000
+        safe=tip-config.CONFIRMATION_BLOCKS
+        last=safe-13326
+        s=scanner(last,tip)
+        s._runtime_rebase_if_stale()
+        expected_first=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS+1)
+        expected_checkpoint=expected_first-1
+        self.assertEqual(s.db.last_block(),expected_checkpoint)
+        gaps=json.loads(s.db.get_meta('historical_gaps_json'))
+        self.assertEqual(gaps,[[last+1,expected_checkpoint]])
+
     def test_small_lag_keeps_durable_cursor(self):
         tip=50000
         safe=tip-config.CONFIRMATION_BLOCKS
-        last=safe-min(5000,max(1,config.RUNTIME_REBASE_LAG_BLOCKS//2))
+        last=safe-min(2000,max(1,config.RUNTIME_REBASE_LAG_BLOCKS//2))
         s=scanner(last,tip,{'last_block_hash':'0xold'})
         s._runtime_rebase_if_stale()
         self.assertEqual(s.db.last_block(),last)
