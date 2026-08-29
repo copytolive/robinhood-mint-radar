@@ -30,10 +30,11 @@ CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','5000'))
 MAX_CATCHUP_BLOCKS=int(os.getenv('RADAR_MAX_CATCHUP_BLOCKS','5000'))
 # If an outage leaves the durable cursor far behind, trying to replay an
 # unbounded live backlog can exceed the supervisor cycle deadline forever.
-# Preserve the skipped interval as an explicit historical gap, then resume from
-# the normal live lookback. This affects continuous local mode only; explicit
-# public-lookback scans are never rebased.
-RUNTIME_REBASE_LAG_BLOCKS=int(os.getenv('RADAR_RUNTIME_REBASE_LAG_BLOCKS','20000'))
+# Real Mac telemetry showed a ~13k-block backlog growing despite repeated 90s
+# cycles, so the fail-safe rebase threshold is intentionally below that level.
+# The skipped interval is explicitly recorded as a historical gap; it is never
+# treated as analyzed. Explicit public-lookback scans are never rebased.
+RUNTIME_REBASE_LAG_BLOCKS=int(os.getenv('RADAR_RUNTIME_REBASE_LAG_BLOCKS','5000'))
 # Readiness is primarily time-based because this chain can advance many blocks
 # per second. The block cap remains as an absolute sanity/fail-closed guard.
 MAX_READY_LAG_BLOCKS=int(os.getenv('RADAR_MAX_READY_LAG_BLOCKS','2000'))
