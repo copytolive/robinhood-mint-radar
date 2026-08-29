@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+    "action": "WAIT",
+    "collection": "0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 572,
-      "mints_1m": 572,
-      "mints_5m": 572,
-      "mints_60m": 572,
-      "raw_units_1m": 572,
-      "raw_units_5m": 572,
-      "recent_mint_concentration": 0.0017,
-      "unique_recent_minters": 572,
-      "velocity_1m": 572.0,
-      "velocity_5m": 114.4
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Lil Uni",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+    "name": "RobinHood Monkex",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4129,
+    "predicted_probability": 0.1841,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x0c15d0ca389c163018f98efe1da0d3dd1cc32910",
+      "owner": "0x5c2f2c50ec3f659d95a17b518f6e1309445dc1fc",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 65,
+    "score": 42,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 4
+      "sell_through": 1
     },
-    "sell_through": 0.486,
+    "sell_through": 0.1475,
     "standard": "ERC721",
     "supply": {
       "max_supply": 10000,
-      "total_supply": 4860
+      "total_supply": 1475
     },
-    "ticker": "liluni"
+    "ticker": "9"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49147371,
-    "latest_block_age_seconds": 2,
+    "latest_block": 49155045,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49147361,
+    "safe_block": 49155035,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 806912,
+    "bytes": 122880,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788005784,
+  "generated_at": 1788006556,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -115,7 +115,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -135,37 +135,37 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.009,
+    "analysis_age_seconds": 3.839,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 7.94,
-    "from_block": 49147182,
+    "duration_seconds": 6.727,
+    "from_block": 49154850,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 60,
-    "lag_seconds": 6,
+    "lag_blocks": 66,
+    "lag_seconds": 7,
     "live_observations": 1,
-    "next_block": 49147302,
+    "next_block": 49154970,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 24,
-    "to_block": 49147301,
-    "total_mint_units_stored": 617
+    "secondary_sales_stored": 13,
+    "to_block": 49154969,
+    "total_mint_units_stored": 41
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49147182-49147301",
+  "status": "SCANNING 49154850-49154969",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+      "action": "WAIT",
+      "collection": "0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -178,27 +178,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 572,
-        "mints_1m": 572,
-        "mints_5m": 572,
-        "mints_60m": 572,
-        "raw_units_1m": 572,
-        "raw_units_5m": 572,
-        "recent_mint_concentration": 0.0017,
-        "unique_recent_minters": 572,
-        "velocity_1m": 572.0,
-        "velocity_5m": 114.4
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Lil Uni",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc73ceaeee5ed04c4de688ccbc085d13fd78436a4",
+      "name": "RobinHood Monkex",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd997c3d96d02e6d46c3e8e70eaa092ea670674c5",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4129,
+      "predicted_probability": 0.1841,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -213,7 +213,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x0c15d0ca389c163018f98efe1da0d3dd1cc32910",
+        "owner": "0x5c2f2c50ec3f659d95a17b518f6e1309445dc1fc",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,24 +222,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 65,
+      "score": 42,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 4
+        "sell_through": 1
       },
-      "sell_through": 0.486,
+      "sell_through": 0.1475,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 4860
+        "total_supply": 1475
       },
-      "ticker": "liluni"
+      "ticker": "9"
     }
   ],
   "win_rate_pct": 0.0
