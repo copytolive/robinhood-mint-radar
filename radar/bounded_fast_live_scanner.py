@@ -31,11 +31,14 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
         return status
 
     def _catchup_status(self,tip,target_safe,first,processed_to,started,ranges,reason):
-        final_tip=self.rpc.block_number()
-        final_safe=max(0,final_tip-config.CONFIRMATION_BLOCKS)
-        lag_blocks,lag_seconds=self._lag_metrics(final_safe,processed_to)
-        try:latest_age=max(0,int(time.time())-int(self.block_time(final_tip)))
-        except Exception:latest_age=None
+        # Keep fail-closed catch-up publication deliberately cheap. Do not run
+        # full-table uint256 sums, DB integrity scans, or block-time RPC reads
+        # in the watchdog tail. Exact counters return on the next live analysis.
+        try:final_tip=self.rpc.block_number()
+        except Exception:final_tip=tip
+        final_safe=max(0,int(final_tip)-config.CONFIRMATION_BLOCKS)
+        lag_blocks=max(0,final_safe-int(processed_to))
+        lag_seconds=None
         diagnostics=list(self.diag)
         diagnostics.append({
             'stage':'INGEST',
@@ -54,7 +57,7 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
                 'latest_block':final_tip,
                 'safe_block':final_safe,
                 'confirmations':config.CONFIRMATION_BLOCKS,
-                'latest_block_age_seconds':latest_age,
+                'latest_block_age_seconds':None,
                 'rpc':config.DEFAULT_RPC_URL,
                 'active_rpc':self.rpc.url,
                 'rpc_failovers':self.rpc.failovers,
@@ -78,9 +81,9 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
                 'analysis_age_seconds':None,
                 'duration_seconds':round(time.time()-started,3),
                 'next_block':processed_to+1,
-                'total_mint_units_stored':self.db.total_mints(),
-                'secondary_sales_stored':self.db.total_market_sales(),
-                'hoodsea_launches_stored':self.db.total_launches(),
+                'total_mint_units_stored':None,
+                'secondary_sales_stored':None,
+                'hoodsea_launches_stored':None,
                 'live_observations':0,
                 'qualified_candidates':0,
             },
@@ -94,16 +97,17 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
                 'brier':None,
                 'ece':None,
             },
-            'db':self.db.db_health(),
+            'db':{'integrity':'DEFERRED_DURING_CATCHUP'},
             'diagnostics':diagnostics[-10:],
             'limitations':[
                 'Scanner is catching up to a fixed per-cycle safe tip; no opportunity may be approved until live readiness returns.',
+                'Heavy counters and integrity scans are deferred while catching up so status can publish before the supervisor deadline.',
                 'Blocks produced after the cycle target are deferred to the next cycle and are not silently discarded.',
                 'Public snapshots are periodic; the Mac runner is continuous while the Mac is awake and online.',
             ],
         }
         self._attach_historical_gaps(status)
-        self._stage('DONE_CATCHUP',duration_seconds=status['scan']['duration_seconds'],lag_seconds=lag_seconds,next_block=processed_to+1)
+        self._stage('DONE_CATCHUP',duration_seconds=status['scan']['duration_seconds'],lag_blocks=lag_blocks,next_block=processed_to+1)
         return status
 
     def scan_once(self,public_lookback=None):
@@ -140,6 +144,9 @@ class BoundedFastLiveRadarScanner(FastLiveRadarScanner):
         self._stage('INGEST',from_block=first,safe_block=target_safe,target_frozen=True,budget_seconds=config.INGEST_CYCLE_BUDGET_SECONDS)
 
         while cursor<=target_safe and ranges<max_ranges:
+            if ranges and time.time()>=ingest_deadline:
+                self._stage('INGEST_DEFERRED',next_block=cursor,target_safe=target_safe,ranges=ranges,reason='WALL_CLOCK_BUDGET_PRE_RANGE')
+                return self._catchup_status(tip,target_safe,first,processed_to,started,ranges,'INGEST_BUDGET_EXHAUSTED')
             end=min(target_safe,cursor+effective-1)
             self._scan_range_or_raise(cursor,end)
             self._checkpoint(end)
