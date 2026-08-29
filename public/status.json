@@ -1,109 +1,26 @@
 {
-  "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xb87260005c800d6da11a988af2eab2ce26062dce",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb87260005c800d6da11a988af2eab2ce26062dce",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 260,
-      "mints_1m": 260,
-      "mints_5m": 260,
-      "mints_60m": 260,
-      "raw_units_1m": 260,
-      "raw_units_5m": 260,
-      "recent_mint_concentration": 0.0077,
-      "unique_recent_minters": 130,
-      "velocity_1m": 260.0,
-      "velocity_5m": 52.0
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Robin Baby Pepe",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xb87260005c800d6da11a988af2eab2ce26062dce",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.4129,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 65,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 4
-    },
-    "sell_through": 0.414,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 10000,
-      "total_supply": 4140
-    },
-    "ticker": "Robin baby pepe"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48903532,
-    "latest_block_age_seconds": 3,
+    "latest_block": 48910873,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48903522,
+    "safe_block": 48910863,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 536576,
+    "bytes": 77824,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787981176,
+  "generated_at": 1787981917,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -115,7 +32,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -135,197 +52,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 16.956,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 0.132,
+    "analysis_rows_considered": 0,
     "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 37.807,
-    "from_block": 48903080,
+    "duration_seconds": 1.874,
+    "from_block": 48910734,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 0,
-    "lag_blocks": 323,
-    "lag_seconds": 33,
-    "live_observations": 2,
-    "next_block": 48903200,
+    "lag_blocks": 10,
+    "lag_seconds": 1,
+    "live_observations": 0,
+    "next_block": 48910854,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 5,
-    "to_block": 48903199,
-    "total_mint_units_stored": 394
+    "secondary_sales_stored": 8,
+    "to_block": 48910853,
+    "total_mint_units_stored": 8
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48903080-48903199",
+  "status": "SCANNING 48910734-48910853",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WATCH",
-      "collection": "0xb87260005c800d6da11a988af2eab2ce26062dce",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb87260005c800d6da11a988af2eab2ce26062dce",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 260,
-        "mints_1m": 260,
-        "mints_5m": 260,
-        "mints_60m": 260,
-        "raw_units_1m": 260,
-        "raw_units_5m": 260,
-        "recent_mint_concentration": 0.0077,
-        "unique_recent_minters": 130,
-        "velocity_1m": 260.0,
-        "velocity_5m": 52.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Robin Baby Pepe",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb87260005c800d6da11a988af2eab2ce26062dce",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4129,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 65,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 4
-      },
-      "sell_through": 0.414,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 10000,
-        "total_supply": 4140
-      },
-      "ticker": "Robin baby pepe"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xdacddf91e6b63f8348698c9bc760d223b52bb773",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 123,
-        "mints_1m": 123,
-        "mints_5m": 123,
-        "mints_60m": 123,
-        "raw_units_1m": 123,
-        "raw_units_5m": 123,
-        "recent_mint_concentration": 0.0813,
-        "unique_recent_minters": 14,
-        "velocity_1m": 123.0,
-        "velocity_5m": 24.6
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Good Boys",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xdacddf91e6b63f8348698c9bc760d223b52bb773",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2254,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x271624cab4ef371330df85a4773139233bdac3e2",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 47,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 7,
-        "mint_velocity": 20,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 6
-      },
-      "sell_through": 0.622990870515623,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 7777,
-        "total_supply": 4845
-      },
-      "ticker": "GOODBOY"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
