@@ -1,26 +1,109 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xc278fe42e0875cf55964313493e5c722108d0780",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc278fe42e0875cf55964313493e5c722108d0780",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 40,
+      "mints_1m": 40,
+      "mints_5m": 40,
+      "mints_60m": 40,
+      "raw_units_1m": 40,
+      "raw_units_5m": 40,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 4,
+      "velocity_1m": 40.0,
+      "velocity_5m": 8.0
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "salty cat ",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xc278fe42e0875cf55964313493e5c722108d0780",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.2525,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x974620398c6fcade97176415ddda28cc346f5f14",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 50,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 2,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 2
+    },
+    "sell_through": 0.22112211221122113,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 3333,
+      "total_supply": 737
+    },
+    "ticker": "salty"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49094198,
-    "latest_block_age_seconds": 1,
+    "latest_block": 49101513,
+    "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49094188,
+    "safe_block": 49101503,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 200704,
+    "bytes": 147456,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788000416,
+  "generated_at": 1788001159,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -52,27 +135,112 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 10.639,
+    "analysis_age_seconds": 5.977,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 20.412,
-    "from_block": 49093874,
+    "duration_seconds": 15.704,
+    "from_block": 49101274,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 2,
-    "lag_blocks": 195,
-    "lag_seconds": 20,
-    "live_observations": 0,
-    "next_block": 49093994,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 110,
+    "lag_seconds": 11,
+    "live_observations": 1,
+    "next_block": 49101394,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 8,
-    "to_block": 49093993,
-    "total_mint_units_stored": 108
+    "secondary_sales_stored": 14,
+    "to_block": 49101393,
+    "total_mint_units_stored": 59
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49093874-49093993",
+  "status": "SCANNING 49101274-49101393",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xc278fe42e0875cf55964313493e5c722108d0780",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc278fe42e0875cf55964313493e5c722108d0780",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 40,
+        "mints_1m": 40,
+        "mints_5m": 40,
+        "mints_60m": 40,
+        "raw_units_1m": 40,
+        "raw_units_5m": 40,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 4,
+        "velocity_1m": 40.0,
+        "velocity_5m": 8.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "salty cat ",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc278fe42e0875cf55964313493e5c722108d0780",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2525,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x974620398c6fcade97176415ddda28cc346f5f14",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 50,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 2,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 2
+      },
+      "sell_through": 0.22112211221122113,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 3333,
+        "total_supply": 737
+      },
+      "ticker": "salty"
+    }
+  ],
   "win_rate_pct": 0.0
 }
