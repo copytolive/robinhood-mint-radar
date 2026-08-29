@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+    "collection": "0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 34,
-      "mints_1m": 34,
-      "mints_5m": 34,
-      "mints_60m": 34,
-      "raw_units_1m": 34,
-      "raw_units_5m": 34,
-      "recent_mint_concentration": 0.0294,
-      "unique_recent_minters": 34,
-      "velocity_1m": 34.0,
-      "velocity_5m": 6.8
+      "mints_15m": 40,
+      "mints_1m": 40,
+      "mints_5m": 40,
+      "mints_60m": 40,
+      "raw_units_1m": 40,
+      "raw_units_5m": 40,
+      "recent_mint_concentration": 0.025,
+      "unique_recent_minters": 40,
+      "velocity_1m": 40.0,
+      "velocity_5m": 8.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Pipkits",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+    "name": "StockCat",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
+      "owner": "0x5eafab2e910c0f37a3f2b2b6be0eae2bbe7b64d3",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 1
+      "sell_through": 0
     },
-    "sell_through": 0.104,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 6000,
-      "total_supply": 624
+      "max_supply": null,
+      "total_supply": null
     },
-    "ticker": "Pipkits"
+    "ticker": "SCAT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48987614,
-    "latest_block_age_seconds": 2,
+    "latest_block": 48995027,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48987604,
+    "safe_block": 48995017,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 118784,
+    "bytes": 147456,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787989664,
+  "generated_at": 1787990411,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,37 +135,37 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.476,
+    "analysis_age_seconds": 2.976,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 8.784,
-    "from_block": 48987404,
+    "duration_seconds": 5.341,
+    "from_block": 48994848,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 81,
-    "lag_seconds": 8,
+    "lag_blocks": 50,
+    "lag_seconds": 5,
     "live_observations": 1,
-    "next_block": 48987524,
+    "next_block": 48994968,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 4,
-    "to_block": 48987523,
-    "total_mint_units_stored": 46
+    "secondary_sales_stored": 6,
+    "to_block": 48994967,
+    "total_mint_units_stored": 65
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48987404-48987523",
+  "status": "SCANNING 48994848-48994967",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+      "collection": "0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -178,27 +178,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 34,
-        "mints_1m": 34,
-        "mints_5m": 34,
-        "mints_60m": 34,
-        "raw_units_1m": 34,
-        "raw_units_5m": 34,
-        "recent_mint_concentration": 0.0294,
-        "unique_recent_minters": 34,
-        "velocity_1m": 34.0,
-        "velocity_5m": 6.8
+        "mints_15m": 40,
+        "mints_1m": 40,
+        "mints_5m": 40,
+        "mints_60m": 40,
+        "raw_units_1m": 40,
+        "raw_units_5m": 40,
+        "recent_mint_concentration": 0.025,
+        "unique_recent_minters": 40,
+        "velocity_1m": 40.0,
+        "velocity_5m": 8.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Pipkits",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x266c899c5cb01d5ff9b30d296feb0dce58a0d249",
+      "name": "StockCat",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x58ca43e05436338d4b639dc947918c7ecb6cbf6d",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -213,7 +213,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x8559ad7cb9085b8f93b6e88cd83bf12f625dc8f4",
+        "owner": "0x5eafab2e910c0f37a3f2b2b6be0eae2bbe7b64d3",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,7 +222,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -231,15 +231,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 0
       },
-      "sell_through": 0.104,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 6000,
-        "total_supply": 624
+        "max_supply": null,
+        "total_supply": null
       },
-      "ticker": "Pipkits"
+      "ticker": "SCAT"
     }
   ],
   "win_rate_pct": 0.0
