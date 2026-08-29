@@ -29,17 +29,15 @@ INITIAL_LOOKBACK_BLOCKS=int(os.getenv('RADAR_INITIAL_LOOKBACK_BLOCKS','120'))
 CHUNK_BLOCKS=int(os.getenv('RADAR_CHUNK_BLOCKS','5000'))
 MAX_CATCHUP_BLOCKS=int(os.getenv('RADAR_MAX_CATCHUP_BLOCKS','5000'))
 # Hard wall-clock budget for ingest inside one supervised cycle. The supervisor
-# kills the child at 90s; keeping ingest bounded leaves deterministic headroom
-# for analysis/status publication. Real Mac telemetry showed ~1.3k blocks can
-# take roughly 55-65s, so 55s converges without chasing the moving tail.
-INGEST_CYCLE_BUDGET_SECONDS=float(os.getenv('RADAR_INGEST_CYCLE_BUDGET_SECONDS','55'))
-# If an outage leaves the durable cursor far behind, trying to replay an
-# unbounded live backlog can exceed the supervisor cycle deadline forever.
-# Real Mac telemetry showed a ~13k-block backlog growing despite repeated 90s
-# cycles, so the fail-safe rebase threshold is intentionally below that level.
+# kills the child at 90s. Real Mac telemetry showed that an individual 128-block
+# range can occasionally take much longer than its neighbors, so stop launching
+# new catch-up work around 35s and reserve deterministic time for status/analysis.
+INGEST_CYCLE_BUDGET_SECONDS=float(os.getenv('RADAR_INGEST_CYCLE_BUDGET_SECONDS','35'))
+# If the cursor is already outside the absolute live-readiness block cap, prefer
+# current opportunity detection over replaying a backlog at roughly chain speed.
 # The skipped interval is explicitly recorded as a historical gap; it is never
 # treated as analyzed. Explicit public-lookback scans are never rebased.
-RUNTIME_REBASE_LAG_BLOCKS=int(os.getenv('RADAR_RUNTIME_REBASE_LAG_BLOCKS','5000'))
+RUNTIME_REBASE_LAG_BLOCKS=int(os.getenv('RADAR_RUNTIME_REBASE_LAG_BLOCKS','2000'))
 # Readiness is primarily time-based because this chain can advance many blocks
 # per second. The block cap remains as an absolute sanity/fail-closed guard.
 MAX_READY_LAG_BLOCKS=int(os.getenv('RADAR_MAX_READY_LAG_BLOCKS','2000'))
