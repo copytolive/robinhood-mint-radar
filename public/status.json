@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 23,
-      "mints_1m": 23,
-      "mints_5m": 23,
-      "mints_60m": 23,
-      "raw_units_1m": 23,
-      "raw_units_5m": 23,
-      "recent_mint_concentration": 0.4348,
-      "unique_recent_minters": 3,
-      "velocity_1m": 23.0,
-      "velocity_5m": 4.6
+      "mints_15m": 42,
+      "mints_1m": 42,
+      "mints_5m": 42,
+      "mints_60m": 42,
+      "raw_units_1m": 42,
+      "raw_units_5m": 42,
+      "recent_mint_concentration": 0.2381,
+      "unique_recent_minters": 5,
+      "velocity_1m": 42.0,
+      "velocity_5m": 8.4
     },
     "mint_price_eth": 15000.0,
     "mint_price_source": "CONTRACT",
@@ -40,7 +40,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1339,
+    "predicted_probability": 0.1405,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -64,11 +64,11 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 35,
+    "score": 36,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
+      "holder_growth": 2,
       "mint_velocity": 20,
       "price_asymmetry": 3,
       "safety": 4,
@@ -79,7 +79,7 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": 1559
+      "total_supply": 2329
     },
     "ticker": "PXREBELS"
   },
@@ -89,21 +89,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48788279,
+    "latest_block": 48795724,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48788269,
+    "safe_block": 48795714,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 102400,
+    "bytes": 122880,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787969527,
+  "generated_at": 1787970281,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,26 +135,26 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.582,
+    "analysis_age_seconds": 1.68,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 12.085,
-    "from_block": 48788041,
+    "duration_seconds": 3.483,
+    "from_block": 48795565,
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 0,
-    "lag_blocks": 109,
-    "lag_seconds": 11,
+    "lag_blocks": 30,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 48788161,
+    "next_block": 48795685,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 5,
-    "to_block": 48788160,
-    "total_mint_units_stored": 30
+    "secondary_sales_stored": 2,
+    "to_block": 48795684,
+    "total_mint_units_stored": 51
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48788041-48788160",
+  "status": "SCANNING 48795565-48795684",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -178,16 +178,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 23,
-        "mints_1m": 23,
-        "mints_5m": 23,
-        "mints_60m": 23,
-        "raw_units_1m": 23,
-        "raw_units_5m": 23,
-        "recent_mint_concentration": 0.4348,
-        "unique_recent_minters": 3,
-        "velocity_1m": 23.0,
-        "velocity_5m": 4.6
+        "mints_15m": 42,
+        "mints_1m": 42,
+        "mints_5m": 42,
+        "mints_60m": 42,
+        "raw_units_1m": 42,
+        "raw_units_5m": 42,
+        "recent_mint_concentration": 0.2381,
+        "unique_recent_minters": 5,
+        "velocity_1m": 42.0,
+        "velocity_5m": 8.4
       },
       "mint_price_eth": 15000.0,
       "mint_price_source": "CONTRACT",
@@ -198,7 +198,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1339,
+      "predicted_probability": 0.1405,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -222,11 +222,11 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 35,
+      "score": 36,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 2,
         "mint_velocity": 20,
         "price_asymmetry": 3,
         "safety": 4,
@@ -237,7 +237,7 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 1559
+        "total_supply": 2329
       },
       "ticker": "PXREBELS"
     }
