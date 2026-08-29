@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+    "action": "WAIT",
+    "collection": "0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 78,
-      "mints_1m": 78,
-      "mints_5m": 78,
-      "mints_60m": 78,
-      "raw_units_1m": 78,
-      "raw_units_5m": 78,
-      "recent_mint_concentration": 0.0128,
-      "unique_recent_minters": 78,
-      "velocity_1m": 78.0,
-      "velocity_5m": 15.6
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Hoodfish",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Bones",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.1152,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xd854f25a029f9123c58a957b8e11bec3fc0ffa29",
+      "owner": "0x139c1de071993d4f14c6906c57ffd09d6b5a71a2",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 32,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 6
     },
-    "sell_through": null,
+    "sell_through": 0.6142857142857143,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 2011
+      "max_supply": 3500,
+      "total_supply": 2150
     },
-    "ticker": "FISH"
+    "ticker": "Bones"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,21 +90,21 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 48727480,
-    "latest_block_age_seconds": 5,
+    "latest_block": 48735095,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 48727470,
+    "safe_block": 48735085,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 180224,
+    "bytes": 86016,
     "integrity": "ok",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1787963400,
+  "generated_at": 1787964166,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -115,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -135,40 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 13.036,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 2.283,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 24.375,
-    "from_block": 48727145,
+    "duration_seconds": 13.659,
+    "from_block": 48734861,
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 206,
-    "lag_seconds": 19,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 105,
+    "lag_seconds": 11,
     "live_observations": 1,
-    "next_block": 48727265,
+    "next_block": 48734981,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
-    "secondary_sales_stored": 1,
-    "to_block": 48727264,
-    "total_mint_units_stored": 89
+    "secondary_sales_stored": 6,
+    "to_block": 48734980,
+    "total_mint_units_stored": 16
   },
   "schema_version": "1.3",
-  "status": "SCANNING 48727145-48727264",
+  "status": "SCANNING 48734861-48734980",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+      "action": "WAIT",
+      "collection": "0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -178,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 78,
-        "mints_1m": 78,
-        "mints_5m": 78,
-        "mints_60m": 78,
-        "raw_units_1m": 78,
-        "raw_units_5m": 78,
-        "recent_mint_concentration": 0.0128,
-        "unique_recent_minters": 78,
-        "velocity_1m": 78.0,
-        "velocity_5m": 15.6
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Hoodfish",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x4f8b55a07b06698fc3f5377604e9999eef298a9d",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Bones",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xdbedda6155a4eecaa31a843d5f401b690cb1ba0d",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3661,
+      "predicted_probability": 0.1152,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -213,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xd854f25a029f9123c58a957b8e11bec3fc0ffa29",
+        "owner": "0x139c1de071993d4f14c6906c57ffd09d6b5a71a2",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 61,
+      "score": 32,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 6
       },
-      "sell_through": null,
+      "sell_through": 0.6142857142857143,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 2011
+        "max_supply": 3500,
+        "total_supply": 2150
       },
-      "ticker": "FISH"
+      "ticker": "Bones"
     }
   ],
   "win_rate_pct": 0.0
