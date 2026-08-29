@@ -27,9 +27,9 @@ class MovingRPC:
 
 
 class Harness(BoundedFastLiveRadarScanner):
-    def __init__(self,last,tips):
+    def __init__(self,last,tips,lag_seconds=0):
         self.db=FakeDB(last);self.rpc=MovingRPC(tips);self.diag=[];self.max_ingest_range_blocks=128
-        self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;self.ranges=[]
+        self._analysis_rows_cache=[];self._analysis_pruned=0;self._analysis_overflow=0;self.ranges=[];self.test_lag_seconds=lag_seconds
     def _runtime_rebase_if_stale(self,public_lookback=None):return None
     def _verify_checkpoint(self,last,stored_hash):return last
     def _init_signatures(self):return None
@@ -40,7 +40,7 @@ class Harness(BoundedFastLiveRadarScanner):
     def _prewarm_enrichment(self):return None
     def build_status(self,tip,safe,first,processed_to,started):
         return {'chain':{},'scan':{},'diagnostics':[],'live_ready':'READY','money_readiness':'WAIT FOR QUALIFIED OPPORTUNITY','manual_packages':[],'watchlist':[],'best_live_observation':None}
-    def _lag_metrics(self,safe,processed):return max(0,safe-processed),0
+    def _lag_metrics(self,safe,processed):return max(0,safe-processed),self.test_lag_seconds
     def block_time(self,n):return 0
 
 
@@ -54,13 +54,16 @@ class BoundedCycleTests(unittest.TestCase):
         self.assertEqual(status['scan']['next_block'],991)
         self.assertEqual(status['chain']['latest_block'],2000)
 
-    def test_wall_clock_budget_exits_normally_as_catching_up(self):
-        s=Harness(last=100,tips=[1000,1100])
+    def test_wall_clock_budget_exits_normally_when_chain_time_is_stale(self):
+        s=Harness(last=100,tips=[1000,1100],lag_seconds=120)
         old=config.INGEST_CYCLE_BUDGET_SECONDS
         config.INGEST_CYCLE_BUDGET_SECONDS=5
-        ticks=iter([0,10,11,12,13,14,15,16,17,18,19,20])
+        values=iter([0,10])
+        def fake_time():
+            try:return next(values)
+            except StopIteration:return 11
         try:
-            with patch('radar.bounded_fast_live_scanner.time.time',side_effect=lambda:next(ticks)):
+            with patch('radar.bounded_fast_live_scanner.time.time',side_effect=fake_time):
                 status=s.scan_once()
         finally:
             config.INGEST_CYCLE_BUDGET_SECONDS=old
@@ -68,7 +71,26 @@ class BoundedCycleTests(unittest.TestCase):
         self.assertEqual(status['live_ready'],'NOT_READY')
         self.assertEqual(status['money_readiness'],'CATCHING UP — WAIT FOR LIVE TIP')
         self.assertEqual(status['scan']['next_block'],229)
+        self.assertEqual(status['scan']['lag_seconds'],120)
         self.assertTrue(any(d.get('reason')=='INGEST_BUDGET_EXHAUSTED' for d in status['diagnostics']))
+
+    def test_wall_clock_budget_continues_to_analysis_inside_ready_window(self):
+        s=Harness(last=100,tips=[1000,1100,1100],lag_seconds=30)
+        old=config.INGEST_CYCLE_BUDGET_SECONDS
+        config.INGEST_CYCLE_BUDGET_SECONDS=5
+        values=iter([0,10])
+        def fake_time():
+            try:return next(values)
+            except StopIteration:return 11
+        try:
+            with patch('radar.bounded_fast_live_scanner.time.time',side_effect=fake_time):
+                status=s.scan_once()
+        finally:
+            config.INGEST_CYCLE_BUDGET_SECONDS=old
+        self.assertEqual(s.ranges,[(101,228)])
+        self.assertEqual(status['live_ready'],'READY')
+        self.assertEqual(status['scan']['next_block'],229)
+        self.assertEqual(status['scan']['lag_seconds'],30)
 
 
 if __name__=='__main__':unittest.main()
