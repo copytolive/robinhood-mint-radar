@@ -16,16 +16,16 @@ class FakeDB:
 
 
 class FakeRPC:
-    def __init__(self,tip):self.tip=tip
+    def __init__(self,tip,timestamps=None):self.tip=tip;self.timestamps=dict(timestamps or {})
     def block_number(self):return self.tip
-    def block(self,n):return {'hash':'0x'+format(int(n),'064x')}
+    def block(self,n):return {'hash':'0x'+format(int(n),'064x'),'timestamp':hex(int(self.timestamps.get(int(n),0)))}
 
 
-def scanner(last,tip,meta=None):
+def scanner(last,tip,meta=None,timestamps=None):
     s=FastLiveRadarScanner.__new__(FastLiveRadarScanner)
     s.db=FakeDB(last,meta)
-    s.rpc=FakeRPC(tip)
-    s.diag=[]
+    s.rpc=FakeRPC(tip,timestamps=timestamps)
+    s.diag=[];s._block_time={}
     s._stage=lambda *args,**kwargs:None
     return s
 
@@ -56,11 +56,25 @@ class RuntimeRecoveryTests(unittest.TestCase):
         gaps=json.loads(s.db.get_meta('historical_gaps_json'))
         self.assertEqual(gaps,[[last+1,expected_checkpoint]])
 
+    def test_chain_time_stale_rebases_even_inside_block_cap(self):
+        tip=50000
+        safe=tip-config.CONFIRMATION_BLOCKS
+        last=safe-500
+        timestamps={last:1000,safe:1000+config.RUNTIME_REBASE_LAG_SECONDS+1}
+        s=scanner(last,tip,{'last_block_hash':'0xold'},timestamps=timestamps)
+        s._runtime_rebase_if_stale()
+        expected_first=max(0,safe-config.INITIAL_LOOKBACK_BLOCKS+1)
+        expected_checkpoint=expected_first-1
+        self.assertEqual(s.db.last_block(),expected_checkpoint)
+        gaps=json.loads(s.db.get_meta('historical_gaps_json'))
+        self.assertEqual(gaps,[[last+1,expected_checkpoint]])
+
     def test_small_lag_keeps_durable_cursor(self):
         tip=50000
         safe=tip-config.CONFIRMATION_BLOCKS
         last=safe-min(2000,max(1,config.RUNTIME_REBASE_LAG_BLOCKS//2))
-        s=scanner(last,tip,{'last_block_hash':'0xold'})
+        timestamps={last:1000,safe:1000+min(30,config.RUNTIME_REBASE_LAG_SECONDS)}
+        s=scanner(last,tip,{'last_block_hash':'0xold'},timestamps=timestamps)
         s._runtime_rebase_if_stale()
         self.assertEqual(s.db.last_block(),last)
         self.assertEqual(s.db.get_meta('last_block_hash'),'0xold')
