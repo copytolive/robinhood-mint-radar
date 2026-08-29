@@ -1,17 +1,100 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WATCH",
+    "collection": "0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 82,
+      "mints_1m": 82,
+      "mints_5m": 82,
+      "mints_60m": 82,
+      "raw_units_1m": 82,
+      "raw_units_5m": 82,
+      "recent_mint_concentration": 0.0244,
+      "unique_recent_minters": 41,
+      "velocity_1m": 82.0,
+      "velocity_5m": 16.4
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Violet Voyager",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.4251,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x3c3f8edad9a5479044df9ca129218416feea059e",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 66,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 5
+    },
+    "sell_through": 0.5886588658865887,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 2222,
+      "total_supply": 1308
+    },
+    "ticker": "Violet Voyager"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49260841,
-    "latest_block_age_seconds": 2,
+    "latest_block": 49268256,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49260831,
+    "safe_block": 49268246,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788017249,
+  "generated_at": 1788018003,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -33,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -53,28 +136,113 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.616,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 2,
+    "analysis_age_seconds": 2.487,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 4.531,
-    "from_block": 49260666,
+    "duration_seconds": 5.637,
+    "from_block": 49268092,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 46,
-    "lag_seconds": 5,
-    "live_observations": 0,
-    "next_block": 49260786,
+    "lag_blocks": 35,
+    "lag_seconds": 4,
+    "live_observations": 1,
+    "next_block": 49268212,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49260785,
+    "to_block": 49268211,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49260666-49260785",
+  "status": "SCANNING 49268092-49268211",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WATCH",
+      "collection": "0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 82,
+        "mints_1m": 82,
+        "mints_5m": 82,
+        "mints_60m": 82,
+        "raw_units_1m": 82,
+        "raw_units_5m": 82,
+        "recent_mint_concentration": 0.0244,
+        "unique_recent_minters": 41,
+        "velocity_1m": 82.0,
+        "velocity_5m": 16.4
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Violet Voyager",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x8486e0fd142407b7c82f14ec96c376b4de27d603",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.4251,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x3c3f8edad9a5479044df9ca129218416feea059e",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 66,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 5
+      },
+      "sell_through": 0.5886588658865887,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 2222,
+        "total_supply": 1308
+      },
+      "ticker": "Violet Voyager"
+    }
+  ],
   "win_rate_pct": 0.0
 }
