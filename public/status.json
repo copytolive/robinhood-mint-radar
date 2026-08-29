@@ -9,27 +9,30 @@
     },
     "explorer_url": "https://robinhoodchain.blockscout.com/address/0x73dae4b6972c9b5754a454241df26532ef5d35e0",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 0,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 50,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 16,
-      "mints_1m": 16,
-      "mints_5m": 16,
-      "mints_60m": 16,
-      "raw_units_1m": 16,
-      "raw_units_5m": 16,
-      "recent_mint_concentration": 0.3125,
-      "unique_recent_minters": 4,
-      "velocity_1m": 16.0,
-      "velocity_5m": 3.2
+      "mints_15m": 23,
+      "mints_1m": 23,
+      "mints_5m": 23,
+      "mints_60m": 23,
+      "raw_units_1m": 23,
+      "raw_units_5m": 23,
+      "recent_mint_concentration": 0.2174,
+      "unique_recent_minters": 6,
+      "velocity_1m": 23.0,
+      "velocity_5m": 4.6
     },
     "mint_price_eth": 0.0001,
     "mint_price_source": "CONTRACT",
@@ -40,15 +43,15 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.192,
+    "predicted_probability": 0.3437,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
@@ -64,22 +67,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 43,
+    "score": 59,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 2,
+      "holder_growth": 3,
       "mint_velocity": 20,
       "price_asymmetry": 10,
       "safety": 4,
-      "secondary_liquidity": 0,
+      "secondary_liquidity": 15,
       "sell_through": 0
     },
     "sell_through": null,
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": 5268
+      "total_supply": 6124
     },
     "ticker": "LARVA"
   },
@@ -89,12 +92,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49427933,
+    "latest_block": 49435764,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49427923,
+    "safe_block": 49435754,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788034153,
+  "generated_at": 1788034941,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,27 +139,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.114,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 2.304,
+    "analysis_rows_considered": 3,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 6.365,
-    "from_block": 49427754,
+    "duration_seconds": 3.524,
+    "from_block": 49435604,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 50,
-    "lag_seconds": 5,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 31,
+    "lag_seconds": 3,
     "live_observations": 2,
-    "next_block": 49427874,
+    "next_block": 49435724,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49427873,
+    "to_block": 49435723,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49427754-49427873",
+  "status": "SCANNING 49435604-49435723",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -169,6 +172,93 @@
       },
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0x73dae4b6972c9b5754a454241df26532ef5d35e0",
       "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      ],
+      "market": {
+        "floor_price": null,
+        "native_sales_24h": 0,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 50,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 23,
+        "mints_1m": 23,
+        "mints_5m": 23,
+        "mints_60m": 23,
+        "raw_units_1m": 23,
+        "raw_units_5m": 23,
+        "recent_mint_concentration": 0.2174,
+        "unique_recent_minters": 6,
+        "velocity_1m": 23.0,
+        "velocity_5m": 4.6
+      },
+      "mint_price_eth": 0.0001,
+      "mint_price_source": "CONTRACT",
+      "name": "LarvaStocks",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x73dae4b6972c9b5754a454241df26532ef5d35e0",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.3437,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "SECONDARY_MARKET_OBSERVED"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": null,
+        "owner_active": false,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 59,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 3,
+        "mint_velocity": 20,
+        "price_asymmetry": 10,
+        "safety": 4,
+        "secondary_liquidity": 15,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": null,
+        "total_supply": 6124
+      },
+      "ticker": "LARVA"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x027aca2794e44f24950d81227dcd516ffbb49d6e",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x027aca2794e44f24950d81227dcd516ffbb49d6e",
+      "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
@@ -180,21 +270,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 16,
-        "mints_1m": 16,
-        "mints_5m": 16,
-        "mints_60m": 16,
-        "raw_units_1m": 16,
-        "raw_units_5m": 16,
-        "recent_mint_concentration": 0.3125,
-        "unique_recent_minters": 4,
-        "velocity_1m": 16.0,
-        "velocity_5m": 3.2
+        "mints_15m": 11,
+        "mints_1m": 11,
+        "mints_5m": 11,
+        "mints_60m": 11,
+        "raw_units_1m": 11,
+        "raw_units_5m": 11,
+        "recent_mint_concentration": 0.5455,
+        "unique_recent_minters": 2,
+        "velocity_1m": 11.0,
+        "velocity_5m": 2.2
       },
-      "mint_price_eth": 0.0001,
-      "mint_price_source": "CONTRACT",
-      "name": "LarvaStocks",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x73dae4b6972c9b5754a454241df26532ef5d35e0",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "QUOTRONS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x027aca2794e44f24950d81227dcd516ffbb49d6e",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -215,8 +305,8 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
+        "owner": "0x7171e64e979265aed6588577d1c6b60a701d7866",
+        "owner_active": true,
         "proxy": null,
         "review_risks": [
           "VERIFICATION_UNAVAILABLE"
@@ -228,93 +318,9 @@
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 20,
-        "price_asymmetry": 10,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 5268
-      },
-      "ticker": "LARVA"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
-      },
-      "mint_price_eth": 0.001205277496505962,
-      "mint_price_source": "CONTRACT",
-      "name": "Goobs",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.0982,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x853deeef098384e173bba5728dce92a4df94acae",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 29,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
-        "price_asymmetry": 3,
+        "holder_growth": 1,
+        "mint_velocity": 16,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
@@ -325,7 +331,7 @@
         "max_supply": null,
         "total_supply": null
       },
-      "ticker": "GOOB"
+      "ticker": "QUOTRON"
     }
   ],
   "win_rate_pct": 0.0
