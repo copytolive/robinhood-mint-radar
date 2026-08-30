@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x9661597d542586b1f922724cb0156d268de2f0c9",
+    "action": "WAIT",
+    "collection": "0xb0f979fcd31d47ba59f75669f3397985f349d345",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9661597d542586b1f922724cb0156d268de2f0c9",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb0f979fcd31d47ba59f75669f3397985f349d345",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 32,
-      "mints_1m": 32,
-      "mints_5m": 32,
-      "mints_60m": 32,
-      "raw_units_1m": 32,
-      "raw_units_5m": 32,
-      "recent_mint_concentration": 0.0312,
-      "unique_recent_minters": 32,
-      "velocity_1m": 32.0,
-      "velocity_5m": 6.4
+      "mints_15m": 20,
+      "mints_1m": 20,
+      "mints_5m": 20,
+      "mints_60m": 20,
+      "raw_units_1m": 20,
+      "raw_units_5m": 20,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 20.0,
+      "velocity_5m": 4.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "SLIP",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x9661597d542586b1f922724cb0156d268de2f0c9",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Voidies",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xb0f979fcd31d47ba59f75669f3397985f349d345",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.1094,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,8 +56,8 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": null,
-      "owner_active": false,
+      "owner": "0x52c7657d3f35372522ef272958639ea7d2af83c3",
+      "owner_active": true,
       "proxy": null,
       "review_risks": [
         "VERIFICATION_UNAVAILABLE"
@@ -64,13 +65,13 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 31,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 0,
+      "holder_growth": 0,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
@@ -79,9 +80,9 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": null
+      "total_supply": 9778
     },
-    "ticker": "SLIP"
+    "ticker": "VOID"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +90,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49863122,
-    "latest_block_age_seconds": 1,
+    "latest_block": 49870078,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49863112,
+    "safe_block": 49870068,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 319488,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788078115,
+  "generated_at": 1788078817,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +117,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,122 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.898,
+    "analysis_age_seconds": 3.127,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 7.381,
-    "from_block": 49862928,
+    "duration_seconds": 5.092,
+    "from_block": 49869903,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 65,
-    "lag_seconds": 7,
-    "live_observations": 2,
-    "next_block": 49863048,
+    "hoodsea_launches_stored": null,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 46,
+    "lag_seconds": 5,
+    "live_observations": 1,
+    "next_block": 49870023,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49863047,
-    "total_mint_units_stored": 0
+    "to_block": 49870022,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49862928-49863047",
+  "status": "SCANNING 49869903-49870022",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x9661597d542586b1f922724cb0156d268de2f0c9",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9661597d542586b1f922724cb0156d268de2f0c9",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 32,
-        "mints_1m": 32,
-        "mints_5m": 32,
-        "mints_60m": 32,
-        "raw_units_1m": 32,
-        "raw_units_5m": 32,
-        "recent_mint_concentration": 0.0312,
-        "unique_recent_minters": 32,
-        "velocity_1m": 32.0,
-        "velocity_5m": 6.4
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "SLIP",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x9661597d542586b1f922724cb0156d268de2f0c9",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3661,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 61,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": null
-      },
-      "ticker": "SLIP"
-    },
-    {
       "action": "WAIT",
-      "collection": "0x482bd7ad0387cfbdc8c42c36e9ba3a646e0464ca",
+      "collection": "0xb0f979fcd31d47ba59f75669f3397985f349d345",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x482bd7ad0387cfbdc8c42c36e9ba3a646e0464ca",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb0f979fcd31d47ba59f75669f3397985f349d345",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -265,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 83,
-        "mints_1m": 83,
-        "mints_5m": 83,
-        "mints_60m": 83,
-        "raw_units_1m": 83,
-        "raw_units_5m": 83,
-        "recent_mint_concentration": 0.241,
-        "unique_recent_minters": 6,
-        "velocity_1m": 83.0,
-        "velocity_5m": 16.6
+        "mints_15m": 20,
+        "mints_1m": 20,
+        "mints_5m": 20,
+        "mints_60m": 20,
+        "raw_units_1m": 20,
+        "raw_units_5m": 20,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 20.0,
+        "velocity_5m": 4.0
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "RH-COMP",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x482bd7ad0387cfbdc8c42c36e9ba3a646e0464ca",
+      "name": "Voidies",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xb0f979fcd31d47ba59f75669f3397985f349d345",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.1094,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -300,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x32ff2482ad8afaacafe7e96c8503f62c108e60eb",
+        "owner": "0x52c7657d3f35372522ef272958639ea7d2af83c3",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -309,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 31,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 3,
+        "holder_growth": 0,
         "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 7
+        "sell_through": 0
       },
-      "sell_through": 0.7393339333933393,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 4107
+        "max_supply": null,
+        "total_supply": 9778
       },
-      "ticker": "RH-COMP"
+      "ticker": "VOID"
     }
   ],
   "win_rate_pct": 0.0
