@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0xae4f613203738538e10ce0f05a52b6d549f72b20",
+    "collection": "0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae4f613203738538e10ce0f05a52b6d549f72b20",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 558,
-      "mints_1m": 558,
-      "mints_5m": 558,
-      "mints_60m": 558,
-      "raw_units_1m": 558,
-      "raw_units_5m": 558,
-      "recent_mint_concentration": 0.0054,
-      "unique_recent_minters": 265,
-      "velocity_1m": 558.0,
-      "velocity_5m": 111.6
+      "mints_15m": 22,
+      "mints_1m": 22,
+      "mints_5m": 22,
+      "mints_60m": 22,
+      "raw_units_1m": 22,
+      "raw_units_5m": 22,
+      "recent_mint_concentration": 0.0455,
+      "unique_recent_minters": 22,
+      "velocity_1m": 22.0,
+      "velocity_5m": 4.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "wraith33",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xae4f613203738538e10ce0f05a52b6d549f72b20",
+    "name": "Candy Machine",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4757,
+    "predicted_probability": 0.3891,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x274260b827bb86b01cf7447af0b068c6137bff3e",
+      "owner": "0x7a21149cf2e4f491721fda887f70def2e8e8f98b",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 70,
+    "score": 63,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 9
+      "sell_through": 2
     },
-    "sell_through": 0.998,
+    "sell_through": 0.20007715057220007,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 1000,
-      "total_supply": 998
+      "max_supply": 7777,
+      "total_supply": 1556
     },
-    "ticker": "wraith33"
+    "ticker": "Candy"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50283379,
+    "latest_block": 50288544,
     "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50283369,
+    "safe_block": 50288534,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 770048,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788120640,
+  "generated_at": 1788121170,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.632,
+    "analysis_age_seconds": 2.447,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 5.254,
-    "from_block": 50283202,
+    "duration_seconds": 3.907,
+    "from_block": 50288376,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 48,
-    "lag_seconds": 5,
-    "live_observations": 2,
-    "next_block": 50283322,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 39,
+    "lag_seconds": 4,
+    "live_observations": 1,
+    "next_block": 50288496,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50283321,
+    "to_block": 50288495,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50283202-50283321",
+  "status": "SCANNING 50288376-50288495",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0xae4f613203738538e10ce0f05a52b6d549f72b20",
+      "collection": "0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae4f613203738538e10ce0f05a52b6d549f72b20",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 558,
-        "mints_1m": 558,
-        "mints_5m": 558,
-        "mints_60m": 558,
-        "raw_units_1m": 558,
-        "raw_units_5m": 558,
-        "recent_mint_concentration": 0.0054,
-        "unique_recent_minters": 265,
-        "velocity_1m": 558.0,
-        "velocity_5m": 111.6
+        "mints_15m": 22,
+        "mints_1m": 22,
+        "mints_5m": 22,
+        "mints_60m": 22,
+        "raw_units_1m": 22,
+        "raw_units_5m": 22,
+        "recent_mint_concentration": 0.0455,
+        "unique_recent_minters": 22,
+        "velocity_1m": 22.0,
+        "velocity_5m": 4.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "wraith33",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xae4f613203738538e10ce0f05a52b6d549f72b20",
+      "name": "Candy Machine",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x3d651ed8e2aa3dcaa36a9a202eb028830d118ecd",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4757,
+      "predicted_probability": 0.3891,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x274260b827bb86b01cf7447af0b068c6137bff3e",
+        "owner": "0x7a21149cf2e4f491721fda887f70def2e8e8f98b",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 70,
+      "score": 63,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -233,99 +233,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 9
+        "sell_through": 2
       },
-      "sell_through": 0.998,
+      "sell_through": 0.20007715057220007,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 1000,
-        "total_supply": 998
+        "max_supply": 7777,
+        "total_supply": 1556
       },
-      "ticker": "wraith33"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 20,
-        "mints_1m": 20,
-        "mints_5m": 20,
-        "mints_60m": 20,
-        "raw_units_1m": 20,
-        "raw_units_5m": 20,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 20.0,
-        "velocity_5m": 4.0
-      },
-      "mint_price_eth": 0.001205277496505962,
-      "mint_price_source": "CONTRACT",
-      "name": "Goobs",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb8933bcce43c811bc7bbf7e1a38e010a66722fb9",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1339,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x853deeef098384e173bba5728dce92a4df94acae",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 35,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 20,
-        "price_asymmetry": 3,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": null
-      },
-      "ticker": "GOOB"
+      "ticker": "Candy"
     }
   ],
   "win_rate_pct": 0.0
