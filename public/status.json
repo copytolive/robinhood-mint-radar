@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+    "collection": "0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 50,
+      "mints_1m": 50,
+      "mints_5m": 50,
+      "mints_60m": 50,
+      "raw_units_1m": 50,
+      "raw_units_5m": 50,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 50.0,
+      "velocity_5m": 10.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "MICRODUCK 9999",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Robinhood Doggies",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2083,
+    "predicted_probability": 0.1152,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xc53cbc3b6562badc83c26e7a045cd8abb71d0bc9",
+      "owner": "0x1cae9918d76ecafdc635092ba0401d30fbfe826a",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 45,
+    "score": 32,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 12,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 20,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 1
     },
-    "sell_through": null,
+    "sell_through": 0.17221722172217221,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 7188
+      "max_supply": 6666,
+      "total_supply": 1148
     },
-    "ticker": "MICRODUCK"
+    "ticker": "RHDOG"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +90,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49900640,
+    "latest_block": 49908024,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49900630,
+    "safe_block": 49908014,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788081902,
+  "generated_at": 1788082648,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.166,
+    "analysis_age_seconds": 1.237,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 5.228,
-    "from_block": 49900461,
+    "duration_seconds": 2.149,
+    "from_block": 49907873,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 50,
-    "lag_seconds": 5,
-    "live_observations": 2,
-    "next_block": 49900581,
+    "hoodsea_launches_stored": null,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 22,
+    "lag_seconds": 3,
+    "live_observations": 1,
+    "next_block": 49907993,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49900580,
-    "total_mint_units_stored": 0
+    "to_block": 49907992,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49900461-49900580",
+  "status": "SCANNING 49907873-49907992",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+      "collection": "0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "MICRODUCK 9999",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x2155b81123777d8a480a6ca0563ad7c09954f4a5",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Robinhood Doggies",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x0606f463d7a1eaba62661781b32eb6783f3dc3e9",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2083,
+      "predicted_probability": 0.1152,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xc53cbc3b6562badc83c26e7a045cd8abb71d0bc9",
+        "owner": "0x1cae9918d76ecafdc635092ba0401d30fbfe826a",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,112 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 45,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 12,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 7188
-      },
-      "ticker": "MICRODUCK"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x6f1123589cc95c671cedf6a859d0616b47039762",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6f1123589cc95c671cedf6a859d0616b47039762",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
-      ],
-      "market": {
-        "floor_price": null,
-        "native_sales_24h": 9,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 10,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.00334888
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "raw_units_1m": 1,
-        "raw_units_5m": 1,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Cyber Strike: Genesis",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x6f1123589cc95c671cedf6a859d0616b47039762",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1405,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x00f67ab99480e46d3cebbfbdaa257e3add3c4ada",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 36,
+      "score": 32,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 1,
+        "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 15,
-        "sell_through": 9
+        "secondary_liquidity": 0,
+        "sell_through": 1
       },
-      "sell_through": 0.97375,
+      "sell_through": 0.17221722172217221,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4000,
-        "total_supply": 3895
+        "max_supply": 6666,
+        "total_supply": 1148
       },
-      "ticker": "CSG"
+      "ticker": "RHDOG"
     }
   ],
   "win_rate_pct": 0.0
