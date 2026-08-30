@@ -1,23 +1,26 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x3735e726b07267280b3ea8250a99185c0a3ea814",
+    "collection": "0xa42b2d8e3c901d9cf718980614c75234fef5d731",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3735e726b07267280b3ea8250a99185c0a3ea814",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa42b2d8e3c901d9cf718980614c75234fef5d731",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
       "MINT_PRICE_UNKNOWN",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 0,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 1,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
@@ -34,29 +37,29 @@
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "COMPUTER AGE",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x3735e726b07267280b3ea8250a99185c0a3ea814",
+    "name": "MUMMY DUAT",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa42b2d8e3c901d9cf718980614c75234fef5d731",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1275,
+    "predicted_probability": 0.1763,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x32ff2482ad8afaacafe7e96c8503f62c108e60eb",
+      "owner": "0x2ff124408110cf9fd2c29b401ddf5df62fe9b35b",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,7 +68,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 34,
+    "score": 41,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
@@ -73,16 +76,16 @@
       "mint_velocity": 20,
       "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 3
+      "secondary_liquidity": 1,
+      "sell_through": 9
     },
-    "sell_through": 0.34,
+    "sell_through": 0.9558955895589559,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2500,
-      "total_supply": 850
+      "max_supply": 5555,
+      "total_supply": 5310
     },
-    "ticker": "COMPUTER AGE"
+    "ticker": "MUMMYDUAT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +93,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50340512,
+    "latest_block": 50348127,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50340502,
+    "safe_block": 50348117,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +108,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788126450,
+  "generated_at": 1788127220,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,48 +140,51 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.847,
+    "analysis_age_seconds": 3.67,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 7,
     "blocks_processed": 120,
-    "duration_seconds": 3.392,
-    "from_block": 50340360,
+    "duration_seconds": 5.039,
+    "from_block": 50347979,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 23,
-    "lag_seconds": 3,
+    "lag_blocks": 19,
+    "lag_seconds": 1,
     "live_observations": 1,
-    "next_block": 50340480,
+    "next_block": 50348099,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50340479,
+    "to_block": 50348098,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50340360-50340479",
+  "status": "SCANNING 50347979-50348098",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x3735e726b07267280b3ea8250a99185c0a3ea814",
+      "collection": "0xa42b2d8e3c901d9cf718980614c75234fef5d731",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3735e726b07267280b3ea8250a99185c0a3ea814",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa42b2d8e3c901d9cf718980614c75234fef5d731",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
+        "floor_price": null,
+        "native_sales_24h": 0,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 1,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
@@ -195,29 +201,29 @@
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "COMPUTER AGE",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x3735e726b07267280b3ea8250a99185c0a3ea814",
+      "name": "MUMMY DUAT",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa42b2d8e3c901d9cf718980614c75234fef5d731",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1275,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "SECONDARY_MARKET_OBSERVED"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x32ff2482ad8afaacafe7e96c8503f62c108e60eb",
+        "owner": "0x2ff124408110cf9fd2c29b401ddf5df62fe9b35b",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,7 +232,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 34,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
@@ -234,16 +240,16 @@
         "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 3
+        "secondary_liquidity": 1,
+        "sell_through": 9
       },
-      "sell_through": 0.34,
+      "sell_through": 0.9558955895589559,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2500,
-        "total_supply": 850
+        "max_supply": 5555,
+        "total_supply": 5310
       },
-      "ticker": "COMPUTER AGE"
+      "ticker": "MUMMYDUAT"
     }
   ],
   "win_rate_pct": 0.0
