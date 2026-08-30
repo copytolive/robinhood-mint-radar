@@ -1,17 +1,16 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+    "collection": "0x874559d7bcce237ba8d14830b7093000c8e0983c",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x874559d7bcce237ba8d14830b7093000c8e0983c",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -21,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 25,
-      "mints_1m": 25,
-      "mints_5m": 25,
-      "mints_60m": 25,
-      "raw_units_1m": 25,
-      "raw_units_5m": 25,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 25.0,
-      "velocity_5m": 5.0
+      "mints_15m": 12,
+      "mints_1m": 12,
+      "mints_5m": 12,
+      "mints_60m": 12,
+      "raw_units_1m": 12,
+      "raw_units_5m": 12,
+      "recent_mint_concentration": 0.0833,
+      "unique_recent_minters": 12,
+      "velocity_1m": 12.0,
+      "velocity_5m": 2.4
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "RHminingmachine",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Dope Rigs",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x874559d7bcce237ba8d14830b7093000c8e0983c",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1152,
+    "predicted_probability": 0.2912,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x986bc0865091d3551745e121d9f128aede006aca",
+      "owner": "0x662b8d6068068e319d2232b8d5c29bce38e703de",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 32,
+    "score": 54,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 20,
-      "price_asymmetry": 0,
+      "distribution": 3,
+      "holder_growth": 6,
+      "mint_velocity": 18,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 1
     },
-    "sell_through": 0.1998199819981998,
+    "sell_through": 0.16867686768676868,
     "standard": "ERC721",
     "supply": {
       "max_supply": 5555,
-      "total_supply": 1110
+      "total_supply": 937
     },
-    "ticker": "Miners"
+    "ticker": "DRG"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50037322,
+    "latest_block": 50044988,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50037312,
+    "safe_block": 50044978,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 139264,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788095724,
+  "generated_at": 1788096500,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,42 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.445,
+    "analysis_age_seconds": 1.885,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 9,
     "blocks_processed": 120,
-    "duration_seconds": 5.894,
-    "from_block": 50037148,
+    "duration_seconds": 2.996,
+    "from_block": 50044835,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
+    "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 45,
-    "lag_seconds": 5,
+    "lag_blocks": 24,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 50037268,
+    "next_block": 50044955,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50037267,
-    "total_mint_units_stored": null
+    "to_block": 50044954,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50037148-50037267",
+  "status": "SCANNING 50044835-50044954",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+      "collection": "0x874559d7bcce237ba8d14830b7093000c8e0983c",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x874559d7bcce237ba8d14830b7093000c8e0983c",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -182,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 25,
-        "mints_1m": 25,
-        "mints_5m": 25,
-        "mints_60m": 25,
-        "raw_units_1m": 25,
-        "raw_units_5m": 25,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 25.0,
-        "velocity_5m": 5.0
+        "mints_15m": 12,
+        "mints_1m": 12,
+        "mints_5m": 12,
+        "mints_60m": 12,
+        "raw_units_1m": 12,
+        "raw_units_5m": 12,
+        "recent_mint_concentration": 0.0833,
+        "unique_recent_minters": 12,
+        "velocity_1m": 12.0,
+        "velocity_5m": 2.4
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "RHminingmachine",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xae1993df12029d2dfed2e7a50acf370e139c2a27",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Dope Rigs",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x874559d7bcce237ba8d14830b7093000c8e0983c",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1152,
+      "predicted_probability": 0.2912,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x986bc0865091d3551745e121d9f128aede006aca",
+        "owner": "0x662b8d6068068e319d2232b8d5c29bce38e703de",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 32,
+      "score": 54,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "distribution": 3,
+        "holder_growth": 6,
+        "mint_velocity": 18,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 1
       },
-      "sell_through": 0.1998199819981998,
+      "sell_through": 0.16867686768676868,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5555,
-        "total_supply": 1110
+        "total_supply": 937
       },
-      "ticker": "Miners"
+      "ticker": "DRG"
     }
   ],
   "win_rate_pct": 0.0
