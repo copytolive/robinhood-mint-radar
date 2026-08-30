@@ -1,17 +1,16 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+    "action": "WATCH",
+    "collection": "0x56ca75549c310621398fe9fe1ec90dba865123a2",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x56ca75549c310621398fe9fe1ec90dba865123a2",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -21,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 20,
-      "mints_1m": 20,
-      "mints_5m": 20,
-      "mints_60m": 20,
-      "raw_units_1m": 20,
-      "raw_units_5m": 20,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 20.0,
-      "velocity_5m": 4.0
+      "mints_15m": 301,
+      "mints_1m": 301,
+      "mints_5m": 301,
+      "mints_60m": 301,
+      "raw_units_1m": 301,
+      "raw_units_5m": 301,
+      "recent_mint_concentration": 0.0033,
+      "unique_recent_minters": 301,
+      "velocity_1m": 301.0,
+      "velocity_5m": 60.2
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "VRAM Goblins",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "SEAT4663",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x56ca75549c310621398fe9fe1ec90dba865123a2",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1094,
+    "predicted_probability": 0.4888,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,34 +55,33 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xfdffe2ebaf220d0dae9396a45dc8c997a3cf8927",
+      "owner": "0x57ecac89cd6b5ac214f9f78a2d2411bdc36c184b",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
-        "CONTRACT_CODE_UNAVAILABLE",
         "VERIFICATION_UNAVAILABLE"
       ],
       "state": "REVIEW",
       "verified": null
     },
-    "score": 31,
+    "score": 71,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
-      "price_asymmetry": 0,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 10
     },
-    "sell_through": null,
+    "sell_through": 1,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 2717
+      "max_supply": 4663,
+      "total_supply": 4663
     },
-    "ticker": "VRAM Goblins"
+    "ticker": "SEAT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -91,35 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50394007,
-    "latest_block_age_seconds": 1,
+    "latest_block": 50401450,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 2,
-    "safe_block": 50393997,
+    "rpc_failovers": 0,
+    "safe_block": 50401440,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 319488,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
-  "diagnostics": [
-    {
-      "error": "eth_getCode failed on all RPC endpoints: https://rpc.mainnet.chain.robinhood.com: RPCError: HTTP Error 429: Too Many Requests | https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public: RPCError: HTTP Error 429: Too Many Requests | https://rpc.nodeflare.app/robinhood/public: RPCError: HTTP Error 429: Too Many Requests",
-      "reason": "GET_CODE_FAILED",
-      "stage": "CONTRACT_CHECK",
-      "ts": 1788131855
-    },
-    {
-      "error": "eth_getCode failed on all RPC endpoints: https://rpc.mainnet.chain.robinhood.com: RPCError: HTTP Error 429: Too Many Requests | https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public: RPCError: HTTP Error 429: Too Many Requests | https://rpc.nodeflare.app/robinhood/public: RPCError: HTTP Error 429: Too Many Requests",
-      "reason": "GET_CODE_FAILED",
-      "stage": "CONTRACT_CHECK",
-      "ts": 1788131855
-    }
-  ],
-  "generated_at": 1788131858,
+  "diagnostics": [],
+  "generated_at": 1788132618,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -131,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -151,42 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.823,
+    "analysis_age_seconds": 2.219,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 7,
     "blocks_processed": 120,
-    "duration_seconds": 8.279,
-    "from_block": 50393797,
+    "duration_seconds": 4.144,
+    "from_block": 50401281,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 81,
-    "lag_seconds": 8,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 50393917,
+    "next_block": 50401401,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50393916,
+    "to_block": 50401400,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50393797-50393916",
+  "status": "SCANNING 50401281-50401400",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+      "action": "WATCH",
+      "collection": "0x56ca75549c310621398fe9fe1ec90dba865123a2",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x56ca75549c310621398fe9fe1ec90dba865123a2",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -196,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 20,
-        "mints_1m": 20,
-        "mints_5m": 20,
-        "mints_60m": 20,
-        "raw_units_1m": 20,
-        "raw_units_5m": 20,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 20.0,
-        "velocity_5m": 4.0
+        "mints_15m": 301,
+        "mints_1m": 301,
+        "mints_5m": 301,
+        "mints_60m": 301,
+        "raw_units_1m": 301,
+        "raw_units_5m": 301,
+        "recent_mint_concentration": 0.0033,
+        "unique_recent_minters": 301,
+        "velocity_1m": 301.0,
+        "velocity_5m": 60.2
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "VRAM Goblins",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x8b76f9a91f210de7cc4f24c325f860186fd77e4f",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "SEAT4663",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x56ca75549c310621398fe9fe1ec90dba865123a2",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1094,
+      "predicted_probability": 0.4888,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -231,34 +215,33 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xfdffe2ebaf220d0dae9396a45dc8c997a3cf8927",
+        "owner": "0x57ecac89cd6b5ac214f9f78a2d2411bdc36c184b",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
-          "CONTRACT_CODE_UNAVAILABLE",
           "VERIFICATION_UNAVAILABLE"
         ],
         "state": "REVIEW",
         "verified": null
       },
-      "score": 31,
+      "score": 71,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 10
       },
-      "sell_through": null,
+      "sell_through": 1,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 2717
+        "max_supply": 4663,
+        "total_supply": 4663
       },
-      "ticker": "VRAM Goblins"
+      "ticker": "SEAT"
     }
   ],
   "win_rate_pct": 0.0
