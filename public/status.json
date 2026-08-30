@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+    "collection": "0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 108,
-      "mints_1m": 108,
-      "mints_5m": 108,
-      "mints_60m": 108,
-      "raw_units_1m": 108,
-      "raw_units_5m": 108,
-      "recent_mint_concentration": 0.0093,
-      "unique_recent_minters": 108,
-      "velocity_1m": 108.0,
-      "velocity_5m": 21.6
+      "mints_15m": 83,
+      "mints_1m": 83,
+      "mints_5m": 83,
+      "mints_60m": 83,
+      "raw_units_1m": 83,
+      "raw_units_5m": 83,
+      "recent_mint_concentration": 0.012,
+      "unique_recent_minters": 83,
+      "velocity_1m": 83.0,
+      "velocity_5m": 16.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Pixelated Souls",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+    "name": "Stonk Trader",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4251,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x05ef7e0cc36833283d574ac0f3ccad3a2f6fb291",
+      "owner": "0x9485d8b695d80953ae74053dd0d4884b89af11dc",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 66,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 5
+      "sell_through": 0
     },
-    "sell_through": 0.5069,
+    "sell_through": 0.07335733573357335,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 5069
+      "max_supply": 4444,
+      "total_supply": 326
     },
-    "ticker": "PXLS"
+    "ticker": "ST"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50317689,
+    "latest_block": 50325350,
     "latest_block_age_seconds": 3,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50317679,
+    "safe_block": 50325340,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 315392,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788124130,
+  "generated_at": 1788124915,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.295,
+    "analysis_age_seconds": 3.923,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 13,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 5.655,
-    "from_block": 50317509,
+    "duration_seconds": 7.226,
+    "from_block": 50325157,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 51,
-    "lag_seconds": 6,
+    "lag_blocks": 64,
+    "lag_seconds": 7,
     "live_observations": 1,
-    "next_block": 50317629,
+    "next_block": 50325277,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50317628,
+    "to_block": 50325276,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50317509-50317628",
+  "status": "SCANNING 50325157-50325276",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+      "collection": "0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 108,
-        "mints_1m": 108,
-        "mints_5m": 108,
-        "mints_60m": 108,
-        "raw_units_1m": 108,
-        "raw_units_5m": 108,
-        "recent_mint_concentration": 0.0093,
-        "unique_recent_minters": 108,
-        "velocity_1m": 108.0,
-        "velocity_5m": 21.6
+        "mints_15m": 83,
+        "mints_1m": 83,
+        "mints_5m": 83,
+        "mints_60m": 83,
+        "raw_units_1m": 83,
+        "raw_units_5m": 83,
+        "recent_mint_concentration": 0.012,
+        "unique_recent_minters": 83,
+        "velocity_1m": 83.0,
+        "velocity_5m": 16.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Pixelated Souls",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x03a75cccdd8cad1ca02ec94ba0b6ba5ce55db18f",
+      "name": "Stonk Trader",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4251,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x05ef7e0cc36833283d574ac0f3ccad3a2f6fb291",
+        "owner": "0x9485d8b695d80953ae74053dd0d4884b89af11dc",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 66,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -233,15 +233,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 5
+        "sell_through": 0
       },
-      "sell_through": 0.5069,
+      "sell_through": 0.07335733573357335,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 5069
+        "max_supply": 4444,
+        "total_supply": 326
       },
-      "ticker": "PXLS"
+      "ticker": "ST"
     }
   ],
   "win_rate_pct": 0.0
