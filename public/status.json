@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
+    "collection": "0xa793665c88c06b04b3cbfc16b6525acac761f938",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa793665c88c06b04b3cbfc16b6525acac761f938",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 0,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 2,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 93,
-      "mints_1m": 93,
-      "mints_5m": 93,
-      "mints_60m": 93,
-      "raw_units_1m": 93,
-      "raw_units_5m": 93,
-      "recent_mint_concentration": 0.1183,
-      "unique_recent_minters": 28,
-      "velocity_1m": 93.0,
-      "velocity_5m": 18.6
+      "mints_15m": 74,
+      "mints_1m": 74,
+      "mints_5m": 74,
+      "mints_60m": 74,
+      "raw_units_1m": 74,
+      "raw_units_5m": 74,
+      "recent_mint_concentration": 0.0135,
+      "unique_recent_minters": 74,
+      "velocity_1m": 74.0,
+      "velocity_5m": 14.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Onchain Button",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
+    "name": "Hoodobi",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa793665c88c06b04b3cbfc16b6525acac761f938",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4628,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x0a8c3920ad579ed4b1ba0a3a751a6f81ddec2497",
+      "owner": "0xed069b19321951a0d83d444cca4697f96e374d89",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 69,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
+      "distribution": 5,
       "holder_growth": 10,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 3,
-      "sell_through": 7
+      "secondary_liquidity": 0,
+      "sell_through": 0
     },
-    "sell_through": 0.7143714371437143,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 2381
+      "max_supply": null,
+      "total_supply": 869
     },
-    "ticker": "OB"
+    "ticker": "DOBI"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49732832,
+    "latest_block": 49740413,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49732822,
+    "safe_block": 49740403,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788064948,
+  "generated_at": 1788065716,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,129 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.062,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 1.138,
+    "analysis_rows_considered": 1,
     "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 5.925,
-    "from_block": 49732652,
+    "duration_seconds": 1.953,
+    "from_block": 49740264,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 51,
-    "lag_seconds": 5,
-    "live_observations": 2,
-    "next_block": 49732772,
+    "lag_blocks": 20,
+    "lag_seconds": 2,
+    "live_observations": 1,
+    "next_block": 49740384,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49732771,
+    "to_block": 49740383,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49732652-49732771",
+  "status": "SCANNING 49740264-49740383",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
+      "collection": "0xa793665c88c06b04b3cbfc16b6525acac761f938",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
-      ],
-      "market": {
-        "floor_price": null,
-        "native_sales_24h": 0,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 2,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.0
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 93,
-        "mints_1m": 93,
-        "mints_5m": 93,
-        "mints_60m": 93,
-        "raw_units_1m": 93,
-        "raw_units_5m": 93,
-        "recent_mint_concentration": 0.1183,
-        "unique_recent_minters": 28,
-        "velocity_1m": 93.0,
-        "velocity_5m": 18.6
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Onchain Button",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x905f122234631fd7251c9f8b37508cf8eb2ca2c3",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4628,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x0a8c3920ad579ed4b1ba0a3a751a6f81ddec2497",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 69,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 3,
-        "sell_through": 7
-      },
-      "sell_through": 0.7143714371437143,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 3333,
-        "total_supply": 2381
-      },
-      "ticker": "OB"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x710de91dd1f1d23fadb3b6aebb0e9f9220fc3c85",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x710de91dd1f1d23fadb3b6aebb0e9f9220fc3c85",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa793665c88c06b04b3cbfc16b6525acac761f938",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -271,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 0.1,
-        "unique_recent_minters": 10,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 74,
+        "mints_1m": 74,
+        "mints_5m": 74,
+        "mints_60m": 74,
+        "raw_units_1m": 74,
+        "raw_units_5m": 74,
+        "recent_mint_concentration": 0.0135,
+        "unique_recent_minters": 74,
+        "velocity_1m": 74.0,
+        "velocity_5m": 14.8
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Rat - The Brokers",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x710de91dd1f1d23fadb3b6aebb0e9f9220fc3c85",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Hoodobi",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa793665c88c06b04b3cbfc16b6525acac761f938",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1275,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -306,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x5e3ad4f5d9ed2f78924a21d49668551ceb05ecaa",
+        "owner": "0xed069b19321951a0d83d444cca4697f96e374d89",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -315,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 34,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 5,
-        "mint_velocity": 15,
-        "price_asymmetry": 0,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.0387038703870387,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2222,
-        "total_supply": 86
+        "max_supply": null,
+        "total_supply": 869
       },
-      "ticker": "ByRat"
+      "ticker": "DOBI"
     }
   ],
   "win_rate_pct": 0.0
