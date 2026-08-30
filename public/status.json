@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+    "action": "WAIT",
+    "collection": "0x3735e726b07267280b3ea8250a99185c0a3ea814",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3735e726b07267280b3ea8250a99185c0a3ea814",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 83,
-      "mints_1m": 83,
-      "mints_5m": 83,
-      "mints_60m": 83,
-      "raw_units_1m": 83,
-      "raw_units_5m": 83,
-      "recent_mint_concentration": 0.012,
-      "unique_recent_minters": 83,
-      "velocity_1m": 83.0,
-      "velocity_5m": 16.6
+      "mints_15m": 12,
+      "mints_1m": 12,
+      "mints_5m": 12,
+      "mints_60m": 12,
+      "raw_units_1m": 12,
+      "raw_units_5m": 12,
+      "recent_mint_concentration": 0.5833,
+      "unique_recent_minters": 2,
+      "velocity_1m": 12.0,
+      "velocity_5m": 2.4
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Stonk Trader",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "COMPUTER AGE",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x3735e726b07267280b3ea8250a99185c0a3ea814",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.1152,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x9485d8b695d80953ae74053dd0d4884b89af11dc",
+      "owner": "0x32ff2482ad8afaacafe7e96c8503f62c108e60eb",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 32,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 18,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 2
     },
-    "sell_through": 0.07335733573357335,
+    "sell_through": 0.2188,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 326
+      "max_supply": 2500,
+      "total_supply": 547
     },
-    "ticker": "ST"
+    "ticker": "COMPUTER AGE"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50325350,
-    "latest_block_age_seconds": 3,
+    "latest_block": 50332823,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50325340,
+    "safe_block": 50332813,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788124915,
+  "generated_at": 1788125671,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +117,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.923,
+    "analysis_age_seconds": 2.065,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 7.226,
-    "from_block": 50325157,
+    "duration_seconds": 3.756,
+    "from_block": 50332654,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 64,
-    "lag_seconds": 7,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 50325277,
+    "next_block": 50332774,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50325276,
+    "to_block": 50332773,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50325157-50325276",
+  "status": "SCANNING 50332654-50332773",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+      "action": "WAIT",
+      "collection": "0x3735e726b07267280b3ea8250a99185c0a3ea814",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3735e726b07267280b3ea8250a99185c0a3ea814",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 83,
-        "mints_1m": 83,
-        "mints_5m": 83,
-        "mints_60m": 83,
-        "raw_units_1m": 83,
-        "raw_units_5m": 83,
-        "recent_mint_concentration": 0.012,
-        "unique_recent_minters": 83,
-        "velocity_1m": 83.0,
-        "velocity_5m": 16.6
+        "mints_15m": 12,
+        "mints_1m": 12,
+        "mints_5m": 12,
+        "mints_60m": 12,
+        "raw_units_1m": 12,
+        "raw_units_5m": 12,
+        "recent_mint_concentration": 0.5833,
+        "unique_recent_minters": 2,
+        "velocity_1m": 12.0,
+        "velocity_5m": 2.4
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Stonk Trader",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x67b9553aa46962fa9419e349e2858ba7d5ba1fb9",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "COMPUTER AGE",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x3735e726b07267280b3ea8250a99185c0a3ea814",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3661,
+      "predicted_probability": 0.1152,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x9485d8b695d80953ae74053dd0d4884b89af11dc",
+        "owner": "0x32ff2482ad8afaacafe7e96c8503f62c108e60eb",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 61,
+      "score": 32,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 18,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 2
       },
-      "sell_through": 0.07335733573357335,
+      "sell_through": 0.2188,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4444,
-        "total_supply": 326
+        "max_supply": 2500,
+        "total_supply": 547
       },
-      "ticker": "ST"
+      "ticker": "COMPUTER AGE"
     }
   ],
   "win_rate_pct": 0.0
