@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
+    "collection": "0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 21,
-      "mints_1m": 21,
-      "mints_5m": 21,
-      "mints_60m": 21,
-      "raw_units_1m": 21,
-      "raw_units_5m": 21,
-      "recent_mint_concentration": 0.1429,
-      "unique_recent_minters": 7,
-      "velocity_1m": 21.0,
-      "velocity_5m": 4.2
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "MeowPop",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Roo Punks",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2715,
+    "predicted_probability": 0.1094,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x3f7b9bfc64243637affec1f248b8ad4d9157756f",
+      "owner": "0x91fbf086fc4222a7fb7c0a7a11abf71118b0ccd5",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 52,
+    "score": 31,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 3,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 5
     },
-    "sell_through": null,
+    "sell_through": 0.5847584758475848,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 2434
+      "max_supply": 3333,
+      "total_supply": 1949
     },
-    "ticker": "MWP"
+    "ticker": "RPUNK"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49572432,
-    "latest_block_age_seconds": 3,
+    "latest_block": 49579932,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49572422,
+    "safe_block": 49579922,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788048745,
+  "generated_at": 1788049501,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,122 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.964,
+    "analysis_age_seconds": 4.234,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 8,
     "blocks_processed": 120,
-    "duration_seconds": 10.355,
-    "from_block": 49572233,
+    "duration_seconds": 7.774,
+    "from_block": 49579725,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 70,
-    "lag_seconds": 7,
-    "live_observations": 2,
-    "next_block": 49572353,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 78,
+    "lag_seconds": 9,
+    "live_observations": 1,
+    "next_block": 49579845,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49572352,
+    "to_block": 49579844,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49572233-49572352",
+  "status": "SCANNING 49579725-49579844",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
+      "collection": "0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 21,
-        "mints_1m": 21,
-        "mints_5m": 21,
-        "mints_60m": 21,
-        "raw_units_1m": 21,
-        "raw_units_5m": 21,
-        "recent_mint_concentration": 0.1429,
-        "unique_recent_minters": 7,
-        "velocity_1m": 21.0,
-        "velocity_5m": 4.2
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "MeowPop",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xedafe5d5b35aa0d423f26f576a170f5024db2fd3",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2715,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x3f7b9bfc64243637affec1f248b8ad4d9157756f",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 52,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 3,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 2434
-      },
-      "ticker": "MWP"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xb0d3f40f2a9f4e42598673e03993c1b7e44e0212",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb0d3f40f2a9f4e42598673e03993c1b7e44e0212",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -265,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "StonkBrokerCashCat",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb0d3f40f2a9f4e42598673e03993c1b7e44e0212",
+      "name": "Roo Punks",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa8e55ae05c5c7a83b5441c4a14cc4813a6976c92",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1213,
+      "predicted_probability": 0.1094,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -300,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x503cecf473ad851b1394cf1e9ac6dc0486a3060d",
+        "owner": "0x91fbf086fc4222a7fb7c0a7a11abf71118b0ccd5",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -309,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 33,
+      "score": 31,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 12,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 5
       },
-      "sell_through": 0.34534534534534533,
+      "sell_through": 0.5847584758475848,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 999,
-        "total_supply": 345
+        "max_supply": 3333,
+        "total_supply": 1949
       },
-      "ticker": "SBCC"
+      "ticker": "RPUNK"
     }
   ],
   "win_rate_pct": 0.0
