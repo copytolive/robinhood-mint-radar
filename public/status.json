@@ -1,15 +1,14 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+    "collection": "0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
@@ -20,42 +19,42 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 33,
-      "mints_1m": 33,
-      "mints_5m": 33,
-      "mints_60m": 33,
-      "raw_units_1m": 33,
-      "raw_units_5m": 33,
-      "recent_mint_concentration": 0.0303,
-      "unique_recent_minters": 33,
-      "velocity_1m": 33.0,
-      "velocity_5m": 6.6
+      "mints_15m": 154,
+      "mints_1m": 154,
+      "mints_5m": 154,
+      "mints_60m": 154,
+      "raw_units_1m": 154,
+      "raw_units_5m": 154,
+      "recent_mint_concentration": 0.0065,
+      "unique_recent_minters": 154,
+      "velocity_1m": 154.0,
+      "velocity_5m": 30.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Punk Syndicate",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+    "name": "DegenBugs NFT",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.4009,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "COLLECTIBLE_CONTRACT_NAME"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x7925d92412407717b56c53aaac7a996d69bec37c",
+      "owner": "0xf9ca4b43b71eaafce25a58aaa8b1d25f5c32215b",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +63,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 64,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
@@ -73,15 +72,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 3
     },
-    "sell_through": null,
+    "sell_through": 0.38253825382538253,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 115
+      "max_supply": 3333,
+      "total_supply": 1275
     },
-    "ticker": "PUNKSYN"
+    "ticker": "degenbug"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +88,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49961350,
+    "latest_block": 49976607,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49961340,
+    "safe_block": 49976597,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 311296,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788088033,
+  "generated_at": 1788089576,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,40 +135,39 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.525,
+    "analysis_age_seconds": 2.327,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 2.416,
-    "from_block": 49961201,
+    "duration_seconds": 3.513,
+    "from_block": 49976449,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 20,
-    "lag_seconds": 2,
+    "lag_blocks": 29,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 49961321,
+    "next_block": 49976569,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49961320,
+    "to_block": 49976568,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49961201-49961320",
+  "status": "SCANNING 49976449-49976568",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+      "collection": "0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
@@ -180,42 +178,42 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 33,
-        "mints_1m": 33,
-        "mints_5m": 33,
-        "mints_60m": 33,
-        "raw_units_1m": 33,
-        "raw_units_5m": 33,
-        "recent_mint_concentration": 0.0303,
-        "unique_recent_minters": 33,
-        "velocity_1m": 33.0,
-        "velocity_5m": 6.6
+        "mints_15m": 154,
+        "mints_1m": 154,
+        "mints_5m": 154,
+        "mints_60m": 154,
+        "raw_units_1m": 154,
+        "raw_units_5m": 154,
+        "recent_mint_concentration": 0.0065,
+        "unique_recent_minters": 154,
+        "velocity_1m": 154.0,
+        "velocity_5m": 30.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Punk Syndicate",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x31b3e5ce86af55301f336cdaa1d14c89c28faaca",
+      "name": "DegenBugs NFT",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x11dd343b0f05e1ce6ce50efbf1468579475e34c1",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3661,
+      "predicted_probability": 0.4009,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "COLLECTIBLE_CONTRACT_NAME"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x7925d92412407717b56c53aaac7a996d69bec37c",
+        "owner": "0xf9ca4b43b71eaafce25a58aaa8b1d25f5c32215b",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +222,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 61,
+      "score": 64,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
@@ -233,15 +231,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 3
       },
-      "sell_through": null,
+      "sell_through": 0.38253825382538253,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 115
+        "max_supply": 3333,
+        "total_supply": 1275
       },
-      "ticker": "PUNKSYN"
+      "ticker": "degenbug"
     }
   ],
   "win_rate_pct": 0.0
