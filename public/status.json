@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+    "action": "WAIT",
+    "collection": "0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 25,
-      "mints_1m": 25,
-      "mints_5m": 25,
-      "mints_60m": 25,
-      "raw_units_1m": 25,
-      "raw_units_5m": 25,
-      "recent_mint_concentration": 0.04,
-      "unique_recent_minters": 25,
-      "velocity_1m": 25.0,
-      "velocity_5m": 5.0
+      "mints_15m": 14,
+      "mints_1m": 14,
+      "mints_5m": 14,
+      "mints_60m": 14,
+      "raw_units_1m": 14,
+      "raw_units_5m": 14,
+      "recent_mint_concentration": 0.1429,
+      "unique_recent_minters": 7,
+      "velocity_1m": 14.0,
+      "velocity_5m": 2.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Duck Gang",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+    "name": "Quants Hood",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.2715,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x5fffae9c2161bc283c87da9b705e5d7484251fc8",
+      "owner": "0x4c50b5969ea5c8dcd902fbdc752ff1426f9782d2",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 52,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 3,
+      "holder_growth": 3,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 1
+      "sell_through": 0
     },
-    "sell_through": 0.13717371737173717,
+    "sell_through": 0.016201620162016202,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 762
+      "max_supply": 2222,
+      "total_supply": 36
     },
-    "ticker": "DCG"
+    "ticker": "8453"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 49633828,
-    "latest_block_age_seconds": 2,
+    "latest_block": 49641501,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 49633818,
+    "safe_block": 49641491,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788054943,
+  "generated_at": 1788055716,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.481,
+    "analysis_age_seconds": 2.396,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.781,
-    "from_block": 49633669,
+    "duration_seconds": 3.638,
+    "from_block": 49641336,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 30,
+    "lag_blocks": 36,
     "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 49633789,
+    "next_block": 49641456,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 49633788,
+    "to_block": 49641455,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 49633669-49633788",
+  "status": "SCANNING 49641336-49641455",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+      "action": "WAIT",
+      "collection": "0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 25,
-        "mints_1m": 25,
-        "mints_5m": 25,
-        "mints_60m": 25,
-        "raw_units_1m": 25,
-        "raw_units_5m": 25,
-        "recent_mint_concentration": 0.04,
-        "unique_recent_minters": 25,
-        "velocity_1m": 25.0,
-        "velocity_5m": 5.0
+        "mints_15m": 14,
+        "mints_1m": 14,
+        "mints_5m": 14,
+        "mints_60m": 14,
+        "raw_units_1m": 14,
+        "raw_units_5m": 14,
+        "recent_mint_concentration": 0.1429,
+        "unique_recent_minters": 7,
+        "velocity_1m": 14.0,
+        "velocity_5m": 2.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Duck Gang",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x31292b5b2031fada4de5a431ae43035a7751a8b5",
+      "name": "Quants Hood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe3118a7eebeb6f9d6fcd15bd15560eab83bc1ddc",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.2715,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x5fffae9c2161bc283c87da9b705e5d7484251fc8",
+        "owner": "0x4c50b5969ea5c8dcd902fbdc752ff1426f9782d2",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 52,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
+        "distribution": 3,
+        "holder_growth": 3,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 0
       },
-      "sell_through": 0.13717371737173717,
+      "sell_through": 0.016201620162016202,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 762
+        "max_supply": 2222,
+        "total_supply": 36
       },
-      "ticker": "DCG"
+      "ticker": "8453"
     }
   ],
   "win_rate_pct": 0.0
