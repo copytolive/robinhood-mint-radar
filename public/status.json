@@ -1,110 +1,27 @@
 {
-  "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x0f42593d778576cdf93896dc4aef426fc4b63684",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0f42593d778576cdf93896dc4aef426fc4b63684",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 148,
-      "mints_1m": 148,
-      "mints_5m": 148,
-      "mints_60m": 148,
-      "raw_units_1m": 148,
-      "raw_units_5m": 148,
-      "recent_mint_concentration": 0.0135,
-      "unique_recent_minters": 90,
-      "velocity_1m": 148.0,
-      "velocity_5m": 29.6
-    },
-    "mint_price_eth": 0.00021,
-    "mint_price_source": "CONTRACT",
-    "name": "rbrc brokers",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0f42593d778576cdf93896dc4aef426fc4b63684",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.2433,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0x8648327fe960a15810283ea33d0d7c0170a11cc5",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 49,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 3,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 0
-    },
-    "sell_through": null,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": null,
-      "total_supply": 1370
-    },
-    "ticker": "rBROKER"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50993084,
+    "latest_block": 51000574,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50993074,
+    "safe_block": 51000564,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 315392,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788192303,
+  "generated_at": 1788193063,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,113 +53,28 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 6.41,
+    "analysis_age_seconds": 3.703,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 11,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 20.049,
-    "from_block": 50992779,
+    "duration_seconds": 4.989,
+    "from_block": 51000368,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 176,
-    "lag_seconds": 18,
-    "live_observations": 1,
-    "next_block": 50992899,
+    "irrelevant_filtered": 2,
+    "lag_blocks": 77,
+    "lag_seconds": 8,
+    "live_observations": 0,
+    "next_block": 51000488,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50992898,
+    "to_block": 51000487,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50992779-50992898",
+  "status": "SCANNING 51000368-51000487",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WAIT",
-      "collection": "0x0f42593d778576cdf93896dc4aef426fc4b63684",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0f42593d778576cdf93896dc4aef426fc4b63684",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 148,
-        "mints_1m": 148,
-        "mints_5m": 148,
-        "mints_60m": 148,
-        "raw_units_1m": 148,
-        "raw_units_5m": 148,
-        "recent_mint_concentration": 0.0135,
-        "unique_recent_minters": 90,
-        "velocity_1m": 148.0,
-        "velocity_5m": 29.6
-      },
-      "mint_price_eth": 0.00021,
-      "mint_price_source": "CONTRACT",
-      "name": "rbrc brokers",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0f42593d778576cdf93896dc4aef426fc4b63684",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2433,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x8648327fe960a15810283ea33d0d7c0170a11cc5",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 49,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 3,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 1370
-      },
-      "ticker": "rBROKER"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
