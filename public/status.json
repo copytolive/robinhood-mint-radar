@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+    "collection": "0x1dfe1ee1bba83152223e676f496feae62406bb56",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1dfe1ee1bba83152223e676f496feae62406bb56",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 13,
+      "mints_1m": 13,
+      "mints_5m": 13,
+      "mints_60m": 13,
+      "raw_units_1m": 13,
+      "raw_units_5m": 13,
+      "recent_mint_concentration": 0.1538,
+      "unique_recent_minters": 11,
+      "velocity_1m": 13.0,
+      "velocity_5m": 2.6
     },
     "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Robinhood Puppets",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+    "mint_price_source": "CONTRACT",
+    "name": "GoodsMash RIGS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x1dfe1ee1bba83152223e676f496feae62406bb56",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.3116,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x6d3abc0f28671c2212ee2f484f0320d4ddb1a008",
+      "owner": "0x2f5552e284e5e53f4c7d198f02bfd91c3db23503",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 56,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "distribution": 3,
+      "holder_growth": 5,
+      "mint_velocity": 19,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 3
     },
-    "sell_through": null,
+    "sell_through": 0.3803,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 268
+      "max_supply": 10000,
+      "total_supply": 3803
     },
-    "ticker": "RHP"
+    "ticker": "GSRIGS"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50448848,
-    "latest_block_age_seconds": 1,
+    "latest_block": 50456519,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50448838,
+    "safe_block": 50456509,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788137406,
+  "generated_at": 1788138180,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.469,
+    "analysis_age_seconds": 3.328,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_rows_pruned": 8,
     "blocks_processed": 120,
-    "duration_seconds": 2.469,
-    "from_block": 50448699,
+    "duration_seconds": 5.538,
+    "from_block": 50456346,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 20,
-    "lag_seconds": 2,
-    "live_observations": 1,
-    "next_block": 50448819,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 44,
+    "lag_seconds": 5,
+    "live_observations": 2,
+    "next_block": 50456466,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50448818,
+    "to_block": 50456465,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50448699-50448818",
+  "status": "SCANNING 50456346-50456465",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+      "collection": "0x1dfe1ee1bba83152223e676f496feae62406bb56",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1dfe1ee1bba83152223e676f496feae62406bb56",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 13,
+        "mints_1m": 13,
+        "mints_5m": 13,
+        "mints_60m": 13,
+        "raw_units_1m": 13,
+        "raw_units_5m": 13,
+        "recent_mint_concentration": 0.1538,
+        "unique_recent_minters": 11,
+        "velocity_1m": 13.0,
+        "velocity_5m": 2.6
       },
       "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Robinhood Puppets",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x9fb790a2d7b1c076ce18bf2c5d053c0b2f895d8f",
+      "mint_price_source": "CONTRACT",
+      "name": "GoodsMash RIGS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x1dfe1ee1bba83152223e676f496feae62406bb56",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.3116,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6d3abc0f28671c2212ee2f484f0320d4ddb1a008",
+        "owner": "0x2f5552e284e5e53f4c7d198f02bfd91c3db23503",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,107 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 56,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "distribution": 3,
+        "holder_growth": 5,
+        "mint_velocity": 19,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 3
       },
-      "sell_through": null,
+      "sell_through": 0.3803,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 268
+        "max_supply": 10000,
+        "total_supply": 3803
       },
-      "ticker": "RHP"
+      "ticker": "GSRIGS"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xe8fc5cf15a93d1e68668e61b6a108b3332bc3a42",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe8fc5cf15a93d1e68668e61b6a108b3332bc3a42",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 11,
+        "mints_1m": 11,
+        "mints_5m": 11,
+        "mints_60m": 11,
+        "raw_units_1m": 11,
+        "raw_units_5m": 11,
+        "recent_mint_concentration": 0.0909,
+        "unique_recent_minters": 11,
+        "velocity_1m": 11.0,
+        "velocity_5m": 2.2
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "ATM MACHINES NFT",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe8fc5cf15a93d1e68668e61b6a108b3332bc3a42",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2619,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "COLLECTIBLE_CONTRACT_NAME"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xe2b92fe22ebf65126495d97999aee3684306a023",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 51,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 5,
+        "mint_velocity": 16,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 1
+      },
+      "sell_through": 0.1185118511851185,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 3333,
+        "total_supply": 395
+      },
+      "ticker": "."
     }
   ],
   "win_rate_pct": 0.0
