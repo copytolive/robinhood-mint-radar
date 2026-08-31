@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 15,
-      "mints_1m": 15,
-      "mints_5m": 15,
-      "mints_60m": 15,
-      "raw_units_1m": 15,
-      "raw_units_5m": 15,
-      "recent_mint_concentration": 0.1333,
-      "unique_recent_minters": 11,
-      "velocity_1m": 15.0,
-      "velocity_5m": 3.0
+      "mints_15m": 14,
+      "mints_1m": 14,
+      "mints_5m": 14,
+      "mints_60m": 14,
+      "raw_units_1m": 14,
+      "raw_units_5m": 14,
+      "recent_mint_concentration": 0.1429,
+      "unique_recent_minters": 10,
+      "velocity_1m": 14.0,
+      "velocity_5m": 2.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -79,7 +79,7 @@
     "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": 132
+      "total_supply": 816
     },
     "ticker": "MEOW"
   },
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50486803,
+    "latest_block": 50494452,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50486793,
+    "safe_block": 50494442,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788141235,
+  "generated_at": 1788142007,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,27 +136,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.276,
+    "analysis_age_seconds": 2.148,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 9,
     "blocks_processed": 120,
-    "duration_seconds": 2.313,
-    "from_block": 50486653,
+    "duration_seconds": 3.307,
+    "from_block": 50494299,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 21,
-    "lag_seconds": 2,
+    "lag_blocks": 24,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 50486773,
+    "next_block": 50494419,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50486772,
+    "to_block": 50494418,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50486653-50486772",
+  "status": "SCANNING 50494299-50494418",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -180,16 +180,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 15,
-        "mints_1m": 15,
-        "mints_5m": 15,
-        "mints_60m": 15,
-        "raw_units_1m": 15,
-        "raw_units_5m": 15,
-        "recent_mint_concentration": 0.1333,
-        "unique_recent_minters": 11,
-        "velocity_1m": 15.0,
-        "velocity_5m": 3.0
+        "mints_15m": 14,
+        "mints_1m": 14,
+        "mints_5m": 14,
+        "mints_60m": 14,
+        "raw_units_1m": 14,
+        "raw_units_5m": 14,
+        "recent_mint_concentration": 0.1429,
+        "unique_recent_minters": 10,
+        "velocity_1m": 14.0,
+        "velocity_5m": 2.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -239,7 +239,7 @@
       "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": 132
+        "total_supply": 816
       },
       "ticker": "MEOW"
     }
