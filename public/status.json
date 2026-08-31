@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+    "action": "WAIT",
+    "collection": "0x2c6677a80afcb56482f1a37c03e9890f65eece63",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2c6677a80afcb56482f1a37c03e9890f65eece63",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 22,
-      "mints_1m": 22,
-      "mints_5m": 22,
-      "mints_60m": 22,
-      "raw_units_1m": 22,
-      "raw_units_5m": 22,
-      "recent_mint_concentration": 0.0455,
-      "unique_recent_minters": 22,
-      "velocity_1m": 22.0,
-      "velocity_5m": 4.4
+      "mints_15m": 204,
+      "mints_1m": 204,
+      "mints_5m": 204,
+      "mints_60m": 204,
+      "raw_units_1m": 204,
+      "raw_units_5m": 204,
+      "recent_mint_concentration": 0.0049,
+      "unique_recent_minters": 204,
+      "velocity_1m": 204.0,
+      "velocity_5m": 40.8
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Platypus INC",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Forbidden Apple",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x2c6677a80afcb56482f1a37c03e9890f65eece63",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3891,
+    "predicted_probability": 0.2912,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x92fe4ae345946c46575e876a42c10796e4cee5ab",
+      "owner": "0x622aba567f3b41ea8476f9683a707d45b84b5dbb",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 63,
+    "score": 54,
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
       "holder_growth": 10,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 2
+      "sell_through": 8
     },
-    "sell_through": 0.208104052026013,
+    "sell_through": 0.8495,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 1999,
-      "total_supply": 416
+      "max_supply": 10000,
+      "total_supply": 8495
     },
-    "ticker": "Platypus"
+    "ticker": "APPLE"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +90,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 51008390,
-    "latest_block_age_seconds": 2,
+    "latest_block": 51015715,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 51008380,
+    "safe_block": 51015705,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 1015808,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788193858,
+  "generated_at": 1788194602,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +117,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 8.709,
+    "analysis_age_seconds": 1.814,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 9,
+    "analysis_rows_pruned": 11,
     "blocks_processed": 120,
-    "duration_seconds": 22.017,
-    "from_block": 51008085,
+    "duration_seconds": 6.722,
+    "from_block": 51015522,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 176,
-    "lag_seconds": 20,
-    "live_observations": 1,
-    "next_block": 51008205,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 64,
+    "lag_seconds": 7,
+    "live_observations": 2,
+    "next_block": 51015642,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 51008204,
+    "to_block": 51015641,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 51008085-51008204",
+  "status": "SCANNING 51015522-51015641",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+      "action": "WAIT",
+      "collection": "0x2c6677a80afcb56482f1a37c03e9890f65eece63",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2c6677a80afcb56482f1a37c03e9890f65eece63",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 22,
-        "mints_1m": 22,
-        "mints_5m": 22,
-        "mints_60m": 22,
-        "raw_units_1m": 22,
-        "raw_units_5m": 22,
-        "recent_mint_concentration": 0.0455,
-        "unique_recent_minters": 22,
-        "velocity_1m": 22.0,
-        "velocity_5m": 4.4
+        "mints_15m": 204,
+        "mints_1m": 204,
+        "mints_5m": 204,
+        "mints_60m": 204,
+        "raw_units_1m": 204,
+        "raw_units_5m": 204,
+        "recent_mint_concentration": 0.0049,
+        "unique_recent_minters": 204,
+        "velocity_1m": 204.0,
+        "velocity_5m": 40.8
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Platypus INC",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf58d271dee7546c42ed3cec1c59cb8ed0cf119e5",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Forbidden Apple",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x2c6677a80afcb56482f1a37c03e9890f65eece63",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3891,
+      "predicted_probability": 0.2912,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x92fe4ae345946c46575e876a42c10796e4cee5ab",
+        "owner": "0x622aba567f3b41ea8476f9683a707d45b84b5dbb",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +226,108 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 63,
+      "score": 54,
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
         "holder_growth": 10,
         "mint_velocity": 20,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 8
+      },
+      "sell_through": 0.8495,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 10000,
+        "total_supply": 8495
+      },
+      "ticker": "APPLE"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x4920cd76108799de4fffc30a25b11b6f87599ad5",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4920cd76108799de4fffc30a25b11b6f87599ad5",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Tendies",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x4920cd76108799de4fffc30a25b11b6f87599ad5",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2168,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x4fa5e19b305d13972a617518c974b2e22fe86d7f",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 46,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 2
+        "sell_through": 0
       },
-      "sell_through": 0.208104052026013,
+      "sell_through": 0.011251125112511251,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 1999,
-        "total_supply": 416
+        "max_supply": 4444,
+        "total_supply": 50
       },
-      "ticker": "Platypus"
+      "ticker": "TENDIES"
     }
   ],
   "win_rate_pct": 0.0
