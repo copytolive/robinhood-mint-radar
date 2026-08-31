@@ -1,61 +1,65 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xf519514579e3fe71f7c3417a926cd63f2b114475",
+    "collection": "0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf519514579e3fe71f7c3417a926cd63f2b114475",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 2,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 2,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0022
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 37,
-      "mints_1m": 37,
-      "mints_5m": 37,
-      "mints_60m": 37,
-      "raw_units_1m": 37,
-      "raw_units_5m": 37,
-      "recent_mint_concentration": 0.4054,
-      "unique_recent_minters": 3,
-      "velocity_1m": 37.0,
-      "velocity_5m": 7.4
+      "mints_15m": 57,
+      "mints_1m": 57,
+      "mints_5m": 57,
+      "mints_60m": 57,
+      "raw_units_1m": 57,
+      "raw_units_5m": 57,
+      "recent_mint_concentration": 0.3509,
+      "unique_recent_minters": 5,
+      "velocity_1m": 57.0,
+      "velocity_5m": 11.4
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "SEXY HOOD",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf519514579e3fe71f7c3417a926cd63f2b114475",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "BAKERS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2254,
+    "predicted_probability": 0.1405,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xc3ebc98e4718fd0ca8894c9540b2bcf4c5effa4d",
+      "owner": "0x3db30c1ec9cd5586d1305857929fc6e872f4b43f",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +68,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 47,
+    "score": 36,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
+      "holder_growth": 2,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 0,
+      "secondary_liquidity": 3,
       "sell_through": 0
     },
-    "sell_through": 0.0351035103510351,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 195
+      "max_supply": null,
+      "total_supply": 9903
     },
-    "ticker": "SEXY HOOD"
+    "ticker": "BAKERS"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +93,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 50640196,
+    "latest_block": 50647783,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 50640186,
+    "safe_block": 50647773,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +108,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788156713,
+  "generated_at": 1788157478,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,86 +140,90 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.889,
+    "analysis_age_seconds": 2.668,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 2.812,
-    "from_block": 50640043,
+    "duration_seconds": 4.026,
+    "from_block": 50647619,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 24,
-    "lag_seconds": 2,
+    "lag_blocks": 35,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 50640163,
+    "next_block": 50647739,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 50640162,
+    "to_block": 50647738,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 50640043-50640162",
+  "status": "SCANNING 50647619-50647738",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xf519514579e3fe71f7c3417a926cd63f2b114475",
+      "collection": "0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf519514579e3fe71f7c3417a926cd63f2b114475",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
+        "floor_price": null,
+        "native_sales_24h": 2,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 2,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0022
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 37,
-        "mints_1m": 37,
-        "mints_5m": 37,
-        "mints_60m": 37,
-        "raw_units_1m": 37,
-        "raw_units_5m": 37,
-        "recent_mint_concentration": 0.4054,
-        "unique_recent_minters": 3,
-        "velocity_1m": 37.0,
-        "velocity_5m": 7.4
+        "mints_15m": 57,
+        "mints_1m": 57,
+        "mints_5m": 57,
+        "mints_60m": 57,
+        "raw_units_1m": 57,
+        "raw_units_5m": 57,
+        "recent_mint_concentration": 0.3509,
+        "unique_recent_minters": 5,
+        "velocity_1m": 57.0,
+        "velocity_5m": 11.4
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "SEXY HOOD",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf519514579e3fe71f7c3417a926cd63f2b114475",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "BAKERS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x4ba87e60e52c19c1da7dab74414deac4e237c23a",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.1405,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "SECONDARY_MARKET_OBSERVED"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xc3ebc98e4718fd0ca8894c9540b2bcf4c5effa4d",
+        "owner": "0x3db30c1ec9cd5586d1305857929fc6e872f4b43f",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +232,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 36,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 2,
         "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 0,
+        "secondary_liquidity": 3,
         "sell_through": 0
       },
-      "sell_through": 0.0351035103510351,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 195
+        "max_supply": null,
+        "total_supply": 9903
       },
-      "ticker": "SEXY HOOD"
+      "ticker": "BAKERS"
     }
   ],
   "win_rate_pct": 0.0
