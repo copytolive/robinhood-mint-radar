@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
+    "action": "WAIT",
+    "collection": "0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 2,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 2,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0003998
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 120,
-      "mints_1m": 120,
-      "mints_5m": 120,
-      "mints_60m": 120,
-      "raw_units_1m": 120,
-      "raw_units_5m": 120,
-      "recent_mint_concentration": 0.1667,
-      "unique_recent_minters": 75,
-      "velocity_1m": 120.0,
-      "velocity_5m": 24.0
+      "mints_15m": 40,
+      "mints_1m": 40,
+      "mints_5m": 40,
+      "mints_60m": 40,
+      "raw_units_1m": 40,
+      "raw_units_5m": 40,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 4,
+      "velocity_1m": 40.0,
+      "velocity_5m": 8.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "rune.md",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
+    "name": "SuperComputer Brokers",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.2433,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xe7b8e438c796af2d4a63151e99c8d3366cb743e0",
+      "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 49,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 10,
+      "distribution": 0,
+      "holder_growth": 2,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 3,
-      "sell_through": 0
+      "secondary_liquidity": 0,
+      "sell_through": 1
     },
-    "sell_through": null,
+    "sell_through": 0.1693969396939694,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 6242
+      "max_supply": 5555,
+      "total_supply": 941
     },
-    "ticker": "RUNE"
+    "ticker": "spbrokers"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52057643,
-    "latest_block_age_seconds": 3,
+    "latest_block": 52068824,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 52057633,
+    "safe_block": 52068814,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 311296,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788299908,
+  "generated_at": 1788301040,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -119,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -139,129 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.637,
-    "analysis_rows_considered": 3,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 5.061,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 1,
     "blocks_processed": 120,
-    "duration_seconds": 5.645,
-    "from_block": 52057458,
+    "duration_seconds": 6.682,
+    "from_block": 52068627,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 56,
-    "lag_seconds": 6,
-    "live_observations": 2,
-    "next_block": 52057578,
+    "lag_blocks": 68,
+    "lag_seconds": 7,
+    "live_observations": 1,
+    "next_block": 52068747,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52057577,
+    "to_block": 52068746,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52057458-52057577",
+  "status": "SCANNING 52068627-52068746",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
-      ],
-      "market": {
-        "floor_price": null,
-        "native_sales_24h": 2,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 2,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.0003998
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 120,
-        "mints_1m": 120,
-        "mints_5m": 120,
-        "mints_60m": 120,
-        "raw_units_1m": 120,
-        "raw_units_5m": 120,
-        "recent_mint_concentration": 0.1667,
-        "unique_recent_minters": 75,
-        "velocity_1m": 120.0,
-        "velocity_5m": 24.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "rune.md",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x7f1108a5606c6dd9a3e8e94513f283b1841bbc6d",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3775,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xe7b8e438c796af2d4a63151e99c8d3366cb743e0",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 62,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 3,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 6242
-      },
-      "ticker": "RUNE"
-    },
-    {
       "action": "WAIT",
-      "collection": "0xcd50464732fe5a7cfa9ad0d354bc4ba2a779cd2b",
+      "collection": "0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xcd50464732fe5a7cfa9ad0d354bc4ba2a779cd2b",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -271,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 66,
-        "mints_1m": 66,
-        "mints_5m": 66,
-        "mints_60m": 66,
-        "raw_units_1m": 66,
-        "raw_units_5m": 66,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 66.0,
-        "velocity_5m": 13.2
+        "mints_15m": 40,
+        "mints_1m": 40,
+        "mints_5m": 40,
+        "mints_60m": 40,
+        "raw_units_1m": 40,
+        "raw_units_5m": 40,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 4,
+        "velocity_1m": 40.0,
+        "velocity_5m": 8.0
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "DEMNOS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xcd50464732fe5a7cfa9ad0d354bc4ba2a779cd2b",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "SuperComputer Brokers",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x065ee5b36c00ebd5a6f2d6d359e1c89807721907",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1094,
+      "predicted_probability": 0.2433,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -306,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6d50bca194e32ef16eb5574315e0581978f8012f",
+        "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -315,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 31,
+      "score": 49,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
+        "holder_growth": 2,
         "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 1
       },
-      "sell_through": 0.0816081608160816,
+      "sell_through": 0.1693969396939694,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 272
+        "max_supply": 5555,
+        "total_supply": 941
       },
-      "ticker": "DEMNOS"
+      "ticker": "spbrokers"
     }
   ],
   "win_rate_pct": 0.0
