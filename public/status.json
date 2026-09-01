@@ -1,27 +1,110 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WATCH",
+    "collection": "0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 51,
+      "mints_1m": 51,
+      "mints_5m": 51,
+      "mints_60m": 51,
+      "raw_units_1m": 51,
+      "raw_units_5m": 51,
+      "recent_mint_concentration": 0.0588,
+      "unique_recent_minters": 26,
+      "velocity_1m": 51.0,
+      "velocity_5m": 10.2
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "XDogHoods",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.3661,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x189b39a79197b7641aa4703d2f486b0621e88f35",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 61,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 0
+    },
+    "sell_through": 0.0834,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 10000,
+      "total_supply": 834
+    },
+    "ticker": "XDH"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 51517560,
+    "latest_block": 51526207,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 51517550,
+    "safe_block": 51526197,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788245314,
+  "generated_at": 1788246185,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -33,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -53,28 +136,113 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.12,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 5,
+    "analysis_age_seconds": 1.86,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 8.236,
-    "from_block": 51517356,
+    "duration_seconds": 9.329,
+    "from_block": 51525988,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 75,
-    "lag_seconds": 8,
-    "live_observations": 0,
-    "next_block": 51517476,
+    "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 90,
+    "lag_seconds": 9,
+    "live_observations": 1,
+    "next_block": 51526108,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 51517475,
-    "total_mint_units_stored": null
+    "to_block": 51526107,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 51517356-51517475",
+  "status": "SCANNING 51525988-51526107",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WATCH",
+      "collection": "0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 51,
+        "mints_1m": 51,
+        "mints_5m": 51,
+        "mints_60m": 51,
+        "raw_units_1m": 51,
+        "raw_units_5m": 51,
+        "recent_mint_concentration": 0.0588,
+        "unique_recent_minters": 26,
+        "velocity_1m": 51.0,
+        "velocity_5m": 10.2
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "XDogHoods",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.3661,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x189b39a79197b7641aa4703d2f486b0621e88f35",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 61,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": 0.0834,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 10000,
+        "total_supply": 834
+      },
+      "ticker": "XDH"
+    }
+  ],
   "win_rate_pct": 0.0
 }
