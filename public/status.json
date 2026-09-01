@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+    "collection": "0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 250,
-      "mints_1m": 250,
-      "mints_5m": 250,
-      "mints_60m": 250,
-      "raw_units_1m": 250,
-      "raw_units_5m": 250,
+      "mints_15m": 24,
+      "mints_1m": 24,
+      "mints_5m": 24,
+      "mints_60m": 24,
+      "raw_units_1m": 24,
+      "raw_units_5m": 24,
       "recent_mint_concentration": 1.0,
       "unique_recent_minters": 1,
-      "velocity_1m": 250.0,
-      "velocity_5m": 50.0
+      "velocity_1m": 24.0,
+      "velocity_5m": 4.8
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Sat Human Computers",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Delta",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2254,
+    "predicted_probability": 0.1094,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
+      "owner": "0x055806d35f973f1b7d66d0617296197d27b42e6a",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 47,
+    "score": 31,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 0,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 1
+      "sell_through": 0
     },
-    "sell_through": 0.135013501350135,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 750
+      "max_supply": null,
+      "total_supply": 9077
     },
-    "ticker": "shc"
+    "ticker": "DELTA"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +90,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 51694847,
-    "latest_block_age_seconds": 0,
+    "latest_block": 51701174,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 51694837,
+    "safe_block": 51701164,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 327680,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788263192,
+  "generated_at": 1788263829,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.536,
+    "analysis_age_seconds": 1.425,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 8.634,
-    "from_block": 51694633,
+    "duration_seconds": 7.64,
+    "from_block": 51700975,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 85,
-    "lag_seconds": 9,
+    "lag_blocks": 70,
+    "lag_seconds": 7,
     "live_observations": 1,
-    "next_block": 51694753,
+    "next_block": 51701095,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 51694752,
-    "total_mint_units_stored": 0
+    "to_block": 51701094,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 51694633-51694752",
+  "status": "SCANNING 51700975-51701094",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+      "collection": "0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 250,
-        "mints_1m": 250,
-        "mints_5m": 250,
-        "mints_60m": 250,
-        "raw_units_1m": 250,
-        "raw_units_5m": 250,
+        "mints_15m": 24,
+        "mints_1m": 24,
+        "mints_5m": 24,
+        "mints_60m": 24,
+        "raw_units_1m": 24,
+        "raw_units_5m": 24,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 250.0,
-        "velocity_5m": 50.0
+        "velocity_1m": 24.0,
+        "velocity_5m": 4.8
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Sat Human Computers",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x33f6262860a9dd1e68ab0162c85c948537374fb8",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Delta",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xda1ba636f241a219c05cd215c2a830b5aae88eb9",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.1094,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
+        "owner": "0x055806d35f973f1b7d66d0617296197d27b42e6a",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 31,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
         "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 0
       },
-      "sell_through": 0.135013501350135,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 750
+        "max_supply": null,
+        "total_supply": 9077
       },
-      "ticker": "shc"
+      "ticker": "DELTA"
     }
   ],
   "win_rate_pct": 0.0
