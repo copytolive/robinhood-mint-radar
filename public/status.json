@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+    "action": "WAIT",
+    "collection": "0xf6628fe36514909e83caa8e86e3401c2aead6762",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf6628fe36514909e83caa8e86e3401c2aead6762",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 118,
-      "mints_1m": 118,
-      "mints_5m": 118,
-      "mints_60m": 118,
-      "raw_units_1m": 118,
-      "raw_units_5m": 118,
-      "recent_mint_concentration": 0.0169,
-      "unique_recent_minters": 61,
-      "velocity_1m": 118.0,
-      "velocity_5m": 23.6
+      "mints_15m": 15,
+      "mints_1m": 15,
+      "mints_5m": 15,
+      "mints_60m": 15,
+      "raw_units_1m": 15,
+      "raw_units_5m": 15,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 15.0,
+      "velocity_5m": 3.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "PxPinies",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+    "name": "CryptoCasino Club",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf6628fe36514909e83caa8e86e3401c2aead6762",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4129,
+    "predicted_probability": 0.2168,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xe625b00c0fbb8aa10889586d8457d53b93a33723",
+      "owner": "0xb768c492638f6db8c961a006256cc93b771f95fc",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 65,
+    "score": 46,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 0,
+      "holder_growth": 0,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 4
+      "sell_through": 0
     },
-    "sell_through": 0.43564356435643564,
+    "sell_through": 0.0142,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 7373,
-      "total_supply": 3212
+      "max_supply": 10000,
+      "total_supply": 142
     },
-    "ticker": "Pxpx"
+    "ticker": "CCC0"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 51813683,
+    "latest_block": 51836273,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 51813673,
+    "safe_block": 51836263,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788275192,
+  "generated_at": 1788277482,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.848,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 8,
+    "analysis_age_seconds": 1.495,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 4.739,
-    "from_block": 51813499,
+    "duration_seconds": 5.49,
+    "from_block": 51836095,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 55,
-    "lag_seconds": 6,
+    "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 49,
+    "lag_seconds": 5,
     "live_observations": 1,
-    "next_block": 51813619,
+    "next_block": 51836215,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 51813618,
-    "total_mint_units_stored": null
+    "to_block": 51836214,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 51813499-51813618",
+  "status": "SCANNING 51836095-51836214",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+      "action": "WAIT",
+      "collection": "0xf6628fe36514909e83caa8e86e3401c2aead6762",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf6628fe36514909e83caa8e86e3401c2aead6762",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 118,
-        "mints_1m": 118,
-        "mints_5m": 118,
-        "mints_60m": 118,
-        "raw_units_1m": 118,
-        "raw_units_5m": 118,
-        "recent_mint_concentration": 0.0169,
-        "unique_recent_minters": 61,
-        "velocity_1m": 118.0,
-        "velocity_5m": 23.6
+        "mints_15m": 15,
+        "mints_1m": 15,
+        "mints_5m": 15,
+        "mints_60m": 15,
+        "raw_units_1m": 15,
+        "raw_units_5m": 15,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 15.0,
+        "velocity_5m": 3.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "PxPinies",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+      "name": "CryptoCasino Club",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf6628fe36514909e83caa8e86e3401c2aead6762",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4129,
+      "predicted_probability": 0.2168,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xe625b00c0fbb8aa10889586d8457d53b93a33723",
+        "owner": "0xb768c492638f6db8c961a006256cc93b771f95fc",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 65,
+      "score": 46,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
+        "distribution": 0,
+        "holder_growth": 0,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 4
+        "sell_through": 0
       },
-      "sell_through": 0.43564356435643564,
+      "sell_through": 0.0142,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 7373,
-        "total_supply": 3212
+        "max_supply": 10000,
+        "total_supply": 142
       },
-      "ticker": "Pxpx"
+      "ticker": "CCC0"
     }
   ],
   "win_rate_pct": 0.0
