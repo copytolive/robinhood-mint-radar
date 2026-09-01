@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+    "action": "WAIT",
+    "collection": "0x6006d48e6ce68cc41b12ad6776bebf885949d530",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6006d48e6ce68cc41b12ad6776bebf885949d530",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 23,
-      "mints_1m": 23,
-      "mints_5m": 23,
-      "mints_60m": 23,
-      "raw_units_1m": 23,
-      "raw_units_5m": 23,
-      "recent_mint_concentration": 0.0435,
-      "unique_recent_minters": 23,
-      "velocity_1m": 23.0,
-      "velocity_5m": 4.6
+      "mints_15m": 136,
+      "mints_1m": 136,
+      "mints_5m": 136,
+      "mints_60m": 136,
+      "raw_units_1m": 136,
+      "raw_units_5m": 136,
+      "recent_mint_concentration": 0.375,
+      "unique_recent_minters": 4,
+      "velocity_1m": 136.0,
+      "velocity_5m": 27.2
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Hood Mfers ",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Artificial Inu",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x6006d48e6ce68cc41b12ad6776bebf885949d530",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4009,
+    "predicted_probability": 0.1841,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x4b0aed1cde8f4fdd0cc4990cd9fc3fda57b82622",
+      "owner": "0x727a88d20cd312d83267dadea861997ae4e5df87",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 64,
+    "score": 42,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 0,
+      "holder_growth": 2,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 3
+      "sell_through": 9
     },
-    "sell_through": 0.313,
+    "sell_through": 0.982,
     "standard": "ERC721",
     "supply": {
       "max_supply": 10000,
-      "total_supply": 3130
+      "total_supply": 9820
     },
-    "ticker": "HOODMFER"
+    "ticker": "AI"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52103280,
+    "latest_block": 52110792,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 52103270,
+    "safe_block": 52110782,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788304515,
+  "generated_at": 1788305278,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +117,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 2
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.339,
+    "analysis_age_seconds": 5.734,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 6.58,
-    "from_block": 52103086,
+    "duration_seconds": 10.63,
+    "from_block": 52110573,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 65,
-    "lag_seconds": 6,
-    "live_observations": 2,
-    "next_block": 52103206,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 90,
+    "lag_seconds": 9,
+    "live_observations": 1,
+    "next_block": 52110693,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52103205,
+    "to_block": 52110692,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52103086-52103205",
+  "status": "SCANNING 52110573-52110692",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+      "action": "WAIT",
+      "collection": "0x6006d48e6ce68cc41b12ad6776bebf885949d530",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6006d48e6ce68cc41b12ad6776bebf885949d530",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 23,
-        "mints_1m": 23,
-        "mints_5m": 23,
-        "mints_60m": 23,
-        "raw_units_1m": 23,
-        "raw_units_5m": 23,
-        "recent_mint_concentration": 0.0435,
-        "unique_recent_minters": 23,
-        "velocity_1m": 23.0,
-        "velocity_5m": 4.6
+        "mints_15m": 136,
+        "mints_1m": 136,
+        "mints_5m": 136,
+        "mints_60m": 136,
+        "raw_units_1m": 136,
+        "raw_units_5m": 136,
+        "recent_mint_concentration": 0.375,
+        "unique_recent_minters": 4,
+        "velocity_1m": 136.0,
+        "velocity_5m": 27.2
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Hood Mfers ",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x4c2c840b70eff96e37e34b5ca06341c045a2f8bb",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Artificial Inu",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x6006d48e6ce68cc41b12ad6776bebf885949d530",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.4009,
+      "predicted_probability": 0.1841,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x4b0aed1cde8f4fdd0cc4990cd9fc3fda57b82622",
+        "owner": "0x727a88d20cd312d83267dadea861997ae4e5df87",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,108 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 64,
+      "score": 42,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
+        "distribution": 0,
+        "holder_growth": 2,
         "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 9
       },
-      "sell_through": 0.313,
+      "sell_through": 0.982,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 3130
+        "total_supply": 9820
       },
-      "ticker": "HOODMFER"
-    },
-    {
-      "action": "WATCH",
-      "collection": "0x7b5578728734d7c116e321e06f96f475f0b0e6de",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7b5578728734d7c116e321e06f96f475f0b0e6de",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 16,
-        "mints_1m": 16,
-        "mints_5m": 16,
-        "mints_60m": 16,
-        "raw_units_1m": 16,
-        "raw_units_5m": 16,
-        "recent_mint_concentration": 0.0625,
-        "unique_recent_minters": 16,
-        "velocity_1m": 16.0,
-        "velocity_5m": 3.2
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "BRRR Machines",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x7b5578728734d7c116e321e06f96f475f0b0e6de",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3775,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x2f7581e7b16e17317bf3822aa37beec88b4ed26a",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 62,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 8,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 3
-      },
-      "sell_through": 0.3031998852059119,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 6969,
-        "total_supply": 2113
-      },
-      "ticker": "BRRRM"
+      "ticker": "AI"
     }
   ],
   "win_rate_pct": 0.0
