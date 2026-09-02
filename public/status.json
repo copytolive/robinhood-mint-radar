@@ -76,11 +76,11 @@
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.0607,
+    "sell_through": 0.0826,
     "standard": "ERC721",
     "supply": {
       "max_supply": 10000,
-      "total_supply": 607
+      "total_supply": 826
     },
     "ticker": "PONSBABY"
   },
@@ -90,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52428073,
+    "latest_block": 52438471,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 52428063,
+    "safe_block": 52438461,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788337288,
+  "generated_at": 1788338336,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,27 +137,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.954,
+    "analysis_age_seconds": 2.765,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 14.123,
-    "from_block": 52427814,
+    "duration_seconds": 7.672,
+    "from_block": 52438287,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 130,
-    "lag_seconds": 13,
+    "lag_blocks": 55,
+    "lag_seconds": 6,
     "live_observations": 1,
-    "next_block": 52427934,
+    "next_block": 52438407,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52427933,
+    "to_block": 52438406,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52427814-52427933",
+  "status": "SCANNING 52438287-52438406",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -237,11 +237,11 @@
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.0607,
+      "sell_through": 0.0826,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 607
+        "total_supply": 826
       },
       "ticker": "PONSBABY"
     }
