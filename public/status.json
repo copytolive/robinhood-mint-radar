@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+    "collection": "0x165ce8b033b4d6ce274119d24b80692e60b110cd",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x165ce8b033b4d6ce274119d24b80692e60b110cd",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -21,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 39,
+      "mints_1m": 39,
+      "mints_5m": 39,
+      "mints_60m": 39,
+      "raw_units_1m": 39,
+      "raw_units_5m": 39,
+      "recent_mint_concentration": 0.7436,
+      "unique_recent_minters": 3,
+      "velocity_1m": 39.0,
+      "velocity_5m": 7.8
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "PONS BABY",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+    "name": "Pons Computers",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x165ce8b033b4d6ce274119d24b80692e60b110cd",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.0829,
+    "predicted_probability": 0.1473,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,47 +56,46 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x911298852fb35688d9d20712679663f87948c650",
+      "owner": "0xb96b76dc6d93b987f8044fc0dc72b1253bf2530c",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
-        "CONTRACT_CODE_UNAVAILABLE",
         "VERIFICATION_UNAVAILABLE"
       ],
       "state": "REVIEW",
       "verified": null
     },
-    "score": 26,
+    "score": 37,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "holder_growth": 1,
+      "mint_velocity": 20,
       "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 5
     },
-    "sell_through": null,
+    "sell_through": 0.595,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": null
+      "max_supply": 4200,
+      "total_supply": 2499
     },
-    "ticker": "PONSBABY"
+    "ticker": "Pons Computer"
   },
   "capital_deployed_usd": 0,
   "chain": {
-    "active_rpc": "https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public",
+    "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52407031,
+    "latest_block": 52414544,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 1,
-    "safe_block": 52407021,
+    "rpc_failovers": 0,
+    "safe_block": 52414534,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,15 +104,8 @@
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
-  "diagnostics": [
-    {
-      "error": "eth_getCode failed on all RPC endpoints: https://rpc.mainnet.chain.robinhood.com: RPCError: HTTP Error 429: Too Many Requests | https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public: RPCError: HTTP Error 429: Too Many Requests | https://rpc.nodeflare.app/robinhood/public: HTTPError: HTTP Error 429: Too Many Requests",
-      "reason": "GET_CODE_FAILED",
-      "stage": "CONTRACT_CHECK",
-      "ts": 1788335159
-    }
-  ],
-  "generated_at": 1788335163,
+  "diagnostics": [],
+  "generated_at": 1788335921,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -145,38 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.815,
+    "analysis_age_seconds": 3.133,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 7.039,
-    "from_block": 52406834,
+    "duration_seconds": 10.372,
+    "from_block": 52414309,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 68,
-    "lag_seconds": 6,
+    "lag_blocks": 106,
+    "lag_seconds": 10,
     "live_observations": 1,
-    "next_block": 52406954,
+    "next_block": 52414429,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52406953,
+    "to_block": 52414428,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52406834-52406953",
+  "status": "SCANNING 52414309-52414428",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+      "collection": "0x165ce8b033b4d6ce274119d24b80692e60b110cd",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x165ce8b033b4d6ce274119d24b80692e60b110cd",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -190,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 39,
+        "mints_1m": 39,
+        "mints_5m": 39,
+        "mints_60m": 39,
+        "raw_units_1m": 39,
+        "raw_units_5m": 39,
+        "recent_mint_concentration": 0.7436,
+        "unique_recent_minters": 3,
+        "velocity_1m": 39.0,
+        "velocity_5m": 7.8
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "PONS BABY",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc843198c96b20939da8e2c64f2c95b154d93f8f2",
+      "name": "Pons Computers",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x165ce8b033b4d6ce274119d24b80692e60b110cd",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.0829,
+      "predicted_probability": 0.1473,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -225,34 +217,33 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x911298852fb35688d9d20712679663f87948c650",
+        "owner": "0xb96b76dc6d93b987f8044fc0dc72b1253bf2530c",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
-          "CONTRACT_CODE_UNAVAILABLE",
           "VERIFICATION_UNAVAILABLE"
         ],
         "state": "REVIEW",
         "verified": null
       },
-      "score": 26,
+      "score": 37,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "holder_growth": 1,
+        "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 5
       },
-      "sell_through": null,
+      "sell_through": 0.595,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": null
+        "max_supply": 4200,
+        "total_supply": 2499
       },
-      "ticker": "PONSBABY"
+      "ticker": "Pons Computer"
     }
   ],
   "win_rate_pct": 0.0
