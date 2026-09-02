@@ -1,17 +1,16 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "collection": "0x53b14544792f7a3ea72cada932b160a175a3f7e8",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x53b14544792f7a3ea72cada932b160a175a3f7e8",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -21,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 50,
+      "mints_1m": 50,
+      "mints_5m": 50,
+      "mints_60m": 50,
+      "raw_units_1m": 50,
+      "raw_units_5m": 50,
+      "recent_mint_concentration": 0.5,
+      "unique_recent_minters": 2,
+      "velocity_1m": 50.0,
+      "velocity_5m": 10.0
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "XDogHoods",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Coco Paws",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x53b14544792f7a3ea72cada932b160a175a3f7e8",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1213,
+    "predicted_probability": 0.2525,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x189b39a79197b7641aa4703d2f486b0621e88f35",
+      "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 33,
+    "score": 50,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
-      "price_asymmetry": 0,
+      "holder_growth": 1,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 7
+      "sell_through": 3
     },
-    "sell_through": 0.768033946251768,
+    "sell_through": 0.3064,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 7777,
-      "total_supply": 5973
+      "max_supply": 10000,
+      "total_supply": 3064
     },
-    "ticker": "XDH"
+    "ticker": "cocopaws"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52572342,
+    "latest_block": 52585186,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 52572332,
+    "safe_block": 52585176,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788351827,
+  "generated_at": 1788353122,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,42 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.57,
+    "analysis_age_seconds": 5.613,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 10.63,
-    "from_block": 52572113,
+    "duration_seconds": 18.847,
+    "from_block": 52584883,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 100,
-    "lag_seconds": 10,
+    "lag_blocks": 174,
+    "lag_seconds": 18,
     "live_observations": 1,
-    "next_block": 52572233,
+    "next_block": 52585003,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52572232,
+    "to_block": 52585002,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52572113-52572232",
+  "status": "SCANNING 52584883-52585002",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "collection": "0x53b14544792f7a3ea72cada932b160a175a3f7e8",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x53b14544792f7a3ea72cada932b160a175a3f7e8",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -182,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "XDogHoods",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc0df74f458c6b6509ebe1238c8ca1dfb8897b34c",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Coco Paws",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x53b14544792f7a3ea72cada932b160a175a3f7e8",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1213,
+      "predicted_probability": 0.2525,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x189b39a79197b7641aa4703d2f486b0621e88f35",
+        "owner": "0xcc3a59ab530025faeba3e1e37621ba1f0f2367d0",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 33,
+      "score": 50,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
-        "price_asymmetry": 0,
+        "holder_growth": 1,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 7
+        "sell_through": 3
       },
-      "sell_through": 0.768033946251768,
+      "sell_through": 0.3064,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 7777,
-        "total_supply": 5973
+        "max_supply": 10000,
+        "total_supply": 3064
       },
-      "ticker": "XDH"
+      "ticker": "cocopaws"
     }
   ],
   "win_rate_pct": 0.0
