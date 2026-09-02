@@ -1,113 +1,124 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+    "collection": "0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 6,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 6,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0010998
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 1,
-      "mints_1m": 1,
-      "mints_5m": 1,
-      "mints_60m": 1,
-      "raw_units_1m": 1,
-      "raw_units_5m": 1,
+      "mints_15m": 99,
+      "mints_1m": 99,
+      "mints_5m": 99,
+      "mints_60m": 99,
+      "raw_units_1m": 16392269459142900738636393,
+      "raw_units_5m": 16392269459142900738636393,
       "recent_mint_concentration": 1.0,
       "unique_recent_minters": 1,
-      "velocity_1m": 1.0,
-      "velocity_5m": 0.2
+      "velocity_1m": 99.0,
+      "velocity_5m": 19.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "ART QUOTRONS",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+    "name": "DLMM Token",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.2168,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xea066e2d4217448e3edf6469baecf450497b22aa",
-      "owner_active": true,
+      "owner": null,
+      "owner_active": false,
       "proxy": null,
       "review_risks": [
+        "CONTRACT_CODE_UNAVAILABLE",
         "VERIFICATION_UNAVAILABLE"
       ],
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 46,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 0,
-      "mint_velocity": 1,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 9,
-      "sell_through": 5
+      "secondary_liquidity": 0,
+      "sell_through": 0
     },
-    "sell_through": 0.5688568856885688,
-    "standard": "ERC721",
+    "sell_through": null,
+    "standard": "ERC1155",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 2528
+      "max_supply": null,
+      "total_supply": null
     },
-    "ticker": "ART QUOTRONS"
+    "ticker": "DLMM"
   },
   "capital_deployed_usd": 0,
   "chain": {
-    "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "active_rpc": "https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 52828302,
+    "latest_block": 52835996,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 0,
-    "safe_block": 52828292,
+    "rpc_failovers": 1,
+    "safe_block": 52835986,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 1544192,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
-  "diagnostics": [],
-  "generated_at": 1788378049,
+  "diagnostics": [
+    {
+      "error": "eth_getCode failed on all RPC endpoints: https://rpc.mainnet.chain.robinhood.com: RPCError: HTTP Error 429: Too Many Requests | https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public: RPCError: HTTP Error 429: Too Many Requests | https://rpc.nodeflare.app/robinhood/public: HTTPError: HTTP Error 429: Too Many Requests",
+      "reason": "GET_CODE_FAILED",
+      "stage": "CONTRACT_CHECK",
+      "ts": 1788378840
+    },
+    {
+      "error": "eth_getCode failed on all RPC endpoints: https://rpc.mainnet.chain.robinhood.com: RPCError: HTTP Error 429: Too Many Requests | https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public: HTTPError: HTTP Error 429: Too Many Requests | https://rpc.nodeflare.app/robinhood/public: RPCError: HTTP Error 429: Too Many Requests",
+      "reason": "GET_CODE_FAILED",
+      "stage": "CONTRACT_CHECK",
+      "ts": 1788378840
+    }
+  ],
+  "generated_at": 1788378842,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,68 +150,150 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.313,
+    "analysis_age_seconds": 2.643,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 4.273,
-    "from_block": 52828133,
+    "duration_seconds": 6.425,
+    "from_block": 52835808,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 40,
-    "lag_seconds": 4,
-    "live_observations": 1,
-    "next_block": 52828253,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 59,
+    "lag_seconds": 6,
+    "live_observations": 2,
+    "next_block": 52835928,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 52828252,
+    "to_block": 52835927,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 52828133-52828252",
+  "status": "SCANNING 52835808-52835927",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+      "collection": "0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
-        "floor_price": null,
-        "native_sales_24h": 6,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 6,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.0010998
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "raw_units_1m": 1,
-        "raw_units_5m": 1,
+        "mints_15m": 99,
+        "mints_1m": 99,
+        "mints_5m": 99,
+        "mints_60m": 99,
+        "raw_units_1m": 16392269459142900738636393,
+        "raw_units_5m": 16392269459142900738636393,
         "recent_mint_concentration": 1.0,
         "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
+        "velocity_1m": 99.0,
+        "velocity_5m": 19.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ART QUOTRONS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
+      "name": "DLMM Token",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x43c70df87d7448ec5b605d1139d9e4fafaecc9ab",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2168,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": null,
+        "owner_active": false,
+        "proxy": null,
+        "review_risks": [
+          "CONTRACT_CODE_UNAVAILABLE",
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 46,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC1155",
+      "supply": {
+        "max_supply": null,
+        "total_supply": null
+      },
+      "ticker": "DLMM"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xea56482448bbbf47c8ff7142f7ca64bbec61d256",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xea56482448bbbf47c8ff7142f7ca64bbec61d256",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "PAYPHONE",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xea56482448bbbf47c8ff7142f7ca64bbec61d256",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -210,21 +303,22 @@
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xea066e2d4217448e3edf6469baecf450497b22aa",
+        "owner": "0x67d2390574f1e2344e5f32cc552cda5427f9a036",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
+          "CONTRACT_CODE_UNAVAILABLE",
           "VERIFICATION_UNAVAILABLE"
         ],
         "state": "REVIEW",
@@ -235,19 +329,19 @@
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 0,
-        "mint_velocity": 1,
+        "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 9,
-        "sell_through": 5
+        "secondary_liquidity": 0,
+        "sell_through": 0
       },
-      "sell_through": 0.5688568856885688,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4444,
-        "total_supply": 2528
+        "max_supply": null,
+        "total_supply": null
       },
-      "ticker": "ART QUOTRONS"
+      "ticker": "PHONE"
     }
   ],
   "win_rate_pct": 0.0
