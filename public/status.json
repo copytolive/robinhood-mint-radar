@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x2042e372d211b11239b334434642e874700caa5d",
+    "action": "WAIT",
+    "collection": "0xa4346605e59379a6706757dd4bdf2ff3a0777987",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2042e372d211b11239b334434642e874700caa5d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa4346605e59379a6706757dd4bdf2ff3a0777987",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 238,
-      "mints_1m": 238,
-      "mints_5m": 238,
-      "mints_60m": 238,
-      "raw_units_1m": 238,
-      "raw_units_5m": 238,
-      "recent_mint_concentration": 0.0294,
-      "unique_recent_minters": 34,
-      "velocity_1m": 238.0,
-      "velocity_5m": 47.6
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "ROBINCAT",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x2042e372d211b11239b334434642e874700caa5d",
+    "name": "Yolkies",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa4346605e59379a6706757dd4bdf2ff3a0777987",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4009,
+    "predicted_probability": 0.2433,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xab10f9a942042d43be6dfb51cc27b1ac5eac50bc",
+      "owner": "0x244f42b160fd39a531f7d2d8bbc9d0c86e4d1e9a",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 64,
+    "score": 49,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 3
+      "sell_through": 8
     },
-    "sell_through": 0.3051,
+    "sell_through": 0.8537353735373537,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 3051
+      "max_supply": 4444,
+      "total_supply": 3794
     },
-    "ticker": "ROBINCAT"
+    "ticker": "YOLK"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 53226493,
+    "latest_block": 53238158,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 53226483,
+    "safe_block": 53238148,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 311296,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788418985,
+  "generated_at": 1788420179,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,122 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.9,
+    "analysis_age_seconds": 2.85,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 4.139,
-    "from_block": 53226324,
+    "duration_seconds": 4.579,
+    "from_block": 53237990,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 40,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 39,
     "lag_seconds": 4,
-    "live_observations": 2,
-    "next_block": 53226444,
+    "live_observations": 1,
+    "next_block": 53238110,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 53226443,
+    "to_block": 53238109,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 53226324-53226443",
+  "status": "SCANNING 53237990-53238109",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x2042e372d211b11239b334434642e874700caa5d",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2042e372d211b11239b334434642e874700caa5d",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 238,
-        "mints_1m": 238,
-        "mints_5m": 238,
-        "mints_60m": 238,
-        "raw_units_1m": 238,
-        "raw_units_5m": 238,
-        "recent_mint_concentration": 0.0294,
-        "unique_recent_minters": 34,
-        "velocity_1m": 238.0,
-        "velocity_5m": 47.6
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ROBINCAT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x2042e372d211b11239b334434642e874700caa5d",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4009,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xab10f9a942042d43be6dfb51cc27b1ac5eac50bc",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 64,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 3
-      },
-      "sell_through": 0.3051,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 10000,
-        "total_supply": 3051
-      },
-      "ticker": "ROBINCAT"
-    },
-    {
       "action": "WAIT",
-      "collection": "0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "collection": "0xa4346605e59379a6706757dd4bdf2ff3a0777987",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa4346605e59379a6706757dd4bdf2ff3a0777987",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -264,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 20,
-        "mints_1m": 20,
-        "mints_5m": 20,
-        "mints_60m": 20,
-        "raw_units_1m": 20,
-        "raw_units_5m": 20,
-        "recent_mint_concentration": 0.1,
-        "unique_recent_minters": 10,
-        "velocity_1m": 20.0,
-        "velocity_5m": 4.0
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "GoldenGoose",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "name": "Yolkies",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa4346605e59379a6706757dd4bdf2ff3a0777987",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3329,
+      "predicted_probability": 0.2433,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -299,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6c6f9b4b5c6c90a2f5947257dcfd6f3ba93f2dcc",
+        "owner": "0x244f42b160fd39a531f7d2d8bbc9d0c86e4d1e9a",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -308,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 58,
+      "score": 49,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 5,
-        "mint_velocity": 20,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 4
+        "sell_through": 8
       },
-      "sell_through": 0.4373,
+      "sell_through": 0.8537353735373537,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 4373
+        "max_supply": 4444,
+        "total_supply": 3794
       },
-      "ticker": "goldengoose"
+      "ticker": "YOLK"
     }
   ],
   "win_rate_pct": 0.0
