@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
+    "action": "WAIT",
+    "collection": "0x24c428de1e18713b4e82da73214c40045334adca",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x24c428de1e18713b4e82da73214c40045334adca",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 685,
-      "mints_1m": 685,
-      "mints_5m": 685,
-      "mints_60m": 685,
-      "raw_units_1m": 685,
-      "raw_units_5m": 685,
-      "recent_mint_concentration": 0.7153,
-      "unique_recent_minters": 196,
-      "velocity_1m": 685.0,
-      "velocity_5m": 137.0
+      "mints_15m": 170,
+      "mints_1m": 170,
+      "mints_5m": 170,
+      "mints_60m": 170,
+      "raw_units_1m": 170,
+      "raw_units_5m": 170,
+      "recent_mint_concentration": 0.8824,
+      "unique_recent_minters": 2,
+      "velocity_1m": 170.0,
+      "velocity_5m": 34.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "The Hollow",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
+    "name": "VANDALS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x24c428de1e18713b4e82da73214c40045334adca",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4009,
+    "predicted_probability": 0.2812,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x0c20b5e0948412c7ddb18f2b6f1455b1fd69b0c7",
+      "owner": "0x7f4b4c7c5021e90752aa2163341d7c8237f235e1",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 64,
+    "score": 53,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 10,
+      "holder_growth": 1,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 8
+      "sell_through": 6
     },
-    "sell_through": 0.8460846084608461,
+    "sell_through": 0.6581908190819082,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2222,
-      "total_supply": 1880
+      "max_supply": 4444,
+      "total_supply": 2925
     },
-    "ticker": "The Hollow"
+    "ticker": "VADN"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 53485662,
-    "latest_block_age_seconds": 1,
+    "latest_block": 53496315,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 53485652,
+    "safe_block": 53496305,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 974848,
+    "bytes": 311296,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788445596,
+  "generated_at": 1788446706,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,113 +136,29 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.913,
+    "analysis_age_seconds": 4.22,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 4.694,
-    "from_block": 53485490,
+    "duration_seconds": 6.041,
+    "from_block": 53496164,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 43,
-    "lag_seconds": 4,
-    "live_observations": 2,
-    "next_block": 53485610,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 22,
+    "lag_seconds": 2,
+    "live_observations": 1,
+    "next_block": 53496284,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 53485609,
+    "to_block": 53496283,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 53485490-53485609",
+  "status": "SCANNING 53496164-53496283",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
-    {
-      "action": "WATCH",
-      "collection": "0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 685,
-        "mints_1m": 685,
-        "mints_5m": 685,
-        "mints_60m": 685,
-        "raw_units_1m": 685,
-        "raw_units_5m": 685,
-        "recent_mint_concentration": 0.7153,
-        "unique_recent_minters": 196,
-        "velocity_1m": 685.0,
-        "velocity_5m": 137.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "The Hollow",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x4d583691cdd68da7bd0d7a26de2831d9a8a9c915",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4009,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x0c20b5e0948412c7ddb18f2b6f1455b1fd69b0c7",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 64,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 8
-      },
-      "sell_through": 0.8460846084608461,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 2222,
-        "total_supply": 1880
-      },
-      "ticker": "The Hollow"
-    },
     {
       "action": "WAIT",
       "collection": "0x24c428de1e18713b4e82da73214c40045334adca",
@@ -264,16 +180,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 151,
-        "mints_1m": 151,
-        "mints_5m": 151,
-        "mints_60m": 151,
-        "raw_units_1m": 151,
-        "raw_units_5m": 151,
-        "recent_mint_concentration": 0.9934,
+        "mints_15m": 170,
+        "mints_1m": 170,
+        "mints_5m": 170,
+        "mints_60m": 170,
+        "raw_units_1m": 170,
+        "raw_units_5m": 170,
+        "recent_mint_concentration": 0.8824,
         "unique_recent_minters": 2,
-        "velocity_1m": 151.0,
-        "velocity_5m": 30.2
+        "velocity_1m": 170.0,
+        "velocity_5m": 34.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -284,7 +200,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2525,
+      "predicted_probability": 0.2812,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -308,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 50,
+      "score": 53,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
@@ -317,13 +233,13 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 6
       },
-      "sell_through": 0.35328532853285327,
+      "sell_through": 0.6581908190819082,
       "standard": "ERC721",
       "supply": {
         "max_supply": 4444,
-        "total_supply": 1570
+        "total_supply": 2925
       },
       "ticker": "VADN"
     }
