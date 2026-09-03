@@ -1,17 +1,16 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+    "collection": "0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -21,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 35,
-      "mints_1m": 35,
-      "mints_5m": 35,
-      "mints_60m": 35,
-      "raw_units_1m": 35,
-      "raw_units_5m": 35,
-      "recent_mint_concentration": 0.7143,
-      "unique_recent_minters": 2,
-      "velocity_1m": 35.0,
-      "velocity_5m": 7.0
+      "mints_15m": 100,
+      "mints_1m": 100,
+      "mints_5m": 100,
+      "mints_60m": 100,
+      "raw_units_1m": 100,
+      "raw_units_5m": 100,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 100.0,
+      "velocity_5m": 20.0
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "Quotnix",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "HOOD CATS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1615,
+    "predicted_probability": 0.2254,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x21fec20f173fa22f60e8ebade5f3023f9f2cc14f",
+      "owner": "0x19bb3eaed13fd820bc91b3b4a6f7ed6e42583f64",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 39,
+    "score": 47,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
+      "holder_growth": 0,
       "mint_velocity": 20,
-      "price_asymmetry": 0,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 7
+      "sell_through": 1
     },
-    "sell_through": 0.7470747074707471,
+    "sell_through": 0.1866,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 3320
+      "max_supply": 5000,
+      "total_supply": 933
     },
-    "ticker": "QUOTNIX"
+    "ticker": "Robinhood chain"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 53329599,
+    "latest_block": 53342150,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 53329589,
+    "safe_block": 53342140,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788429533,
+  "generated_at": 1788430816,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,42 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.798,
+    "analysis_age_seconds": 2.93,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 2.542,
-    "from_block": 53329449,
+    "duration_seconds": 5.001,
+    "from_block": 53341981,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 21,
-    "lag_seconds": 2,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 53329569,
+    "next_block": 53342101,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 53329568,
+    "to_block": 53342100,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 53329449-53329568",
+  "status": "SCANNING 53341981-53342100",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+      "collection": "0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -182,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 35,
-        "mints_1m": 35,
-        "mints_5m": 35,
-        "mints_60m": 35,
-        "raw_units_1m": 35,
-        "raw_units_5m": 35,
-        "recent_mint_concentration": 0.7143,
-        "unique_recent_minters": 2,
-        "velocity_1m": 35.0,
-        "velocity_5m": 7.0
+        "mints_15m": 100,
+        "mints_1m": 100,
+        "mints_5m": 100,
+        "mints_60m": 100,
+        "raw_units_1m": 100,
+        "raw_units_5m": 100,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 100.0,
+        "velocity_5m": 20.0
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Quotnix",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x155c7ea06ea892c3aade409f7d02a43db9a656d6",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "HOOD CATS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x28f1b6a3d03983cc33610bda24cb8f7e65a5a404",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1615,
+      "predicted_probability": 0.2254,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x21fec20f173fa22f60e8ebade5f3023f9f2cc14f",
+        "owner": "0x19bb3eaed13fd820bc91b3b4a6f7ed6e42583f64",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 39,
+      "score": 47,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 0,
         "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 7
+        "sell_through": 1
       },
-      "sell_through": 0.7470747074707471,
+      "sell_through": 0.1866,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4444,
-        "total_supply": 3320
+        "max_supply": 5000,
+        "total_supply": 933
       },
-      "ticker": "QUOTNIX"
+      "ticker": "Robinhood chain"
     }
   ],
   "win_rate_pct": 0.0
