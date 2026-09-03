@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+    "collection": "0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 18,
-      "mints_1m": 18,
-      "mints_5m": 18,
-      "mints_60m": 18,
-      "raw_units_1m": 18,
-      "raw_units_5m": 18,
+      "mints_15m": 90,
+      "mints_1m": 90,
+      "mints_5m": 90,
+      "mints_60m": 90,
+      "raw_units_1m": 90,
+      "raw_units_5m": 90,
       "recent_mint_concentration": 0.1111,
-      "unique_recent_minters": 9,
-      "velocity_1m": 18.0,
-      "velocity_5m": 3.6
+      "unique_recent_minters": 17,
+      "velocity_1m": 90.0,
+      "velocity_5m": 18.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "GoldenGoose",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+    "name": "Corrupt Punks",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3013,
+    "predicted_probability": 0.3329,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x6c6f9b4b5c6c90a2f5947257dcfd6f3ba93f2dcc",
+      "owner": "0x7a7d86c5f0b4d84b7130e4ac9875b82ce9fd2bff",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 55,
+    "score": 58,
     "score_parts": {
       "acceleration": 7,
       "distribution": 3,
-      "holder_growth": 4,
+      "holder_growth": 8,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 2
+      "sell_through": 1
     },
-    "sell_through": 0.2478,
+    "sell_through": 0.1415,
     "standard": "ERC721",
     "supply": {
       "max_supply": 10000,
-      "total_supply": 2478
+      "total_supply": 1415
     },
-    "ticker": "goldengoose"
+    "ticker": "PUNK"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 53205070,
-    "latest_block_age_seconds": 1,
+    "latest_block": 53217927,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 53205060,
+    "safe_block": 53217917,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788416798,
+  "generated_at": 1788418110,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.557,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 3.229,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 3.685,
-    "from_block": 53204911,
+    "duration_seconds": 4.985,
+    "from_block": 53217760,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 30,
-    "lag_seconds": 3,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 38,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 53205031,
+    "next_block": 53217880,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 53205030,
+    "to_block": 53217879,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 53204911-53205030",
+  "status": "SCANNING 53217760-53217879",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "collection": "0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 18,
-        "mints_1m": 18,
-        "mints_5m": 18,
-        "mints_60m": 18,
-        "raw_units_1m": 18,
-        "raw_units_5m": 18,
+        "mints_15m": 90,
+        "mints_1m": 90,
+        "mints_5m": 90,
+        "mints_60m": 90,
+        "raw_units_1m": 90,
+        "raw_units_5m": 90,
         "recent_mint_concentration": 0.1111,
-        "unique_recent_minters": 9,
-        "velocity_1m": 18.0,
-        "velocity_5m": 3.6
+        "unique_recent_minters": 17,
+        "velocity_1m": 90.0,
+        "velocity_5m": 18.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "GoldenGoose",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x58cf52a126ad8ace6fef32625fbe8b022943808e",
+      "name": "Corrupt Punks",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x7a2fcd33dc70c45a71974ec6ee8f2490453c7f87",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3013,
+      "predicted_probability": 0.3329,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6c6f9b4b5c6c90a2f5947257dcfd6f3ba93f2dcc",
+        "owner": "0x7a7d86c5f0b4d84b7130e4ac9875b82ce9fd2bff",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 55,
+      "score": 58,
       "score_parts": {
         "acceleration": 7,
         "distribution": 3,
-        "holder_growth": 4,
+        "holder_growth": 8,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 2
+        "sell_through": 1
       },
-      "sell_through": 0.2478,
+      "sell_through": 0.1415,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 2478
+        "total_supply": 1415
       },
-      "ticker": "goldengoose"
+      "ticker": "PUNK"
     }
   ],
   "win_rate_pct": 0.0
