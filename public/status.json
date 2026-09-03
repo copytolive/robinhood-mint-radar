@@ -1,16 +1,16 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+    "action": "WATCH",
+    "collection": "0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,42 +20,42 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 25,
-      "mints_1m": 25,
-      "mints_5m": 25,
-      "mints_60m": 25,
-      "raw_units_1m": 25,
-      "raw_units_5m": 25,
-      "recent_mint_concentration": 0.28,
-      "unique_recent_minters": 4,
-      "velocity_1m": 25.0,
-      "velocity_5m": 5.0
+      "mints_15m": 325,
+      "mints_1m": 325,
+      "mints_5m": 325,
+      "mints_60m": 325,
+      "raw_units_1m": 325,
+      "raw_units_5m": 325,
+      "recent_mint_concentration": 0.0154,
+      "unique_recent_minters": 65,
+      "velocity_1m": 325.0,
+      "velocity_5m": 65.0
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "Chog NFT Robinhood",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Milady Brokers",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1213,
+    "predicted_probability": 0.3891,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "COLLECTIBLE_CONTRACT_NAME"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x964a9273fa446be4aa5c25c54aacc75a91ff3f78",
+      "owner": "0xcdd80e828f663fa03b43169867f983f2740b8c8b",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 33,
+    "score": 63,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 2,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
-      "price_asymmetry": 0,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 2
     },
-    "sell_through": 0.09497206703910614,
+    "sell_through": 0.24011610449404464,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 1969,
-      "total_supply": 187
+      "max_supply": 9991,
+      "total_supply": 2399
     },
-    "ticker": "CHGRb"
+    "ticker": "Milady Brokers"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 53773095,
+    "latest_block": 53780744,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 53773085,
+    "safe_block": 53780734,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 315392,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788475137,
+  "generated_at": 1788475906,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,41 +136,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.695,
+    "analysis_age_seconds": 2.696,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 8,
     "blocks_processed": 120,
-    "duration_seconds": 4.08,
-    "from_block": 53772931,
+    "duration_seconds": 4.67,
+    "from_block": 53780577,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 35,
+    "lag_blocks": 38,
     "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 53773051,
+    "next_block": 53780697,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 53773050,
+    "to_block": 53780696,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 53772931-53773050",
+  "status": "SCANNING 53780577-53780696",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+      "action": "WATCH",
+      "collection": "0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,42 +180,42 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 25,
-        "mints_1m": 25,
-        "mints_5m": 25,
-        "mints_60m": 25,
-        "raw_units_1m": 25,
-        "raw_units_5m": 25,
-        "recent_mint_concentration": 0.28,
-        "unique_recent_minters": 4,
-        "velocity_1m": 25.0,
-        "velocity_5m": 5.0
+        "mints_15m": 325,
+        "mints_1m": 325,
+        "mints_5m": 325,
+        "mints_60m": 325,
+        "raw_units_1m": 325,
+        "raw_units_5m": 325,
+        "recent_mint_concentration": 0.0154,
+        "unique_recent_minters": 65,
+        "velocity_1m": 325.0,
+        "velocity_5m": 65.0
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Chog NFT Robinhood",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xef01f7e626a06217d03af8fddd2b4f710480eb5d",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Milady Brokers",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xff6c60bcb9f81bb96c5d4b3a386972eaa736af13",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1213,
+      "predicted_probability": 0.3891,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x964a9273fa446be4aa5c25c54aacc75a91ff3f78",
+        "owner": "0xcdd80e828f663fa03b43169867f983f2740b8c8b",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 33,
+      "score": 63,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
-        "price_asymmetry": 0,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 2
       },
-      "sell_through": 0.09497206703910614,
+      "sell_through": 0.24011610449404464,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 1969,
-        "total_supply": 187
+        "max_supply": 9991,
+        "total_supply": 2399
       },
-      "ticker": "CHGRb"
+      "ticker": "Milady Brokers"
     }
   ],
   "win_rate_pct": 0.0
