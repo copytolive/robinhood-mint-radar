@@ -1,109 +1,27 @@
 {
-  "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-    "hard_gates": [
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "A MEME NFT",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.1763,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "HIGH",
-      "reasons": [
-        "COLLECTIBLE_CONTRACT_NAME"
-      ],
-      "state": "PASS"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0xb8e7064062c24ffcb6ecd75b2927367fe1e430cf",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 41,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 0
-    },
-    "sell_through": 0.04224,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 50000,
-      "total_supply": 2112
-    },
-    "ticker": "MEMENFT"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
-    "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "active_rpc": "https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 54578763,
+    "latest_block": 54588922,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 0,
-    "safe_block": 54578753,
+    "rpc_failovers": 1,
+    "safe_block": 54588912,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788556628,
+  "generated_at": 1788557653,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,112 +53,28 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.681,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_age_seconds": 0.199,
+    "analysis_rows_considered": 0,
+    "analysis_rows_pruned": 0,
     "blocks_processed": 120,
-    "duration_seconds": 6.478,
-    "from_block": 54578574,
+    "duration_seconds": 2.845,
+    "from_block": 54588781,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 60,
-    "lag_seconds": 6,
-    "live_observations": 1,
-    "next_block": 54578694,
+    "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 12,
+    "lag_seconds": 1,
+    "live_observations": 0,
+    "next_block": 54588901,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 54578693,
-    "total_mint_units_stored": null
+    "to_block": 54588900,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 54578574-54578693",
+  "status": "SCANNING 54588781-54588900",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WAIT",
-      "collection": "0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "A MEME NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x805cf60e1dc2ee151fa7f0c57c16f4c0188be394",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1763,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xb8e7064062c24ffcb6ecd75b2927367fe1e430cf",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 41,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.04224,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 50000,
-        "total_supply": 2112
-      },
-      "ticker": "MEMENFT"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
