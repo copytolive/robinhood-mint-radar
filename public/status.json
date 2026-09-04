@@ -1,17 +1,103 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "hard_gates": [
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+    ],
+    "market": {
+      "floor_price": null,
+      "native_sales_24h": 7,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 9,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.052714
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 9,
+      "mints_1m": 9,
+      "mints_5m": 9,
+      "mints_60m": 9,
+      "raw_units_1m": 9,
+      "raw_units_5m": 9,
+      "recent_mint_concentration": 0.6667,
+      "unique_recent_minters": 4,
+      "velocity_1m": 9.0,
+      "velocity_5m": 1.8
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Spy Inc. Recruits",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.3222,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "HIGH",
+      "reasons": [
+        "SECONDARY_MARKET_OBSERVED"
+      ],
+      "state": "PASS"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x3b9fca07d05a7ab0a651893b29f50219cc594446",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 57,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 2,
+      "mint_velocity": 13,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 15,
+      "sell_through": 1
+    },
+    "sell_through": 0.19466666666666665,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 6000,
+      "total_supply": 1168
+    },
+    "ticker": "Recruits"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 54459314,
-    "latest_block_age_seconds": 1,
+    "latest_block": 54472692,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 54459304,
+    "safe_block": 54472682,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788544545,
+  "generated_at": 1788545904,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +139,116 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.54,
-    "analysis_rows_considered": 1,
+    "analysis_age_seconds": 3.112,
+    "analysis_rows_considered": 2,
     "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 9.906,
-    "from_block": 54459096,
+    "duration_seconds": 13.445,
+    "from_block": 54472449,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 89,
-    "lag_seconds": 9,
-    "live_observations": 0,
-    "next_block": 54459216,
+    "lag_blocks": 114,
+    "lag_seconds": 11,
+    "live_observations": 1,
+    "next_block": 54472569,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 54459215,
+    "to_block": 54472568,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 54459096-54459215",
+  "status": "SCANNING 54472449-54472568",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      ],
+      "market": {
+        "floor_price": null,
+        "native_sales_24h": 7,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 9,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.052714
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 9,
+        "mints_1m": 9,
+        "mints_5m": 9,
+        "mints_60m": 9,
+        "raw_units_1m": 9,
+        "raw_units_5m": 9,
+        "recent_mint_concentration": 0.6667,
+        "unique_recent_minters": 4,
+        "velocity_1m": 9.0,
+        "velocity_5m": 1.8
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Spy Inc. Recruits",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.3222,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "SECONDARY_MARKET_OBSERVED"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x3b9fca07d05a7ab0a651893b29f50219cc594446",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 57,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 2,
+        "mint_velocity": 13,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 15,
+        "sell_through": 1
+      },
+      "sell_through": 0.19466666666666665,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 6000,
+        "total_supply": 1168
+      },
+      "ticker": "Recruits"
+    }
+  ],
   "win_rate_pct": 0.0
 }
