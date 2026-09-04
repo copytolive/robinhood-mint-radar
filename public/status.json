@@ -1,15 +1,16 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+    "collection": "0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
@@ -23,27 +24,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 6,
-      "mints_1m": 6,
-      "mints_5m": 6,
-      "mints_60m": 6,
-      "raw_units_1m": 6,
-      "raw_units_5m": 6,
-      "recent_mint_concentration": 0.5,
-      "unique_recent_minters": 2,
-      "velocity_1m": 6.0,
-      "velocity_5m": 1.2
+      "mints_15m": 8,
+      "mints_1m": 8,
+      "mints_5m": 8,
+      "mints_60m": 8,
+      "raw_units_1m": 8,
+      "raw_units_5m": 8,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 5,
+      "velocity_1m": 8.0,
+      "velocity_5m": 1.6
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Pixel Sloths",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Wasteland",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2,
+    "predicted_probability": 0.1037,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -58,7 +59,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xb2eb995ec7cc7de4f5294026477994e1d5ae4278",
+      "owner": "0x407f0404a8c648d24324cedc088510ccbf454c65",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +68,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 44,
+    "score": 30,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 9,
-      "price_asymmetry": 15,
+      "holder_growth": 2,
+      "mint_velocity": 12,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 1,
-      "sell_through": 7
+      "sell_through": 4
     },
-    "sell_through": 0.7221722172217222,
+    "sell_through": 0.41014101410141013,
     "standard": "ERC721",
     "supply": {
       "max_supply": 3333,
-      "total_supply": 2407
+      "total_supply": 1367
     },
-    "ticker": "PXS"
+    "ticker": "WLAND"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +93,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 54336064,
+    "latest_block": 54346093,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 54336054,
+    "safe_block": 54346083,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +108,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788532075,
+  "generated_at": 1788533093,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,40 +140,41 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.195,
+    "analysis_age_seconds": 2.39,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 9.461,
-    "from_block": 54335811,
+    "duration_seconds": 8.932,
+    "from_block": 54345889,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 124,
-    "lag_seconds": 9,
+    "lag_blocks": 75,
+    "lag_seconds": 10,
     "live_observations": 1,
-    "next_block": 54335931,
+    "next_block": 54346009,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 54335930,
+    "to_block": 54346008,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 54335811-54335930",
+  "status": "SCANNING 54345889-54346008",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+      "collection": "0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
@@ -186,27 +188,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 6,
-        "mints_1m": 6,
-        "mints_5m": 6,
-        "mints_60m": 6,
-        "raw_units_1m": 6,
-        "raw_units_5m": 6,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 6.0,
-        "velocity_5m": 1.2
+        "mints_15m": 8,
+        "mints_1m": 8,
+        "mints_5m": 8,
+        "mints_60m": 8,
+        "raw_units_1m": 8,
+        "raw_units_5m": 8,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 5,
+        "velocity_1m": 8.0,
+        "velocity_5m": 1.6
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Pixel Sloths",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x5f215b791eeb2bca10a39a9249f4b6611fc7f14a",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Wasteland",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xeb5cbe68a0fb8a0fb3660f152e98329a5b465c9d",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2,
+      "predicted_probability": 0.1037,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -221,7 +223,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xb2eb995ec7cc7de4f5294026477994e1d5ae4278",
+        "owner": "0x407f0404a8c648d24324cedc088510ccbf454c65",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,24 +232,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 44,
+      "score": 30,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 9,
-        "price_asymmetry": 15,
+        "holder_growth": 2,
+        "mint_velocity": 12,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 1,
-        "sell_through": 7
+        "sell_through": 4
       },
-      "sell_through": 0.7221722172217222,
+      "sell_through": 0.41014101410141013,
       "standard": "ERC721",
       "supply": {
         "max_supply": 3333,
-        "total_supply": 2407
+        "total_supply": 1367
       },
-      "ticker": "PXS"
+      "ticker": "WLAND"
     }
   ],
   "win_rate_pct": 0.0
