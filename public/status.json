@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "collection": "0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.625,
-      "unique_recent_minters": 2,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 12,
+      "mints_1m": 12,
+      "mints_5m": 12,
+      "mints_60m": 12,
+      "raw_units_1m": 12,
+      "raw_units_5m": 12,
+      "recent_mint_concentration": 0.1667,
+      "unique_recent_minters": 6,
+      "velocity_1m": 12.0,
+      "velocity_5m": 2.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Spy Inc. Recruits",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xa131dd641b4176be4d68a86cdc282184e471510f",
+    "name": "ART QUOTRONS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.3437,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x3b9fca07d05a7ab0a651893b29f50219cc594446",
+      "owner": "0xea066e2d4217448e3edf6469baecf450497b22aa",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 59,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 12,
+      "distribution": 3,
+      "holder_growth": 3,
+      "mint_velocity": 18,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 2
+      "sell_through": 9
     },
-    "sell_through": 0.29533333333333334,
+    "sell_through": 0.9288928892889289,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 6000,
-      "total_supply": 1772
+      "max_supply": 4444,
+      "total_supply": 4128
     },
-    "ticker": "Recruits"
+    "ticker": "ART QUOTRONS"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 54482218,
+    "latest_block": 54491348,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 54482208,
+    "safe_block": 54491338,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788546868,
+  "generated_at": 1788547794,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.751,
+    "analysis_age_seconds": 1.228,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 2.587,
-    "from_block": 54482065,
+    "duration_seconds": 5.036,
+    "from_block": 54491174,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
+    "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 24,
-    "lag_seconds": 2,
+    "lag_blocks": 45,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 54482185,
+    "next_block": 54491294,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 54482184,
-    "total_mint_units_stored": null
+    "to_block": 54491293,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 54482065-54482184",
+  "status": "SCANNING 54491174-54491293",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "collection": "0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.625,
-        "unique_recent_minters": 2,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 12,
+        "mints_1m": 12,
+        "mints_5m": 12,
+        "mints_60m": 12,
+        "raw_units_1m": 12,
+        "raw_units_5m": 12,
+        "recent_mint_concentration": 0.1667,
+        "unique_recent_minters": 6,
+        "velocity_1m": 12.0,
+        "velocity_5m": 2.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Spy Inc. Recruits",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xa131dd641b4176be4d68a86cdc282184e471510f",
+      "name": "ART QUOTRONS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xab6c80181a4e5b437e7d0d420fdbcc5fa760dbc5",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.3437,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x3b9fca07d05a7ab0a651893b29f50219cc594446",
+        "owner": "0xea066e2d4217448e3edf6469baecf450497b22aa",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 59,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 12,
+        "distribution": 3,
+        "holder_growth": 3,
+        "mint_velocity": 18,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 2
+        "sell_through": 9
       },
-      "sell_through": 0.29533333333333334,
+      "sell_through": 0.9288928892889289,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 6000,
-        "total_supply": 1772
+        "max_supply": 4444,
+        "total_supply": 4128
       },
-      "ticker": "Recruits"
+      "ticker": "ART QUOTRONS"
     }
   ],
   "win_rate_pct": 0.0
