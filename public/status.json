@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
+    "action": "WAIT",
+    "collection": "0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 1,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 1,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.00027
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 59,
-      "mints_1m": 59,
-      "mints_5m": 59,
-      "mints_60m": 59,
-      "raw_units_1m": 59,
-      "raw_units_5m": 59,
-      "recent_mint_concentration": 0.0169,
-      "unique_recent_minters": 59,
-      "velocity_1m": 59.0,
-      "velocity_5m": 11.8
+      "mints_15m": 25,
+      "mints_1m": 25,
+      "mints_5m": 25,
+      "mints_60m": 25,
+      "raw_units_1m": 25,
+      "raw_units_5m": 25,
+      "recent_mint_concentration": 0.2,
+      "unique_recent_minters": 5,
+      "velocity_1m": 25.0,
+      "velocity_5m": 5.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Nexus Robots",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
+    "name": "1 ETH FP",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.4757,
+    "predicted_probability": 0.3116,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xc3eb649888da9bd0f1fcecb5f3be6dd50b82df07",
+      "owner": "0x4c2400237ee537b96465aede8366fad455f5d762",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 70,
+    "score": 56,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 3,
+      "holder_growth": 2,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 1,
-      "sell_through": 8
+      "secondary_liquidity": 0,
+      "sell_through": 5
     },
-    "sell_through": 0.8242574257425742,
+    "sell_through": 0.5085508550855086,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 3663
+      "max_supply": 5555,
+      "total_supply": 2825
     },
-    "ticker": "NEXBOT"
+    "ticker": "1 ETH"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 54176984,
+    "latest_block": 54189424,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 54176974,
+    "safe_block": 54189414,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 143360,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788515984,
+  "generated_at": 1788517243,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -119,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 2
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -139,125 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.121,
-    "analysis_rows_considered": 3,
-    "analysis_rows_pruned": 4,
-    "blocks_processed": 184,
-    "duration_seconds": 6.252,
-    "from_block": 54176731,
+    "analysis_age_seconds": 1.78,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 3,
+    "blocks_processed": 120,
+    "duration_seconds": 2.495,
+    "from_block": 54189275,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 60,
-    "lag_seconds": 6,
-    "live_observations": 2,
-    "next_block": 54176915,
+    "lag_blocks": 20,
+    "lag_seconds": 2,
+    "live_observations": 1,
+    "next_block": 54189395,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 54176914,
-    "total_mint_units_stored": 0
+    "to_block": 54189394,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 54176731-54176914",
+  "status": "SCANNING 54189275-54189394",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
+      "action": "WAIT",
+      "collection": "0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
-      ],
-      "market": {
-        "floor_price": null,
-        "native_sales_24h": 1,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 1,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.00027
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 59,
-        "mints_1m": 59,
-        "mints_5m": 59,
-        "mints_60m": 59,
-        "raw_units_1m": 59,
-        "raw_units_5m": 59,
-        "recent_mint_concentration": 0.0169,
-        "unique_recent_minters": 59,
-        "velocity_1m": 59.0,
-        "velocity_5m": 11.8
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Nexus Robots",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0d9f18bd995aa14a335cd0056a04fbb4f0278834",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.4757,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xc3eb649888da9bd0f1fcecb5f3be6dd50b82df07",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 70,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 1,
-        "sell_through": 8
-      },
-      "sell_through": 0.8242574257425742,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 4444,
-        "total_supply": 3663
-      },
-      "ticker": "NEXBOT"
-    },
-    {
-      "action": "WATCH",
-      "collection": "0xebd5f0e0b0a622b0a5dc44dd9a39b107f6947a7e",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xebd5f0e0b0a622b0a5dc44dd9a39b107f6947a7e",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -270,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 63,
-        "mints_1m": 63,
-        "mints_5m": 63,
-        "mints_60m": 63,
-        "raw_units_1m": 63,
-        "raw_units_5m": 63,
-        "recent_mint_concentration": 0.0317,
-        "unique_recent_minters": 32,
-        "velocity_1m": 63.0,
-        "velocity_5m": 12.6
+        "mints_15m": 25,
+        "mints_1m": 25,
+        "mints_5m": 25,
+        "mints_60m": 25,
+        "raw_units_1m": 25,
+        "raw_units_5m": 25,
+        "recent_mint_concentration": 0.2,
+        "unique_recent_minters": 5,
+        "velocity_1m": 25.0,
+        "velocity_5m": 5.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Blue Whale Society",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xebd5f0e0b0a622b0a5dc44dd9a39b107f6947a7e",
+      "name": "1 ETH FP",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xfa23e1bf0a2fd4bad383c0ac3210beadcf80cdb5",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.3116,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -305,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x00e57dbc5b2e03f57874caf8c6004f5edf1d38df",
+        "owner": "0x4c2400237ee537b96465aede8366fad455f5d762",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -314,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 56,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
+        "distribution": 3,
+        "holder_growth": 2,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 5
       },
-      "sell_through": 0.1954995499549955,
+      "sell_through": 0.5085508550855086,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5555,
-        "total_supply": 1086
+        "total_supply": 2825
       },
-      "ticker": "Blue Whale"
+      "ticker": "1 ETH"
     }
   ],
   "win_rate_pct": 0.0
