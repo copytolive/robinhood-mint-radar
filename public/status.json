@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+    "collection": "0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 20,
-      "mints_1m": 20,
-      "mints_5m": 20,
-      "mints_60m": 20,
-      "raw_units_1m": 20,
-      "raw_units_5m": 20,
-      "recent_mint_concentration": 0.25,
-      "unique_recent_minters": 4,
-      "velocity_1m": 20.0,
-      "velocity_5m": 4.0
+      "mints_15m": 30,
+      "mints_1m": 30,
+      "mints_5m": 30,
+      "mints_60m": 30,
+      "raw_units_1m": 30,
+      "raw_units_5m": 30,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 30.0,
+      "velocity_5m": 6.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "GPU CORE",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+    "name": "2008 afternoon",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2525,
+    "predicted_probability": 0.2433,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x6ddc3c7d445f0edcd4233a1f1b79ca61ee60af93",
+      "owner": "0x2a98ac9a941bc2c301d62f5d50fd49029c048674",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 50,
+    "score": 49,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 2,
+      "holder_growth": 1,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 2
     },
-    "sell_through": 0.231237721021611,
+    "sell_through": 0.20169322709163345,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5090,
-      "total_supply": 1177
+      "max_supply": 2008,
+      "total_supply": 405
     },
-    "ticker": "CORE"
+    "ticker": "BTC"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55006957,
-    "latest_block_age_seconds": 1,
+    "latest_block": 55015772,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55006947,
+    "safe_block": 55015762,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788599813,
+  "generated_at": 1788600703,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.122,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 1.185,
+    "analysis_rows_considered": 1,
     "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 4.6,
-    "from_block": 55006783,
+    "duration_seconds": 8.935,
+    "from_block": 55015557,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 45,
-    "lag_seconds": 5,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 86,
+    "lag_seconds": 9,
     "live_observations": 1,
-    "next_block": 55006903,
+    "next_block": 55015677,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55006902,
+    "to_block": 55015676,
     "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55006783-55006902",
+  "status": "SCANNING 55015557-55015676",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+      "collection": "0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 20,
-        "mints_1m": 20,
-        "mints_5m": 20,
-        "mints_60m": 20,
-        "raw_units_1m": 20,
-        "raw_units_5m": 20,
-        "recent_mint_concentration": 0.25,
-        "unique_recent_minters": 4,
-        "velocity_1m": 20.0,
-        "velocity_5m": 4.0
+        "mints_15m": 30,
+        "mints_1m": 30,
+        "mints_5m": 30,
+        "mints_60m": 30,
+        "raw_units_1m": 30,
+        "raw_units_5m": 30,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 30.0,
+        "velocity_5m": 6.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "GPU CORE",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc4b06c0ee753d94a9d740e492bb6eabf55ae7b48",
+      "name": "2008 afternoon",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd83ee290e8c17b2c33f633a24d05f1f9e8b153e0",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2525,
+      "predicted_probability": 0.2433,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6ddc3c7d445f0edcd4233a1f1b79ca61ee60af93",
+        "owner": "0x2a98ac9a941bc2c301d62f5d50fd49029c048674",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 50,
+      "score": 49,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 2,
+        "holder_growth": 1,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 2
       },
-      "sell_through": 0.231237721021611,
+      "sell_through": 0.20169322709163345,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5090,
-        "total_supply": 1177
+        "max_supply": 2008,
+        "total_supply": 405
       },
-      "ticker": "CORE"
+      "ticker": "BTC"
     }
   ],
   "win_rate_pct": 0.0
