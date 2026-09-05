@@ -21,16 +21,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 19,
-      "mints_1m": 19,
-      "mints_5m": 19,
-      "mints_60m": 19,
-      "raw_units_1m": 19,
-      "raw_units_5m": 19,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 19.0,
-      "velocity_5m": 3.8
+      "mints_15m": 48,
+      "mints_1m": 48,
+      "mints_5m": 48,
+      "mints_60m": 48,
+      "raw_units_1m": 48,
+      "raw_units_5m": 48,
+      "recent_mint_concentration": 0.4167,
+      "unique_recent_minters": 6,
+      "velocity_1m": 48.0,
+      "velocity_5m": 9.6
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
@@ -41,7 +41,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1213,
+    "predicted_probability": 0.1615,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -65,22 +65,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 33,
+    "score": 39,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
+      "holder_growth": 3,
       "mint_velocity": 20,
       "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 2
+      "sell_through": 5
     },
-    "sell_through": 0.2781278127812781,
+    "sell_through": 0.5598559855985599,
     "standard": "ERC721",
     "supply": {
       "max_supply": 3333,
-      "total_supply": 927
+      "total_supply": 1866
     },
     "ticker": "KITTYZENS"
   },
@@ -90,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55327700,
+    "latest_block": 55338484,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55327690,
+    "safe_block": 55338474,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788632162,
+  "generated_at": 1788633250,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,27 +137,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.08,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 8,
+    "analysis_age_seconds": 2.189,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 11.488,
-    "from_block": 55327460,
+    "duration_seconds": 3.572,
+    "from_block": 55338325,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 111,
-    "lag_seconds": 11,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 30,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 55327580,
+    "next_block": 55338445,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55327579,
+    "to_block": 55338444,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55327460-55327579",
+  "status": "SCANNING 55338325-55338444",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -182,16 +182,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 19,
-        "mints_1m": 19,
-        "mints_5m": 19,
-        "mints_60m": 19,
-        "raw_units_1m": 19,
-        "raw_units_5m": 19,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 19.0,
-        "velocity_5m": 3.8
+        "mints_15m": 48,
+        "mints_1m": 48,
+        "mints_5m": 48,
+        "mints_60m": 48,
+        "raw_units_1m": 48,
+        "raw_units_5m": 48,
+        "recent_mint_concentration": 0.4167,
+        "unique_recent_minters": 6,
+        "velocity_1m": 48.0,
+        "velocity_5m": 9.6
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
@@ -202,7 +202,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1213,
+      "predicted_probability": 0.1615,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -226,22 +226,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 33,
+      "score": 39,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
+        "holder_growth": 3,
         "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 2
+        "sell_through": 5
       },
-      "sell_through": 0.2781278127812781,
+      "sell_through": 0.5598559855985599,
       "standard": "ERC721",
       "supply": {
         "max_supply": 3333,
-        "total_supply": 927
+        "total_supply": 1866
       },
       "ticker": "KITTYZENS"
     }
