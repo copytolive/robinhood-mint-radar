@@ -1,111 +1,27 @@
 {
-  "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x80246b20769f17cae30f0d2e2f74f5035136b966",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x80246b20769f17cae30f0d2e2f74f5035136b966",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 50,
-      "mints_1m": 50,
-      "mints_5m": 50,
-      "mints_60m": 50,
-      "raw_units_1m": 50,
-      "raw_units_5m": 50,
-      "recent_mint_concentration": 0.3,
-      "unique_recent_minters": 4,
-      "velocity_1m": 50.0,
-      "velocity_5m": 10.0
-    },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "Glphys on Robinhood",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x80246b20769f17cae30f0d2e2f74f5035136b966",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.1615,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0xbf37e96f6d298bcd24d04a643bdccb6230561610",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 39,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 2,
-      "mint_velocity": 20,
-      "price_asymmetry": 0,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 6
-    },
-    "sell_through": 0.6705670567056705,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 6666,
-      "total_supply": 4470
-    },
-    "ticker": "GPS"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55416535,
+    "latest_block": 55434686,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55416525,
+    "safe_block": 55434676,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788641128,
+  "generated_at": 1788642965,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,114 +53,28 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.988,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 1.469,
+    "analysis_rows_considered": 1,
     "analysis_rows_pruned": 1,
     "blocks_processed": 120,
-    "duration_seconds": 12.436,
-    "from_block": 55416252,
+    "duration_seconds": 7.94,
+    "from_block": 55434483,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 154,
-    "lag_seconds": 12,
-    "live_observations": 1,
-    "next_block": 55416372,
+    "lag_blocks": 74,
+    "lag_seconds": 8,
+    "live_observations": 0,
+    "next_block": 55434603,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55416371,
-    "total_mint_units_stored": 0
+    "to_block": 55434602,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55416252-55416371",
+  "status": "SCANNING 55434483-55434602",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WAIT",
-      "collection": "0x80246b20769f17cae30f0d2e2f74f5035136b966",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x80246b20769f17cae30f0d2e2f74f5035136b966",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 50,
-        "mints_1m": 50,
-        "mints_5m": 50,
-        "mints_60m": 50,
-        "raw_units_1m": 50,
-        "raw_units_5m": 50,
-        "recent_mint_concentration": 0.3,
-        "unique_recent_minters": 4,
-        "velocity_1m": 50.0,
-        "velocity_5m": 10.0
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Glphys on Robinhood",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x80246b20769f17cae30f0d2e2f74f5035136b966",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1615,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xbf37e96f6d298bcd24d04a643bdccb6230561610",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 39,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 20,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 6
-      },
-      "sell_through": 0.6705670567056705,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 6666,
-        "total_supply": 4470
-      },
-      "ticker": "GPS"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
