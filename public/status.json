@@ -1,27 +1,110 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xd1cda9e06764161772bc7840a1af6a0140557824",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd1cda9e06764161772bc7840a1af6a0140557824",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 24,
+      "mints_1m": 24,
+      "mints_5m": 24,
+      "mints_60m": 24,
+      "raw_units_1m": 24,
+      "raw_units_5m": 24,
+      "recent_mint_concentration": 0.2917,
+      "unique_recent_minters": 6,
+      "velocity_1m": 24.0,
+      "velocity_5m": 4.8
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "LILBEET",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd1cda9e06764161772bc7840a1af6a0140557824",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.2715,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x373ecae2f006c0eae761b1a416e23eedeca6ac0f",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 52,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 3,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 3
+    },
+    "sell_through": 0.36152753668928517,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 6337,
+      "total_supply": 2291
+    },
+    "ticker": "LILBEET"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55211493,
-    "latest_block_age_seconds": 0,
+    "latest_block": 55238017,
+    "latest_block_age_seconds": 6,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55211483,
+    "safe_block": 55238007,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788620433,
+  "generated_at": 1788623113,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +136,113 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.06,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 0,
+    "analysis_age_seconds": 4.662,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 8,
     "blocks_processed": 120,
-    "duration_seconds": 3.825,
-    "from_block": 55211313,
+    "duration_seconds": 11.278,
+    "from_block": 55237821,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 51,
-    "lag_seconds": 6,
-    "live_observations": 0,
-    "next_block": 55211433,
+    "hoodsea_launches_stored": null,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 67,
+    "lag_seconds": 7,
+    "live_observations": 1,
+    "next_block": 55237941,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55211432,
-    "total_mint_units_stored": 0
+    "to_block": 55237940,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55211313-55211432",
+  "status": "SCANNING 55237821-55237940",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xd1cda9e06764161772bc7840a1af6a0140557824",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd1cda9e06764161772bc7840a1af6a0140557824",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 24,
+        "mints_1m": 24,
+        "mints_5m": 24,
+        "mints_60m": 24,
+        "raw_units_1m": 24,
+        "raw_units_5m": 24,
+        "recent_mint_concentration": 0.2917,
+        "unique_recent_minters": 6,
+        "velocity_1m": 24.0,
+        "velocity_5m": 4.8
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "LILBEET",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd1cda9e06764161772bc7840a1af6a0140557824",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2715,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x373ecae2f006c0eae761b1a416e23eedeca6ac0f",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 52,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 3,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 3
+      },
+      "sell_through": 0.36152753668928517,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 6337,
+        "total_supply": 2291
+      },
+      "ticker": "LILBEET"
+    }
+  ],
   "win_rate_pct": 0.0
 }
