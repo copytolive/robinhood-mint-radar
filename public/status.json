@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+    "collection": "0xb5a5ec68868f234721c8953ae0763069b324f5dd",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -21,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 22,
-      "mints_1m": 22,
-      "mints_5m": 22,
-      "mints_60m": 22,
-      "raw_units_1m": 22,
-      "raw_units_5m": 22,
-      "recent_mint_concentration": 0.9091,
-      "unique_recent_minters": 2,
-      "velocity_1m": 22.0,
-      "velocity_5m": 4.4
+      "mints_15m": 55,
+      "mints_1m": 55,
+      "mints_5m": 55,
+      "mints_60m": 55,
+      "raw_units_1m": 55,
+      "raw_units_5m": 55,
+      "recent_mint_concentration": 0.3636,
+      "unique_recent_minters": 8,
+      "velocity_1m": 55.0,
+      "velocity_5m": 11.0
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "Android Mancers",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+    "name": "BIT Bunkos",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1405,
+    "predicted_probability": 0.2083,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x6ff2d34f9ebd05566b211ac64aa1890c52cc66e3",
+      "owner": "0x09c86a84d10b7eb13a0e41eb136aa4d4bded77f0",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 36,
+    "score": 45,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
+      "holder_growth": 4,
       "mint_velocity": 20,
       "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 4
+      "sell_through": 10
     },
-    "sell_through": 0.43534353435343537,
+    "sell_through": 1,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 1451
+      "max_supply": 2323,
+      "total_supply": 2323
     },
-    "ticker": "Android"
+    "ticker": "BB"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 56186237,
+    "latest_block": 56212406,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 56186227,
+    "safe_block": 56212396,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788718736,
+  "generated_at": 1788721376,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,38 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.393,
+    "analysis_age_seconds": 1.88,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 9,
     "blocks_processed": 120,
-    "duration_seconds": 9.104,
-    "from_block": 56186023,
+    "duration_seconds": 8.842,
+    "from_block": 56212197,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 85,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 80,
     "lag_seconds": 8,
-    "live_observations": 2,
-    "next_block": 56186143,
+    "live_observations": 1,
+    "next_block": 56212317,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 56186142,
+    "to_block": 56212316,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 56186023-56186142",
+  "status": "SCANNING 56212197-56212316",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+      "collection": "0xb5a5ec68868f234721c8953ae0763069b324f5dd",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -182,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 22,
-        "mints_1m": 22,
-        "mints_5m": 22,
-        "mints_60m": 22,
-        "raw_units_1m": 22,
-        "raw_units_5m": 22,
-        "recent_mint_concentration": 0.9091,
-        "unique_recent_minters": 2,
-        "velocity_1m": 22.0,
-        "velocity_5m": 4.4
+        "mints_15m": 55,
+        "mints_1m": 55,
+        "mints_5m": 55,
+        "mints_60m": 55,
+        "raw_units_1m": 55,
+        "raw_units_5m": 55,
+        "recent_mint_concentration": 0.3636,
+        "unique_recent_minters": 8,
+        "velocity_1m": 55.0,
+        "velocity_5m": 11.0
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Android Mancers",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf7a37ec0af35e0c1f6be210ab77b185c1e642e58",
+      "name": "BIT Bunkos",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1405,
+      "predicted_probability": 0.2083,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x6ff2d34f9ebd05566b211ac64aa1890c52cc66e3",
+        "owner": "0x09c86a84d10b7eb13a0e41eb136aa4d4bded77f0",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,109 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 36,
+      "score": 45,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 4,
         "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 4
+        "sell_through": 10
       },
-      "sell_through": 0.43534353435343537,
+      "sell_through": 1,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 1451
+        "max_supply": 2323,
+        "total_supply": 2323
       },
-      "ticker": "Android"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xcff7e1e6826ee0a0a22f9e131419ce0da59a53c5",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xcff7e1e6826ee0a0a22f9e131419ce0da59a53c5",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 35,
-        "mints_1m": 35,
-        "mints_5m": 35,
-        "mints_60m": 35,
-        "raw_units_1m": 35,
-        "raw_units_5m": 35,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 35.0,
-        "velocity_5m": 7.0
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "PonsBuns",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xcff7e1e6826ee0a0a22f9e131419ce0da59a53c5",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1094,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xae834ffa92f55425a9accfe1fa38e84ccf2bb40b",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 31,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.0634063406340634,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 9999,
-        "total_supply": 634
-      },
-      "ticker": "PonsBuns"
+      "ticker": "BB"
     }
   ],
   "win_rate_pct": 0.0
