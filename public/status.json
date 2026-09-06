@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+    "collection": "0xa03bc4041105872709c042a0d7aeb105cbeede72",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa03bc4041105872709c042a0d7aeb105cbeede72",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 16,
+      "mints_1m": 16,
+      "mints_5m": 16,
+      "mints_60m": 16,
+      "raw_units_1m": 16,
+      "raw_units_5m": 16,
+      "recent_mint_concentration": 0.9375,
+      "unique_recent_minters": 2,
+      "velocity_1m": 16.0,
+      "velocity_5m": 3.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "[ Limited edition ] QUOTRONS",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+    "name": "BitShadowz",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa03bc4041105872709c042a0d7aeb105cbeede72",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2,
+    "predicted_probability": 0.3116,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x7134225e22adbb504708d8b6f729035fda69e297",
+      "owner": "0x73d3b5c0c04da5876242a32e03d21a1e3b4d9bfc",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 44,
+    "score": 56,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "holder_growth": 1,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 3
+      "sell_through": 9
     },
-    "sell_through": 0.39953995399539954,
+    "sell_through": 0.9222322232223222,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 9999,
-      "total_supply": 3995
+      "max_supply": 5555,
+      "total_supply": 5123
     },
-    "ticker": "9"
+    "ticker": "BitShadowz"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55528156,
+    "latest_block": 55541892,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55528146,
+    "safe_block": 55541882,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788652386,
+  "generated_at": 1788653776,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.568,
+    "analysis_age_seconds": 2.356,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_rows_pruned": 1,
     "blocks_processed": 120,
-    "duration_seconds": 10.616,
-    "from_block": 55527932,
+    "duration_seconds": 3.725,
+    "from_block": 55541732,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 95,
-    "lag_seconds": 9,
+    "lag_blocks": 31,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 55528052,
+    "next_block": 55541852,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55528051,
-    "total_mint_units_stored": 0
+    "to_block": 55541851,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55527932-55528051",
+  "status": "SCANNING 55541732-55541851",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+      "collection": "0xa03bc4041105872709c042a0d7aeb105cbeede72",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa03bc4041105872709c042a0d7aeb105cbeede72",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 16,
+        "mints_1m": 16,
+        "mints_5m": 16,
+        "mints_60m": 16,
+        "raw_units_1m": 16,
+        "raw_units_5m": 16,
+        "recent_mint_concentration": 0.9375,
+        "unique_recent_minters": 2,
+        "velocity_1m": 16.0,
+        "velocity_5m": 3.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "[ Limited edition ] QUOTRONS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc82d61b84cda063c1c9a6ff6baf653406c0b00ee",
+      "name": "BitShadowz",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa03bc4041105872709c042a0d7aeb105cbeede72",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2,
+      "predicted_probability": 0.3116,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x7134225e22adbb504708d8b6f729035fda69e297",
+        "owner": "0x73d3b5c0c04da5876242a32e03d21a1e3b4d9bfc",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 44,
+      "score": 56,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "holder_growth": 1,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 9
       },
-      "sell_through": 0.39953995399539954,
+      "sell_through": 0.9222322232223222,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 9999,
-        "total_supply": 3995
+        "max_supply": 5555,
+        "total_supply": 5123
       },
-      "ticker": "9"
+      "ticker": "BitShadowz"
     }
   ],
   "win_rate_pct": 0.0
