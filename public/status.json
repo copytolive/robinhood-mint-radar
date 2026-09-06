@@ -23,16 +23,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 12,
-      "mints_1m": 12,
-      "mints_5m": 12,
-      "mints_60m": 12,
-      "raw_units_1m": 12,
-      "raw_units_5m": 12,
-      "recent_mint_concentration": 0.1667,
-      "unique_recent_minters": 6,
-      "velocity_1m": 12.0,
-      "velocity_5m": 2.4
+      "mints_15m": 4,
+      "mints_1m": 4,
+      "mints_5m": 4,
+      "mints_60m": 4,
+      "raw_units_1m": 4,
+      "raw_units_5m": 4,
+      "recent_mint_concentration": 0.5,
+      "unique_recent_minters": 2,
+      "velocity_1m": 4.0,
+      "velocity_5m": 0.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -43,7 +43,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3013,
+    "predicted_probability": 0.1543,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -67,22 +67,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 55,
+    "score": 38,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 3,
-      "mint_velocity": 18,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 6,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 1,
       "sell_through": 4
     },
-    "sell_through": 0.4378937893789379,
+    "sell_through": 0.4980873087308731,
     "standard": "ERC721",
     "supply": {
       "max_supply": 8888,
-      "total_supply": 3892
+      "total_supply": 4427
     },
     "ticker": "SORA"
   },
@@ -92,12 +92,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 55595996,
-    "latest_block_age_seconds": 5,
+    "latest_block": 55603571,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 55595986,
+    "safe_block": 55603561,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788659233,
+  "generated_at": 1788659992,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,27 +139,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 4.225,
+    "analysis_age_seconds": 5.318,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 11.666,
-    "from_block": 55595796,
+    "duration_seconds": 11.607,
+    "from_block": 55603306,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 71,
-    "lag_seconds": 7,
+    "lag_blocks": 136,
+    "lag_seconds": 14,
     "live_observations": 1,
-    "next_block": 55595916,
+    "next_block": 55603426,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 55595915,
+    "to_block": 55603425,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 55595796-55595915",
+  "status": "SCANNING 55603306-55603425",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -186,16 +186,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 12,
-        "mints_1m": 12,
-        "mints_5m": 12,
-        "mints_60m": 12,
-        "raw_units_1m": 12,
-        "raw_units_5m": 12,
-        "recent_mint_concentration": 0.1667,
-        "unique_recent_minters": 6,
-        "velocity_1m": 12.0,
-        "velocity_5m": 2.4
+        "mints_15m": 4,
+        "mints_1m": 4,
+        "mints_5m": 4,
+        "mints_60m": 4,
+        "raw_units_1m": 4,
+        "raw_units_5m": 4,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
+        "velocity_1m": 4.0,
+        "velocity_5m": 0.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -206,7 +206,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3013,
+      "predicted_probability": 0.1543,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -230,22 +230,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 55,
+      "score": 38,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 3,
-        "mint_velocity": 18,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 6,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 1,
         "sell_through": 4
       },
-      "sell_through": 0.4378937893789379,
+      "sell_through": 0.4980873087308731,
       "standard": "ERC721",
       "supply": {
         "max_supply": 8888,
-        "total_supply": 3892
+        "total_supply": 4427
       },
       "ticker": "SORA"
     }
