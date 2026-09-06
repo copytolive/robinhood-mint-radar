@@ -10,7 +10,6 @@
     "explorer_url": "https://robinhoodchain.blockscout.com/address/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
@@ -24,19 +23,19 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 3,
-      "mints_1m": 3,
-      "mints_5m": 3,
-      "mints_60m": 3,
-      "raw_units_1m": 3,
-      "raw_units_5m": 3,
-      "recent_mint_concentration": 0.3333,
-      "unique_recent_minters": 3,
-      "velocity_1m": 3.0,
-      "velocity_5m": 0.6
+      "mints_15m": 6,
+      "mints_1m": 6,
+      "mints_5m": 6,
+      "mints_60m": 6,
+      "raw_units_1m": 6,
+      "raw_units_5m": 6,
+      "recent_mint_concentration": 0.1667,
+      "unique_recent_minters": 6,
+      "velocity_1m": 6.0,
+      "velocity_5m": 1.2
     },
-    "mint_price_eth": null,
-    "mint_price_source": "CONTRACT",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
     "name": "Stats",
     "opensea_url": "https://opensea.io/assets/robinhood/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
     "ownership": {
@@ -44,7 +43,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.0536,
+    "predicted_probability": 0.2083,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -68,22 +67,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 19,
+    "score": 45,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 4,
-      "price_asymmetry": 0,
+      "distribution": 3,
+      "holder_growth": 3,
+      "mint_velocity": 9,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 1,
-      "sell_through": 2
+      "sell_through": 3
     },
-    "sell_through": 0.2634,
+    "sell_through": 0.3956,
     "standard": "ERC721",
     "supply": {
       "max_supply": 5000,
-      "total_supply": 1317
+      "total_supply": 1978
     },
     "ticker": "Stats5000"
   },
@@ -93,12 +92,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 56221900,
+    "latest_block": 56229697,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 56221890,
+    "safe_block": 56229687,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -108,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788722337,
+  "generated_at": 1788723126,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -140,27 +139,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.159,
+    "analysis_age_seconds": 1.965,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 4.735,
-    "from_block": 56221727,
+    "duration_seconds": 9.183,
+    "from_block": 56229483,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 44,
-    "lag_seconds": 4,
+    "lag_blocks": 85,
+    "lag_seconds": 9,
     "live_observations": 1,
-    "next_block": 56221847,
+    "next_block": 56229603,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 56221846,
+    "to_block": 56229602,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 56221727-56221846",
+  "status": "SCANNING 56229483-56229602",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -174,7 +173,6 @@
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
@@ -188,19 +186,19 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 3,
-        "mints_1m": 3,
-        "mints_5m": 3,
-        "mints_60m": 3,
-        "raw_units_1m": 3,
-        "raw_units_5m": 3,
-        "recent_mint_concentration": 0.3333,
-        "unique_recent_minters": 3,
-        "velocity_1m": 3.0,
-        "velocity_5m": 0.6
+        "mints_15m": 6,
+        "mints_1m": 6,
+        "mints_5m": 6,
+        "mints_60m": 6,
+        "raw_units_1m": 6,
+        "raw_units_5m": 6,
+        "recent_mint_concentration": 0.1667,
+        "unique_recent_minters": 6,
+        "velocity_1m": 6.0,
+        "velocity_5m": 1.2
       },
-      "mint_price_eth": null,
-      "mint_price_source": "CONTRACT",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
       "name": "Stats",
       "opensea_url": "https://opensea.io/assets/robinhood/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
       "ownership": {
@@ -208,7 +206,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.0536,
+      "predicted_probability": 0.2083,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -232,22 +230,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 19,
+      "score": 45,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 4,
-        "price_asymmetry": 0,
+        "distribution": 3,
+        "holder_growth": 3,
+        "mint_velocity": 9,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 1,
-        "sell_through": 2
+        "sell_through": 3
       },
-      "sell_through": 0.2634,
+      "sell_through": 0.3956,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5000,
-        "total_supply": 1317
+        "total_supply": 1978
       },
       "ticker": "Stats5000"
     }
