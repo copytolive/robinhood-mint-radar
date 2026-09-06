@@ -1,62 +1,65 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+    "collection": "0x49f1de435b330fc94d396c2c68b5698987c3daa2",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
       "MINT_PRICE_UNKNOWN",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 0,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 1,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 55,
-      "mints_1m": 55,
-      "mints_5m": 55,
-      "mints_60m": 55,
-      "raw_units_1m": 55,
-      "raw_units_5m": 55,
-      "recent_mint_concentration": 0.3636,
-      "unique_recent_minters": 8,
-      "velocity_1m": 55.0,
-      "velocity_5m": 11.0
+      "mints_15m": 3,
+      "mints_1m": 3,
+      "mints_5m": 3,
+      "mints_60m": 3,
+      "raw_units_1m": 3,
+      "raw_units_5m": 3,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 3.0,
+      "velocity_5m": 0.6
     },
     "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "BIT Bunkos",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+    "mint_price_source": "CONTRACT",
+    "name": "Stats",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2083,
+    "predicted_probability": 0.0536,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x09c86a84d10b7eb13a0e41eb136aa4d4bded77f0",
+      "owner": "0x858e26f9858120ffb4b9416630868b5bc3f09ac9",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +68,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 45,
+    "score": 19,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 4,
-      "mint_velocity": 20,
+      "holder_growth": 1,
+      "mint_velocity": 4,
       "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 10
+      "secondary_liquidity": 1,
+      "sell_through": 2
     },
-    "sell_through": 1,
+    "sell_through": 0.2634,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2323,
-      "total_supply": 2323
+      "max_supply": 5000,
+      "total_supply": 1317
     },
-    "ticker": "BB"
+    "ticker": "Stats5000"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,12 +93,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 56212406,
+    "latest_block": 56221900,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 56212396,
+    "safe_block": 56221890,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -105,7 +108,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788721376,
+  "generated_at": 1788722337,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,87 +140,90 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.88,
+    "analysis_age_seconds": 3.159,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 9,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 8.842,
-    "from_block": 56212197,
+    "duration_seconds": 4.735,
+    "from_block": 56221727,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 80,
-    "lag_seconds": 8,
+    "lag_blocks": 44,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 56212317,
+    "next_block": 56221847,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 56212316,
+    "to_block": 56221846,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 56212197-56212316",
+  "status": "SCANNING 56221727-56221846",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+      "collection": "0x49f1de435b330fc94d396c2c68b5698987c3daa2",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
+        "floor_price": null,
+        "native_sales_24h": 0,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 1,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 55,
-        "mints_1m": 55,
-        "mints_5m": 55,
-        "mints_60m": 55,
-        "raw_units_1m": 55,
-        "raw_units_5m": 55,
-        "recent_mint_concentration": 0.3636,
-        "unique_recent_minters": 8,
-        "velocity_1m": 55.0,
-        "velocity_5m": 11.0
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "BIT Bunkos",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb5a5ec68868f234721c8953ae0763069b324f5dd",
+      "mint_price_source": "CONTRACT",
+      "name": "Stats",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x49f1de435b330fc94d396c2c68b5698987c3daa2",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2083,
+      "predicted_probability": 0.0536,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "SECONDARY_MARKET_OBSERVED"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x09c86a84d10b7eb13a0e41eb136aa4d4bded77f0",
+        "owner": "0x858e26f9858120ffb4b9416630868b5bc3f09ac9",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,24 +232,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 45,
+      "score": 19,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 4,
-        "mint_velocity": 20,
+        "holder_growth": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 10
+        "secondary_liquidity": 1,
+        "sell_through": 2
       },
-      "sell_through": 1,
+      "sell_through": 0.2634,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2323,
-        "total_supply": 2323
+        "max_supply": 5000,
+        "total_supply": 1317
       },
-      "ticker": "BB"
+      "ticker": "Stats5000"
     }
   ],
   "win_rate_pct": 0.0
