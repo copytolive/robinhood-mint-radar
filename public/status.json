@@ -1,61 +1,64 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+    "collection": "0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 0,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 1,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 251,
-      "mints_1m": 251,
-      "mints_5m": 251,
-      "mints_60m": 251,
-      "raw_units_1m": 251,
-      "raw_units_5m": 251,
-      "recent_mint_concentration": 0.996,
-      "unique_recent_minters": 2,
-      "velocity_1m": 251.0,
-      "velocity_5m": 50.2
+      "mints_15m": 5,
+      "mints_1m": 5,
+      "mints_5m": 5,
+      "mints_60m": 5,
+      "raw_units_1m": 5,
+      "raw_units_5m": 5,
+      "recent_mint_concentration": 0.4,
+      "unique_recent_minters": 3,
+      "velocity_1m": 5.0,
+      "velocity_5m": 1.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "ACTIVE CHAD",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+    "name": "Clay Ducks",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2619,
+    "predicted_probability": 0.1615,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x695b64d26541fc03955a8d9f147070b97d82b62a",
+      "owner": "0xfe5026a3cf6de9d9d3acd33b012e930d47dbe406",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +67,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 51,
+    "score": 39,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 1,
-      "mint_velocity": 20,
+      "mint_velocity": 7,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 0,
+      "secondary_liquidity": 1,
       "sell_through": 4
     },
-    "sell_through": 0.42508038585209,
+    "sell_through": 0.43312331233123313,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 1555,
-      "total_supply": 661
+      "max_supply": 5555,
+      "total_supply": 2406
     },
-    "ticker": "AC"
+    "ticker": "CD"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +92,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 57297319,
-    "latest_block_age_seconds": 5,
+    "latest_block": 57308131,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 57297309,
+    "safe_block": 57308121,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 319488,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788830847,
+  "generated_at": 1788831937,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,86 +139,89 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.424,
+    "analysis_age_seconds": 1.145,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 7.788,
-    "from_block": 57297158,
+    "duration_seconds": 6.2,
+    "from_block": 57307941,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 1,
-    "lag_blocks": 32,
-    "lag_seconds": 3,
+    "lag_blocks": 61,
+    "lag_seconds": 6,
     "live_observations": 1,
-    "next_block": 57297278,
+    "next_block": 57308061,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 57297277,
+    "to_block": 57308060,
     "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 57297158-57297277",
+  "status": "SCANNING 57307941-57308060",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+      "collection": "0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
+        "floor_price": null,
+        "native_sales_24h": 0,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 1,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 251,
-        "mints_1m": 251,
-        "mints_5m": 251,
-        "mints_60m": 251,
-        "raw_units_1m": 251,
-        "raw_units_5m": 251,
-        "recent_mint_concentration": 0.996,
-        "unique_recent_minters": 2,
-        "velocity_1m": 251.0,
-        "velocity_5m": 50.2
+        "mints_15m": 5,
+        "mints_1m": 5,
+        "mints_5m": 5,
+        "mints_60m": 5,
+        "raw_units_1m": 5,
+        "raw_units_5m": 5,
+        "recent_mint_concentration": 0.4,
+        "unique_recent_minters": 3,
+        "velocity_1m": 5.0,
+        "velocity_5m": 1.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ACTIVE CHAD",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x7169541a9c2593937e5b2fe3bd5cbfd6489926ad",
+      "name": "Clay Ducks",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2619,
+      "predicted_probability": 0.1615,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "SECONDARY_MARKET_OBSERVED"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x695b64d26541fc03955a8d9f147070b97d82b62a",
+        "owner": "0xfe5026a3cf6de9d9d3acd33b012e930d47dbe406",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +230,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 51,
+      "score": 39,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 1,
-        "mint_velocity": 20,
+        "mint_velocity": 7,
         "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 0,
+        "secondary_liquidity": 1,
         "sell_through": 4
       },
-      "sell_through": 0.42508038585209,
+      "sell_through": 0.43312331233123313,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 1555,
-        "total_supply": 661
+        "max_supply": 5555,
+        "total_supply": 2406
       },
-      "ticker": "AC"
+      "ticker": "CD"
     }
   ],
   "win_rate_pct": 0.0
