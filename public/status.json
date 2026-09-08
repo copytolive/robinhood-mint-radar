@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
+    "collection": "0xfeac1e6919269513648a918e886ef3d6deea6acf",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfeac1e6919269513648a918e886ef3d6deea6acf",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 0,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 1,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 4,
-      "mints_1m": 4,
-      "mints_5m": 4,
-      "mints_60m": 4,
-      "raw_units_1m": 4,
-      "raw_units_5m": 4,
-      "recent_mint_concentration": 0.25,
-      "unique_recent_minters": 4,
-      "velocity_1m": 4.0,
-      "velocity_5m": 0.8
+      "mints_15m": 8,
+      "mints_1m": 8,
+      "mints_5m": 8,
+      "mints_60m": 8,
+      "raw_units_1m": 8,
+      "raw_units_5m": 8,
+      "recent_mint_concentration": 0.5,
+      "unique_recent_minters": 2,
+      "velocity_1m": 8.0,
+      "velocity_5m": 1.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Clay Ducks",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
+    "name": "Kageuri",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xfeac1e6919269513648a918e886ef3d6deea6acf",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1841,
+    "predicted_probability": 0.1615,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xfe5026a3cf6de9d9d3acd33b012e930d47dbe406",
+      "owner": "0xf049353ef90072caa682cb5b8955b04731c97bdd",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 42,
+    "score": 39,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 2,
-      "mint_velocity": 6,
+      "holder_growth": 1,
+      "mint_velocity": 12,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 1,
-      "sell_through": 7
+      "secondary_liquidity": 0,
+      "sell_through": 0
     },
-    "sell_through": 0.7632763276327633,
+    "sell_through": 0.0036003600360036,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 4240
+      "max_supply": 4444,
+      "total_supply": 16
     },
-    "ticker": "CD"
+    "ticker": "Kageuri"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 57413785,
+    "latest_block": 57422204,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 57413775,
+    "safe_block": 57422194,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788842595,
+  "generated_at": 1788843445,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,29 +136,113 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.744,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 1.836,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 3.09,
-    "from_block": 57413632,
+    "duration_seconds": 2.883,
+    "from_block": 57422050,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 24,
-    "lag_seconds": 3,
-    "live_observations": 1,
-    "next_block": 57413752,
+    "lag_blocks": 25,
+    "lag_seconds": 2,
+    "live_observations": 2,
+    "next_block": 57422170,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 57413751,
+    "to_block": 57422169,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 57413632-57413751",
+  "status": "SCANNING 57422050-57422169",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xfeac1e6919269513648a918e886ef3d6deea6acf",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xfeac1e6919269513648a918e886ef3d6deea6acf",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 8,
+        "mints_1m": 8,
+        "mints_5m": 8,
+        "mints_60m": 8,
+        "raw_units_1m": 8,
+        "raw_units_5m": 8,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
+        "velocity_1m": 8.0,
+        "velocity_5m": 1.6
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Kageuri",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xfeac1e6919269513648a918e886ef3d6deea6acf",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1615,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xf049353ef90072caa682cb5b8955b04731c97bdd",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 39,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 12,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": 0.0036003600360036,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 4444,
+        "total_supply": 16
+      },
+      "ticker": "Kageuri"
+    },
     {
       "action": "WAIT",
       "collection": "0x432236bf23782d1208effbcf73f38ed9f70ba4f2",
@@ -186,16 +267,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 4,
-        "mints_1m": 4,
-        "mints_5m": 4,
-        "mints_60m": 4,
-        "raw_units_1m": 4,
-        "raw_units_5m": 4,
-        "recent_mint_concentration": 0.25,
-        "unique_recent_minters": 4,
-        "velocity_1m": 4.0,
-        "velocity_5m": 0.8
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "raw_units_1m": 1,
+        "raw_units_5m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -206,7 +287,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1841,
+      "predicted_probability": 0.1405,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -230,22 +311,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 42,
+      "score": 36,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 6,
+        "holder_growth": 0,
+        "mint_velocity": 1,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 1,
-        "sell_through": 7
+        "sell_through": 8
       },
-      "sell_through": 0.7632763276327633,
+      "sell_through": 0.8963096309630963,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5555,
-        "total_supply": 4240
+        "total_supply": 4979
       },
       "ticker": "CD"
     }
