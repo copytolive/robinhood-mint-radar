@@ -1,61 +1,65 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
+    "action": "WAIT",
+    "collection": "0x47f268a75c54685df20921ecd3a754fcc0f074fe",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x47f268a75c54685df20921ecd3a754fcc0f074fe",
     "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
+      "floor_price": null,
+      "native_sales_24h": 11,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 11,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.000551
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 52,
-      "mints_1m": 52,
-      "mints_5m": 52,
-      "mints_60m": 52,
-      "raw_units_1m": 52,
-      "raw_units_5m": 52,
-      "recent_mint_concentration": 0.0385,
-      "unique_recent_minters": 26,
-      "velocity_1m": 52.0,
-      "velocity_5m": 10.4
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "No-sell Skellies",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "The Violet Floor",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x47f268a75c54685df20921ecd3a754fcc0f074fe",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.1763,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "LOW",
+      "confidence": "HIGH",
       "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        "SECONDARY_MARKET_OBSERVED"
       ],
-      "state": "REVIEW"
+      "state": "PASS"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xd86588b87c2b6b362c00b855b80586ef062ee4f3",
+      "owner": "0x5cf29e070b640611c6845bad3bada77019246cd5",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +68,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 41,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 0,
+      "secondary_liquidity": 15,
       "sell_through": 0
     },
-    "sell_through": 0.05119261926192619,
+    "sell_through": 0.08748874887488749,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 8888,
-      "total_supply": 455
+      "max_supply": 5555,
+      "total_supply": 486
     },
-    "ticker": "NOSELL"
+    "ticker": "TVF"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +93,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 58791179,
+    "latest_block": 58799847,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 58791169,
+    "safe_block": 58799837,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +108,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788981568,
+  "generated_at": 1788982441,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +120,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,113 +140,29 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.271,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 2.682,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 7,
     "blocks_processed": 120,
-    "duration_seconds": 3.011,
-    "from_block": 58791025,
+    "duration_seconds": 4.303,
+    "from_block": 58799678,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 25,
-    "lag_seconds": 3,
-    "live_observations": 2,
-    "next_block": 58791145,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
+    "live_observations": 1,
+    "next_block": 58799798,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 58791144,
+    "to_block": 58799797,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 58791025-58791144",
+  "status": "SCANNING 58799678-58799797",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
-    {
-      "action": "WATCH",
-      "collection": "0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 52,
-        "mints_1m": 52,
-        "mints_5m": 52,
-        "mints_60m": 52,
-        "raw_units_1m": 52,
-        "raw_units_5m": 52,
-        "recent_mint_concentration": 0.0385,
-        "unique_recent_minters": 26,
-        "velocity_1m": 52.0,
-        "velocity_5m": 10.4
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "No-sell Skellies",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0eacd8cfe22d84380a1c75f41635751dfaa669ce",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3661,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0xd86588b87c2b6b362c00b855b80586ef062ee4f3",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 61,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.05119261926192619,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 8888,
-        "total_supply": 455
-      },
-      "ticker": "NOSELL"
-    },
     {
       "action": "WAIT",
       "collection": "0x47f268a75c54685df20921ecd3a754fcc0f074fe",
@@ -253,30 +173,34 @@
       },
       "explorer_url": "https://robinhoodchain.blockscout.com/address/0x47f268a75c54685df20921ecd3a754fcc0f074fe",
       "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
+        "floor_price": null,
+        "native_sales_24h": 11,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 11,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.000551
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 35,
-        "mints_1m": 35,
-        "mints_5m": 35,
-        "mints_60m": 35,
-        "raw_units_1m": 35,
-        "raw_units_5m": 35,
-        "recent_mint_concentration": 0.5714,
-        "unique_recent_minters": 3,
-        "velocity_1m": 35.0,
-        "velocity_5m": 7.0
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
       "name": "The Violet Floor",
       "opensea_url": "https://opensea.io/assets/robinhood/0x47f268a75c54685df20921ecd3a754fcc0f074fe",
       "ownership": {
@@ -284,15 +208,15 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "LOW",
+        "confidence": "HIGH",
         "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+          "SECONDARY_MARKET_OBSERVED"
         ],
-        "state": "REVIEW"
+        "state": "PASS"
       },
       "safety": {
         "capabilities": [],
@@ -308,22 +232,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "holder_growth": 0,
+        "mint_velocity": 15,
+        "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 0,
+        "secondary_liquidity": 15,
         "sell_through": 0
       },
-      "sell_through": 0.030423042304230423,
+      "sell_through": 0.08748874887488749,
       "standard": "ERC721",
       "supply": {
         "max_supply": 5555,
-        "total_supply": 169
+        "total_supply": 486
       },
       "ticker": "TVF"
     }
