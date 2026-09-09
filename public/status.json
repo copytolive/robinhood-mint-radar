@@ -1,17 +1,101 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 36,
+      "mints_1m": 36,
+      "mints_5m": 36,
+      "mints_60m": 36,
+      "raw_units_1m": 36,
+      "raw_units_5m": 36,
+      "recent_mint_concentration": 0.1111,
+      "unique_recent_minters": 16,
+      "velocity_1m": 36.0,
+      "velocity_5m": 7.2
+    },
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Artificial Inu",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.2343,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x190142aae74860719a0c35b9c1fa409ebfc9027f",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 48,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 3,
+      "holder_growth": 8,
+      "mint_velocity": 20,
+      "price_asymmetry": 0,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 6
+    },
+    "sell_through": 0.6112736273627363,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 8888,
+      "total_supply": 5433
+    },
+    "ticker": "AI"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 58204924,
+    "latest_block": 58216419,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 58204914,
+    "safe_block": 58216409,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788922416,
+  "generated_at": 1788923576,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +137,114 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.052,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 2,
+    "analysis_age_seconds": 6.622,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 0.85,
-    "from_block": 58204790,
+    "duration_seconds": 12.43,
+    "from_block": 58216175,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 5,
-    "lag_seconds": 0,
-    "live_observations": 0,
-    "next_block": 58204910,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 115,
+    "lag_seconds": 12,
+    "live_observations": 1,
+    "next_block": 58216295,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 58204909,
+    "to_block": 58216294,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 58204790-58204909",
+  "status": "SCANNING 58216175-58216294",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 36,
+        "mints_1m": 36,
+        "mints_5m": 36,
+        "mints_60m": 36,
+        "raw_units_1m": 36,
+        "raw_units_5m": 36,
+        "recent_mint_concentration": 0.1111,
+        "unique_recent_minters": 16,
+        "velocity_1m": 36.0,
+        "velocity_5m": 7.2
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Artificial Inu",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x28c9662b0b07c2fcfee79fce0c68e34c9f72a088",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2343,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x190142aae74860719a0c35b9c1fa409ebfc9027f",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 48,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 8,
+        "mint_velocity": 20,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 6
+      },
+      "sell_through": 0.6112736273627363,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 8888,
+        "total_supply": 5433
+      },
+      "ticker": "AI"
+    }
+  ],
   "win_rate_pct": 0.0
 }
