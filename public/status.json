@@ -15,25 +15,25 @@
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 3,
+      "native_sales_24h": 0,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 5,
+      "sales_24h": 1,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.001799
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 7,
-      "mints_1m": 7,
-      "mints_5m": 7,
-      "mints_60m": 7,
-      "raw_units_1m": 7,
-      "raw_units_5m": 7,
-      "recent_mint_concentration": 0.1429,
-      "unique_recent_minters": 7,
-      "velocity_1m": 7.0,
-      "velocity_5m": 1.4
+      "mints_15m": 3,
+      "mints_1m": 3,
+      "mints_5m": 3,
+      "mints_60m": 3,
+      "raw_units_1m": 3,
+      "raw_units_5m": 3,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 3.0,
+      "velocity_5m": 0.6
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
@@ -44,7 +44,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1473,
+    "predicted_probability": 0.061,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -68,22 +68,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 37,
+    "score": 21,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 3,
-      "mint_velocity": 10,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 4,
       "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 7,
-      "sell_through": 3
+      "secondary_liquidity": 1,
+      "sell_through": 4
     },
-    "sell_through": 0.3827,
+    "sell_through": 0.4129,
     "standard": "ERC721",
     "supply": {
       "max_supply": 10000,
-      "total_supply": 3827
+      "total_supply": 4129
     },
     "ticker": "EBRC"
   },
@@ -93,22 +93,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 58729420,
+    "latest_block": 58738113,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 58729410,
+    "safe_block": 58738103,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788975339,
+  "generated_at": 1788976217,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -140,27 +140,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.783,
+    "analysis_age_seconds": 1.378,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 9,
     "blocks_processed": 120,
-    "duration_seconds": 5.933,
-    "from_block": 58729242,
+    "duration_seconds": 5.956,
+    "from_block": 58737929,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
+    "hoodsea_launches_stored": 0,
     "irrelevant_filtered": 0,
-    "lag_blocks": 49,
-    "lag_seconds": 5,
+    "lag_blocks": 55,
+    "lag_seconds": 6,
     "live_observations": 1,
-    "next_block": 58729362,
+    "next_block": 58738049,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 58729361,
-    "total_mint_units_stored": null
+    "to_block": 58738048,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 58729242-58729361",
+  "status": "SCANNING 58737929-58738048",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -179,25 +179,25 @@
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 3,
+        "native_sales_24h": 0,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 5,
+        "sales_24h": 1,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.001799
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 7,
-        "mints_1m": 7,
-        "mints_5m": 7,
-        "mints_60m": 7,
-        "raw_units_1m": 7,
-        "raw_units_5m": 7,
-        "recent_mint_concentration": 0.1429,
-        "unique_recent_minters": 7,
-        "velocity_1m": 7.0,
-        "velocity_5m": 1.4
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
@@ -208,7 +208,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1473,
+      "predicted_probability": 0.061,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -232,22 +232,22 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 37,
+      "score": 21,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 3,
-        "mint_velocity": 10,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 4,
         "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 7,
-        "sell_through": 3
+        "secondary_liquidity": 1,
+        "sell_through": 4
       },
-      "sell_through": 0.3827,
+      "sell_through": 0.4129,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 3827
+        "total_supply": 4129
       },
       "ticker": "EBRC"
     }
