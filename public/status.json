@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+    "action": "WATCH",
+    "collection": "0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 15,
-      "mints_1m": 15,
-      "mints_5m": 15,
-      "mints_60m": 15,
-      "raw_units_1m": 15,
-      "raw_units_5m": 15,
-      "recent_mint_concentration": 0.3333,
-      "unique_recent_minters": 3,
-      "velocity_1m": 15.0,
-      "velocity_5m": 3.0
+      "mints_15m": 184,
+      "mints_1m": 184,
+      "mints_5m": 184,
+      "mints_60m": 184,
+      "raw_units_1m": 184,
+      "raw_units_5m": 184,
+      "recent_mint_concentration": 0.0054,
+      "unique_recent_minters": 184,
+      "velocity_1m": 184.0,
+      "velocity_5m": 36.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Cera (Lamps of Lava)",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+    "name": "Pixel Deck",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2433,
+    "predicted_probability": 0.3891,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xd93fae95776925b1e3d86d57360641e0869a3785",
+      "owner": "0xd2bed48aa145a96b656a238f90df4021c0f316ae",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 49,
+    "score": 63,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 2
     },
-    "sell_through": 0.2618,
+    "sell_through": 0.27122712271227123,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 2618
+      "max_supply": 3333,
+      "total_supply": 904
     },
-    "ticker": "CERA"
+    "ticker": "pixeldeck"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 58300354,
+    "latest_block": 58309527,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 58300344,
+    "safe_block": 58309517,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 323584,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788932043,
+  "generated_at": 1788932968,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.183,
-    "analysis_rows_considered": 1,
+    "analysis_age_seconds": 1.992,
+    "analysis_rows_considered": 2,
     "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.975,
-    "from_block": 58300190,
+    "duration_seconds": 2.787,
+    "from_block": 58309373,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 35,
-    "lag_seconds": 4,
-    "live_observations": 1,
-    "next_block": 58300310,
+    "lag_blocks": 25,
+    "lag_seconds": 3,
+    "live_observations": 2,
+    "next_block": 58309493,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 58300309,
+    "to_block": 58309492,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 58300190-58300309",
+  "status": "SCANNING 58309373-58309492",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+      "action": "WATCH",
+      "collection": "0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 15,
-        "mints_1m": 15,
-        "mints_5m": 15,
-        "mints_60m": 15,
-        "raw_units_1m": 15,
-        "raw_units_5m": 15,
-        "recent_mint_concentration": 0.3333,
-        "unique_recent_minters": 3,
-        "velocity_1m": 15.0,
-        "velocity_5m": 3.0
+        "mints_15m": 184,
+        "mints_1m": 184,
+        "mints_5m": 184,
+        "mints_60m": 184,
+        "raw_units_1m": 184,
+        "raw_units_5m": 184,
+        "recent_mint_concentration": 0.0054,
+        "unique_recent_minters": 184,
+        "velocity_1m": 184.0,
+        "velocity_5m": 36.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Cera (Lamps of Lava)",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0250e953dd141c3b84df7f00d3e983df4b959d4d",
+      "name": "Pixel Deck",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd1ca4f594433e949830e9b58957a0b4f0b1a1225",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2433,
+      "predicted_probability": 0.3891,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xd93fae95776925b1e3d86d57360641e0869a3785",
+        "owner": "0xd2bed48aa145a96b656a238f90df4021c0f316ae",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,108 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 49,
+      "score": 63,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 2
       },
-      "sell_through": 0.2618,
+      "sell_through": 0.27122712271227123,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 2618
+        "max_supply": 3333,
+        "total_supply": 904
       },
-      "ticker": "CERA"
+      "ticker": "pixeldeck"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 40,
+        "mints_1m": 40,
+        "mints_5m": 40,
+        "mints_60m": 40,
+        "raw_units_1m": 2982,
+        "raw_units_5m": 2982,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 5,
+        "velocity_1m": 40.0,
+        "velocity_5m": 8.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": null,
+      "opensea_url": "https://opensea.io/assets/robinhood/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2343,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": null,
+        "owner_active": false,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 48,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 2,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC1155",
+      "supply": {
+        "max_supply": null,
+        "total_supply": null
+      },
+      "ticker": null
     }
   ],
   "win_rate_pct": 0.0
