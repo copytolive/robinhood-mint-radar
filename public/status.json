@@ -14,25 +14,25 @@
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 0,
+      "native_sales_24h": 1,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
       "sales_24h": 2,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.0
+      "volume_eth_24h": 0.00026
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 35,
-      "mints_1m": 35,
-      "mints_5m": 35,
-      "mints_60m": 35,
-      "raw_units_1m": 35,
-      "raw_units_5m": 35,
-      "recent_mint_concentration": 0.0857,
-      "unique_recent_minters": 14,
-      "velocity_1m": 35.0,
-      "velocity_5m": 7.0
+      "mints_15m": 16,
+      "mints_1m": 16,
+      "mints_5m": 16,
+      "mints_60m": 16,
+      "raw_units_1m": 16,
+      "raw_units_5m": 16,
+      "recent_mint_concentration": 0.1875,
+      "unique_recent_minters": 6,
+      "velocity_1m": 16.0,
+      "velocity_5m": 3.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -71,18 +71,18 @@
     "score_parts": {
       "acceleration": 7,
       "distribution": 3,
-      "holder_growth": 7,
+      "holder_growth": 3,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 3,
-      "sell_through": 2
+      "sell_through": 6
     },
-    "sell_through": 0.2423105776444111,
+    "sell_through": 0.6704176044011003,
     "standard": "ERC721",
     "supply": {
       "max_supply": 3999,
-      "total_supply": 969
+      "total_supply": 2681
     },
     "ticker": "\u03a3:"
   },
@@ -92,22 +92,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 58700480,
+    "latest_block": 58707631,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 58700470,
+    "safe_block": 58707621,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1788972418,
+  "generated_at": 1788973140,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,27 +139,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.182,
-    "analysis_rows_considered": 3,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 3.552,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 6.953,
-    "from_block": 58700286,
+    "duration_seconds": 4.275,
+    "from_block": 58707462,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 65,
-    "lag_seconds": 7,
+    "hoodsea_launches_stored": null,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
     "live_observations": 2,
-    "next_block": 58700406,
+    "next_block": 58707582,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 58700405,
-    "total_mint_units_stored": 0
+    "to_block": 58707581,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 58700286-58700405",
+  "status": "SCANNING 58707462-58707581",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -177,25 +177,25 @@
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 0,
+        "native_sales_24h": 1,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
         "sales_24h": 2,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.0
+        "volume_eth_24h": 0.00026
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 35,
-        "mints_1m": 35,
-        "mints_5m": 35,
-        "mints_60m": 35,
-        "raw_units_1m": 35,
-        "raw_units_5m": 35,
-        "recent_mint_concentration": 0.0857,
-        "unique_recent_minters": 14,
-        "velocity_1m": 35.0,
-        "velocity_5m": 7.0
+        "mints_15m": 16,
+        "mints_1m": 16,
+        "mints_5m": 16,
+        "mints_60m": 16,
+        "raw_units_1m": 16,
+        "raw_units_5m": 16,
+        "recent_mint_concentration": 0.1875,
+        "unique_recent_minters": 6,
+        "velocity_1m": 16.0,
+        "velocity_5m": 3.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -234,18 +234,18 @@
       "score_parts": {
         "acceleration": 7,
         "distribution": 3,
-        "holder_growth": 7,
+        "holder_growth": 3,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 3,
-        "sell_through": 2
+        "sell_through": 6
       },
-      "sell_through": 0.2423105776444111,
+      "sell_through": 0.6704176044011003,
       "standard": "ERC721",
       "supply": {
         "max_supply": 3999,
-        "total_supply": 969
+        "total_supply": 2681
       },
       "ticker": "\u03a3:"
     },
@@ -270,16 +270,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 9,
-        "mints_1m": 9,
-        "mints_5m": 9,
-        "mints_60m": 9,
-        "raw_units_1m": 90,
-        "raw_units_5m": 90,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 9.0,
-        "velocity_5m": 1.8
+        "mints_15m": 15,
+        "mints_1m": 15,
+        "mints_5m": 15,
+        "mints_60m": 15,
+        "raw_units_1m": 174,
+        "raw_units_5m": 174,
+        "recent_mint_concentration": 0.6,
+        "unique_recent_minters": 2,
+        "velocity_1m": 15.0,
+        "velocity_5m": 3.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -290,7 +290,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1615,
+      "predicted_probability": 0.2254,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -314,12 +314,12 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 39,
+      "score": 47,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 13,
+        "holder_growth": 1,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
