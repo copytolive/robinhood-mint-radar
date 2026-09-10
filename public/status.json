@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+    "action": "WATCH",
+    "collection": "0xf2b493ed881b7cbfcf664692267893e171109621",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf2b493ed881b7cbfcf664692267893e171109621",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 14,
-      "mints_1m": 14,
-      "mints_5m": 14,
-      "mints_60m": 14,
-      "raw_units_1m": 1668,
-      "raw_units_5m": 1668,
-      "recent_mint_concentration": 0.5714,
-      "unique_recent_minters": 2,
-      "velocity_1m": 14.0,
-      "velocity_5m": 2.8
+      "mints_15m": 67,
+      "mints_1m": 67,
+      "mints_5m": 67,
+      "mints_60m": 67,
+      "raw_units_1m": 67,
+      "raw_units_5m": 67,
+      "recent_mint_concentration": 0.0149,
+      "unique_recent_minters": 67,
+      "velocity_1m": 67.0,
+      "velocity_5m": 13.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": null,
-    "opensea_url": "https://opensea.io/assets/robinhood/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+    "name": "Skelrams",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf2b493ed881b7cbfcf664692267893e171109621",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2254,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,8 +55,8 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": null,
-      "owner_active": false,
+      "owner": "0xae3a5be143a518edcb763b29e9bd9328214618f4",
+      "owner_active": true,
       "proxy": null,
       "review_risks": [
         "VERIFICATION_UNAVAILABLE"
@@ -64,11 +64,11 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 47,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 1,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
@@ -76,12 +76,12 @@
       "sell_through": 0
     },
     "sell_through": null,
-    "standard": "ERC1155",
+    "standard": "ERC721",
     "supply": {
       "max_supply": null,
-      "total_supply": null
+      "total_supply": 1427
     },
-    "ticker": null
+    "ticker": "SKEL"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 59342002,
+    "latest_block": 59349729,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 59341992,
+    "safe_block": 59349719,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789037131,
+  "generated_at": 1789037911,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.887,
+    "analysis_age_seconds": 1.201,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.019,
-    "from_block": 59341848,
+    "duration_seconds": 1.953,
+    "from_block": 59349585,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 25,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 15,
     "lag_seconds": 2,
-    "live_observations": 1,
-    "next_block": 59341968,
+    "live_observations": 2,
+    "next_block": 59349705,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 59341967,
+    "to_block": 59349704,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 59341848-59341967",
+  "status": "SCANNING 59349585-59349704",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "action": "WATCH",
+      "collection": "0xf2b493ed881b7cbfcf664692267893e171109621",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf2b493ed881b7cbfcf664692267893e171109621",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 14,
-        "mints_1m": 14,
-        "mints_5m": 14,
-        "mints_60m": 14,
-        "raw_units_1m": 1668,
-        "raw_units_5m": 1668,
-        "recent_mint_concentration": 0.5714,
-        "unique_recent_minters": 2,
-        "velocity_1m": 14.0,
-        "velocity_5m": 2.8
+        "mints_15m": 67,
+        "mints_1m": 67,
+        "mints_5m": 67,
+        "mints_60m": 67,
+        "raw_units_1m": 67,
+        "raw_units_5m": 67,
+        "recent_mint_concentration": 0.0149,
+        "unique_recent_minters": 67,
+        "velocity_1m": 67.0,
+        "velocity_5m": 13.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": null,
-      "opensea_url": "https://opensea.io/assets/robinhood/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "name": "Skelrams",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf2b493ed881b7cbfcf664692267893e171109621",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,8 +215,8 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
+        "owner": "0xae3a5be143a518edcb763b29e9bd9328214618f4",
+        "owner_active": true,
         "proxy": null,
         "review_risks": [
           "VERIFICATION_UNAVAILABLE"
@@ -224,11 +224,11 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
@@ -236,12 +236,97 @@
         "sell_through": 0
       },
       "sell_through": null,
-      "standard": "ERC1155",
+      "standard": "ERC721",
       "supply": {
         "max_supply": null,
-        "total_supply": null
+        "total_supply": 1427
       },
-      "ticker": null
+      "ticker": "SKEL"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x18cbb98380c4cb348a810e6475ac4548fd78abf5",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x18cbb98380c4cb348a810e6475ac4548fd78abf5",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "All Star Legend",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x18cbb98380c4cb348a810e6475ac4548fd78abf5",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1543,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x9e0d44763e69990eb3b7136397360bb4ecc1a34c",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 38,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 7
+      },
+      "sell_through": 0.7817656765676567,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 9696,
+        "total_supply": 7580
+      },
+      "ticker": "ASL"
     }
   ],
   "win_rate_pct": 0.0
