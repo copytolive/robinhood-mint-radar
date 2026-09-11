@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+    "collection": "0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 15,
+      "mints_1m": 15,
+      "mints_5m": 15,
+      "mints_60m": 15,
+      "raw_units_1m": 15,
+      "raw_units_5m": 15,
+      "recent_mint_concentration": 0.0667,
+      "unique_recent_minters": 15,
+      "velocity_1m": 15.0,
+      "velocity_5m": 3.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Heat Miner",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+    "name": "GLITCH STUDIO",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.3329,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x33754f0e311ed3a1f618d9265d30111ba445f90f",
+      "owner": "0x65343ad7a9dabb137789a77db1cc553be4a37cf1",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 58,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "distribution": 5,
+      "holder_growth": 7,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": null,
+    "sell_through": 0.0738,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": null
+      "max_supply": 5000,
+      "total_supply": 369
     },
-    "ticker": "HEATMINER"
+    "ticker": "GLITCH"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 60612179,
-    "latest_block_age_seconds": 1,
+    "latest_block": 60619971,
+    "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 60612169,
+    "safe_block": 60619961,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789165930,
+  "generated_at": 1789166722,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.596,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 3.042,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 6.247,
-    "from_block": 60611996,
+    "duration_seconds": 9.937,
+    "from_block": 60619762,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 54,
-    "lag_seconds": 6,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 80,
+    "lag_seconds": 8,
     "live_observations": 1,
-    "next_block": 60612116,
+    "next_block": 60619882,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 60612115,
+    "to_block": 60619881,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 60611996-60612115",
+  "status": "SCANNING 60619762-60619881",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+      "collection": "0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 15,
+        "mints_1m": 15,
+        "mints_5m": 15,
+        "mints_60m": 15,
+        "raw_units_1m": 15,
+        "raw_units_5m": 15,
+        "recent_mint_concentration": 0.0667,
+        "unique_recent_minters": 15,
+        "velocity_1m": 15.0,
+        "velocity_5m": 3.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Heat Miner",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
+      "name": "GLITCH STUDIO",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x1d70977f435e46cf98a47aa434e88edb1333ba8a",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.3329,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x33754f0e311ed3a1f618d9265d30111ba445f90f",
+        "owner": "0x65343ad7a9dabb137789a77db1cc553be4a37cf1",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 58,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "distribution": 5,
+        "holder_growth": 7,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": null,
+      "sell_through": 0.0738,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": null
+        "max_supply": 5000,
+        "total_supply": 369
       },
-      "ticker": "HEATMINER"
+      "ticker": "GLITCH"
     }
   ],
   "win_rate_pct": 0.0
