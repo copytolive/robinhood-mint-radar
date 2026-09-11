@@ -26,8 +26,8 @@
       "mints_60m": 12,
       "raw_units_1m": 16,
       "raw_units_5m": 16,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
+      "recent_mint_concentration": 0.5,
+      "unique_recent_minters": 2,
       "velocity_1m": 12.0,
       "velocity_5m": 2.4
     },
@@ -40,7 +40,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2,
+    "predicted_probability": 0.2083,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -64,11 +64,11 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 44,
+    "score": 45,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
+      "holder_growth": 1,
       "mint_velocity": 18,
       "price_asymmetry": 15,
       "safety": 4,
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 60013124,
+    "latest_block": 60022146,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 60013114,
+    "safe_block": 60022136,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789104907,
+  "generated_at": 1789105821,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,27 +136,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.686,
+    "analysis_age_seconds": 1.525,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 2.879,
-    "from_block": 60012969,
+    "duration_seconds": 2.263,
+    "from_block": 60021983,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 26,
-    "lag_seconds": 3,
+    "lag_blocks": 34,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 60013089,
+    "next_block": 60022103,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 60013088,
+    "to_block": 60022102,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 60012969-60013088",
+  "status": "SCANNING 60021983-60022102",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -186,8 +186,8 @@
         "mints_60m": 12,
         "raw_units_1m": 16,
         "raw_units_5m": 16,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
         "velocity_1m": 12.0,
         "velocity_5m": 2.4
       },
@@ -200,7 +200,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2,
+      "predicted_probability": 0.2083,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -224,11 +224,11 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 44,
+      "score": 45,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
+        "holder_growth": 1,
         "mint_velocity": 18,
         "price_asymmetry": 15,
         "safety": 4,
