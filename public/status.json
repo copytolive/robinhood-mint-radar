@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 24,
-      "mints_1m": 24,
-      "mints_5m": 24,
-      "mints_60m": 24,
-      "raw_units_1m": 32,
-      "raw_units_5m": 32,
-      "recent_mint_concentration": 0.25,
-      "unique_recent_minters": 4,
-      "velocity_1m": 24.0,
-      "velocity_5m": 4.8
+      "mints_15m": 18,
+      "mints_1m": 18,
+      "mints_5m": 18,
+      "mints_60m": 18,
+      "raw_units_1m": 24,
+      "raw_units_5m": 24,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 18.0,
+      "velocity_5m": 3.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -40,7 +40,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2343,
+    "predicted_probability": 0.2254,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -64,11 +64,11 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 48,
+    "score": 47,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 2,
+      "holder_growth": 1,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 60097882,
+    "latest_block": 60111143,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 60097872,
+    "safe_block": 60111133,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789113509,
+  "generated_at": 1789114860,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,27 +136,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.945,
+    "analysis_age_seconds": 1.018,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 3.337,
-    "from_block": 60097711,
+    "duration_seconds": 4.003,
+    "from_block": 60110980,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 42,
-    "lag_seconds": 5,
-    "live_observations": 1,
-    "next_block": 60097831,
+    "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 34,
+    "lag_seconds": 4,
+    "live_observations": 2,
+    "next_block": 60111100,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 60097830,
-    "total_mint_units_stored": null
+    "to_block": 60111099,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 60097711-60097830",
+  "status": "SCANNING 60110980-60111099",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -180,16 +180,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 24,
-        "mints_1m": 24,
-        "mints_5m": 24,
-        "mints_60m": 24,
-        "raw_units_1m": 32,
-        "raw_units_5m": 32,
-        "recent_mint_concentration": 0.25,
-        "unique_recent_minters": 4,
-        "velocity_1m": 24.0,
-        "velocity_5m": 4.8
+        "mints_15m": 18,
+        "mints_1m": 18,
+        "mints_5m": 18,
+        "mints_60m": 18,
+        "raw_units_1m": 24,
+        "raw_units_5m": 24,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 18.0,
+        "velocity_5m": 3.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -200,7 +200,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2343,
+      "predicted_probability": 0.2254,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -224,11 +224,11 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 48,
+      "score": 47,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 2,
+        "holder_growth": 1,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
@@ -242,6 +242,90 @@
         "total_supply": null
       },
       "ticker": "ITEMS"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x6b5d9d04501ffb08006d205a6ee59ebecb744750",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6b5d9d04501ffb08006d205a6ee59ebecb744750",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 18,
+        "mints_1m": 18,
+        "mints_5m": 18,
+        "mints_60m": 18,
+        "raw_units_1m": 18,
+        "raw_units_5m": 18,
+        "recent_mint_concentration": 0.5,
+        "unique_recent_minters": 2,
+        "velocity_1m": 18.0,
+        "velocity_5m": 3.6
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Akai",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x6b5d9d04501ffb08006d205a6ee59ebecb744750",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2254,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x27c7a6501b5fc9451b5aee5b750819e5b610febe",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 47,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": 0.0018001800180018,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 9999,
+        "total_supply": 18
+      },
+      "ticker": "Akai"
     }
   ],
   "win_rate_pct": 0.0
