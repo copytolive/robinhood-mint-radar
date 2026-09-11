@@ -1,66 +1,61 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+    "collection": "0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "MINT_PRICE_UNKNOWN",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 0,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 1,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 7,
-      "mints_1m": 7,
-      "mints_5m": 7,
-      "mints_60m": 7,
-      "raw_units_1m": 7,
-      "raw_units_5m": 7,
-      "recent_mint_concentration": 0.1429,
-      "unique_recent_minters": 7,
-      "velocity_1m": 7.0,
-      "velocity_5m": 1.4
+      "mints_15m": 50,
+      "mints_1m": 50,
+      "mints_5m": 50,
+      "mints_60m": 50,
+      "raw_units_1m": 50,
+      "raw_units_5m": 50,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 50.0,
+      "velocity_5m": 10.0
     },
-    "mint_price_eth": null,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "TRUST US // NFT",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Heat Miner",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.0982,
+    "predicted_probability": 0.2168,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "COLLECTIBLE_CONTRACT_NAME",
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x9c0998152d9654b3dcad1da31bb01bfa0b61892f",
+      "owner": "0x33754f0e311ed3a1f618d9265d30111ba445f90f",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -69,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 29,
+    "score": 46,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 3,
-      "mint_velocity": 10,
-      "price_asymmetry": 0,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 1,
-      "sell_through": 1
+      "secondary_liquidity": 0,
+      "sell_through": 0
     },
-    "sell_through": 0.1914941494149415,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 851
+      "max_supply": null,
+      "total_supply": null
     },
-    "ticker": "TUS"
+    "ticker": "HEATMINER"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -94,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 60203520,
-    "latest_block_age_seconds": 1,
+    "latest_block": 60215782,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 60203510,
+    "safe_block": 60215772,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -109,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789124250,
+  "generated_at": 1789125498,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -141,91 +136,86 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.342,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 7,
+    "analysis_age_seconds": 1.646,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 2.723,
-    "from_block": 60203372,
+    "duration_seconds": 2.697,
+    "from_block": 60215633,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 19,
+    "lag_blocks": 20,
     "lag_seconds": 2,
-    "live_observations": 1,
-    "next_block": 60203492,
+    "live_observations": 2,
+    "next_block": 60215753,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 60203491,
+    "to_block": 60215752,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 60203372-60203491",
+  "status": "SCANNING 60215633-60215752",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+      "collection": "0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
-        "floor_price": null,
-        "native_sales_24h": 0,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 1,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.0
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 7,
-        "mints_1m": 7,
-        "mints_5m": 7,
-        "mints_60m": 7,
-        "raw_units_1m": 7,
-        "raw_units_5m": 7,
-        "recent_mint_concentration": 0.1429,
-        "unique_recent_minters": 7,
-        "velocity_1m": 7.0,
-        "velocity_5m": 1.4
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
       },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "TRUST US // NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xca94e274d769f988f74e2a73cc87d333ee2a3249",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Heat Miner",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x9dd8ca9345e3142d3e78b9582b5c6fe36e3be089",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.0982,
+      "predicted_probability": 0.2168,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME",
-          "SECONDARY_MARKET_OBSERVED"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x9c0998152d9654b3dcad1da31bb01bfa0b61892f",
+        "owner": "0x33754f0e311ed3a1f618d9265d30111ba445f90f",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -234,24 +224,109 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 29,
+      "score": 46,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 3,
-        "mint_velocity": 10,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": null,
+        "total_supply": null
+      },
+      "ticker": "HEATMINER"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xf9358c2d8758c01cea75b257570b809bc1ebcf57",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf9358c2d8758c01cea75b257570b809bc1ebcf57",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Robin Flames ",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf9358c2d8758c01cea75b257570b809bc1ebcf57",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1037,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x6179d9c77a4d437ea03d8e41a0ba99099bf8168a",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 30,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 1,
-        "sell_through": 1
+        "secondary_liquidity": 0,
+        "sell_through": 4
       },
-      "sell_through": 0.1914941494149415,
+      "sell_through": 0.4327182718271827,
       "standard": "ERC721",
       "supply": {
         "max_supply": 4444,
-        "total_supply": 851
+        "total_supply": 1923
       },
-      "ticker": "TUS"
+      "ticker": "FLAMES"
     }
   ],
   "win_rate_pct": 0.0
