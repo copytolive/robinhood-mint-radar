@@ -1,100 +1,17 @@
 {
-  "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 60,
-      "mints_1m": 60,
-      "mints_5m": 60,
-      "mints_60m": 60,
-      "raw_units_1m": 60,
-      "raw_units_5m": 60,
-      "recent_mint_concentration": 0.0167,
-      "unique_recent_minters": 60,
-      "velocity_1m": 60.0,
-      "velocity_5m": 12.0
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "clay cats",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.3891,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0x4dc288d1cf39df635781474003dbc2177ff2ef1d",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 63,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 2
-    },
-    "sell_through": 0.2376237623762376,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": 3333,
-      "total_supply": 792
-    },
-    "ticker": "claycats"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 61020417,
+    "latest_block": 61030847,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 61020407,
+    "safe_block": 61030837,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +21,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789207421,
+  "generated_at": 1789208475,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +33,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,113 +53,28 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.709,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 6.456,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 1,
     "blocks_processed": 120,
-    "duration_seconds": 11.326,
-    "from_block": 61020193,
+    "duration_seconds": 11.567,
+    "from_block": 61030615,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 95,
+    "lag_blocks": 103,
     "lag_seconds": 10,
-    "live_observations": 1,
-    "next_block": 61020313,
+    "live_observations": 0,
+    "next_block": 61030735,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 61020312,
+    "to_block": 61030734,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 61020193-61020312",
+  "status": "SCANNING 61030615-61030734",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WATCH",
-      "collection": "0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 60,
-        "mints_1m": 60,
-        "mints_5m": 60,
-        "mints_60m": 60,
-        "raw_units_1m": 60,
-        "raw_units_5m": 60,
-        "recent_mint_concentration": 0.0167,
-        "unique_recent_minters": 60,
-        "velocity_1m": 60.0,
-        "velocity_5m": 12.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "clay cats",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3891,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x4dc288d1cf39df635781474003dbc2177ff2ef1d",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 63,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 2
-      },
-      "sell_through": 0.2376237623762376,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 3333,
-        "total_supply": 792
-      },
-      "ticker": "claycats"
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
