@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+    "collection": "0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 50,
+      "mints_1m": 50,
+      "mints_5m": 50,
+      "mints_60m": 50,
+      "raw_units_1m": 50,
+      "raw_units_5m": 50,
+      "recent_mint_concentration": 0.2,
+      "unique_recent_minters": 5,
+      "velocity_1m": 50.0,
+      "velocity_5m": 10.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "WINE",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+    "name": "Street Born",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.2619,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xf928e965363838801ccfab295f43d0a986dc302a",
+      "owner": "0x2feb9359f692f3a1a622327e72befb6ca8df3c2e",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 51,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "distribution": 3,
+      "holder_growth": 2,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.04972997299729973,
+    "sell_through": 0.010980109801098011,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4444,
-      "total_supply": 221
+      "max_supply": 11111,
+      "total_supply": 122
     },
-    "ticker": "WINE"
+    "ticker": "Street Born"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 61150995,
-    "latest_block_age_seconds": 7,
+    "latest_block": 61158623,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 61150985,
+    "safe_block": 61158613,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789220650,
+  "generated_at": 1789221426,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.953,
+    "analysis_age_seconds": 3.681,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 12.6,
-    "from_block": 61150809,
+    "duration_seconds": 5.826,
+    "from_block": 61158455,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 57,
-    "lag_seconds": 6,
+    "lag_blocks": 39,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 61150929,
+    "next_block": 61158575,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 61150928,
+    "to_block": 61158574,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 61150809-61150928",
+  "status": "SCANNING 61158455-61158574",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+      "collection": "0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 0.2,
+        "unique_recent_minters": 5,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "WINE",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x406d607f0454c2d4fa7d0e0a0761caad12c30aa4",
+      "name": "Street Born",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc07ea9724855370bfdb655a8691834c7a1a7dbe6",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.2619,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xf928e965363838801ccfab295f43d0a986dc302a",
+        "owner": "0x2feb9359f692f3a1a622327e72befb6ca8df3c2e",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 51,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "distribution": 3,
+        "holder_growth": 2,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.04972997299729973,
+      "sell_through": 0.010980109801098011,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4444,
-        "total_supply": 221
+        "max_supply": 11111,
+        "total_supply": 122
       },
-      "ticker": "WINE"
+      "ticker": "Street Born"
     }
   ],
   "win_rate_pct": 0.0
