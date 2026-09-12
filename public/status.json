@@ -1,17 +1,103 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+    "hard_gates": [
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+    ],
+    "market": {
+      "floor_price": null,
+      "native_sales_24h": 2,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 4,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.141
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 1,
+      "mints_1m": 1,
+      "mints_5m": 1,
+      "mints_60m": 1,
+      "raw_units_1m": 1,
+      "raw_units_5m": 1,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 1.0,
+      "velocity_5m": 0.2
+    },
+    "mint_price_eth": 0.0408,
+    "mint_price_source": "CONTRACT",
+    "name": "Hashcats",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.0829,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "HIGH",
+      "reasons": [
+        "SECONDARY_MARKET_OBSERVED"
+      ],
+      "state": "PASS"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0xca75a875857691f2a8bbccecaa7e4448acdc12ca",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 26,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 1,
+      "price_asymmetry": 3,
+      "safety": 4,
+      "secondary_liquidity": 11,
+      "sell_through": 0
+    },
+    "sell_through": null,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": null,
+      "total_supply": 3118
+    },
+    "ticker": "HCAT"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 60840429,
+    "latest_block": 60851741,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 60840419,
+    "safe_block": 60851731,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789189164,
+  "generated_at": 1789190313,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +139,116 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.047,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 1.596,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 1.988,
-    "from_block": 60840280,
+    "duration_seconds": 3.89,
+    "from_block": 60851568,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 20,
-    "lag_seconds": 2,
-    "live_observations": 0,
-    "next_block": 60840400,
+    "lag_blocks": 44,
+    "lag_seconds": 4,
+    "live_observations": 1,
+    "next_block": 60851688,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 60840399,
+    "to_block": 60851687,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 60840280-60840399",
+  "status": "SCANNING 60851568-60851687",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      ],
+      "market": {
+        "floor_price": null,
+        "native_sales_24h": 2,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 4,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.141
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "raw_units_1m": 1,
+        "raw_units_5m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
+      },
+      "mint_price_eth": 0.0408,
+      "mint_price_source": "CONTRACT",
+      "name": "Hashcats",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xca75df55cc9c476db27a7375d1fc8e794cf80721",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.0829,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "SECONDARY_MARKET_OBSERVED"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xca75a875857691f2a8bbccecaa7e4448acdc12ca",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 26,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 1,
+        "price_asymmetry": 3,
+        "safety": 4,
+        "secondary_liquidity": 11,
+        "sell_through": 0
+      },
+      "sell_through": null,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": null,
+        "total_supply": 3118
+      },
+      "ticker": "HCAT"
+    }
+  ],
   "win_rate_pct": 0.0
 }
