@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+    "action": "WATCH",
+    "collection": "0x050f7f04899065f40d182a2da1ba20da1ba0575e",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x050f7f04899065f40d182a2da1ba20da1ba0575e",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 0,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 2,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.0
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 1,
-      "mints_1m": 1,
-      "mints_5m": 1,
-      "mints_60m": 1,
-      "raw_units_1m": 1,
-      "raw_units_5m": 1,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 1.0,
-      "velocity_5m": 0.2
+      "mints_15m": 45,
+      "mints_1m": 45,
+      "mints_5m": 45,
+      "mints_60m": 45,
+      "raw_units_1m": 45,
+      "raw_units_5m": 45,
+      "recent_mint_concentration": 0.0444,
+      "unique_recent_minters": 23,
+      "velocity_1m": 45.0,
+      "velocity_5m": 9.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "clay cats",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+    "name": "Elemental Frog",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x050f7f04899065f40d182a2da1ba20da1ba0575e",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1275,
+    "predicted_probability": 0.4129,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x4dc288d1cf39df635781474003dbc2177ff2ef1d",
+      "owner": "0x91cb7b9783cd338d74806d0a4a6ee6e486839bd9",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 34,
+    "score": 65,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 1,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 3,
+      "secondary_liquidity": 0,
       "sell_through": 4
     },
-    "sell_through": 0.44284428442844287,
+    "sell_through": 0.49144914491449143,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 1476
+      "max_supply": 1111,
+      "total_supply": 546
     },
-    "ticker": "claycats"
+    "ticker": "EF"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 61047353,
+    "latest_block": 61055418,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 61047343,
+    "safe_block": 61055408,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789210146,
+  "generated_at": 1789210961,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -119,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -139,89 +136,86 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.811,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 1.939,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 6.581,
-    "from_block": 61047174,
+    "duration_seconds": 6.661,
+    "from_block": 61055235,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 50,
-    "lag_seconds": 5,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 54,
+    "lag_seconds": 6,
     "live_observations": 1,
-    "next_block": 61047294,
+    "next_block": 61055355,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 61047293,
+    "to_block": 61055354,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 61047174-61047293",
+  "status": "SCANNING 61055235-61055354",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+      "action": "WATCH",
+      "collection": "0x050f7f04899065f40d182a2da1ba20da1ba0575e",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x050f7f04899065f40d182a2da1ba20da1ba0575e",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
-        "floor_price": null,
-        "native_sales_24h": 0,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 2,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.0
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "raw_units_1m": 1,
-        "raw_units_5m": 1,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
+        "mints_15m": 45,
+        "mints_1m": 45,
+        "mints_5m": 45,
+        "mints_60m": 45,
+        "raw_units_1m": 45,
+        "raw_units_5m": 45,
+        "recent_mint_concentration": 0.0444,
+        "unique_recent_minters": 23,
+        "velocity_1m": 45.0,
+        "velocity_5m": 9.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "clay cats",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x086cbda4bc6bac2edcd906bfbbab0e4e23f7f270",
+      "name": "Elemental Frog",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x050f7f04899065f40d182a2da1ba20da1ba0575e",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1275,
+      "predicted_probability": 0.4129,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x4dc288d1cf39df635781474003dbc2177ff2ef1d",
+        "owner": "0x91cb7b9783cd338d74806d0a4a6ee6e486839bd9",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 34,
+      "score": 65,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 1,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 3,
+        "secondary_liquidity": 0,
         "sell_through": 4
       },
-      "sell_through": 0.44284428442844287,
+      "sell_through": 0.49144914491449143,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 1476
+        "max_supply": 1111,
+        "total_supply": 546
       },
-      "ticker": "claycats"
+      "ticker": "EF"
     }
   ],
   "win_rate_pct": 0.0
