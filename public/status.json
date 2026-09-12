@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xd36687c50faa3755cb185b344d132e545f9d7d89",
+    "collection": "0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd36687c50faa3755cb185b344d132e545f9d7d89",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 30,
-      "mints_1m": 30,
-      "mints_5m": 30,
-      "mints_60m": 30,
-      "raw_units_1m": 30,
-      "raw_units_5m": 30,
-      "recent_mint_concentration": 0.3333,
+      "mints_15m": 24,
+      "mints_1m": 24,
+      "mints_5m": 24,
+      "mints_60m": 24,
+      "raw_units_1m": 24,
+      "raw_units_5m": 24,
+      "recent_mint_concentration": 0.4167,
       "unique_recent_minters": 3,
-      "velocity_1m": 30.0,
-      "velocity_5m": 6.0
+      "velocity_1m": 24.0,
+      "velocity_5m": 4.8
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Great Escape",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xd36687c50faa3755cb185b344d132e545f9d7d89",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Trust",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2254,
+    "predicted_probability": 0.1543,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x18f2cb46ca6c2078950ee643df097b1040fb2945",
+      "owner": "0xe7ff0affac74cf0644d97653b629c96a863746f9",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 47,
+    "score": 38,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
       "holder_growth": 1,
       "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 6
     },
-    "sell_through": 0.037803780378037805,
+    "sell_through": 0.6005244755244755,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 210
+      "max_supply": 1144,
+      "total_supply": 687
     },
-    "ticker": "Great Escape"
+    "ticker": "SD"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 61221695,
-    "latest_block_age_seconds": 4,
+    "latest_block": 61229155,
+    "latest_block_age_seconds": 5,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 61221685,
+    "safe_block": 61229145,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789227927,
+  "generated_at": 1789228691,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,41 +137,42 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.147,
+    "analysis_age_seconds": 8.001,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 9,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 17.042,
-    "from_block": 61221444,
+    "duration_seconds": 25.703,
+    "from_block": 61228870,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 122,
-    "lag_seconds": 13,
+    "lag_blocks": 156,
+    "lag_seconds": 16,
     "live_observations": 1,
-    "next_block": 61221564,
+    "next_block": 61228990,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 61221563,
+    "to_block": 61228989,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 61221444-61221563",
+  "status": "SCANNING 61228870-61228989",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xd36687c50faa3755cb185b344d132e545f9d7d89",
+      "collection": "0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd36687c50faa3755cb185b344d132e545f9d7d89",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
       ],
@@ -180,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 30,
-        "mints_1m": 30,
-        "mints_5m": 30,
-        "mints_60m": 30,
-        "raw_units_1m": 30,
-        "raw_units_5m": 30,
-        "recent_mint_concentration": 0.3333,
+        "mints_15m": 24,
+        "mints_1m": 24,
+        "mints_5m": 24,
+        "mints_60m": 24,
+        "raw_units_1m": 24,
+        "raw_units_5m": 24,
+        "recent_mint_concentration": 0.4167,
         "unique_recent_minters": 3,
-        "velocity_1m": 30.0,
-        "velocity_5m": 6.0
+        "velocity_1m": 24.0,
+        "velocity_5m": 4.8
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Great Escape",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xd36687c50faa3755cb185b344d132e545f9d7d89",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Trust",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xc8bc343b89de256f7fddcc892f460147b85bdd1e",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.1543,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x18f2cb46ca6c2078950ee643df097b1040fb2945",
+        "owner": "0xe7ff0affac74cf0644d97653b629c96a863746f9",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 38,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
         "holder_growth": 1,
         "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 6
       },
-      "sell_through": 0.037803780378037805,
+      "sell_through": 0.6005244755244755,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 210
+        "max_supply": 1144,
+        "total_supply": 687
       },
-      "ticker": "Great Escape"
+      "ticker": "SD"
     }
   ],
   "win_rate_pct": 0.0
