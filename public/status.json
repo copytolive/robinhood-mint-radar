@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+    "collection": "0x0cf6afa0db87f9ba83627393285ffae9484f9527",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0cf6afa0db87f9ba83627393285ffae9484f9527",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 62,
+      "mints_1m": 62,
+      "mints_5m": 62,
+      "mints_60m": 62,
+      "raw_units_1m": 64,
+      "raw_units_5m": 64,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 62.0,
+      "velocity_5m": 12.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Frontier Outlaws",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+    "name": null,
+    "opensea_url": "https://opensea.io/assets/robinhood/0x0cf6afa0db87f9ba83627393285ffae9484f9527",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2083,
+    "predicted_probability": 0.2168,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x5c2f39b377a4cbdc5a4912e5463816ec6d2fa275",
+      "owner": "0x7c02947e099d337de68f6095153aa11e0ae76a83",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 45,
+    "score": 46,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 12,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
     "sell_through": null,
-    "standard": "ERC721",
+    "standard": "ERC1155",
     "supply": {
       "max_supply": null,
-      "total_supply": 4083
+      "total_supply": null
     },
-    "ticker": "OUTLAW"
+    "ticker": null
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 61549365,
+    "latest_block": 61560032,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 61549355,
+    "safe_block": 61560022,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789261219,
+  "generated_at": 1789262300,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.119,
+    "analysis_age_seconds": 2.949,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 3.776,
-    "from_block": 61549207,
+    "duration_seconds": 5.076,
+    "from_block": 61559856,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 29,
-    "lag_seconds": 3,
+    "lag_blocks": 47,
+    "lag_seconds": 5,
     "live_observations": 2,
-    "next_block": 61549327,
+    "next_block": 61559976,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 61549326,
+    "to_block": 61559975,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 61549207-61549326",
+  "status": "SCANNING 61559856-61559975",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+      "collection": "0x0cf6afa0db87f9ba83627393285ffae9484f9527",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0cf6afa0db87f9ba83627393285ffae9484f9527",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 62,
+        "mints_1m": 62,
+        "mints_5m": 62,
+        "mints_60m": 62,
+        "raw_units_1m": 64,
+        "raw_units_5m": 64,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 62.0,
+        "velocity_5m": 12.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Frontier Outlaws",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf8ddf59090cd2780ed70ff97fe911c70276d4a44",
+      "name": null,
+      "opensea_url": "https://opensea.io/assets/robinhood/0x0cf6afa0db87f9ba83627393285ffae9484f9527",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2083,
+      "predicted_probability": 0.2168,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x5c2f39b377a4cbdc5a4912e5463816ec6d2fa275",
+        "owner": "0x7c02947e099d337de68f6095153aa11e0ae76a83",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 45,
+      "score": 46,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 12,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
       "sell_through": null,
-      "standard": "ERC721",
+      "standard": "ERC1155",
       "supply": {
         "max_supply": null,
-        "total_supply": 4083
+        "total_supply": null
       },
-      "ticker": "OUTLAW"
+      "ticker": null
     },
     {
       "action": "WAIT",
@@ -268,10 +268,10 @@
         "mints_1m": 10,
         "mints_5m": 10,
         "mints_60m": 10,
-        "raw_units_1m": 117,
-        "raw_units_5m": 117,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
+        "raw_units_1m": 103,
+        "raw_units_5m": 103,
+        "recent_mint_concentration": 0.7,
+        "unique_recent_minters": 2,
         "velocity_1m": 10.0,
         "velocity_5m": 2.0
       },
@@ -284,7 +284,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.1841,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -308,11 +308,11 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 42,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
+        "holder_growth": 1,
         "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
