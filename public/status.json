@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+    "collection": "0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 9,
-      "mints_1m": 9,
-      "mints_5m": 9,
-      "mints_60m": 9,
-      "raw_units_1m": 9,
-      "raw_units_5m": 9,
-      "recent_mint_concentration": 0.1111,
-      "unique_recent_minters": 9,
-      "velocity_1m": 9.0,
-      "velocity_5m": 1.8
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Wallstreet Market Trader Card",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+    "name": null,
+    "opensea_url": "https://opensea.io/assets/robinhood/0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2168,
+    "predicted_probability": 0.1763,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x2dc37edf1a7b2705a9b33e5c6eb03f06d2a01459",
+      "owner": "0x7c02947e099d337de68f6095153aa11e0ae76a83",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 46,
+    "score": 41,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 13,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.05670567056705671,
-    "standard": "ERC721",
+    "sell_through": null,
+    "standard": "ERC1155",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 189
+      "max_supply": null,
+      "total_supply": null
     },
-    "ticker": "WSM Trader Card"
+    "ticker": null
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 63040185,
-    "latest_block_age_seconds": 0,
+    "latest_block": 63052076,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 63040175,
+    "safe_block": 63052066,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789412540,
+  "generated_at": 1789413748,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 5.116,
+    "analysis_age_seconds": 4.99,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 8.75,
-    "from_block": 63039977,
+    "duration_seconds": 10.959,
+    "from_block": 63051840,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 79,
-    "lag_seconds": 9,
+    "lag_blocks": 107,
+    "lag_seconds": 8,
     "live_observations": 1,
-    "next_block": 63040097,
+    "next_block": 63051960,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 63040096,
+    "to_block": 63051959,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 63039977-63040096",
+  "status": "SCANNING 63051840-63051959",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+      "collection": "0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 9,
-        "mints_1m": 9,
-        "mints_5m": 9,
-        "mints_60m": 9,
-        "raw_units_1m": 9,
-        "raw_units_5m": 9,
-        "recent_mint_concentration": 0.1111,
-        "unique_recent_minters": 9,
-        "velocity_1m": 9.0,
-        "velocity_5m": 1.8
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Wallstreet Market Trader Card",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xd5689ba8f9b1c9259c3c966f7f0d9ff9d8e3700a",
+      "name": null,
+      "opensea_url": "https://opensea.io/assets/robinhood/0xbaeeddf7ada7050a1078f27ab9f4a8c1a37ae9ec",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2168,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x2dc37edf1a7b2705a9b33e5c6eb03f06d2a01459",
+        "owner": "0x7c02947e099d337de68f6095153aa11e0ae76a83",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 46,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 13,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.05670567056705671,
-      "standard": "ERC721",
+      "sell_through": null,
+      "standard": "ERC1155",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 189
+        "max_supply": null,
+        "total_supply": null
       },
-      "ticker": "WSM Trader Card"
+      "ticker": null
     }
   ],
   "win_rate_pct": 0.0
