@@ -1,49 +1,49 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+    "collection": "0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 1,
+      "native_sales_24h": 0,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
       "sales_24h": 1,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.0008
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 1,
+      "mints_1m": 1,
+      "mints_5m": 1,
+      "mints_60m": 1,
+      "raw_units_1m": 1,
+      "raw_units_5m": 1,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 1.0,
+      "velocity_5m": 0.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Stock Salesman",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+    "name": "Yuna",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2525,
+    "predicted_probability": 0.1473,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -58,7 +58,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x1cbbf4e40f5cf00a7a6ad8362fad4a39797e4d38",
+      "owner": "0xa7e9cd350e6525d163f48134a2757307bea64a5a",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +67,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 50,
+    "score": 37,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 12,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 1,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 1,
-      "sell_through": 4
+      "sell_through": 9
     },
-    "sell_through": 0.4014401440144014,
+    "sell_through": 0.9240924092409241,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2222,
-      "total_supply": 892
+      "max_supply": 3333,
+      "total_supply": 3080
     },
-    "ticker": "SSM"
+    "ticker": "YUNA"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,22 +92,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 63733418,
-    "latest_block_age_seconds": 5,
+    "latest_block": 63743562,
+    "latest_block_age_seconds": 6,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 63733408,
+    "safe_block": 63743552,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 77824,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789483051,
+  "generated_at": 1789484109,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,74 +139,74 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.834,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 6,
+    "analysis_age_seconds": 9.153,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 8,
     "blocks_processed": 120,
-    "duration_seconds": 12.694,
-    "from_block": 63733193,
+    "duration_seconds": 28.066,
+    "from_block": 63743250,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 96,
-    "lag_seconds": 10,
+    "hoodsea_launches_stored": 0,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 183,
+    "lag_seconds": 19,
     "live_observations": 1,
-    "next_block": 63733313,
+    "next_block": 63743370,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 63733312,
-    "total_mint_units_stored": null
+    "to_block": 63743369,
+    "total_mint_units_stored": 0
   },
   "schema_version": "1.3",
-  "status": "SCANNING 63733193-63733312",
+  "status": "SCANNING 63743250-63743369",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+      "collection": "0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 1,
+        "native_sales_24h": 0,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
         "sales_24h": 1,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.0008
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 1,
+        "mints_1m": 1,
+        "mints_5m": 1,
+        "mints_60m": 1,
+        "raw_units_1m": 1,
+        "raw_units_5m": 1,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 1.0,
+        "velocity_5m": 0.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Stock Salesman",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xd7ab9a3590cc87bb59582cf39b68a55b11972599",
+      "name": "Yuna",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x281724d25b1d9f3e0787873b3cb9c614674e5b91",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2525,
+      "predicted_probability": 0.1473,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -221,7 +221,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x1cbbf4e40f5cf00a7a6ad8362fad4a39797e4d38",
+        "owner": "0xa7e9cd350e6525d163f48134a2757307bea64a5a",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,24 +230,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 50,
+      "score": 37,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 12,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 1,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 1,
-        "sell_through": 4
+        "sell_through": 9
       },
-      "sell_through": 0.4014401440144014,
+      "sell_through": 0.9240924092409241,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2222,
-        "total_supply": 892
+        "max_supply": 3333,
+        "total_supply": 3080
       },
-      "ticker": "SSM"
+      "ticker": "YUNA"
     }
   ],
   "win_rate_pct": 0.0
