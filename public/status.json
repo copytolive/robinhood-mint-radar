@@ -1,16 +1,17 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x10af822803c7797ca39328518bb158f4bb41931d",
+    "collection": "0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x10af822803c7797ca39328518bb158f4bb41931d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
     ],
@@ -20,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "ywuh",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x10af822803c7797ca39328518bb158f4bb41931d",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Clockers Room",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2083,
+    "predicted_probability": 0.0982,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x5bbeb747910566558103595fac59501a91ef7ddb",
+      "owner": "0x7c3fba8e753c8cf92c0d8c6bd895981e56dd779f",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 45,
+    "score": 29,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 12,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 3
     },
-    "sell_through": 0.02059202059202059,
+    "sell_through": 0.3177317731773177,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 777,
-      "total_supply": 16
+      "max_supply": 4444,
+      "total_supply": 1412
     },
-    "ticker": "H"
+    "ticker": "ROOM"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +90,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 63633621,
-    "latest_block_age_seconds": 6,
+    "latest_block": 63641194,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 63633611,
+    "safe_block": 63641184,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789472786,
+  "generated_at": 1789473557,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,122 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 6.909,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_age_seconds": 12.856,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 19.614,
-    "from_block": 63633336,
+    "duration_seconds": 36.522,
+    "from_block": 63640780,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 156,
-    "lag_seconds": 15,
-    "live_observations": 2,
-    "next_block": 63633456,
+    "lag_blocks": 285,
+    "lag_seconds": 30,
+    "live_observations": 1,
+    "next_block": 63640900,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 63633455,
+    "to_block": 63640899,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 63633336-63633455",
+  "status": "SCANNING 63640780-63640899",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x10af822803c7797ca39328518bb158f4bb41931d",
+      "collection": "0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x10af822803c7797ca39328518bb158f4bb41931d",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ywuh",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x10af822803c7797ca39328518bb158f4bb41931d",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2083,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x5bbeb747910566558103595fac59501a91ef7ddb",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 45,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 12,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.02059202059202059,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 777,
-        "total_supply": 16
-      },
-      "ticker": "H"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x3025f5d45cfadf02837ec2a6ed06836c130288ec",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3025f5d45cfadf02837ec2a6ed06836c130288ec",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -271,21 +188,21 @@
         "mints_60m": 10,
         "raw_units_1m": 10,
         "raw_units_5m": 10,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
         "velocity_1m": 10.0,
         "velocity_5m": 2.0
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "HoodMiners Robinhood",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x3025f5d45cfadf02837ec2a6ed06836c130288ec",
+      "name": "Clockers Room",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf4127ac7e73a807060cbdd08fc2c776b2e78ce67",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1037,
+      "predicted_probability": 0.0982,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -300,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xbdaa4a711fd9d019ee77506807640e7784e45c6c",
+        "owner": "0x7c3fba8e753c8cf92c0d8c6bd895981e56dd779f",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -309,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 30,
+      "score": 29,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 0,
         "mint_velocity": 15,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 3
       },
-      "sell_through": 0.38208820882088207,
+      "sell_through": 0.3177317731773177,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2222,
-        "total_supply": 849
+        "max_supply": 4444,
+        "total_supply": 1412
       },
-      "ticker": "HMM"
+      "ticker": "ROOM"
     }
   ],
   "win_rate_pct": 0.0
