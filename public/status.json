@@ -1,110 +1,27 @@
 {
-  "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-    "execution": {
-      "source": null,
-      "state": "UNAVAILABLE",
-      "url": null
-    },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-    "hard_gates": [
-      "NFT_RELEVANCE_NOT_PASS",
-      "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-      "MARKET_EVIDENCE_UNAVAILABLE"
-    ],
-    "market": {
-      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-      "state": "UNAVAILABLE"
-    },
-    "metrics": {
-      "acceleration_5m": 1.0,
-      "mints_15m": 17,
-      "mints_1m": 17,
-      "mints_5m": 17,
-      "mints_60m": 17,
-      "raw_units_1m": 17,
-      "raw_units_5m": 17,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 17.0,
-      "velocity_5m": 3.4
-    },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Miner Potato",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-    "ownership": {
-      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-      "source": "BLOCKSCOUT_V2",
-      "state": "UNAVAILABLE"
-    },
-    "predicted_probability": 0.2168,
-    "qualification_path": null,
-    "qualified": false,
-    "relevance": {
-      "confidence": "LOW",
-      "reasons": [
-        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-      ],
-      "state": "REVIEW"
-    },
-    "safety": {
-      "capabilities": [],
-      "confidence": "MEDIUM",
-      "contract_name": null,
-      "hard_risks": [],
-      "owner": "0x7dbe7f2d1e747dcc7c2ca262037090e5f48815f8",
-      "owner_active": true,
-      "proxy": null,
-      "review_risks": [
-        "VERIFICATION_UNAVAILABLE"
-      ],
-      "state": "REVIEW",
-      "verified": null
-    },
-    "score": 46,
-    "score_parts": {
-      "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
-      "safety": 4,
-      "secondary_liquidity": 0,
-      "sell_through": 0
-    },
-    "sell_through": null,
-    "standard": "ERC721",
-    "supply": {
-      "max_supply": null,
-      "total_supply": 306
-    },
-    "ticker": "POTATO"
-  },
+  "best_live_observation": null,
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 63301791,
-    "latest_block_age_seconds": 2,
+    "latest_block": 63312516,
+    "latest_block_age_seconds": 4,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 63301781,
+    "safe_block": 63312506,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 86016,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789439125,
+  "generated_at": 1789440216,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,197 +53,28 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.418,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 2.12,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 14.213,
-    "from_block": 63301520,
+    "duration_seconds": 6.725,
+    "from_block": 63312358,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 142,
-    "lag_seconds": 15,
-    "live_observations": 2,
-    "next_block": 63301640,
+    "hoodsea_launches_stored": null,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 29,
+    "lag_seconds": 3,
+    "live_observations": 0,
+    "next_block": 63312478,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 63301639,
-    "total_mint_units_stored": 0
+    "to_block": 63312477,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 63301520-63301639",
+  "status": "SCANNING 63312358-63312477",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [
-    {
-      "action": "WAIT",
-      "collection": "0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 17,
-        "mints_1m": 17,
-        "mints_5m": 17,
-        "mints_60m": 17,
-        "raw_units_1m": 17,
-        "raw_units_5m": 17,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 17.0,
-        "velocity_5m": 3.4
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Miner Potato",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xcdbdbc5015f1ddff1aaca78066786c9d109c60e1",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2168,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x7dbe7f2d1e747dcc7c2ca262037090e5f48815f8",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 46,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 306
-      },
-      "ticker": "POTATO"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x063bdba5c8c29a57c6530f2668cfd040b1282118",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 13,
-        "mints_1m": 13,
-        "mints_5m": 13,
-        "mints_60m": 13,
-        "raw_units_1m": 741,
-        "raw_units_5m": 741,
-        "recent_mint_concentration": 0.6154,
-        "unique_recent_minters": 3,
-        "velocity_1m": 13.0,
-        "velocity_5m": 2.6
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": null,
-      "opensea_url": "https://opensea.io/assets/robinhood/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2168,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 46,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 19,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC1155",
-      "supply": {
-        "max_supply": null,
-        "total_supply": null
-      },
-      "ticker": null
-    }
-  ],
+  "watchlist": [],
   "win_rate_pct": 0.0
 }
