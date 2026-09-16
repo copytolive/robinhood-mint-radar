@@ -1,49 +1,50 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+    "action": "WAIT",
+    "collection": "0xf0474980e09c3023655a9ca3e71a763358214efb",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf0474980e09c3023655a9ca3e71a763358214efb",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 12,
+      "native_sales_24h": 1,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 13,
+      "sales_24h": 1,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.00295
+      "volume_eth_24h": 0.0065
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 172,
-      "mints_1m": 172,
-      "mints_5m": 172,
-      "mints_60m": 172,
-      "raw_units_1m": 172,
-      "raw_units_5m": 172,
-      "recent_mint_concentration": 0.0174,
-      "unique_recent_minters": 60,
-      "velocity_1m": 172.0,
-      "velocity_5m": 34.4
+      "mints_15m": 3,
+      "mints_1m": 3,
+      "mints_5m": 3,
+      "mints_60m": 3,
+      "raw_units_1m": 3,
+      "raw_units_5m": 3,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 3.0,
+      "velocity_5m": 0.6
     },
-    "mint_price_eth": 0.0,
-    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Project CPU",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Opencatz AI",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf0474980e09c3023655a9ca3e71a763358214efb",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.6004,
+    "predicted_probability": 0.065,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -58,7 +59,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xa2849f0c74f736e7bed6efbf0a37962388213b8c",
+      "owner": "0x80516ff0bf3380691edf4afed21a0957984eea94",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +68,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 79,
+    "score": 22,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
-      "price_asymmetry": 15,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 4,
+      "price_asymmetry": 0,
       "safety": 4,
-      "secondary_liquidity": 15,
-      "sell_through": 3
+      "secondary_liquidity": 1,
+      "sell_through": 5
     },
-    "sell_through": 0.3875128644939966,
+    "sell_through": 0.5138,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 29150,
-      "total_supply": 11296
+      "max_supply": 5000,
+      "total_supply": 2569
     },
-    "ticker": "CPULAND"
+    "ticker": "CATZ"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,22 +93,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 64575383,
+    "latest_block": 64586322,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 64575373,
+    "safe_block": 64586312,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 311296,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789568433,
+  "generated_at": 1789569533,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -119,7 +120,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -139,74 +140,75 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.992,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 1.825,
+    "analysis_rows_considered": 1,
     "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 3.417,
-    "from_block": 64575229,
+    "duration_seconds": 3.57,
+    "from_block": 64586163,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 25,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 30,
     "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 64575349,
+    "next_block": 64586283,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 64575348,
+    "to_block": 64586282,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 64575229-64575348",
+  "status": "SCANNING 64586163-64586282",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+      "action": "WAIT",
+      "collection": "0xf0474980e09c3023655a9ca3e71a763358214efb",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf0474980e09c3023655a9ca3e71a763358214efb",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 12,
+        "native_sales_24h": 1,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 13,
+        "sales_24h": 1,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.00295
+        "volume_eth_24h": 0.0065
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 172,
-        "mints_1m": 172,
-        "mints_5m": 172,
-        "mints_60m": 172,
-        "raw_units_1m": 172,
-        "raw_units_5m": 172,
-        "recent_mint_concentration": 0.0174,
-        "unique_recent_minters": 60,
-        "velocity_1m": 172.0,
-        "velocity_5m": 34.4
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
       },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Project CPU",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf43526648eeb1890a0f17ecc56e5c55d994079e2",
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Opencatz AI",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf0474980e09c3023655a9ca3e71a763358214efb",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.6004,
+      "predicted_probability": 0.065,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -221,7 +223,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xa2849f0c74f736e7bed6efbf0a37962388213b8c",
+        "owner": "0x80516ff0bf3380691edf4afed21a0957984eea94",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,24 +232,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 79,
+      "score": 22,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 4,
+        "price_asymmetry": 0,
         "safety": 4,
-        "secondary_liquidity": 15,
-        "sell_through": 3
+        "secondary_liquidity": 1,
+        "sell_through": 5
       },
-      "sell_through": 0.3875128644939966,
+      "sell_through": 0.5138,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 29150,
-        "total_supply": 11296
+        "max_supply": 5000,
+        "total_supply": 2569
       },
-      "ticker": "CPULAND"
+      "ticker": "CATZ"
     }
   ],
   "win_rate_pct": 0.0
