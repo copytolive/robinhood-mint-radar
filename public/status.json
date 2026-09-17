@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+    "collection": "0xd07e7c80115840e39733656d6eb8002884db2a69",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd07e7c80115840e39733656d6eb8002884db2a69",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,21 +20,21 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 890,
-      "mints_1m": 890,
-      "mints_5m": 890,
-      "mints_60m": 890,
-      "raw_units_1m": 890,
-      "raw_units_5m": 890,
-      "recent_mint_concentration": 0.0011,
-      "unique_recent_minters": 890,
-      "velocity_1m": 890.0,
-      "velocity_5m": 178.0
+      "mints_15m": 48,
+      "mints_1m": 48,
+      "mints_5m": 48,
+      "mints_60m": 48,
+      "raw_units_1m": 48,
+      "raw_units_5m": 48,
+      "recent_mint_concentration": 0.0625,
+      "unique_recent_minters": 16,
+      "velocity_1m": 48.0,
+      "velocity_5m": 9.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Kizo",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+    "name": "Sundazed",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd07e7c80115840e39733656d6eb8002884db2a69",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x8fbcee9c86351089ad746ac3e56a55d885d8a254",
+      "owner": "0x5ba26c8f90a0144ecd323752e5335ca5858ac261",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -68,20 +68,20 @@
     "score_parts": {
       "acceleration": 7,
       "distribution": 5,
-      "holder_growth": 10,
+      "holder_growth": 8,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 4
+      "sell_through": 6
     },
-    "sell_through": 0.49924992499249926,
+    "sell_through": 0.6912288046891354,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 1664
+      "max_supply": 4777,
+      "total_supply": 3302
     },
-    "ticker": "KIZO"
+    "ticker": "SDZ"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 65564850,
-    "latest_block_age_seconds": 3,
+    "latest_block": 65578946,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 65564840,
+    "safe_block": 65578936,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 1003520,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789668020,
+  "generated_at": 1789669434,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.772,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 7,
+    "analysis_age_seconds": 2.178,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 8.078,
-    "from_block": 65564661,
+    "duration_seconds": 3.724,
+    "from_block": 65578787,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 60,
-    "lag_seconds": 6,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 30,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 65564781,
+    "next_block": 65578907,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 65564780,
+    "to_block": 65578906,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 65564661-65564780",
+  "status": "SCANNING 65578787-65578906",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+      "collection": "0xd07e7c80115840e39733656d6eb8002884db2a69",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd07e7c80115840e39733656d6eb8002884db2a69",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,21 +180,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 890,
-        "mints_1m": 890,
-        "mints_5m": 890,
-        "mints_60m": 890,
-        "raw_units_1m": 890,
-        "raw_units_5m": 890,
-        "recent_mint_concentration": 0.0011,
-        "unique_recent_minters": 890,
-        "velocity_1m": 890.0,
-        "velocity_5m": 178.0
+        "mints_15m": 48,
+        "mints_1m": 48,
+        "mints_5m": 48,
+        "mints_60m": 48,
+        "raw_units_1m": 48,
+        "raw_units_5m": 48,
+        "recent_mint_concentration": 0.0625,
+        "unique_recent_minters": 16,
+        "velocity_1m": 48.0,
+        "velocity_5m": 9.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Kizo",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x560cc14d3dbe9c8853f66e76e7655d9be6667b90",
+      "name": "Sundazed",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd07e7c80115840e39733656d6eb8002884db2a69",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x8fbcee9c86351089ad746ac3e56a55d885d8a254",
+        "owner": "0x5ba26c8f90a0144ecd323752e5335ca5858ac261",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -228,20 +228,20 @@
       "score_parts": {
         "acceleration": 7,
         "distribution": 5,
-        "holder_growth": 10,
+        "holder_growth": 8,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 4
+        "sell_through": 6
       },
-      "sell_through": 0.49924992499249926,
+      "sell_through": 0.6912288046891354,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 1664
+        "max_supply": 4777,
+        "total_supply": 3302
       },
-      "ticker": "KIZO"
+      "ticker": "SDZ"
     }
   ],
   "win_rate_pct": 0.0
