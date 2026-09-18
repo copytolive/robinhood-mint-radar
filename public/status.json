@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+    "action": "WATCH",
+    "collection": "0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 370,
+      "mints_1m": 370,
+      "mints_5m": 370,
+      "mints_60m": 370,
+      "raw_units_1m": 370,
+      "raw_units_5m": 370,
+      "recent_mint_concentration": 0.027,
+      "unique_recent_minters": 37,
+      "velocity_1m": 370.0,
+      "velocity_5m": 74.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Yield Fields RH",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+    "name": "ROBINHOOD ROBOT SWARM",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1763,
+    "predicted_probability": 0.3775,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x87603389a3255d91de10cee66cd7410e8b257812",
+      "owner": "0x591dd50af3800569005ce206e0219d6a346249be",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 41,
+    "score": 62,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 0,
-      "mint_velocity": 15,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 1
     },
-    "sell_through": 0.013542665388302972,
+    "sell_through": 0.1013,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 8344,
-      "total_supply": 113
+      "max_supply": 10000,
+      "total_supply": 1013
     },
-    "ticker": "Yi"
+    "ticker": "SWARM"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 66310979,
-    "latest_block_age_seconds": 1,
+    "latest_block": 66321538,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 66310969,
+    "safe_block": 66321528,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 536576,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789743162,
+  "generated_at": 1789744228,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.223,
+    "analysis_age_seconds": 2.487,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 7,
     "blocks_processed": 120,
-    "duration_seconds": 3.332,
-    "from_block": 66310825,
+    "duration_seconds": 4.381,
+    "from_block": 66321369,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 25,
-    "lag_seconds": 3,
+    "lag_blocks": 40,
+    "lag_seconds": 4,
     "live_observations": 1,
-    "next_block": 66310945,
+    "next_block": 66321489,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 66310944,
+    "to_block": 66321488,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 66310825-66310944",
+  "status": "SCANNING 66321369-66321488",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+      "action": "WATCH",
+      "collection": "0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 10,
-        "mints_1m": 10,
-        "mints_5m": 10,
-        "mints_60m": 10,
-        "raw_units_1m": 10,
-        "raw_units_5m": 10,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 10.0,
-        "velocity_5m": 2.0
+        "mints_15m": 370,
+        "mints_1m": 370,
+        "mints_5m": 370,
+        "mints_60m": 370,
+        "raw_units_1m": 370,
+        "raw_units_5m": 370,
+        "recent_mint_concentration": 0.027,
+        "unique_recent_minters": 37,
+        "velocity_1m": 370.0,
+        "velocity_5m": 74.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Yield Fields RH",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x65c269c6dd473740e5d59e786148dc0d0b87b817",
+      "name": "ROBINHOOD ROBOT SWARM",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xf99199905fdd12ffce53571fb02d01c2e1c8e2dd",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1763,
+      "predicted_probability": 0.3775,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x87603389a3255d91de10cee66cd7410e8b257812",
+        "owner": "0x591dd50af3800569005ce206e0219d6a346249be",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 41,
+      "score": 62,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 15,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 1
       },
-      "sell_through": 0.013542665388302972,
+      "sell_through": 0.1013,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 8344,
-        "total_supply": 113
+        "max_supply": 10000,
+        "total_supply": 1013
       },
-      "ticker": "Yi"
+      "ticker": "SWARM"
     }
   ],
   "win_rate_pct": 0.0
