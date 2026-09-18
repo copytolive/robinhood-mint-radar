@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0x766ab08a185f359a6e1ae783b690df4363b856b6",
+    "action": "WAIT",
+    "collection": "0x879482d7b476580c9c71a884a16688d9f4a528a7",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x766ab08a185f359a6e1ae783b690df4363b856b6",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x879482d7b476580c9c71a884a16688d9f4a528a7",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 86,
-      "mints_1m": 86,
-      "mints_5m": 86,
-      "mints_60m": 86,
-      "raw_units_1m": 86,
-      "raw_units_5m": 86,
-      "recent_mint_concentration": 0.0116,
-      "unique_recent_minters": 86,
-      "velocity_1m": 86.0,
-      "velocity_5m": 17.2
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "TurtleGuild",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x766ab08a185f359a6e1ae783b690df4363b856b6",
+    "name": "Yield Fields",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x879482d7b476580c9c71a884a16688d9f4a528a7",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.1763,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x2dc8d9d106b3173e11af53d3d8d8a2f4cdadc981",
+      "owner": "0x87603389a3255d91de10cee66cd7410e8b257812",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 41,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 1
+      "sell_through": 0
     },
-    "sell_through": 0.1701170117011701,
+    "sell_through": 0.02277085330776606,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 1111,
-      "total_supply": 189
+      "max_supply": 8344,
+      "total_supply": 190
     },
-    "ticker": "TRUTHS"
+    "ticker": "Yield Fields"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 66261851,
-    "latest_block_age_seconds": 2,
+    "latest_block": 66271574,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 66261841,
+    "safe_block": 66271564,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789738225,
+  "generated_at": 1789739201,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.765,
+    "analysis_age_seconds": 4.41,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 3.133,
-    "from_block": 66261698,
+    "duration_seconds": 6.003,
+    "from_block": 66271389,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 24,
-    "lag_seconds": 2,
+    "lag_blocks": 56,
+    "lag_seconds": 6,
     "live_observations": 1,
-    "next_block": 66261818,
+    "next_block": 66271509,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 66261817,
+    "to_block": 66271508,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 66261698-66261817",
+  "status": "SCANNING 66271389-66271508",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0x766ab08a185f359a6e1ae783b690df4363b856b6",
+      "action": "WAIT",
+      "collection": "0x879482d7b476580c9c71a884a16688d9f4a528a7",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x766ab08a185f359a6e1ae783b690df4363b856b6",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x879482d7b476580c9c71a884a16688d9f4a528a7",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 86,
-        "mints_1m": 86,
-        "mints_5m": 86,
-        "mints_60m": 86,
-        "raw_units_1m": 86,
-        "raw_units_5m": 86,
-        "recent_mint_concentration": 0.0116,
-        "unique_recent_minters": 86,
-        "velocity_1m": 86.0,
-        "velocity_5m": 17.2
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "TurtleGuild",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x766ab08a185f359a6e1ae783b690df4363b856b6",
+      "name": "Yield Fields",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x879482d7b476580c9c71a884a16688d9f4a528a7",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x2dc8d9d106b3173e11af53d3d8d8a2f4cdadc981",
+        "owner": "0x87603389a3255d91de10cee66cd7410e8b257812",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 1
+        "sell_through": 0
       },
-      "sell_through": 0.1701170117011701,
+      "sell_through": 0.02277085330776606,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 1111,
-        "total_supply": 189
+        "max_supply": 8344,
+        "total_supply": 190
       },
-      "ticker": "TRUTHS"
+      "ticker": "Yield Fields"
     }
   ],
   "win_rate_pct": 0.0
