@@ -1,17 +1,103 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+    "hard_gates": [
+      "SAFETY_REVIEW_REQUIRED",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+    ],
+    "market": {
+      "floor_price": null,
+      "native_sales_24h": 0,
+      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+      "sales_24h": 1,
+      "source": "SEAPORT_1_6",
+      "state": "LIVE",
+      "volume_eth_24h": 0.0
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 3,
+      "mints_1m": 3,
+      "mints_5m": 3,
+      "mints_60m": 3,
+      "raw_units_1m": 3,
+      "raw_units_5m": 3,
+      "recent_mint_concentration": 0.3333,
+      "unique_recent_minters": 3,
+      "velocity_1m": 3.0,
+      "velocity_5m": 0.6
+    },
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Stake the Future",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.1275,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "HIGH",
+      "reasons": [
+        "SECONDARY_MARKET_OBSERVED"
+      ],
+      "state": "PASS"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x72cb65d6e06b1add86123e18e39d41d45c3990b5",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 34,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 1,
+      "mint_velocity": 4,
+      "price_asymmetry": 15,
+      "safety": 4,
+      "secondary_liquidity": 1,
+      "sell_through": 2
+    },
+    "sell_through": 0.26777677767776775,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 2222,
+      "total_supply": 595
+    },
+    "ticker": "STF"
+  },
   "capital_deployed_usd": 0,
   "chain": {
-    "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "active_rpc": "https://robinhood-mainnet-rpc.blockreq.com/v1/rpc/public",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 67413996,
-    "latest_block_age_seconds": 1,
+    "latest_block": 67421499,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
-    "rpc_failovers": 0,
-    "safe_block": 67413986,
+    "rpc_failovers": 1,
+    "safe_block": 67421489,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789854251,
+  "generated_at": 1789855004,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +139,116 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.081,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 3.148,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 1.143,
-    "from_block": 67413862,
+    "duration_seconds": 4.215,
+    "from_block": 67421326,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 5,
-    "lag_seconds": 1,
-    "live_observations": 0,
-    "next_block": 67413982,
+    "lag_blocks": 44,
+    "lag_seconds": 4,
+    "live_observations": 1,
+    "next_block": 67421446,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 67413981,
+    "to_block": 67421445,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 67413862-67413981",
+  "status": "SCANNING 67421326-67421445",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+      "hard_gates": [
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      ],
+      "market": {
+        "floor_price": null,
+        "native_sales_24h": 0,
+        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
+        "sales_24h": 1,
+        "source": "SEAPORT_1_6",
+        "state": "LIVE",
+        "volume_eth_24h": 0.0
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 3,
+        "mints_1m": 3,
+        "mints_5m": 3,
+        "mints_60m": 3,
+        "raw_units_1m": 3,
+        "raw_units_5m": 3,
+        "recent_mint_concentration": 0.3333,
+        "unique_recent_minters": 3,
+        "velocity_1m": 3.0,
+        "velocity_5m": 0.6
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Stake the Future",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x89cc705fe0f9aa7a373fbb2fcf2963c980ef2675",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1275,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "HIGH",
+        "reasons": [
+          "SECONDARY_MARKET_OBSERVED"
+        ],
+        "state": "PASS"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x72cb65d6e06b1add86123e18e39d41d45c3990b5",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 34,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 1,
+        "mint_velocity": 4,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 1,
+        "sell_through": 2
+      },
+      "sell_through": 0.26777677767776775,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 2222,
+        "total_supply": 595
+      },
+      "ticker": "STF"
+    }
+  ],
   "win_rate_pct": 0.0
 }
