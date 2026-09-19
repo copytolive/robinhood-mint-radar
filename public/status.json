@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
-    "collection": "0xf685e5db8056604d060c9f5d9604cf5813693a6e",
+    "action": "WAIT",
+    "collection": "0xbd993bab3a7e95a37401073514cc547969ff431d",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf685e5db8056604d060c9f5d9604cf5813693a6e",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbd993bab3a7e95a37401073514cc547969ff431d",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 60,
-      "mints_1m": 60,
-      "mints_5m": 60,
-      "mints_60m": 60,
-      "raw_units_1m": 60,
-      "raw_units_5m": 60,
-      "recent_mint_concentration": 0.0333,
-      "unique_recent_minters": 30,
-      "velocity_1m": 60.0,
-      "velocity_5m": 12.0
+      "mints_15m": 20,
+      "mints_1m": 20,
+      "mints_5m": 20,
+      "mints_60m": 20,
+      "raw_units_1m": 20,
+      "raw_units_5m": 20,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 4,
+      "velocity_1m": 20.0,
+      "velocity_5m": 4.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Loxley Arrows",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xf685e5db8056604d060c9f5d9604cf5813693a6e",
+    "name": "RH Army",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xbd993bab3a7e95a37401073514cc547969ff431d",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.2619,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,8 +55,8 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": null,
-      "owner_active": false,
+      "owner": "0x19f9ffeae4d52e211e350da473a366293f1fc738",
+      "owner_active": true,
       "proxy": null,
       "review_risks": [
         "VERIFICATION_UNAVAILABLE"
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 51,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
+      "distribution": 0,
+      "holder_growth": 2,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 3
     },
-    "sell_through": null,
+    "sell_through": 0.304,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 1020
+      "max_supply": 10000,
+      "total_supply": 3040
     },
-    "ticker": "ARROW"
+    "ticker": "RH Army"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 66692533,
-    "latest_block_age_seconds": 1,
+    "latest_block": 66701052,
+    "latest_block_age_seconds": 0,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 66692523,
+    "safe_block": 66701042,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789781598,
+  "generated_at": 1789782454,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,122 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.863,
+    "analysis_age_seconds": 1.13,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 6,
     "blocks_processed": 120,
-    "duration_seconds": 3.79,
-    "from_block": 66692380,
+    "duration_seconds": 5.745,
+    "from_block": 66700868,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 24,
-    "lag_seconds": 3,
+    "lag_blocks": 55,
+    "lag_seconds": 6,
     "live_observations": 2,
-    "next_block": 66692500,
+    "next_block": 66700988,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 66692499,
+    "to_block": 66700987,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 66692380-66692499",
+  "status": "SCANNING 66700868-66700987",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
-      "collection": "0xf685e5db8056604d060c9f5d9604cf5813693a6e",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf685e5db8056604d060c9f5d9604cf5813693a6e",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 60,
-        "mints_1m": 60,
-        "mints_5m": 60,
-        "mints_60m": 60,
-        "raw_units_1m": 60,
-        "raw_units_5m": 60,
-        "recent_mint_concentration": 0.0333,
-        "unique_recent_minters": 30,
-        "velocity_1m": 60.0,
-        "velocity_5m": 12.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Loxley Arrows",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf685e5db8056604d060c9f5d9604cf5813693a6e",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.3661,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 61,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": null,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": null,
-        "total_supply": 1020
-      },
-      "ticker": "ARROW"
-    },
-    {
       "action": "WAIT",
-      "collection": "0x8b7bc631613030d4f405d08f3a25ce9e1013a17e",
+      "collection": "0xbd993bab3a7e95a37401073514cc547969ff431d",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x8b7bc631613030d4f405d08f3a25ce9e1013a17e",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xbd993bab3a7e95a37401073514cc547969ff431d",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -264,21 +180,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 28,
-        "mints_1m": 28,
-        "mints_5m": 28,
-        "mints_60m": 28,
-        "raw_units_1m": 28,
-        "raw_units_5m": 28,
+        "mints_15m": 20,
+        "mints_1m": 20,
+        "mints_5m": 20,
+        "mints_60m": 20,
+        "raw_units_1m": 20,
+        "raw_units_5m": 20,
         "recent_mint_concentration": 0.25,
         "unique_recent_minters": 4,
-        "velocity_1m": 28.0,
-        "velocity_5m": 5.6
+        "velocity_1m": 20.0,
+        "velocity_5m": 4.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ThumbkinsV2",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x8b7bc631613030d4f405d08f3a25ce9e1013a17e",
+      "name": "RH Army",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xbd993bab3a7e95a37401073514cc547969ff431d",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -299,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xe4a0100e783093661ad52b0e68eeee29ae7477cb",
+        "owner": "0x19f9ffeae4d52e211e350da473a366293f1fc738",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -319,13 +235,97 @@
         "secondary_liquidity": 0,
         "sell_through": 3
       },
-      "sell_through": 0.3284,
+      "sell_through": 0.304,
       "standard": "ERC721",
       "supply": {
         "max_supply": 10000,
-        "total_supply": 3284
+        "total_supply": 3040
       },
-      "ticker": "Thumbkins"
+      "ticker": "RH Army"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xcd279b1ba8297f9317342d427f1f4c976f87eb65",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xcd279b1ba8297f9317342d427f1f4c976f87eb65",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "The Robinhood Ledger",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xcd279b1ba8297f9317342d427f1f4c976f87eb65",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2525,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x2eeaa7534aa31545e98319ed72827da53264775f",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 50,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 9
+      },
+      "sell_through": 0.9327390599675851,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 1234,
+        "total_supply": 1151
+      },
+      "ticker": "TRL"
     }
   ],
   "win_rate_pct": 0.0
