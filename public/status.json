@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+    "collection": "0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 10,
-      "mints_1m": 10,
-      "mints_5m": 10,
-      "mints_60m": 10,
-      "raw_units_1m": 10,
-      "raw_units_5m": 10,
-      "recent_mint_concentration": 0.5,
-      "unique_recent_minters": 2,
-      "velocity_1m": 10.0,
-      "velocity_5m": 2.0
+      "mints_15m": 47,
+      "mints_1m": 47,
+      "mints_5m": 47,
+      "mints_60m": 47,
+      "raw_units_1m": 47,
+      "raw_units_5m": 47,
+      "recent_mint_concentration": 0.4255,
+      "unique_recent_minters": 9,
+      "velocity_1m": 47.0,
+      "velocity_5m": 9.4
     },
-    "mint_price_eth": 7.610053758e-08,
-    "mint_price_source": "CONTRACT",
-    "name": "OMNIGODS",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+    "mint_price_eth": 0.0,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+    "name": "Artificial Shiba",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1688,
+    "predicted_probability": 0.2715,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x26e8134ecc3af5cce32f34b03e7bd2f318b25158",
+      "owner": "0x80a3636b43cf4c235abd02b0fa61e8436cb2af07",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 40,
+    "score": 52,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 15,
-      "price_asymmetry": 13,
+      "holder_growth": 4,
+      "mint_velocity": 20,
+      "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 2
     },
-    "sell_through": 2.266e-05,
+    "sell_through": 0.2786,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 200000000,
-      "total_supply": 4532
+      "max_supply": 5000,
+      "total_supply": 1393
     },
-    "ticker": "OMNIGODS"
+    "ticker": "ASHIBA"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 67912368,
+    "latest_block": 67920060,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 67912358,
+    "safe_block": 67920050,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789904676,
+  "generated_at": 1789905451,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,122 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.125,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 4,
+    "analysis_age_seconds": 2.171,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 2.526,
-    "from_block": 67912224,
+    "duration_seconds": 3.938,
+    "from_block": 67919901,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 15,
-    "lag_seconds": 1,
-    "live_observations": 1,
-    "next_block": 67912344,
+    "lag_blocks": 30,
+    "lag_seconds": 3,
+    "live_observations": 2,
+    "next_block": 67920021,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 67912343,
+    "to_block": 67920020,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 67912224-67912343",
+  "status": "SCANNING 67919901-67920020",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+      "collection": "0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 47,
+        "mints_1m": 47,
+        "mints_5m": 47,
+        "mints_60m": 47,
+        "raw_units_1m": 47,
+        "raw_units_5m": 47,
+        "recent_mint_concentration": 0.4255,
+        "unique_recent_minters": 9,
+        "velocity_1m": 47.0,
+        "velocity_5m": 9.4
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Artificial Shiba",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x3054cab70f3af95cfd2c152c4d7d5e6cb4bb8c2f",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.2715,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x80a3636b43cf4c235abd02b0fa61e8436cb2af07",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 52,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 4,
+        "mint_velocity": 20,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 2
+      },
+      "sell_through": 0.2786,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 5000,
+        "total_supply": 1393
+      },
+      "ticker": "ASHIBA"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x19792d1451542cfe0ce8eb85d996fd43f7a4a1f9",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x19792d1451542cfe0ce8eb85d996fd43f7a4a1f9",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -186,21 +270,21 @@
         "mints_60m": 10,
         "raw_units_1m": 10,
         "raw_units_5m": 10,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
         "velocity_1m": 10.0,
         "velocity_5m": 2.0
       },
-      "mint_price_eth": 7.610053758e-08,
-      "mint_price_source": "CONTRACT",
-      "name": "OMNIGODS",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xdcd9c4087963d4bffe7179a143d5bdeab6622bc6",
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Secret Airdrop",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x19792d1451542cfe0ce8eb85d996fd43f7a4a1f9",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1688,
+      "predicted_probability": 0.1763,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +299,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x26e8134ecc3af5cce32f34b03e7bd2f318b25158",
+        "owner": "0x59dd3a07662880844697c7cc4478f26419b0e922",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +308,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 40,
+      "score": 41,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
+        "holder_growth": 0,
         "mint_velocity": 15,
-        "price_asymmetry": 13,
+        "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 2.266e-05,
+      "sell_through": 0.0493,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 200000000,
-        "total_supply": 4532
+        "max_supply": 10000,
+        "total_supply": 493
       },
-      "ticker": "OMNIGODS"
+      "ticker": "SecretAirdrop"
     }
   ],
   "win_rate_pct": 0.0
