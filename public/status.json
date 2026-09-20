@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 22,
-      "mints_1m": 22,
-      "mints_5m": 22,
-      "mints_60m": 22,
-      "raw_units_1m": 22,
-      "raw_units_5m": 22,
+      "mints_15m": 28,
+      "mints_1m": 28,
+      "mints_5m": 28,
+      "mints_60m": 28,
+      "raw_units_1m": 28,
+      "raw_units_5m": 28,
       "recent_mint_concentration": 0.5,
       "unique_recent_minters": 2,
-      "velocity_1m": 22.0,
-      "velocity_5m": 4.4
+      "velocity_1m": 28.0,
+      "velocity_5m": 5.6
     },
     "mint_price_eth": 3.805026879e-08,
     "mint_price_source": "CONTRACT",
@@ -75,11 +75,11 @@
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 1.313e-05,
+    "sell_through": 1.342e-05,
     "standard": "ERC721",
     "supply": {
       "max_supply": 200000000,
-      "total_supply": 2626
+      "total_supply": 2684
     },
     "ticker": "OMNIGODS"
   },
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 67791568,
+    "latest_block": 67801650,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 67791558,
+    "safe_block": 67801640,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789892457,
+  "generated_at": 1789893474,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,27 +136,27 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.844,
+    "analysis_age_seconds": 1.767,
     "analysis_rows_considered": 2,
     "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.121,
-    "from_block": 67791417,
+    "duration_seconds": 3.367,
+    "from_block": 67801496,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 22,
-    "lag_seconds": 2,
+    "lag_blocks": 25,
+    "lag_seconds": 3,
     "live_observations": 2,
-    "next_block": 67791537,
+    "next_block": 67801616,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 67791536,
+    "to_block": 67801615,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 67791417-67791536",
+  "status": "SCANNING 67801496-67801615",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
@@ -180,16 +180,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 22,
-        "mints_1m": 22,
-        "mints_5m": 22,
-        "mints_60m": 22,
-        "raw_units_1m": 22,
-        "raw_units_5m": 22,
+        "mints_15m": 28,
+        "mints_1m": 28,
+        "mints_5m": 28,
+        "mints_60m": 28,
+        "raw_units_1m": 28,
+        "raw_units_5m": 28,
         "recent_mint_concentration": 0.5,
         "unique_recent_minters": 2,
-        "velocity_1m": 22.0,
-        "velocity_5m": 4.4
+        "velocity_1m": 28.0,
+        "velocity_5m": 5.6
       },
       "mint_price_eth": 3.805026879e-08,
       "mint_price_source": "CONTRACT",
@@ -235,23 +235,23 @@
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 1.313e-05,
+      "sell_through": 1.342e-05,
       "standard": "ERC721",
       "supply": {
         "max_supply": 200000000,
-        "total_supply": 2626
+        "total_supply": 2684
       },
       "ticker": "OMNIGODS"
     },
     {
       "action": "WAIT",
-      "collection": "0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "collection": "0xe2efc98ca338768b83c70e8c00a2b08ed7e7c6fd",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe2efc98ca338768b83c70e8c00a2b08ed7e7c6fd",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -264,27 +264,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 9,
-        "mints_1m": 9,
-        "mints_5m": 9,
-        "mints_60m": 9,
-        "raw_units_1m": 84,
-        "raw_units_5m": 84,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 9.0,
-        "velocity_5m": 1.8
+        "mints_15m": 7,
+        "mints_1m": 7,
+        "mints_5m": 7,
+        "mints_60m": 7,
+        "raw_units_1m": 7,
+        "raw_units_5m": 7,
+        "recent_mint_concentration": 0.1429,
+        "unique_recent_minters": 7,
+        "velocity_1m": 7.0,
+        "velocity_5m": 1.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": null,
-      "opensea_url": "https://opensea.io/assets/robinhood/0x063bdba5c8c29a57c6530f2668cfd040b1282118",
+      "name": "SODA APE",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe2efc98ca338768b83c70e8c00a2b08ed7e7c6fd",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1615,
+      "predicted_probability": 0.1841,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -299,8 +299,8 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": null,
-        "owner_active": false,
+        "owner": "0xb4ba95fc62000c70f88fda8bb181854a55e168e6",
+        "owner_active": true,
         "proxy": null,
         "review_risks": [
           "VERIFICATION_UNAVAILABLE"
@@ -308,24 +308,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 39,
+      "score": 42,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 13,
+        "distribution": 3,
+        "holder_growth": 3,
+        "mint_velocity": 10,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": null,
-      "standard": "ERC1155",
+      "sell_through": 0.08333333333333333,
+      "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": null
+        "max_supply": 900,
+        "total_supply": 75
       },
-      "ticker": null
+      "ticker": "Soda Ape"
     }
   ],
   "win_rate_pct": 0.0
