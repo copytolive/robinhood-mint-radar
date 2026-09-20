@@ -1,17 +1,101 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 10,
+      "mints_1m": 10,
+      "mints_5m": 10,
+      "mints_60m": 10,
+      "raw_units_1m": 10,
+      "raw_units_5m": 10,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 10.0,
+      "velocity_5m": 2.0
+    },
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Hood Keycaps",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.0929,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0xe6462a810b66f1191ca2b2d54214d342dc414586",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 28,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 15,
+      "price_asymmetry": 0,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 2
+    },
+    "sell_through": 0.2992992992992993,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 999,
+      "total_supply": 299
+    },
+    "ticker": "CAPS"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 68193483,
+    "latest_block": 68201155,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 68193473,
+    "safe_block": 68201145,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789932906,
+  "generated_at": 1789933673,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +137,114 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 0.143,
-    "analysis_rows_considered": 0,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 1.446,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 1.901,
-    "from_block": 68193343,
+    "duration_seconds": 2.467,
+    "from_block": 68200989,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 11,
-    "lag_seconds": 1,
-    "live_observations": 0,
-    "next_block": 68193463,
+    "lag_blocks": 37,
+    "lag_seconds": 3,
+    "live_observations": 1,
+    "next_block": 68201109,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 68193462,
+    "to_block": 68201108,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 68193343-68193462",
+  "status": "SCANNING 68200989-68201108",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Hood Keycaps",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xdfef95752e4b1d8cf7d6aa220a311f60565e7dcd",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.0929,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xe6462a810b66f1191ca2b2d54214d342dc414586",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 28,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 2
+      },
+      "sell_through": 0.2992992992992993,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 999,
+        "total_supply": 299
+      },
+      "ticker": "CAPS"
+    }
+  ],
   "win_rate_pct": 0.0
 }
