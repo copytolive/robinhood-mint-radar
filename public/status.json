@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+    "collection": "0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -21,27 +21,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 11,
-      "mints_1m": 11,
-      "mints_5m": 11,
-      "mints_60m": 11,
-      "raw_units_1m": 11,
-      "raw_units_5m": 11,
-      "recent_mint_concentration": 0.4545,
-      "unique_recent_minters": 3,
-      "velocity_1m": 11.0,
-      "velocity_5m": 2.2
+      "mints_15m": 208,
+      "mints_1m": 208,
+      "mints_5m": 208,
+      "mints_60m": 208,
+      "raw_units_1m": 208,
+      "raw_units_5m": 208,
+      "recent_mint_concentration": 0.7212,
+      "unique_recent_minters": 6,
+      "velocity_1m": 208.0,
+      "velocity_5m": 41.6
     },
     "mint_price_eth": null,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-    "name": "TERMINAL 404",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+    "name": "Tektronik",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.1094,
+    "predicted_probability": 0.1688,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -56,7 +56,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xe66e589525b045ee358f6abd58c3ca0a0c0fd325",
+      "owner": "0xbf6d335131f30c97ef14a21eb9cf53546e395f23",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -65,24 +65,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 31,
+    "score": 40,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 16,
+      "holder_growth": 3,
+      "mint_velocity": 20,
       "price_asymmetry": 0,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 3
+      "sell_through": 6
     },
-    "sell_through": 0.32623762376237625,
+    "sell_through": 0.6894689468946895,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 4040,
-      "total_supply": 1318
+      "max_supply": 3333,
+      "total_supply": 2298
     },
-    "ticker": "terminal404"
+    "ticker": "Tektronik"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -90,22 +90,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 68219897,
+    "latest_block": 68228961,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 68219887,
+    "safe_block": 68228951,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 307200,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789935558,
+  "generated_at": 1789936469,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -137,38 +137,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.737,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_age_seconds": 1.239,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 2.482,
-    "from_block": 68219748,
+    "duration_seconds": 2.005,
+    "from_block": 68228811,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 20,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 21,
     "lag_seconds": 2,
     "live_observations": 1,
-    "next_block": 68219868,
+    "next_block": 68228931,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 68219867,
+    "to_block": 68228930,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 68219748-68219867",
+  "status": "SCANNING 68228811-68228930",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+      "collection": "0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -182,27 +182,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 11,
-        "mints_1m": 11,
-        "mints_5m": 11,
-        "mints_60m": 11,
-        "raw_units_1m": 11,
-        "raw_units_5m": 11,
-        "recent_mint_concentration": 0.4545,
-        "unique_recent_minters": 3,
-        "velocity_1m": 11.0,
-        "velocity_5m": 2.2
+        "mints_15m": 208,
+        "mints_1m": 208,
+        "mints_5m": 208,
+        "mints_60m": 208,
+        "raw_units_1m": 208,
+        "raw_units_5m": 208,
+        "recent_mint_concentration": 0.7212,
+        "unique_recent_minters": 6,
+        "velocity_1m": 208.0,
+        "velocity_5m": 41.6
       },
       "mint_price_eth": null,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "TERMINAL 404",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xc53bf47b4dc6834e43987c453f7f99c950d6948b",
+      "name": "Tektronik",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa94c35d2fe10482061b0db11cd3153b4d5e8c24c",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.1094,
+      "predicted_probability": 0.1688,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -217,7 +217,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xe66e589525b045ee358f6abd58c3ca0a0c0fd325",
+        "owner": "0xbf6d335131f30c97ef14a21eb9cf53546e395f23",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -226,24 +226,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 31,
+      "score": 40,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 16,
+        "holder_growth": 3,
+        "mint_velocity": 20,
         "price_asymmetry": 0,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 6
       },
-      "sell_through": 0.32623762376237625,
+      "sell_through": 0.6894689468946895,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 4040,
-        "total_supply": 1318
+        "max_supply": 3333,
+        "total_supply": 2298
       },
-      "ticker": "terminal404"
+      "ticker": "Tektronik"
     }
   ],
   "win_rate_pct": 0.0
