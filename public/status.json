@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+    "collection": "0x5ee47839cf693f3022d3804c8746021240388a79",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5ee47839cf693f3022d3804c8746021240388a79",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 15,
-      "mints_1m": 15,
-      "mints_5m": 15,
-      "mints_60m": 15,
-      "raw_units_1m": 15,
-      "raw_units_5m": 15,
-      "recent_mint_concentration": 0.0667,
-      "unique_recent_minters": 15,
-      "velocity_1m": 15.0,
-      "velocity_5m": 3.0
+      "mints_15m": 28,
+      "mints_1m": 28,
+      "mints_5m": 28,
+      "mints_60m": 28,
+      "raw_units_1m": 28,
+      "raw_units_5m": 28,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 28.0,
+      "velocity_5m": 5.6
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Identicon Punks",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+    "name": "Turtle Fees",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x5ee47839cf693f3022d3804c8746021240388a79",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3329,
+    "predicted_probability": 0.2168,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x46e717983e4ee7c41c1c90adff39069359aadf09",
+      "owner": "0x00439ffb31a8d32a7bb8bff25a4347f87904dcae",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 58,
+    "score": 46,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 7,
+      "distribution": 0,
+      "holder_growth": 0,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.09840984098409841,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 6666,
-      "total_supply": 656
+      "max_supply": 10001,
+      "total_supply": null
     },
-    "ticker": "IDP"
+    "ticker": "TURTLE"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 68924664,
+    "latest_block": 68936906,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 68924654,
+    "safe_block": 68936896,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790006517,
+  "generated_at": 1790007742,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.989,
+    "analysis_age_seconds": 2.232,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 4,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 3.152,
-    "from_block": 68924509,
+    "duration_seconds": 3.969,
+    "from_block": 68936747,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 1,
-    "lag_blocks": 26,
-    "lag_seconds": 2,
+    "lag_blocks": 30,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 68924629,
+    "next_block": 68936867,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 68924628,
+    "to_block": 68936866,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 68924509-68924628",
+  "status": "SCANNING 68936747-68936866",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+      "collection": "0x5ee47839cf693f3022d3804c8746021240388a79",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x5ee47839cf693f3022d3804c8746021240388a79",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 15,
-        "mints_1m": 15,
-        "mints_5m": 15,
-        "mints_60m": 15,
-        "raw_units_1m": 15,
-        "raw_units_5m": 15,
-        "recent_mint_concentration": 0.0667,
-        "unique_recent_minters": 15,
-        "velocity_1m": 15.0,
-        "velocity_5m": 3.0
+        "mints_15m": 28,
+        "mints_1m": 28,
+        "mints_5m": 28,
+        "mints_60m": 28,
+        "raw_units_1m": 28,
+        "raw_units_5m": 28,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 28.0,
+        "velocity_5m": 5.6
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Identicon Punks",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x9a591c60f792c5b5dd4296d8d23c171caa35ec0a",
+      "name": "Turtle Fees",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x5ee47839cf693f3022d3804c8746021240388a79",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3329,
+      "predicted_probability": 0.2168,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x46e717983e4ee7c41c1c90adff39069359aadf09",
+        "owner": "0x00439ffb31a8d32a7bb8bff25a4347f87904dcae",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 58,
+      "score": 46,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 7,
+        "distribution": 0,
+        "holder_growth": 0,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.09840984098409841,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 6666,
-        "total_supply": 656
+        "max_supply": 10001,
+        "total_supply": null
       },
-      "ticker": "IDP"
+      "ticker": "TURTLE"
     }
   ],
   "win_rate_pct": 0.0
