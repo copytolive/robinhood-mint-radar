@@ -1,6 +1,6 @@
 {
   "best_live_observation": {
-    "action": "WATCH",
+    "action": "WAIT",
     "collection": "0xa4e1a464d1513c85012d5455321386dfe18bc482",
     "execution": {
       "source": null,
@@ -20,16 +20,16 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 28,
-      "mints_1m": 28,
-      "mints_5m": 28,
-      "mints_60m": 28,
-      "raw_units_1m": 28,
-      "raw_units_5m": 28,
-      "recent_mint_concentration": 0.0357,
-      "unique_recent_minters": 28,
-      "velocity_1m": 28.0,
-      "velocity_5m": 5.6
+      "mints_15m": 9,
+      "mints_1m": 9,
+      "mints_5m": 9,
+      "mints_60m": 9,
+      "raw_units_1m": 9,
+      "raw_units_5m": 9,
+      "recent_mint_concentration": 0.1111,
+      "unique_recent_minters": 9,
+      "velocity_1m": 9.0,
+      "velocity_5m": 1.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -40,7 +40,7 @@
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3661,
+    "predicted_probability": 0.2254,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -64,22 +64,22 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 61,
+    "score": 47,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 5,
-      "holder_growth": 10,
-      "mint_velocity": 20,
+      "distribution": 3,
+      "holder_growth": 4,
+      "mint_velocity": 13,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 1
     },
-    "sell_through": 0.05709142342805709,
+    "sell_through": 0.13077021987913076,
     "standard": "ERC721",
     "supply": {
       "max_supply": 7777,
-      "total_supply": 444
+      "total_supply": 1017
     },
     "ticker": "CPU"
   },
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 68967312,
+    "latest_block": 68976677,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 68967302,
+    "safe_block": 68976667,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790010782,
+  "generated_at": 1790011718,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 1
+      "tracked": 0
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,31 +136,31 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.423,
+    "analysis_age_seconds": 1.912,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 7,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.457,
-    "from_block": 68967153,
+    "duration_seconds": 3.541,
+    "from_block": 68976523,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 30,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 25,
     "lag_seconds": 3,
-    "live_observations": 1,
-    "next_block": 68967273,
+    "live_observations": 2,
+    "next_block": 68976643,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 68967272,
+    "to_block": 68976642,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 68967153-68967272",
+  "status": "SCANNING 68976523-68976642",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WATCH",
+      "action": "WAIT",
       "collection": "0xa4e1a464d1513c85012d5455321386dfe18bc482",
       "execution": {
         "source": null,
@@ -180,16 +180,16 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 28,
-        "mints_1m": 28,
-        "mints_5m": 28,
-        "mints_60m": 28,
-        "raw_units_1m": 28,
-        "raw_units_5m": 28,
-        "recent_mint_concentration": 0.0357,
-        "unique_recent_minters": 28,
-        "velocity_1m": 28.0,
-        "velocity_5m": 5.6
+        "mints_15m": 9,
+        "mints_1m": 9,
+        "mints_5m": 9,
+        "mints_60m": 9,
+        "raw_units_1m": 9,
+        "raw_units_5m": 9,
+        "recent_mint_concentration": 0.1111,
+        "unique_recent_minters": 9,
+        "velocity_1m": 9.0,
+        "velocity_5m": 1.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
@@ -200,7 +200,7 @@
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3661,
+      "predicted_probability": 0.2254,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -224,24 +224,108 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 61,
+      "score": 47,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 5,
-        "holder_growth": 10,
-        "mint_velocity": 20,
+        "distribution": 3,
+        "holder_growth": 4,
+        "mint_velocity": 13,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 1
       },
-      "sell_through": 0.05709142342805709,
+      "sell_through": 0.13077021987913076,
       "standard": "ERC721",
       "supply": {
         "max_supply": 7777,
-        "total_supply": 444
+        "total_supply": 1017
       },
       "ticker": "CPU"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0x174f559077f4b20c11211737ad77b8a668088de1",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x174f559077f4b20c11211737ad77b8a668088de1",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 7,
+        "mints_1m": 7,
+        "mints_5m": 7,
+        "mints_60m": 7,
+        "raw_units_1m": 7,
+        "raw_units_5m": 7,
+        "recent_mint_concentration": 0.1429,
+        "unique_recent_minters": 7,
+        "velocity_1m": 7.0,
+        "velocity_5m": 1.4
+      },
+      "mint_price_eth": 0.0,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
+      "name": "Rare Mummy",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x174f559077f4b20c11211737ad77b8a668088de1",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.192,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x5d9447c26c64fe83fca75bc7490d9a2e57f335b1",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 43,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 3,
+        "mint_velocity": 10,
+        "price_asymmetry": 15,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 1
+      },
+      "sell_through": 0.17394239423942395,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 4444,
+        "total_supply": 773
+      },
+      "ticker": "Rare Mummy"
     }
   ],
   "win_rate_pct": 0.0
