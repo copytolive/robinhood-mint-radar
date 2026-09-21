@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+    "collection": "0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 33,
-      "mints_1m": 33,
-      "mints_5m": 33,
-      "mints_60m": 33,
-      "raw_units_1m": 33,
-      "raw_units_5m": 33,
-      "recent_mint_concentration": 0.6061,
+      "mints_15m": 20,
+      "mints_1m": 20,
+      "mints_5m": 20,
+      "mints_60m": 20,
+      "raw_units_1m": 20,
+      "raw_units_5m": 20,
+      "recent_mint_concentration": 0.5,
       "unique_recent_minters": 2,
-      "velocity_1m": 33.0,
-      "velocity_5m": 6.6
+      "velocity_1m": 20.0,
+      "velocity_5m": 4.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "ALMS RH",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+    "name": "Shielded Wizards",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2254,
+    "predicted_probability": 0.2433,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x097c3b7e84b1c37e220b9f01cf076a5b7c0f1c58",
+      "owner": "0xa70c712a9b0f86946d64e818f33454c48911f4c2",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,7 +64,7 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 47,
+    "score": 49,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
@@ -73,15 +73,15 @@
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 0
+      "sell_through": 2
     },
-    "sell_through": 0.022322232223222323,
+    "sell_through": 0.2256,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 124
+      "max_supply": 2500,
+      "total_supply": 564
     },
-    "ticker": "Rh"
+    "ticker": "Shielded Wizards"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 68836538,
+    "latest_block": 68846220,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 68836528,
+    "safe_block": 68846210,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1789997689,
+  "generated_at": 1789998658,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.379,
-    "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 7,
+    "analysis_age_seconds": 1.461,
+    "analysis_rows_considered": 2,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 2.709,
-    "from_block": 68836389,
+    "duration_seconds": 2.308,
+    "from_block": 68846071,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
+    "irrelevant_filtered": 1,
     "lag_blocks": 20,
     "lag_seconds": 2,
     "live_observations": 1,
-    "next_block": 68836509,
+    "next_block": 68846191,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 68836508,
+    "to_block": 68846190,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 68836389-68836508",
+  "status": "SCANNING 68846071-68846190",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+      "collection": "0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 33,
-        "mints_1m": 33,
-        "mints_5m": 33,
-        "mints_60m": 33,
-        "raw_units_1m": 33,
-        "raw_units_5m": 33,
-        "recent_mint_concentration": 0.6061,
+        "mints_15m": 20,
+        "mints_1m": 20,
+        "mints_5m": 20,
+        "mints_60m": 20,
+        "raw_units_1m": 20,
+        "raw_units_5m": 20,
+        "recent_mint_concentration": 0.5,
         "unique_recent_minters": 2,
-        "velocity_1m": 33.0,
-        "velocity_5m": 6.6
+        "velocity_1m": 20.0,
+        "velocity_5m": 4.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "ALMS RH",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x6af1c9a128ad5d2f866271bd255a8de9a21f7811",
+      "name": "Shielded Wizards",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x3e8adf2aba7c699b20f35b69f15c7088de82ab55",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2254,
+      "predicted_probability": 0.2433,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x097c3b7e84b1c37e220b9f01cf076a5b7c0f1c58",
+        "owner": "0xa70c712a9b0f86946d64e818f33454c48911f4c2",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,7 +224,7 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 47,
+      "score": 49,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
@@ -233,15 +233,15 @@
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 0
+        "sell_through": 2
       },
-      "sell_through": 0.022322232223222323,
+      "sell_through": 0.2256,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 124
+        "max_supply": 2500,
+        "total_supply": 564
       },
-      "ticker": "Rh"
+      "ticker": "Shielded Wizards"
     }
   ],
   "win_rate_pct": 0.0
