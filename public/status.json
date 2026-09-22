@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x6824da440f3686a9fdfd33c8be366586d218c157",
+    "collection": "0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6824da440f3686a9fdfd33c8be366586d218c157",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 111,
-      "mints_1m": 111,
-      "mints_5m": 111,
-      "mints_60m": 111,
-      "raw_units_1m": 111,
-      "raw_units_5m": 111,
-      "recent_mint_concentration": 1.0,
-      "unique_recent_minters": 1,
-      "velocity_1m": 111.0,
-      "velocity_5m": 22.2
+      "mints_15m": 50,
+      "mints_1m": 50,
+      "mints_5m": 50,
+      "mints_60m": 50,
+      "raw_units_1m": 50,
+      "raw_units_5m": 50,
+      "recent_mint_concentration": 0.4,
+      "unique_recent_minters": 4,
+      "velocity_1m": 50.0,
+      "velocity_5m": 10.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "024EFF",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x6824da440f3686a9fdfd33c8be366586d218c157",
+    "name": "Magnet Cloth",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2343,
+    "predicted_probability": 0.3222,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xe5c5d252b3177508f938bc41d57856f0e9a09cbe",
+      "owner": "0x58cb08f39edc208da2874421bc8a871aa3838f88",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 48,
+    "score": 57,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 0,
+      "holder_growth": 2,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 2
+      "sell_through": 9
     },
-    "sell_through": 0.21332133213321333,
+    "sell_through": 0.96725,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 3333,
-      "total_supply": 711
+      "max_supply": 4000,
+      "total_supply": 3869
     },
-    "ticker": "024EFF"
+    "ticker": "MAG"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 69952944,
+    "latest_block": 69960500,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 69952934,
+    "safe_block": 69960490,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790110069,
+  "generated_at": 1790110827,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.051,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_age_seconds": 1.216,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 3.189,
-    "from_block": 69952790,
+    "duration_seconds": 2.084,
+    "from_block": 69960357,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 25,
-    "lag_seconds": 3,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 14,
+    "lag_seconds": 1,
     "live_observations": 1,
-    "next_block": 69952910,
+    "next_block": 69960477,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 69952909,
+    "to_block": 69960476,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 69952790-69952909",
+  "status": "SCANNING 69960357-69960476",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x6824da440f3686a9fdfd33c8be366586d218c157",
+      "collection": "0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x6824da440f3686a9fdfd33c8be366586d218c157",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 111,
-        "mints_1m": 111,
-        "mints_5m": 111,
-        "mints_60m": 111,
-        "raw_units_1m": 111,
-        "raw_units_5m": 111,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 111.0,
-        "velocity_5m": 22.2
+        "mints_15m": 50,
+        "mints_1m": 50,
+        "mints_5m": 50,
+        "mints_60m": 50,
+        "raw_units_1m": 50,
+        "raw_units_5m": 50,
+        "recent_mint_concentration": 0.4,
+        "unique_recent_minters": 4,
+        "velocity_1m": 50.0,
+        "velocity_5m": 10.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "024EFF",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x6824da440f3686a9fdfd33c8be366586d218c157",
+      "name": "Magnet Cloth",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xdce4a9c9f8c75f5043462aeddcdf7d6b78a96815",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2343,
+      "predicted_probability": 0.3222,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xe5c5d252b3177508f938bc41d57856f0e9a09cbe",
+        "owner": "0x58cb08f39edc208da2874421bc8a871aa3838f88",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 48,
+      "score": 57,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 0,
+        "holder_growth": 2,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 2
+        "sell_through": 9
       },
-      "sell_through": 0.21332133213321333,
+      "sell_through": 0.96725,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 3333,
-        "total_supply": 711
+        "max_supply": 4000,
+        "total_supply": 3869
       },
-      "ticker": "024EFF"
+      "ticker": "MAG"
     }
   ],
   "win_rate_pct": 0.0
