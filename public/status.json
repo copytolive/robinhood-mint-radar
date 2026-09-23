@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0xb76ac6d65fcd12a480f083307dff6a0982714118",
+    "collection": "0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb76ac6d65fcd12a480f083307dff6a0982714118",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,21 +20,21 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 14,
-      "mints_1m": 14,
-      "mints_5m": 14,
-      "mints_60m": 14,
-      "raw_units_1m": 14,
-      "raw_units_5m": 14,
-      "recent_mint_concentration": 0.5,
-      "unique_recent_minters": 2,
-      "velocity_1m": 14.0,
-      "velocity_5m": 2.8
+      "mints_15m": 100,
+      "mints_1m": 100,
+      "mints_5m": 100,
+      "mints_60m": 100,
+      "raw_units_1m": 100,
+      "raw_units_5m": 100,
+      "recent_mint_concentration": 0.55,
+      "unique_recent_minters": 3,
+      "velocity_1m": 100.0,
+      "velocity_5m": 20.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Yield Fields RH",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xb76ac6d65fcd12a480f083307dff6a0982714118",
+    "name": "Muzzle Run Robinhood",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0xf4ef248d2a91da6e3a68d55f272b557363cc17b1",
+      "owner": "0x1d9311baae68089f77d0c8d1805e395e5e029264",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -75,13 +75,13 @@
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.017592027659141755,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 9834,
-      "total_supply": 173
+      "max_supply": null,
+      "total_supply": 25566
     },
-    "ticker": "Yield Fields"
+    "ticker": "MRR"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 70331861,
+    "latest_block": 70342531,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 70331851,
+    "safe_block": 70342521,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 77824,
+    "bytes": 4096,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790148204,
+  "generated_at": 1790149279,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.318,
-    "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 5,
+    "analysis_age_seconds": 1.661,
+    "analysis_rows_considered": 1,
+    "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 4.342,
-    "from_block": 70331692,
+    "duration_seconds": 10.267,
+    "from_block": 70342318,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
-    "hoodsea_launches_stored": 0,
+    "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 40,
-    "lag_seconds": 4,
-    "live_observations": 2,
-    "next_block": 70331812,
+    "lag_blocks": 84,
+    "lag_seconds": 8,
+    "live_observations": 1,
+    "next_block": 70342438,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 70331811,
-    "total_mint_units_stored": 0
+    "to_block": 70342437,
+    "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 70331692-70331811",
+  "status": "SCANNING 70342318-70342437",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0xb76ac6d65fcd12a480f083307dff6a0982714118",
+      "collection": "0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xb76ac6d65fcd12a480f083307dff6a0982714118",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,21 +180,21 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 14,
-        "mints_1m": 14,
-        "mints_5m": 14,
-        "mints_60m": 14,
-        "raw_units_1m": 14,
-        "raw_units_5m": 14,
-        "recent_mint_concentration": 0.5,
-        "unique_recent_minters": 2,
-        "velocity_1m": 14.0,
-        "velocity_5m": 2.8
+        "mints_15m": 100,
+        "mints_1m": 100,
+        "mints_5m": 100,
+        "mints_60m": 100,
+        "raw_units_1m": 100,
+        "raw_units_5m": 100,
+        "recent_mint_concentration": 0.55,
+        "unique_recent_minters": 3,
+        "velocity_1m": 100.0,
+        "velocity_5m": 20.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Yield Fields RH",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xb76ac6d65fcd12a480f083307dff6a0982714118",
+      "name": "Muzzle Run Robinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xd9eddc2e43435d444de311718aed1d4bbd8905cb",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0xf4ef248d2a91da6e3a68d55f272b557363cc17b1",
+        "owner": "0x1d9311baae68089f77d0c8d1805e395e5e029264",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -235,97 +235,13 @@
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.017592027659141755,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 9834,
-        "total_supply": 173
+        "max_supply": null,
+        "total_supply": 25566
       },
-      "ticker": "Yield Fields"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xf6fdf7c7179657df08629a368a48d1f6ac3fb738",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf6fdf7c7179657df08629a368a48d1f6ac3fb738",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 15,
-        "mints_1m": 15,
-        "mints_5m": 15,
-        "mints_60m": 15,
-        "raw_units_1m": 15,
-        "raw_units_5m": 15,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 15.0,
-        "velocity_5m": 3.0
-      },
-      "mint_price_eth": 0.0,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Byte",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf6fdf7c7179657df08629a368a48d1f6ac3fb738",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.2168,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x0ad3621f55ad15e42bc5b1088a2d7d64f1cbbbf8",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 46,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 20,
-        "price_asymmetry": 15,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 0
-      },
-      "sell_through": 0.0105,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 10000,
-        "total_supply": 105
-      },
-      "ticker": "Byte"
+      "ticker": "MRR"
     }
   ],
   "win_rate_pct": 0.0
