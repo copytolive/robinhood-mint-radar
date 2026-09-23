@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
-    "action": "WAIT",
-    "collection": "0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+    "action": "WATCH",
+    "collection": "0x1dd347b7d973827eb21ac66f476913e768433137",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1dd347b7d973827eb21ac66f476913e768433137",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 8,
-      "mints_1m": 8,
-      "mints_5m": 8,
-      "mints_60m": 8,
-      "raw_units_1m": 8,
-      "raw_units_5m": 8,
-      "recent_mint_concentration": 0.25,
-      "unique_recent_minters": 4,
-      "velocity_1m": 8.0,
-      "velocity_5m": 1.6
+      "mints_15m": 32,
+      "mints_1m": 32,
+      "mints_5m": 32,
+      "mints_60m": 32,
+      "raw_units_1m": 32,
+      "raw_units_5m": 32,
+      "recent_mint_concentration": 0.0312,
+      "unique_recent_minters": 32,
+      "velocity_1m": 32.0,
+      "velocity_5m": 6.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Fuzzy Cubes",
-    "opensea_url": "https://opensea.io/assets/robinhood/0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+    "name": "Quillfolk",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x1dd347b7d973827eb21ac66f476913e768433137",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.192,
+    "predicted_probability": 0.3661,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x865eafb2e0933be0752acc38d9fb697c8e898845",
+      "owner": "0x81327b73082173b054c3e5257d75d798ae882478",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 43,
+    "score": 61,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 0,
-      "holder_growth": 2,
-      "mint_velocity": 12,
+      "distribution": 5,
+      "holder_growth": 10,
+      "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 3
+      "sell_through": 0
     },
-    "sell_through": 0.377,
+    "sell_through": null,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 2000,
-      "total_supply": 754
+      "max_supply": null,
+      "total_supply": 7989
     },
-    "ticker": "Fuzzy"
+    "ticker": "QUILL"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 70775005,
-    "latest_block_age_seconds": 0,
+    "latest_block": 70782540,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 70774995,
+    "safe_block": 70782530,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -104,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790192828,
+  "generated_at": 1790193585,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -116,7 +116,7 @@
       "marked": 0,
       "reached_10x": 0,
       "reached_2x": 0,
-      "tracked": 0
+      "tracked": 1
     },
     "status": "PREDICTION_UNCERTIFIED"
   },
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.916,
+    "analysis_age_seconds": 1.763,
     "analysis_rows_considered": 1,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 4,
     "blocks_processed": 120,
-    "duration_seconds": 3.084,
-    "from_block": 70774851,
+    "duration_seconds": 3.289,
+    "from_block": 70782380,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 25,
+    "lag_blocks": 31,
     "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 70774971,
+    "next_block": 70782500,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 70774970,
+    "to_block": 70782499,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 70774851-70774970",
+  "status": "SCANNING 70782380-70782499",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
-      "action": "WAIT",
-      "collection": "0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+      "action": "WATCH",
+      "collection": "0x1dd347b7d973827eb21ac66f476913e768433137",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x1dd347b7d973827eb21ac66f476913e768433137",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 8,
-        "mints_1m": 8,
-        "mints_5m": 8,
-        "mints_60m": 8,
-        "raw_units_1m": 8,
-        "raw_units_5m": 8,
-        "recent_mint_concentration": 0.25,
-        "unique_recent_minters": 4,
-        "velocity_1m": 8.0,
-        "velocity_5m": 1.6
+        "mints_15m": 32,
+        "mints_1m": 32,
+        "mints_5m": 32,
+        "mints_60m": 32,
+        "raw_units_1m": 32,
+        "raw_units_5m": 32,
+        "recent_mint_concentration": 0.0312,
+        "unique_recent_minters": 32,
+        "velocity_1m": 32.0,
+        "velocity_5m": 6.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Fuzzy Cubes",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xa77143993a5e81fac810dcec6f0ab863052a1f14",
+      "name": "Quillfolk",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x1dd347b7d973827eb21ac66f476913e768433137",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.192,
+      "predicted_probability": 0.3661,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x865eafb2e0933be0752acc38d9fb697c8e898845",
+        "owner": "0x81327b73082173b054c3e5257d75d798ae882478",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 43,
+      "score": 61,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 2,
-        "mint_velocity": 12,
+        "distribution": 5,
+        "holder_growth": 10,
+        "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 3
+        "sell_through": 0
       },
-      "sell_through": 0.377,
+      "sell_through": null,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 2000,
-        "total_supply": 754
+        "max_supply": null,
+        "total_supply": 7989
       },
-      "ticker": "Fuzzy"
+      "ticker": "QUILL"
     }
   ],
   "win_rate_pct": 0.0
