@@ -1,14 +1,15 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+    "collection": "0xae4a232ff07611761343e97821688853f70deb5d",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae4a232ff07611761343e97821688853f70deb5d",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
       "MARKET_EVIDENCE_UNAVAILABLE"
@@ -19,42 +20,42 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 49,
-      "mints_1m": 49,
-      "mints_5m": 49,
-      "mints_60m": 49,
-      "raw_units_1m": 49,
-      "raw_units_5m": 49,
-      "recent_mint_concentration": 0.1429,
-      "unique_recent_minters": 7,
-      "velocity_1m": 49.0,
-      "velocity_5m": 9.8
+      "mints_15m": 11,
+      "mints_1m": 11,
+      "mints_5m": 11,
+      "mints_60m": 11,
+      "raw_units_1m": 11,
+      "raw_units_5m": 11,
+      "recent_mint_concentration": 0.0909,
+      "unique_recent_minters": 11,
+      "velocity_1m": 11.0,
+      "velocity_5m": 2.2
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "The Slippy Club NFT",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+    "name": "Bitborn",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xae4a232ff07611761343e97821688853f70deb5d",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.2715,
+    "predicted_probability": 0.2525,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "COLLECTIBLE_CONTRACT_NAME"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x85c8123a8d9a156eb559969a8cfbec957ad078e8",
+      "owner": "0xd4e94be93a127a69d6728955fda4d9c270b9898c",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -63,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 52,
+    "score": 50,
     "score_parts": {
       "acceleration": 7,
       "distribution": 3,
-      "holder_growth": 3,
-      "mint_velocity": 20,
+      "holder_growth": 5,
+      "mint_velocity": 16,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
       "sell_through": 0
     },
-    "sell_through": 0.021261516654854713,
+    "sell_through": 0.0909,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 9877,
-      "total_supply": 210
+      "max_supply": 10000,
+      "total_supply": 909
     },
-    "ticker": "The Slippy Club NFT"
+    "ticker": "BITBORN"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -88,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 70477585,
+    "latest_block": 70487703,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 70477575,
+    "safe_block": 70487693,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -103,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790162923,
+  "generated_at": 1790163944,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -135,39 +136,40 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.662,
+    "analysis_age_seconds": 1.437,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 2,
+    "analysis_rows_pruned": 9,
     "blocks_processed": 120,
-    "duration_seconds": 2.791,
-    "from_block": 70477430,
+    "duration_seconds": 2.249,
+    "from_block": 70487559,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 1,
-    "lag_blocks": 26,
-    "lag_seconds": 2,
-    "live_observations": 1,
-    "next_block": 70477550,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 15,
+    "lag_seconds": 1,
+    "live_observations": 2,
+    "next_block": 70487679,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 70477549,
+    "to_block": 70487678,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 70477430-70477549",
+  "status": "SCANNING 70487559-70487678",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+      "collection": "0xae4a232ff07611761343e97821688853f70deb5d",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xae4a232ff07611761343e97821688853f70deb5d",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
         "MARKET_EVIDENCE_UNAVAILABLE"
@@ -178,42 +180,42 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 49,
-        "mints_1m": 49,
-        "mints_5m": 49,
-        "mints_60m": 49,
-        "raw_units_1m": 49,
-        "raw_units_5m": 49,
-        "recent_mint_concentration": 0.1429,
-        "unique_recent_minters": 7,
-        "velocity_1m": 49.0,
-        "velocity_5m": 9.8
+        "mints_15m": 11,
+        "mints_1m": 11,
+        "mints_5m": 11,
+        "mints_60m": 11,
+        "raw_units_1m": 11,
+        "raw_units_5m": 11,
+        "recent_mint_concentration": 0.0909,
+        "unique_recent_minters": 11,
+        "velocity_1m": 11.0,
+        "velocity_5m": 2.2
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "The Slippy Club NFT",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x4ff913a74daf8cad2a0f4c0721b9913bb8863224",
+      "name": "Bitborn",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xae4a232ff07611761343e97821688853f70deb5d",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.2715,
+      "predicted_probability": 0.2525,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "COLLECTIBLE_CONTRACT_NAME"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x85c8123a8d9a156eb559969a8cfbec957ad078e8",
+        "owner": "0xd4e94be93a127a69d6728955fda4d9c270b9898c",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -222,24 +224,109 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 52,
+      "score": 50,
       "score_parts": {
         "acceleration": 7,
         "distribution": 3,
-        "holder_growth": 3,
-        "mint_velocity": 20,
+        "holder_growth": 5,
+        "mint_velocity": 16,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
         "sell_through": 0
       },
-      "sell_through": 0.021261516654854713,
+      "sell_through": 0.0909,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 9877,
-        "total_supply": 210
+        "max_supply": 10000,
+        "total_supply": 909
       },
-      "ticker": "The Slippy Club NFT"
+      "ticker": "BITBORN"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xa5d8b69474a6a80cec9e905b99ea969e848d68b5",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xa5d8b69474a6a80cec9e905b99ea969e848d68b5",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 10,
+        "mints_1m": 10,
+        "mints_5m": 10,
+        "mints_60m": 10,
+        "raw_units_1m": 10,
+        "raw_units_5m": 10,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 10.0,
+        "velocity_5m": 2.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Credit Brokers",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xa5d8b69474a6a80cec9e905b99ea969e848d68b5",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.0829,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0xbbf8544e3220a6ff9d12639c472bbd297483a1a6",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 26,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 15,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 0
+      },
+      "sell_through": 0.003000300030003,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 3333,
+        "total_supply": 10
+      },
+      "ticker": "Credit Brokers"
     }
   ],
   "win_rate_pct": 0.0
