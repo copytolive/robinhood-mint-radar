@@ -1,49 +1,49 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+    "collection": "0xe9212e3ad53fe79c9fde2211e7980492edd75901",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe9212e3ad53fe79c9fde2211e7980492edd75901",
     "hard_gates": [
       "SAFETY_REVIEW_REQUIRED",
       "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
     ],
     "market": {
       "floor_price": null,
-      "native_sales_24h": 6,
+      "native_sales_24h": 0,
       "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 6,
+      "sales_24h": 8,
       "source": "SEAPORT_1_6",
       "state": "LIVE",
-      "volume_eth_24h": 0.00348
+      "volume_eth_24h": 0.0
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 5,
-      "mints_1m": 5,
-      "mints_5m": 5,
-      "mints_60m": 5,
-      "raw_units_1m": 5,
-      "raw_units_5m": 5,
-      "recent_mint_concentration": 0.6,
-      "unique_recent_minters": 3,
-      "velocity_1m": 5.0,
-      "velocity_5m": 1.0
+      "mints_15m": 4,
+      "mints_1m": 4,
+      "mints_5m": 4,
+      "mints_60m": 4,
+      "raw_units_1m": 4,
+      "raw_units_5m": 4,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 4,
+      "velocity_1m": 4.0,
+      "velocity_5m": 0.8
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Solve et Coagula",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+    "name": "fooms",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xe9212e3ad53fe79c9fde2211e7980492edd75901",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.192,
+    "predicted_probability": 0.2619,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -58,7 +58,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x7b755edeb83a5ec715e94babcb68af0707e20f10",
+      "owner": "0x472731f2b2751d57154f179446be657fa0238454",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +67,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 43,
+    "score": 51,
     "score_parts": {
       "acceleration": 7,
       "distribution": 0,
-      "holder_growth": 1,
-      "mint_velocity": 7,
+      "holder_growth": 2,
+      "mint_velocity": 6,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 9,
-      "sell_through": 0
+      "secondary_liquidity": 12,
+      "sell_through": 5
     },
-    "sell_through": null,
+    "sell_through": 0.513051305130513,
     "standard": "ERC721",
     "supply": {
-      "max_supply": null,
-      "total_supply": 3816
+      "max_supply": 1111,
+      "total_supply": 570
     },
-    "ticker": "DUST"
+    "ticker": "FOOMS"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +92,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 71488601,
-    "latest_block_age_seconds": 2,
+    "latest_block": 71622006,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 71488591,
+    "safe_block": 71621996,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +107,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790264873,
+  "generated_at": 1790278275,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,74 +139,74 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.064,
+    "analysis_age_seconds": 1.599,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 6,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 3.989,
-    "from_block": 71488442,
+    "duration_seconds": 2.668,
+    "from_block": 71621857,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 30,
-    "lag_seconds": 3,
-    "live_observations": 2,
-    "next_block": 71488562,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 20,
+    "lag_seconds": 2,
+    "live_observations": 1,
+    "next_block": 71621977,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 71488561,
+    "to_block": 71621976,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 71488442-71488561",
+  "status": "SCANNING 71621857-71621976",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+      "collection": "0xe9212e3ad53fe79c9fde2211e7980492edd75901",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe9212e3ad53fe79c9fde2211e7980492edd75901",
       "hard_gates": [
         "SAFETY_REVIEW_REQUIRED",
         "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
       ],
       "market": {
         "floor_price": null,
-        "native_sales_24h": 6,
+        "native_sales_24h": 0,
         "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 6,
+        "sales_24h": 8,
         "source": "SEAPORT_1_6",
         "state": "LIVE",
-        "volume_eth_24h": 0.00348
+        "volume_eth_24h": 0.0
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 5,
-        "mints_1m": 5,
-        "mints_5m": 5,
-        "mints_60m": 5,
-        "raw_units_1m": 5,
-        "raw_units_5m": 5,
-        "recent_mint_concentration": 0.6,
-        "unique_recent_minters": 3,
-        "velocity_1m": 5.0,
-        "velocity_5m": 1.0
+        "mints_15m": 4,
+        "mints_1m": 4,
+        "mints_5m": 4,
+        "mints_60m": 4,
+        "raw_units_1m": 4,
+        "raw_units_5m": 4,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 4,
+        "velocity_1m": 4.0,
+        "velocity_5m": 0.8
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Solve et Coagula",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x51a2a2244f560916b16e6f0ec04440561cf14c39",
+      "name": "fooms",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe9212e3ad53fe79c9fde2211e7980492edd75901",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.192,
+      "predicted_probability": 0.2619,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -221,7 +221,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x7b755edeb83a5ec715e94babcb68af0707e20f10",
+        "owner": "0x472731f2b2751d57154f179446be657fa0238454",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,112 +230,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 43,
+      "score": 51,
       "score_parts": {
         "acceleration": 7,
         "distribution": 0,
-        "holder_growth": 1,
-        "mint_velocity": 7,
+        "holder_growth": 2,
+        "mint_velocity": 6,
         "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 9,
-        "sell_through": 0
+        "secondary_liquidity": 12,
+        "sell_through": 5
       },
-      "sell_through": null,
+      "sell_through": 0.513051305130513,
       "standard": "ERC721",
       "supply": {
-        "max_supply": null,
-        "total_supply": 3816
+        "max_supply": 1111,
+        "total_supply": 570
       },
-      "ticker": "DUST"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0x02ad518b699e32472800453c58ac072235021612",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x02ad518b699e32472800453c58ac072235021612",
-      "hard_gates": [
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
-      ],
-      "market": {
-        "floor_price": null,
-        "native_sales_24h": 2,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 3,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.00076
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 1,
-        "mints_1m": 1,
-        "mints_5m": 1,
-        "mints_60m": 1,
-        "raw_units_1m": 1,
-        "raw_units_5m": 1,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 1.0,
-        "velocity_5m": 0.2
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Zonks",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x02ad518b699e32472800453c58ac072235021612",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.0501,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "HIGH",
-        "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
-        ],
-        "state": "PASS"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x09c7f6b3fd3c3c40539e5f51efe59eaeaaf23767",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 18,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 1,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 4,
-        "sell_through": 2
-      },
-      "sell_through": 0.224,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 1000,
-        "total_supply": 224
-      },
-      "ticker": "ZKs"
+      "ticker": "FOOMS"
     }
   ],
   "win_rate_pct": 0.0
