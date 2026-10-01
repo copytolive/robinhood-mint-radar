@@ -1,17 +1,101 @@
 {
-  "best_live_observation": null,
+  "best_live_observation": {
+    "action": "WAIT",
+    "collection": "0x995700ab05cec44106b3e50d992717e66e3c39ea",
+    "execution": {
+      "source": null,
+      "state": "UNAVAILABLE",
+      "url": null
+    },
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x995700ab05cec44106b3e50d992717e66e3c39ea",
+    "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
+      "SAFETY_REVIEW_REQUIRED",
+      "MINT_PRICE_UNKNOWN",
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
+    ],
+    "market": {
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
+    },
+    "metrics": {
+      "acceleration_5m": 1.0,
+      "mints_15m": 20,
+      "mints_1m": 20,
+      "mints_5m": 20,
+      "mints_60m": 20,
+      "raw_units_1m": 20,
+      "raw_units_5m": 20,
+      "recent_mint_concentration": 1.0,
+      "unique_recent_minters": 1,
+      "velocity_1m": 20.0,
+      "velocity_5m": 4.0
+    },
+    "mint_price_eth": null,
+    "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+    "name": "Gobbinhood",
+    "opensea_url": "https://opensea.io/assets/robinhood/0x995700ab05cec44106b3e50d992717e66e3c39ea",
+    "ownership": {
+      "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+      "source": "BLOCKSCOUT_V2",
+      "state": "UNAVAILABLE"
+    },
+    "predicted_probability": 0.1615,
+    "qualification_path": null,
+    "qualified": false,
+    "relevance": {
+      "confidence": "LOW",
+      "reasons": [
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+      ],
+      "state": "REVIEW"
+    },
+    "safety": {
+      "capabilities": [],
+      "confidence": "MEDIUM",
+      "contract_name": null,
+      "hard_risks": [],
+      "owner": "0x71a719b9e8a94acb7ac1f9cf1fb2e9d25fbfa27a",
+      "owner_active": true,
+      "proxy": null,
+      "review_risks": [
+        "VERIFICATION_UNAVAILABLE"
+      ],
+      "state": "REVIEW",
+      "verified": null
+    },
+    "score": 39,
+    "score_parts": {
+      "acceleration": 7,
+      "distribution": 0,
+      "holder_growth": 0,
+      "mint_velocity": 20,
+      "price_asymmetry": 0,
+      "safety": 4,
+      "secondary_liquidity": 0,
+      "sell_through": 8
+    },
+    "sell_through": 0.8991899189918992,
+    "standard": "ERC721",
+    "supply": {
+      "max_supply": 2222,
+      "total_supply": 1998
+    },
+    "ticker": "Go"
+  },
   "capital_deployed_usd": 0,
   "chain": {
     "active_rpc": "https://rpc.mainnet.chain.robinhood.com",
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 77493648,
+    "latest_block": 77665430,
     "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 77493638,
+    "safe_block": 77665420,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -21,7 +105,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1790869668,
+  "generated_at": 1790886931,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -53,28 +137,199 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 2.931,
+    "analysis_age_seconds": 1.898,
     "analysis_rows_considered": 2,
-    "analysis_rows_pruned": 3,
+    "analysis_rows_pruned": 5,
     "blocks_processed": 120,
-    "duration_seconds": 3.711,
-    "from_block": 77493484,
+    "duration_seconds": 2.606,
+    "from_block": 77665276,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 2,
-    "lag_blocks": 35,
-    "lag_seconds": 3,
-    "live_observations": 0,
-    "next_block": 77493604,
+    "irrelevant_filtered": 0,
+    "lag_blocks": 25,
+    "lag_seconds": 2,
+    "live_observations": 2,
+    "next_block": 77665396,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 77493603,
+    "to_block": 77665395,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 77493484-77493603",
+  "status": "SCANNING 77665276-77665395",
   "wallet_execution": "MANUAL_ONLY",
-  "watchlist": [],
+  "watchlist": [
+    {
+      "action": "WAIT",
+      "collection": "0x995700ab05cec44106b3e50d992717e66e3c39ea",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x995700ab05cec44106b3e50d992717e66e3c39ea",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 20,
+        "mints_1m": 20,
+        "mints_5m": 20,
+        "mints_60m": 20,
+        "raw_units_1m": 20,
+        "raw_units_5m": 20,
+        "recent_mint_concentration": 1.0,
+        "unique_recent_minters": 1,
+        "velocity_1m": 20.0,
+        "velocity_5m": 4.0
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Gobbinhood",
+      "opensea_url": "https://opensea.io/assets/robinhood/0x995700ab05cec44106b3e50d992717e66e3c39ea",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1615,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x71a719b9e8a94acb7ac1f9cf1fb2e9d25fbfa27a",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 39,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 0,
+        "holder_growth": 0,
+        "mint_velocity": 20,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 8
+      },
+      "sell_through": 0.8991899189918992,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 2222,
+        "total_supply": 1998
+      },
+      "ticker": "Go"
+    },
+    {
+      "action": "WAIT",
+      "collection": "0xeff2b5eb263401c1493c14cd240c2e423657ffa4",
+      "execution": {
+        "source": null,
+        "state": "UNAVAILABLE",
+        "url": null
+      },
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xeff2b5eb263401c1493c14cd240c2e423657ffa4",
+      "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
+        "SAFETY_REVIEW_REQUIRED",
+        "MINT_PRICE_UNKNOWN",
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
+      ],
+      "market": {
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
+      },
+      "metrics": {
+        "acceleration_5m": 1.0,
+        "mints_15m": 8,
+        "mints_1m": 8,
+        "mints_5m": 8,
+        "mints_60m": 8,
+        "raw_units_1m": 8,
+        "raw_units_5m": 8,
+        "recent_mint_concentration": 0.125,
+        "unique_recent_minters": 8,
+        "velocity_1m": 8.0,
+        "velocity_5m": 1.6
+      },
+      "mint_price_eth": null,
+      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
+      "name": "Yield Fields Founding Deeds",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xeff2b5eb263401c1493c14cd240c2e423657ffa4",
+      "ownership": {
+        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
+        "source": "BLOCKSCOUT_V2",
+        "state": "UNAVAILABLE"
+      },
+      "predicted_probability": 0.1213,
+      "qualification_path": null,
+      "qualified": false,
+      "relevance": {
+        "confidence": "LOW",
+        "reasons": [
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
+        ],
+        "state": "REVIEW"
+      },
+      "safety": {
+        "capabilities": [],
+        "confidence": "MEDIUM",
+        "contract_name": null,
+        "hard_risks": [],
+        "owner": "0x3ddd3fc1bbed4a885ac8b54358b580357c952c30",
+        "owner_active": true,
+        "proxy": null,
+        "review_risks": [
+          "VERIFICATION_UNAVAILABLE"
+        ],
+        "state": "REVIEW",
+        "verified": null
+      },
+      "score": 33,
+      "score_parts": {
+        "acceleration": 7,
+        "distribution": 3,
+        "holder_growth": 4,
+        "mint_velocity": 12,
+        "price_asymmetry": 0,
+        "safety": 4,
+        "secondary_liquidity": 0,
+        "sell_through": 3
+      },
+      "sell_through": 0.368,
+      "standard": "ERC721",
+      "supply": {
+        "max_supply": 1000,
+        "total_supply": 368
+      },
+      "ticker": "YFFD"
+    }
+  ],
   "win_rate_pct": 0.0
 }
