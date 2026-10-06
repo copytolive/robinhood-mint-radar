@@ -1,13 +1,13 @@
 {
   "best_live_observation": {
     "action": "WATCH",
-    "collection": "0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+    "collection": "0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
     "hard_gates": [
       "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
@@ -20,27 +20,27 @@
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 16,
-      "mints_1m": 16,
-      "mints_5m": 16,
-      "mints_60m": 16,
-      "raw_units_1m": 16,
-      "raw_units_5m": 16,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 16.0,
-      "velocity_5m": 3.2
+      "mints_15m": 240,
+      "mints_1m": 240,
+      "mints_5m": 240,
+      "mints_60m": 240,
+      "raw_units_1m": 240,
+      "raw_units_5m": 240,
+      "recent_mint_concentration": 0.0417,
+      "unique_recent_minters": 24,
+      "velocity_1m": 240.0,
+      "velocity_5m": 48.0
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Hoodborn",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+    "name": "ROUGE   BOTS",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3775,
+    "predicted_probability": 0.4628,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
@@ -55,7 +55,7 @@
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x95ee94b570310fdf0531112c6b8e5567d1950547",
+      "owner": "0x7f4b4c7c5021e90752aa2163341d7c8237f235e1",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -64,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 62,
+    "score": 69,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
+      "distribution": 5,
+      "holder_growth": 10,
       "mint_velocity": 20,
       "price_asymmetry": 15,
       "safety": 4,
       "secondary_liquidity": 0,
-      "sell_through": 9
+      "sell_through": 8
     },
-    "sell_through": 0.9164716471647165,
+    "sell_through": 0.8994149414941495,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 5555,
-      "total_supply": 5091
+      "max_supply": 4444,
+      "total_supply": 3997
     },
-    "ticker": "HOBO"
+    "ticker": "BOT"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -89,22 +89,22 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 81282284,
+    "latest_block": 81521749,
     "latest_block_age_seconds": 2,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 81282274,
+    "safe_block": 81521739,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
-    "bytes": 4096,
+    "bytes": 311296,
     "full_integrity": "DEFERRED_TO_DOCTOR",
     "integrity": "RUNTIME_OPERATIONAL",
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1791253925,
+  "generated_at": 1791278601,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -136,38 +136,38 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 3.474,
-    "analysis_rows_considered": 2,
+    "analysis_age_seconds": 2.684,
+    "analysis_rows_considered": 1,
     "analysis_rows_pruned": 2,
     "blocks_processed": 120,
-    "duration_seconds": 6.016,
-    "from_block": 81282115,
+    "duration_seconds": 7.202,
+    "from_block": 81521562,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
     "irrelevant_filtered": 0,
-    "lag_blocks": 40,
-    "lag_seconds": 4,
-    "live_observations": 2,
-    "next_block": 81282235,
+    "lag_blocks": 58,
+    "lag_seconds": 6,
+    "live_observations": 1,
+    "next_block": 81521682,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 81282234,
+    "to_block": 81521681,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 81282115-81282234",
+  "status": "SCANNING 81521562-81521681",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WATCH",
-      "collection": "0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+      "collection": "0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
       "hard_gates": [
         "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
@@ -180,27 +180,27 @@
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 16,
-        "mints_1m": 16,
-        "mints_5m": 16,
-        "mints_60m": 16,
-        "raw_units_1m": 16,
-        "raw_units_5m": 16,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 16.0,
-        "velocity_5m": 3.2
+        "mints_15m": 240,
+        "mints_1m": 240,
+        "mints_5m": 240,
+        "mints_60m": 240,
+        "raw_units_1m": 240,
+        "raw_units_5m": 240,
+        "recent_mint_concentration": 0.0417,
+        "unique_recent_minters": 24,
+        "velocity_1m": 240.0,
+        "velocity_5m": 48.0
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Hoodborn",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x0549cc5460400ae74c2abbbd612192b08ae922d2",
+      "name": "ROUGE   BOTS",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xce067d8ef9f0087f9987651ce838bf7a905bc63b",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3775,
+      "predicted_probability": 0.4628,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
@@ -215,7 +215,7 @@
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x95ee94b570310fdf0531112c6b8e5567d1950547",
+        "owner": "0x7f4b4c7c5021e90752aa2163341d7c8237f235e1",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -224,109 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 62,
+      "score": 69,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
+        "distribution": 5,
+        "holder_growth": 10,
         "mint_velocity": 20,
         "price_asymmetry": 15,
         "safety": 4,
         "secondary_liquidity": 0,
-        "sell_through": 9
+        "sell_through": 8
       },
-      "sell_through": 0.9164716471647165,
+      "sell_through": 0.8994149414941495,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 5555,
-        "total_supply": 5091
+        "max_supply": 4444,
+        "total_supply": 3997
       },
-      "ticker": "HOBO"
-    },
-    {
-      "action": "WAIT",
-      "collection": "0xf517d3a2c499cce82c0f9e37d9e6c79319f3d9a3",
-      "execution": {
-        "source": null,
-        "state": "UNAVAILABLE",
-        "url": null
-      },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xf517d3a2c499cce82c0f9e37d9e6c79319f3d9a3",
-      "hard_gates": [
-        "NFT_RELEVANCE_NOT_PASS",
-        "SAFETY_REVIEW_REQUIRED",
-        "MINT_PRICE_UNKNOWN",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
-        "MARKET_EVIDENCE_UNAVAILABLE"
-      ],
-      "market": {
-        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
-        "state": "UNAVAILABLE"
-      },
-      "metrics": {
-        "acceleration_5m": 1.0,
-        "mints_15m": 9,
-        "mints_1m": 9,
-        "mints_5m": 9,
-        "mints_60m": 9,
-        "raw_units_1m": 9,
-        "raw_units_5m": 9,
-        "recent_mint_concentration": 1.0,
-        "unique_recent_minters": 1,
-        "velocity_1m": 9.0,
-        "velocity_5m": 1.8
-      },
-      "mint_price_eth": null,
-      "mint_price_source": "OBSERVED_MINT_TX_VALUE_NONZERO_UNRESOLVED",
-      "name": "Hood Penguins ",
-      "opensea_url": "https://opensea.io/assets/robinhood/0xf517d3a2c499cce82c0f9e37d9e6c79319f3d9a3",
-      "ownership": {
-        "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
-        "source": "BLOCKSCOUT_V2",
-        "state": "UNAVAILABLE"
-      },
-      "predicted_probability": 0.1094,
-      "qualification_path": null,
-      "qualified": false,
-      "relevance": {
-        "confidence": "LOW",
-        "reasons": [
-          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
-        ],
-        "state": "REVIEW"
-      },
-      "safety": {
-        "capabilities": [],
-        "confidence": "MEDIUM",
-        "contract_name": null,
-        "hard_risks": [],
-        "owner": "0x6ec612b3cca13b1c8209d665d5f9430408bd9680",
-        "owner_active": true,
-        "proxy": null,
-        "review_risks": [
-          "VERIFICATION_UNAVAILABLE"
-        ],
-        "state": "REVIEW",
-        "verified": null
-      },
-      "score": 31,
-      "score_parts": {
-        "acceleration": 7,
-        "distribution": 0,
-        "holder_growth": 0,
-        "mint_velocity": 13,
-        "price_asymmetry": 0,
-        "safety": 4,
-        "secondary_liquidity": 0,
-        "sell_through": 7
-      },
-      "sell_through": 0.714,
-      "standard": "ERC721",
-      "supply": {
-        "max_supply": 1500,
-        "total_supply": 1071
-      },
-      "ticker": "RPENG"
+      "ticker": "BOT"
     }
   ],
   "win_rate_pct": 0.0
