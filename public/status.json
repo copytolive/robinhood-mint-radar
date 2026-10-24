@@ -1,64 +1,61 @@
 {
   "best_live_observation": {
     "action": "WAIT",
-    "collection": "0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+    "collection": "0xe07075032729f1a3267d747c1c8ab91482e8512a",
     "execution": {
       "source": null,
       "state": "UNAVAILABLE",
       "url": null
     },
-    "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+    "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe07075032729f1a3267d747c1c8ab91482e8512a",
     "hard_gates": [
+      "NFT_RELEVANCE_NOT_PASS",
       "SAFETY_REVIEW_REQUIRED",
-      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+      "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+      "MARKET_EVIDENCE_UNAVAILABLE"
     ],
     "market": {
-      "floor_price": null,
-      "native_sales_24h": 1,
-      "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-      "sales_24h": 1,
-      "source": "SEAPORT_1_6",
-      "state": "LIVE",
-      "volume_eth_24h": 0.000158
+      "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+      "state": "UNAVAILABLE"
     },
     "metrics": {
       "acceleration_5m": 1.0,
-      "mints_15m": 24,
-      "mints_1m": 24,
-      "mints_5m": 24,
-      "mints_60m": 24,
-      "raw_units_1m": 24,
-      "raw_units_5m": 24,
-      "recent_mint_concentration": 0.125,
-      "unique_recent_minters": 8,
-      "velocity_1m": 24.0,
-      "velocity_5m": 4.8
+      "mints_15m": 12,
+      "mints_1m": 12,
+      "mints_5m": 12,
+      "mints_60m": 12,
+      "raw_units_1m": 12,
+      "raw_units_5m": 12,
+      "recent_mint_concentration": 0.25,
+      "unique_recent_minters": 4,
+      "velocity_1m": 12.0,
+      "velocity_5m": 2.4
     },
     "mint_price_eth": 0.0,
     "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-    "name": "Pharaoh God Mob",
-    "opensea_url": "https://opensea.io/assets/robinhood/0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+    "name": "BitNODE",
+    "opensea_url": "https://opensea.io/assets/robinhood/0xe07075032729f1a3267d747c1c8ab91482e8512a",
     "ownership": {
       "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
       "source": "BLOCKSCOUT_V2",
       "state": "UNAVAILABLE"
     },
-    "predicted_probability": 0.3222,
+    "predicted_probability": 0.2254,
     "qualification_path": null,
     "qualified": false,
     "relevance": {
-      "confidence": "HIGH",
+      "confidence": "LOW",
       "reasons": [
-        "SECONDARY_MARKET_OBSERVED"
+        "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
       ],
-      "state": "PASS"
+      "state": "REVIEW"
     },
     "safety": {
       "capabilities": [],
       "confidence": "MEDIUM",
       "contract_name": null,
       "hard_risks": [],
-      "owner": "0x1c358080e24485b425715512f46285a993f27080",
+      "owner": "0x383905093704d98feadae69fd21d5d94676db2ff",
       "owner_active": true,
       "proxy": null,
       "review_risks": [
@@ -67,24 +64,24 @@
       "state": "REVIEW",
       "verified": null
     },
-    "score": 57,
+    "score": 47,
     "score_parts": {
       "acceleration": 7,
-      "distribution": 3,
-      "holder_growth": 4,
-      "mint_velocity": 20,
+      "distribution": 0,
+      "holder_growth": 2,
+      "mint_velocity": 18,
       "price_asymmetry": 15,
       "safety": 4,
-      "secondary_liquidity": 1,
-      "sell_through": 3
+      "secondary_liquidity": 0,
+      "sell_through": 1
     },
-    "sell_through": 0.3967,
+    "sell_through": 0.17386738673867386,
     "standard": "ERC721",
     "supply": {
-      "max_supply": 10000,
-      "total_supply": 3967
+      "max_supply": 6666,
+      "total_supply": 1159
     },
-    "ticker": "PGM"
+    "ticker": "Bitnode"
   },
   "capital_deployed_usd": 0,
   "chain": {
@@ -92,12 +89,12 @@
     "chain_id": 4663,
     "confirmations": 10,
     "hoodsea_launchpad": "0xa1e9DAB10a4DED224c090c73B09b6658Cc69331b",
-    "latest_block": 96935401,
-    "latest_block_age_seconds": 0,
+    "latest_block": 97013201,
+    "latest_block_age_seconds": 1,
     "name": "Robinhood Chain",
     "rpc": "https://rpc.mainnet.chain.robinhood.com",
     "rpc_failovers": 0,
-    "safe_block": 96935391,
+    "safe_block": 97013191,
     "seaport_1_6": "0x0000000000000068F116a894984e2DB1123eB395"
   },
   "db": {
@@ -107,7 +104,7 @@
     "journal_mode": "wal"
   },
   "diagnostics": [],
-  "generated_at": 1792862834,
+  "generated_at": 1792870962,
   "learning": {
     "brier": null,
     "calibration_curve": [],
@@ -139,89 +136,86 @@
   "prediction_mae": null,
   "realized_net_usd": 0,
   "scan": {
-    "analysis_age_seconds": 1.272,
-    "analysis_rows_considered": 1,
+    "analysis_age_seconds": 1.822,
+    "analysis_rows_considered": 2,
     "analysis_rows_pruned": 3,
     "blocks_processed": 120,
-    "duration_seconds": 1.878,
-    "from_block": 96935255,
+    "duration_seconds": 3.015,
+    "from_block": 97013047,
     "heavy_db_metrics_state": "DEFERRED_TO_DOCTOR_OR_MAINTENANCE",
     "hoodsea_launches_stored": null,
-    "irrelevant_filtered": 0,
-    "lag_blocks": 17,
-    "lag_seconds": 2,
+    "irrelevant_filtered": 1,
+    "lag_blocks": 25,
+    "lag_seconds": 3,
     "live_observations": 1,
-    "next_block": 96935375,
+    "next_block": 97013167,
     "qualification_queue_overflow": 0,
     "qualified_candidates": 0,
     "secondary_sales_stored": null,
-    "to_block": 96935374,
+    "to_block": 97013166,
     "total_mint_units_stored": null
   },
   "schema_version": "1.3",
-  "status": "SCANNING 96935255-96935374",
+  "status": "SCANNING 97013047-97013166",
   "wallet_execution": "MANUAL_ONLY",
   "watchlist": [
     {
       "action": "WAIT",
-      "collection": "0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+      "collection": "0xe07075032729f1a3267d747c1c8ab91482e8512a",
       "execution": {
         "source": null,
         "state": "UNAVAILABLE",
         "url": null
       },
-      "explorer_url": "https://robinhoodchain.blockscout.com/address/0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+      "explorer_url": "https://robinhoodchain.blockscout.com/address/0xe07075032729f1a3267d747c1c8ab91482e8512a",
       "hard_gates": [
+        "NFT_RELEVANCE_NOT_PASS",
         "SAFETY_REVIEW_REQUIRED",
-        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE"
+        "TRUSTED_EXECUTION_SURFACE_UNAVAILABLE",
+        "MARKET_EVIDENCE_UNAVAILABLE"
       ],
       "market": {
-        "floor_price": null,
-        "native_sales_24h": 1,
-        "reason": "ONCHAIN_SECONDARY_SALES_OBSERVED",
-        "sales_24h": 1,
-        "source": "SEAPORT_1_6",
-        "state": "LIVE",
-        "volume_eth_24h": 0.000158
+        "reason": "OPENSEA_API_KEY_NOT_CONFIGURED",
+        "state": "UNAVAILABLE"
       },
       "metrics": {
         "acceleration_5m": 1.0,
-        "mints_15m": 24,
-        "mints_1m": 24,
-        "mints_5m": 24,
-        "mints_60m": 24,
-        "raw_units_1m": 24,
-        "raw_units_5m": 24,
-        "recent_mint_concentration": 0.125,
-        "unique_recent_minters": 8,
-        "velocity_1m": 24.0,
-        "velocity_5m": 4.8
+        "mints_15m": 12,
+        "mints_1m": 12,
+        "mints_5m": 12,
+        "mints_60m": 12,
+        "raw_units_1m": 12,
+        "raw_units_5m": 12,
+        "recent_mint_concentration": 0.25,
+        "unique_recent_minters": 4,
+        "velocity_1m": 12.0,
+        "velocity_5m": 2.4
       },
       "mint_price_eth": 0.0,
       "mint_price_source": "OBSERVED_MINT_TX_VALUE_ZERO",
-      "name": "Pharaoh God Mob",
-      "opensea_url": "https://opensea.io/assets/robinhood/0x2376817e10b564b8174155d1886ad0d91eb1f89d",
+      "name": "BitNODE",
+      "opensea_url": "https://opensea.io/assets/robinhood/0xe07075032729f1a3267d747c1c8ab91482e8512a",
       "ownership": {
         "reason": "BLOCKSCOUT_HOLDERS_ERROR:HTTPError",
         "source": "BLOCKSCOUT_V2",
         "state": "UNAVAILABLE"
       },
-      "predicted_probability": 0.3222,
+      "predicted_probability": 0.2254,
       "qualification_path": null,
       "qualified": false,
       "relevance": {
-        "confidence": "HIGH",
+        "confidence": "LOW",
         "reasons": [
-          "SECONDARY_MARKET_OBSERVED"
+          "COLLECTIBLE_RELEVANCE_NOT_PROVEN"
         ],
-        "state": "PASS"
+        "state": "REVIEW"
       },
       "safety": {
         "capabilities": [],
         "confidence": "MEDIUM",
         "contract_name": null,
         "hard_risks": [],
-        "owner": "0x1c358080e24485b425715512f46285a993f27080",
+        "owner": "0x383905093704d98feadae69fd21d5d94676db2ff",
         "owner_active": true,
         "proxy": null,
         "review_risks": [
@@ -230,24 +224,24 @@
         "state": "REVIEW",
         "verified": null
       },
-      "score": 57,
+      "score": 47,
       "score_parts": {
         "acceleration": 7,
-        "distribution": 3,
-        "holder_growth": 4,
-        "mint_velocity": 20,
+        "distribution": 0,
+        "holder_growth": 2,
+        "mint_velocity": 18,
         "price_asymmetry": 15,
         "safety": 4,
-        "secondary_liquidity": 1,
-        "sell_through": 3
+        "secondary_liquidity": 0,
+        "sell_through": 1
       },
-      "sell_through": 0.3967,
+      "sell_through": 0.17386738673867386,
       "standard": "ERC721",
       "supply": {
-        "max_supply": 10000,
-        "total_supply": 3967
+        "max_supply": 6666,
+        "total_supply": 1159
       },
-      "ticker": "PGM"
+      "ticker": "Bitnode"
     }
   ],
   "win_rate_pct": 0.0
